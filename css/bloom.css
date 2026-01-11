@@ -1,0 +1,126 @@
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.task-image {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.frame-container {
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #f9f9f9;
+}
+
+.stem {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+body {
+    color: #333;
+    font-family: Georgia, serif;
+    font-size: 1.4em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.rw-page-header {
+    padding-top: 8rem;
+    margin-bottom: 1rem;
+}
+
+rw-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.rw-article-intro-inner .rw-article-intro-text {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.rw-group, .rw-article, .rw-front-page, .rw-icon-list {
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.rw-cta {
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "din-2014", sans-serif;
+    margin-right: auto;
+}
+
+.rw-section {
+    padding-top: 1px;
+    padding: 100px 0;
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+.rw-icon-list__item {
+    margin-bottom: 42px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+svg[Attributes Style] {
+    width: 64;
+    height: 64;
+    fill: none;
+}
+
