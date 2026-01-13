@@ -153,6 +153,7 @@ ul {
 
 .task-container {
     display: flex;
+    align-items: center;
     margin-bottom: 12px;
     font-size: 1.4rem;
     line-height: 1.4;
