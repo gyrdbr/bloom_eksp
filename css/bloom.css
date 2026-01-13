@@ -86,6 +86,10 @@ button.task-btn {
     position: relative; 
 }
 
+.gear-icon {
+    padding-bottom: 80px;
+}
+
 button.gear-btn {
     background-color: transparent; /* Makes background fully transparent */
     border: transparent;
