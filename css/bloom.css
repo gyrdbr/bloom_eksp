@@ -60,6 +60,11 @@ ul.rw-icon-list__items {
     padding-left: clamp(1rem, 2vw, 2rem);
 }
 
+.rw-icon-list__icon {
+    width: 42px;
+    height: 42px;
+}
+
 .rw-icon-list__icon img {
     width: 42px;
     height: 42px;
