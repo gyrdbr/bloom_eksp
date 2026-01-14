@@ -2,6 +2,7 @@ const helpButton = document.getElementById('help-button-svg');
 const badHabitButton = document.getElementById('habitB-button-svg');
 const goodHabitButton = document.getElementById('habitG-button-svg');
 const helpBHabitButton = document.getElementById('help-Bhabit-button');
+const helpGHabitButton = document.getElementById('help-Ghabit-button');
 
 const helpContent = `
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -89,6 +90,10 @@ if (goodHabitButton) {
 
 if (helpBHabitButton) {
     helpBHabitButton.innerHTML = lollipopContent;
+}
+
+if (helpGHabitButton) {
+    helpGHabitButton.innerHTML = carrotContent;
 }
 
 

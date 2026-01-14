@@ -43,7 +43,14 @@ body {
     font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
-ul.rw-icon-list__items {
+
+
+ul.rw-icon-list__row-items{
+    list-style-type: none; /* Removes default bullets */
+    display: flex;         /* Aligns items in a single line */
+}
+
+ul.rw-icon-row-items {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -163,6 +170,17 @@ ul {
     background-color: #685650;
 }
 
+.rw-button-list {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.rw-button-container {
+    padding-left: 1rem;
+}
+
 .rw-group, .rw-article, .rw-icon-list {
     margin-left: auto;
     margin-right: auto;
@@ -170,7 +188,7 @@ ul {
     padding-right: 1rem;
 }
 
-    .rw-front-page {
+.rw-front-page {
     margin-left: auto;
     margin-right: auto;
 }
