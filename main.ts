@@ -7,6 +7,9 @@ const helpGHabitButton = document.getElementById('help-Ghabit-button');
 const badHabitButton = document.getElementById('habitB-button-svg');
 const helpBHabitButton = document.getElementById('help-Bhabit-button');
 
+const infoButton = document.getElementById('info-button-svg');
+const refsButton = document.getElementById('refs-button-svg');
+
 
 const helpContent = `
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -163,6 +166,54 @@ const lollipopContent =
                      <!-- text x="0.0" y="117.5" font-size="5.0" font-weight="bold" font-family="Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif" fill="#000000">Created by SHAKA FAHMI</text><text x="0.0" y="122.5" font-size="5.0" font-weight="bold" font-family="Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif" fill="#000000">from Noun Project</text -->
     </svg>`;
 
+const infoWhiteContent = `<svg xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 25.92405 75.5752375" x="0px" y="0px"
+    id="info_svg"
+    >
+    <path fill="#FFFFFF" d="M689.35717,408.48241c-2.15222.651-7.09592,1.729-6.84642-2.1387l5.58042-22.4936a7.63371,7.63371,0,0,0-5.571-9.2472v-.0001c-.14772-.0366-.44172-.0881-.44172-.0881a16.91407,16.91407,0,0,0-13.52728,3.18,2.01447,2.01447,0,0,0-.67352,1.0089l-.681,2.2801a.54164.54164,0,0,0,.6737.676c2.3317-.7054,7.9552-1.926,6.683,3.2019l.0001-.0001-5.3069,21.3907a7.63376,7.63376,0,0,0,5.571,9.2472h.0001c.1239.0308.2478.0511.3717.0726l-.0403.0554a16.91412,16.91412,0,0,0,13.5273-3.18,2.01439,2.01439,0,0,0,.6734-1.0089l.681-2.2801A.54157.54157,0,0,0,689.35717,408.48241Z" 
+        transform="translate(-667.17311 -355.47991)"/>
+    <circle fill="#FFFFFF" data-name="Form" 
+        cx="685.11073" cy="363.46638" r="7.98642" transform="translate(-482.91695 600.12601) rotate(-77.7211)"/>
+    <!-- text x="0" y="75.46019" fill="#FFFFFF" font-size="5px" 
+        font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">
+        Created by fjayv0
+    </text>
+    <text x="0" y="80.46019" fill="#FFFFFF" font-size="5px" font-weight="bold" 
+    font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text -->
+    </svg>`;
+
+const referencesWhiteContent = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="1280.000000pt" height="1232.000000pt" viewBox="0 0 1280.000000 1232.000000"
+    id="references_svg"
+    preserveAspectRatio="xMidYMid meet">
+    <metadata>
+    Created by potrace 1.15, written by Peter Selinger 2001-2017
+    </metadata>
+    <g transform="translate(0.000000,1232.000000) scale(0.100000,-0.100000)"
+        fill="#FFFFFF" stroke="none">
+        <path d="M612 11877 c-22 -24 -22 -24 -20 -433 l3 -409 40 -3 c22 -1 112 -12
+        200 -23 298 -37 520 -92 685 -171 203 -97 297 -269 348 -637 16 -118 17 -363
+        17 -3851 0 -3990 2 -3807 -50 -4041 -76 -341 -206 -461 -615 -564 -137 -34
+        -526 -94 -622 -95 -5 0 -8 -183 -8 -407 l0 -407 27 -28 27 -28 2742 0 2742 0
+        31 26 31 26 0 408 0 409 -52 5 c-29 3 -118 13 -198 21 -558 60 -919 176 -1033
+        333 -97 132 -153 327 -177 607 -6 75 -10 773 -10 1848 l0 1727 426 0 c450 0
+        632 -9 859 -41 561 -80 970 -283 1207 -599 254 -340 422 -912 498 -1700 5 -58
+        19 -235 30 -395 49 -694 115 -1149 219 -1506 113 -384 237 -615 440 -819 343
+        -343 777 -530 1396 -601 167 -20 619 -17 780 5 623 84 1076 318 1405 727 271
+        337 428 763 481 1309 12 129 14 615 2 700 l-8 55 -375 6 -375 7 -27 -26 c-26
+        -24 -28 -32 -28 -101 0 -215 -35 -518 -80 -696 -54 -216 -121 -352 -228 -467
+        -104 -110 -220 -155 -377 -145 -197 12 -288 111 -359 392 -45 181 -70 361
+        -116 850 -67 712 -177 1316 -302 1660 -296 815 -1016 1388 -2172 1730 -157 46
+        -176 54 -146 59 19 3 107 18 195 32 1118 180 1939 523 2433 1014 176 175 285
+        327 393 545 158 322 217 616 206 1043 -10 405 -78 703 -232 1018 -505 1028
+        -1791 1551 -4045 1644 -151 6 -1387 10 -3216 10 l-2971 0 -21 -23z m5803 -798
+        c748 -64 1261 -374 1540 -930 111 -220 179 -465 216 -774 20 -165 17 -588 -5
+        -750 -49 -360 -165 -652 -350 -881 -321 -398 -900 -611 -1831 -675 -93 -6
+        -415 -12 -715 -13 l-545 -1 0 1535 c0 1403 1 1545 17 1655 57 392 161 585 372
+        690 146 72 381 123 661 144 162 12 503 12 640 0z"
+        />
+    </g>
+</svg>`;
 
 if (helpButton) {
     helpButton.innerHTML = helpContent;
@@ -186,6 +237,14 @@ if (badHabitButton) {
 
 if (helpBHabitButton) {
     helpBHabitButton.innerHTML = lollipopWhiteContent;
+}
+
+if (infoButton) {
+    infoButton.innerHTML = infoWhiteContent;
+}
+
+if (refsButton) {
+    refsButton.innerHTML = referencesWhiteContent;
 }
 
 
