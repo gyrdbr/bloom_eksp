@@ -127,11 +127,28 @@ button.gear-btn {
     height:60px;
 }
 
+#helpWhite_svg,
 #help_svg {
     width: 50px;
     position: absolute;
     left: -2px;
     top: -2px;
+}
+
+#lollipopWhite_svg,
+#lollipop_svg {
+    width: 42px;
+    position: absolute;
+    left: -2px;
+    top: -1px;
+}
+
+#carrotWhite_svg,
+#carrot_svg {
+    width: 47px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 #game_lightbulb {
@@ -151,20 +168,6 @@ button.gear-btn {
     position: absolute;
     left: -2px;
     top: -4px;
-}
-
-#lollipop_svg {
-    width: 42px;
-    position: absolute;
-    left: -2px;
-    top: -1px;
-}
-
-#carrot_svg {
-    width: 47px;
-    position: absolute;
-    left: 0;
-    top: 0;
 }
 
 ul {
