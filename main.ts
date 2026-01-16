@@ -1,8 +1,6 @@
 const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg');
 
-const closeHelpButton = document.getElementById('cross-button-svg');
-
 const goodHabitButton = document.getElementById('habitG-button-svg');
 const helpGHabitButton = document.getElementById('help-Ghabit-button');
 
@@ -11,6 +9,12 @@ const helpBHabitButton = document.getElementById('help-Bhabit-button');
 
 const infoButton = document.getElementById('info-button-svg');
 const refsButton = document.getElementById('refs-button-svg');
+
+
+const helpPage = document.getElementById('rw-help-page');
+const goodHabitsPage = document.getElementById('rw-good-habits-page');
+const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
+const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;;
 
 
 const helpContent = `
@@ -262,11 +266,8 @@ if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
 
-const helpPage = document.getElementById('rw-help-page');
-const goodHabitsPage = document.getElementById('rw-good-habits-page');
-const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
-
 gearButton.addEventListener('click', () => {
+    console.log("help  me");
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
@@ -275,6 +276,18 @@ gearButton.addEventListener('click', () => {
     if (goodHabitsPage) {
         goodHabitsPage.classList.remove('visible-element');
         goodHabitsPage.classList.add('hidden-element');
+    }
+});
+
+closeHelpButton.addEventListener('click', () => {
+    if (helpPage) {
+        helpPage.classList.add('hidden-element');
+        helpPage.classList.remove('visible-element');
+    }
+
+    if (goodHabitsPage) {
+        goodHabitsPage.classList.add('visible-element');
+        goodHabitsPage.classList.remove('hidden-element');
     }
 });
 
