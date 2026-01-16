@@ -44,12 +44,16 @@ if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
 var helpPage = document.getElementById('rw-help-page');
+var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var gearButton = document.getElementById("help-button-svg");
 gearButton.addEventListener('click', function () {
-    var helpElement = document.getElementById('rw-help-page');
     if (helpPage) {
-        // helpPage.classList.remove('hidden-element');
+        helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
+    }
+    if (goodHabitsPage) {
+        goodHabitsPage.classList.remove('visible-element');
+        goodHabitsPage.classList.add('hidden-element');
     }
 });
 console.log("Welcome");
