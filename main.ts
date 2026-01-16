@@ -11,12 +11,6 @@ const infoButton = document.getElementById('info-button-svg');
 const refsButton = document.getElementById('refs-button-svg');
 
 
-const helpPage = document.getElementById('rw-help-page');
-const goodHabitsPage = document.getElementById('rw-good-habits-page');
-const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
-const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;;
-
-
 const helpContent = `
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
             id="help_svg"
@@ -230,6 +224,13 @@ const referencesWhiteContent = `<svg version="1.0" xmlns="http://www.w3.org/2000
     </g>
 </svg>`;
 
+const helpPage = document.getElementById('rw-help-page');
+const goodHabitsPage = document.getElementById('rw-good-habits-page');
+const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
+const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;
+
+
+
 if (helpButton) {
     helpButton.innerHTML = helpContent;
 }
@@ -266,6 +267,11 @@ if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
 
+const header = document.getElementById('rw-page-header');
+const body = document.getElementById('rw-page-header');
+// const main = document.getElementById('rw-main');
+const gearIcon = document.getElementById('gear-icon');
+
 gearButton.addEventListener('click', () => {
     console.log("help  me");
     if (helpPage) {
@@ -276,6 +282,21 @@ gearButton.addEventListener('click', () => {
     if (goodHabitsPage) {
         goodHabitsPage.classList.remove('visible-element');
         goodHabitsPage.classList.add('hidden-element');
+    }
+
+    
+    if (header) {
+        header.classList.add('hidden-element');
+    }
+
+    /*
+    if (main) {
+        main.classList.add('rw-help-page');
+    }
+        */
+
+    if (gearIcon) {
+        gearIcon.classList.add('hidden-element');
     }
 });
 
@@ -288,6 +309,21 @@ closeHelpButton.addEventListener('click', () => {
     if (goodHabitsPage) {
         goodHabitsPage.classList.add('visible-element');
         goodHabitsPage.classList.remove('hidden-element');
+    }
+
+    
+     if (header) {
+        header.classList.remove('hidden-element');
+    }
+
+    /*
+    if (main) {
+        main.classList.remove('rw-help-page');
+    }
+        */
+
+    if (gearIcon) {
+        gearIcon.classList.remove('hidden-element');
     }
 });
 

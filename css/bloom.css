@@ -7,17 +7,21 @@ body {
 
 
 /* The element is hidden by default */
-section.hidden-element {
+.hidden-element {
   display: none;
 }
 
 /* This class will show the element when added to it */
-section.visible-element {
+.visible-element {
   display: block;
 }
 
+.full-page-element {
+  height: 100vh; /* Fills the entire visible browser window height */
+}
 .rw-help-page {
     background-color: black;
+    height: 100vh;
 }
 
 .rw-help-line {
