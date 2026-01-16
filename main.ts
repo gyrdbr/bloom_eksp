@@ -1,6 +1,8 @@
 const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg');
 
+const closeHelpButton = document.getElementById('cross-button-svg');
+
 const goodHabitButton = document.getElementById('habitG-button-svg');
 const helpGHabitButton = document.getElementById('help-Ghabit-button');
 
@@ -79,6 +81,15 @@ const helpWhiteContent = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="h
     <!-- text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Ehsan Madadi</text>
     <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text -->
 </svg>`;
+
+const crossWhiteContent = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
+    <path fill="#FFFFFF"d="m86.898 13.102c-4.0977-4.1016-10.699-4.1016-14.898 0l-22 22-22-22c-4.1992-4.1016-10.801-4.1016-14.898 0-4.1016 
+    4.0977-4.1016 10.699 0 14.898l22 22-22 22c-4.1016 4.1992-4.1016 10.801 0 14.898 4.1016 4.1016 10.801 4.1016 14.898 
+    0l22-22 22 22c4.1016 4.1016 10.801 4.1016 14.898 0 4.1016-4.1016 4.1016-10.801 0-14.898l-22-22 22-22c4.1016-4.1992 
+    4.1016-10.801 0-14.898z"/>
+    <!-- text x="0.0" y="117.5" font-size="5.0" font-weight="bold" fill="#000000">Created by ainul muttaqin</text>
+    <text x="0.0" y="122.5" font-size="5.0" font-weight="bold" fill="#000000">from Noun Project</text -->
+    </svg>`;
 
 
 const carrotWhiteContent = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -221,6 +232,10 @@ if (helpButton) {
 
 if (settingsButton) {
     settingsButton.innerHTML = helpWhiteContent;
+}
+
+if (closeHelpButton) {
+    closeHelpButton.innerHTML = crossWhiteContent;
 }
 
 if (goodHabitButton) {

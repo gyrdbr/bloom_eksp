@@ -117,6 +117,11 @@ button.task-btn {
     padding-bottom: 80px;
 }
 
+.close-icon {
+    padding-bottom: 40px;
+}
+
+button.cross-btn,
 button.gear-btn {
     background-color: transparent; /* Makes background fully transparent */
     border: transparent;
