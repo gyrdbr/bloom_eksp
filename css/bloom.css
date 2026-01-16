@@ -4,8 +4,16 @@ body {
     background-color: #D8C4BC;
 }
 
-.hidden-element {
-    display: none;
+
+
+/* The element is hidden by default */
+section {
+  display: none;
+}
+
+/* This class will show the element when added to it */
+section.visible-element {
+  display: block;
 }
 
 .rw-help-page {

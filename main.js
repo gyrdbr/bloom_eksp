@@ -43,5 +43,14 @@ if (infoButton) {
 if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
+var helpPage = document.getElementById('rw-help-page');
+var gearButton = document.getElementById("help-button-svg");
+gearButton.addEventListener('click', function () {
+    var helpElement = document.getElementById('rw-help-page');
+    if (helpPage) {
+        helpPage.classList.remove('hidden-element');
+        helpPage.classList.add('visible-element');
+    }
+});
 console.log("Welcome");
 console.log("proever igjen");
