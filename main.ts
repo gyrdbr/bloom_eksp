@@ -268,7 +268,7 @@ const gearButton = document.getElementById("help-button-svg") as HTMLButtonEleme
 gearButton.addEventListener('click', () => {
     const helpElement = document.getElementById('rw-help-page');
     if (helpPage) {
-        helpPage.classList.remove('hidden-element');
+        // helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
     }
 });

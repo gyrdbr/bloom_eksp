@@ -48,7 +48,7 @@ var gearButton = document.getElementById("help-button-svg");
 gearButton.addEventListener('click', function () {
     var helpElement = document.getElementById('rw-help-page');
     if (helpPage) {
-        helpPage.classList.remove('hidden-element');
+        // helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
     }
 });
