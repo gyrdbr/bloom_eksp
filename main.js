@@ -55,9 +55,14 @@ var header = document.getElementById('rw-page-header');
 var body = document.getElementById('rw-page-header');
 // const main = document.getElementById('rw-main');
 var gearIcon = document.getElementById('gear-icon');
+var helpDivs = document.getElementsByClassName('rw-help-text');
 infoButton.addEventListener('click', function () {
     console.log("why am I calling helpPage?");
     infoText.classList.remove("hidden-element");
+    for (var i = 0; i < helpDivs.length; i++) {
+        console.log(helpDivs[i], "helpDivs");
+        ;
+    }
     /*
     if (helpPage) {
         helpPage.classList.remove('hidden-element');

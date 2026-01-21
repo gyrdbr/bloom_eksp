@@ -280,12 +280,17 @@ const body = document.getElementById('rw-page-header');
 // const main = document.getElementById('rw-main');
 const gearIcon = document.getElementById('gear-icon');
 
-
-
+const helpDivs = document.getElementsByClassName('rw-help-text');
 
 infoButton.addEventListener('click', () => {
     console.log("why am I calling helpPage?");
+
     infoText.classList.remove("hidden-element");
+
+    for (let i = 0; i < helpDivs.length; i++) {
+        console.log(helpDivs[i],"helpDivs");;
+    }
+
     /*
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
