@@ -60,14 +60,7 @@ ul.rw-icon-list__row-items{
     display: flex;         /* Aligns items in a single line */
 }
 
-ul.rw-icon-list__row-buttons {
-    padding: 0;            /* Removes default padding */
-    margin: 0; 
-    list-style-type: none; /* Removes default bullets */
-    display: flex;         /* Aligns items in a single line */
-    gap: 24px;
-    justify-content:  space-evenly
-}
+
 
 ul.rw-icon-row-items {
     display: block;
@@ -219,13 +212,6 @@ ul {
     background-color: #685650;
 }
 
-.rw-button-list {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
 .rw-group, .rw-article, .rw-icon-list {
     margin-left: auto;
     margin-right: auto;
@@ -278,6 +264,24 @@ ul {
 
 /* help page */
 
+ul.rw-icon-list__row-buttons {
+    padding: 0;            /* Removes default padding */
+    margin: 0; 
+    list-style-type: none; /* Removes default bullets */
+    display: flex;         /* Aligns items in a single line */
+    gap: 21px;
+    justify-content: space-evenly;
+
+}
+
+.rw-button-list {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
 .rw-icon-list-help {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -285,18 +289,23 @@ ul {
 
 
 .frame-container-help {
+    background-color: #F5F1E9;
     border: 2px solid black;
     border-radius: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    background-color: #685650;
+    padding: 16px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
 }
-
 
 .rw-help-text {
-    background-color: #F5F1E9;
+    padding-top: 2rem;
+    padding-left: 17px;
+    padding-right: 17px;
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem;
 }
-
 /* game switches*/
 
 .switch {
