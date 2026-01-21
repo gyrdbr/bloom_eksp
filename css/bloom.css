@@ -8,8 +8,13 @@ body {
 
 /* The element is hidden by default */
 .hidden-element {
-  display: none;
+  display: none !important;
 }
+
+.hidden-div {
+  display: none !important;
+}
+
 
 /* This class will show the element when added to it */
 .visible-element {

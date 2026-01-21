@@ -7,7 +7,6 @@ const helpGHabitButton = document.getElementById('help-Ghabit-button');
 const badHabitButton = document.getElementById('habitB-button-svg');
 const helpBHabitButton = document.getElementById('help-Bhabit-button');
 
-const infoButton = document.getElementById('info-button-svg');
 const refsButton = document.getElementById('refs-button-svg');
 
 const moveHelpTriangle = document.getElementById('rw-help-triangle');
@@ -226,13 +225,22 @@ const referencesWhiteContent = `<svg version="1.0" xmlns="http://www.w3.org/2000
     </g>
 </svg>`;
 
+const infoButton = document.getElementById('info-button-svg') as HTMLButtonElement;
+
 const helpPage = document.getElementById('rw-help-page');
 const goodHabitsPage = document.getElementById('rw-good-habits-page');
 const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
 const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;
 
+const infoText = document.getElementById('rw-info-text') as HTMLButtonElement;
+
 if (moveHelpTriangle) {
 
+}
+
+if (infoButton) {
+    infoButton.innerHTML = infoWhiteContent;
+    // infoText.classList.remove("hidden-element");
 }
 
 if (helpButton) {
@@ -263,10 +271,6 @@ if (helpBHabitButton) {
     helpBHabitButton.innerHTML = lollipopWhiteContent;
 }
 
-if (infoButton) {
-    infoButton.innerHTML = infoWhiteContent;
-}
-
 if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
@@ -275,6 +279,20 @@ const header = document.getElementById('rw-page-header');
 const body = document.getElementById('rw-page-header');
 // const main = document.getElementById('rw-main');
 const gearIcon = document.getElementById('gear-icon');
+
+
+
+
+infoButton.addEventListener('click', () => {
+    console.log("why am I calling helpPage?");
+    infoText.classList.remove("hidden-element");
+    /*
+    if (helpPage) {
+        helpPage.classList.remove('hidden-element');
+        helpPage.classList.add('visible-element');
+    }
+        */
+});
 
 gearButton.addEventListener('click', () => {
     console.log("help  me");
@@ -334,4 +352,4 @@ closeHelpButton.addEventListener('click', () => {
 
 
 console.log("Welcome");
-console.log("proever igjen");
+console.log("Sjekk a");
