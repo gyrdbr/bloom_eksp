@@ -257,11 +257,6 @@ ul {
     border-radius: 15px; 
 }
 
-.rw-section {
-    /* padding-top: 1px;
-    padding: 100px 0; */
-}
-
 /* help page */
 
 ul.rw-icon-list__row-buttons {
@@ -296,6 +291,13 @@ ul.rw-icon-list__row-buttons {
     display: flex; 
     align-items: center;
     justify-content: space-around;
+}
+
+.frame-container-bloom {
+    background-color: #F5F1E9;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 .rw-help-text {
