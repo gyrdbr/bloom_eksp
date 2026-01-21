@@ -245,7 +245,6 @@ ul {
 }
 
 .rw-icon-list__button {
-    margin-bottom: 2px;
     display: flex;
 }
 
@@ -258,6 +257,7 @@ ul {
 }
 
 /* help page */
+
 
 ul.rw-icon-list__row-buttons {
     padding: 0;            /* Removes default padding */
@@ -307,6 +307,47 @@ ul.rw-icon-list__row-buttons {
     display: flex; 
     flex-direction: column;
     gap: 1rem;
+}
+
+.flex-container {
+     background-color: #F5F1E9;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items at the start initially */
+    height: 100px;
+    background-color: lightblue;
+}
+
+.flex-item {
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+    transition: transform 0.5s ease; /* Smooth transition for the transform property */
+    cursor: pointer;
+}
+
+.moved {
+    /* Moves the element 100px to the right */
+    transform: translateX(100px); 
+    /* To move down: transform: translateY(100px); */
+}
+.rw-help-selection {
+    display: flex; 
+    flex-direction: column;
+}
+
+
+.rw-help-triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent; 
+    border-right: 15px solid transparent;
+    border-bottom: 10px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* game switches*/
 

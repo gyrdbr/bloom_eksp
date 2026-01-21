@@ -10,6 +10,8 @@ const helpBHabitButton = document.getElementById('help-Bhabit-button');
 const infoButton = document.getElementById('info-button-svg');
 const refsButton = document.getElementById('refs-button-svg');
 
+const moveHelpTriangle = document.getElementById('rw-help-triangle');
+
 
 const helpContent = `
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -229,7 +231,9 @@ const goodHabitsPage = document.getElementById('rw-good-habits-page');
 const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
 const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;
 
+if (moveHelpTriangle) {
 
+}
 
 if (helpButton) {
     helpButton.innerHTML = helpContent;
