@@ -278,6 +278,21 @@ ul {
 
 /* help page */
 
+.rw-icon-list-help {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.frame-container-help {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #685650;
+}
+
+
 .rw-help-text {
     background-color: #F5F1E9;
 }
