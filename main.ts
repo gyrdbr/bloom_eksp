@@ -10,9 +10,13 @@ const refsButton = document.getElementById('refs-button-svg');
 
 const moveHelpTriangle = document.getElementById('rw-help-triangle');
 
-const brakeButton = document.getElementById('brake-button-svg') as HTMLButtonElement;
-const tripButton = document.getElementById('trip-button-svg') as HTMLButtonElement;
+const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
+const brakeButtonSettings = document.getElementById('brake-button-menu') as HTMLButtonElement;
+const lightGHButtonSettings = document.getElementById('lightbulbGH-menu') as HTMLButtonElement;
 
+const tripButton = document.getElementById('trip-button-svg') as HTMLButtonElement;
+const brakeButton = document.getElementById('brake-button-svg') as HTMLButtonElement;
+const lightGHButton = document.getElementById('lightbulbGH-svg') as HTMLButtonElement;
 
 
 const lightContent = `
@@ -421,8 +425,6 @@ const readContent = `
 // ``
 const infoButton = document.getElementById('info-button-svg') as HTMLButtonElement;
 const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButtonElement;
-const lightGHButton = document.getElementById('lightbulbGH-button') as HTMLButtonElement;
-
 const goodHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
 
 const fysenButton = document.getElementById('fysen-button') as HTMLButtonElement;
@@ -448,21 +450,33 @@ if (moveHelpTriangle) {
 
 
 
+if (brakeButtonSettings) {
+    brakeButtonSettings.innerHTML = brakeContent;
+}
+
 if (brakeButton) {
     brakeButton.innerHTML = brakeContent;
 }
 
 
+if (tripButtonSettings) {
+    tripButtonSettings.innerHTML = eveningTrip;
+}
+
 if (tripButton) {
     tripButton.innerHTML = eveningTrip;
 }
 
-if (infoButton) {
-    infoButton.innerHTML = infoWhiteContent;
-}
-
 if (lightButton) {
     lightButton.innerHTML = lightContent;
+}
+
+if (lightGHButton) {
+    lightGHButton.innerHTML = lightContent;
+}
+
+if (infoButton) {
+    infoButton.innerHTML = infoWhiteContent;
 }
 
 if (fysenButton) {
@@ -476,6 +490,10 @@ if (gameButton) {
 
 if (readButton) {
     readButton.innerHTML = readContent;
+}
+
+if (lightGHButtonSettings) {
+    lightGHButtonSettings.innerHTML = lightContent;
 }
 
 if (lightGHButton) {
