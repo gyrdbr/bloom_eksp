@@ -328,6 +328,7 @@ ul.rw-icon-list__row-buttons {
     align-items: center;
 }
 
+#rw-badHabits-text .rw-icon-list__item,
 #rw-goodHabits-text .rw-icon-list__item {   
         margin-bottom: 15px !important;
 }
