@@ -1,5 +1,5 @@
 const helpButton = document.getElementById('help-button-svg');
-const settingsButton = document.getElementById('settings-button-svg');
+const settingsButton = document.getElementById('settings-button-svg') as HTMLButtonElement;
 
 const goodHabitButton = document.getElementById('habitG-button-svg');
 const helpGHabitButton = document.getElementById('help-Ghabit-button');
@@ -233,6 +233,7 @@ const gearButton = document.getElementById("help-button-svg") as HTMLButtonEleme
 const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;
 
 const infoText = document.getElementById('rw-info-text') as HTMLButtonElement;
+const helpText = document.getElementById('rw-settings-text') as HTMLButtonElement;
 
 if (moveHelpTriangle) {
 
@@ -240,7 +241,6 @@ if (moveHelpTriangle) {
 
 if (infoButton) {
     infoButton.innerHTML = infoWhiteContent;
-    // infoText.classList.remove("hidden-element");
 }
 
 if (helpButton) {
@@ -282,25 +282,26 @@ const gearIcon = document.getElementById('gear-icon');
 
 const helpDivs = document.getElementsByClassName('rw-help-text');
 
-infoButton.addEventListener('click', () => {
-    console.log("why am I calling helpPage?");
-
-    infoText.classList.remove("hidden-element");
+settingsButton.addEventListener('click', () => {
 
     for (let i = 0; i < helpDivs.length; i++) {
-        console.log(helpDivs[i],"helpDivs");;
+        helpDivs[i].classList.add('hidden-element');
     }
 
-    /*
-    if (helpPage) {
-        helpPage.classList.remove('hidden-element');
-        helpPage.classList.add('visible-element');
+    helpText.classList.remove("hidden-element");
+});
+
+infoButton.addEventListener('click', () => {
+
+    for (let i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
     }
-        */
+
+    infoText.classList.remove("hidden-element");
 });
 
 gearButton.addEventListener('click', () => {
-    console.log("help  me");
+
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');

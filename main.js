@@ -21,11 +21,11 @@ var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var gearButton = document.getElementById("help-button-svg");
 var closeHelpButton = document.getElementById('cross-button-svg');
 var infoText = document.getElementById('rw-info-text');
+var helpText = document.getElementById('rw-settings-text');
 if (moveHelpTriangle) {
 }
 if (infoButton) {
     infoButton.innerHTML = infoWhiteContent;
-    // infoText.classList.remove("hidden-element");
 }
 if (helpButton) {
     helpButton.innerHTML = helpContent;
@@ -56,22 +56,20 @@ var body = document.getElementById('rw-page-header');
 // const main = document.getElementById('rw-main');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
-infoButton.addEventListener('click', function () {
-    console.log("why am I calling helpPage?");
-    infoText.classList.remove("hidden-element");
+settingsButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         console.log(helpDivs[i], "helpDivs");
-        ;
+        helpDivs[i].classList.add('hidden-element');
     }
-    /*
-    if (helpPage) {
-        helpPage.classList.remove('hidden-element');
-        helpPage.classList.add('visible-element');
+    helpText.classList.remove("hidden-element");
+});
+infoButton.addEventListener('click', function () {
+    for (var i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
     }
-        */
+    infoText.classList.remove("hidden-element");
 });
 gearButton.addEventListener('click', function () {
-    console.log("help  me");
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
