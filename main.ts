@@ -19,9 +19,9 @@ const brakeButton = document.getElementById('brake-button-svg') as HTMLButtonEle
 const lightGHButton = document.getElementById('lightbulbGH-svg') as HTMLButtonElement;
 
 const fysenButtonSettings = document.getElementById('fysen-button-menu') as HTMLButtonElement;
-const gameButtonSettings = document.getElementById('game-button-men') as HTMLButtonElement;
+const gameButtonSettings = document.getElementById('game-button-menu') as HTMLButtonElement;
 const readButtonSettings = document.getElementById('read-button-menu') as HTMLButtonElement;
-const lightBHButton = document.getElementById('lightbulbBH-menu') as HTMLButtonElement;
+const lightBHButtonSettings = document.getElementById('lightbulbBH-menu') as HTMLButtonElement;
 
 const lightContent = `
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0"
@@ -471,10 +471,6 @@ if (tripButtonSettings) {
     tripButtonSettings.innerHTML = eveningTrip;
 }
 
-if (fysenButtonSettings) {
-    fysenButtonSettings.innerHTML = fysenContent;
-}
-
 if (tripButton) {
     tripButton.innerHTML = eveningTrip;
 }
@@ -491,6 +487,10 @@ if (infoButton) {
     infoButton.innerHTML = infoWhiteContent;
 }
 
+if (fysenButtonSettings) {
+    fysenButtonSettings.innerHTML = fysenContent;
+}
+
 if (fysenButton) {
     fysenButton.innerHTML = fysenContent;
 }
@@ -499,9 +499,20 @@ if (gameButton) {
     gameButton.innerHTML = gameContent;
 }
 
+if (gameButton) {
+    gameButton.innerHTML = gameContent;
+}
+
+if (gameButtonSettings) {
+    gameButtonSettings.innerHTML = gameContent;
+}
 
 if (readButton) {
     readButton.innerHTML = readContent;
+}
+
+if (readButtonSettings) {
+    readButtonSettings.innerHTML = readContent;
 }
 
 if (lightGHButtonSettings) {
@@ -510,6 +521,10 @@ if (lightGHButtonSettings) {
 
 if (lightGHButton) {
     lightGHButton.innerHTML = lightContent;
+}
+
+if (lightBHButtonSettings) {
+    lightBHButtonSettings.innerHTML = lightContent;
 }
 
 if (helpButton) {
