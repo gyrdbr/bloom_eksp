@@ -199,8 +199,15 @@ button.gear-btn {
 #break_svg {
     width: 43px;
     position: absolute;
-    left: 6px;
+    left: 2px;
     top: -2px;
+}
+
+#trip {
+    width: 42px;
+    position: absolute;
+    top: -4px;
+    left: 1px;
 }
 
 #fysen_svg, #game_svg {

@@ -300,6 +300,7 @@ const brakeContent = `<svg viewBox="-5.0 -10.0 110.0 135.0" id="break_svg">
 
 const infoButton = document.getElementById('info-button-svg') as HTMLButtonElement;
 const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButtonElement;
+const lightGHButton = document.getElementById('lightbulbGH-button') as HTMLButtonElement;
 
 
 const helpPage = document.getElementById('rw-help-page');
@@ -332,6 +333,10 @@ if (infoButton) {
 
 if (lightButton) {
     lightButton.innerHTML = lightContent;
+}
+
+if (lightGHButton) {
+    lightGHButton.innerHTML = lightContent;
 }
 
 if (helpButton) {
