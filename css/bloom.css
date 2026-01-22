@@ -323,8 +323,13 @@ ul.rw-icon-list__row-buttons {
     background-color: #F5F1E9;
     border: 2px solid black;
     border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 20px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-items: center;
+}
+
+#rw-goodHabits-text .rw-icon-list__item {   
+        margin-bottom: 15px !important;
 }
 
 .rw-help-text {
