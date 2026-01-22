@@ -1,7 +1,6 @@
 var helpButton = document.getElementById('help-button-svg');
 var settingsButton = document.getElementById('settings-button-svg');
 var helpGHabitButton = document.getElementById('help-Ghabit-button');
-var goodHabitButton = document.getElementById('habitG-button-svg');
 var badHabitButton = document.getElementById('habitB-button-svg');
 var helpBHabitButton = document.getElementById('help-Bhabit-button');
 var refsButton = document.getElementById('refs-button-svg');
@@ -27,6 +26,7 @@ var readContent = "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\
 var infoButton = document.getElementById('info-button-svg');
 var lightButton = document.getElementById('lightbulb-button-svg');
 var lightGHButton = document.getElementById('lightbulbGH-button');
+var goodHabitButton = document.getElementById('help-Ghabit-button');
 var fysenButton = document.getElementById('fysen-button');
 var gameButton = document.getElementById('game-button');
 var readButton = document.getElementById('read-button');
@@ -37,6 +37,7 @@ var gearButton = document.getElementById("help-button-svg");
 var closeHelpButton = document.getElementById('cross-button-svg');
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
+var goodHabitsText = document.getElementById('rw-goodHabits-text');
 if (moveHelpTriangle) {
 }
 if (brakeButton) {
@@ -105,6 +106,13 @@ infoButton.addEventListener('click', function () {
         helpDivs[i].classList.add('hidden-element');
     }
     infoText.classList.remove("hidden-element");
+});
+goodHabitButton.addEventListener('click', function () {
+    console.log("Good habit clicked");
+    for (var i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
+    }
+    goodHabitsText.classList.remove("hidden-element");
 });
 gearButton.addEventListener('click', function () {
     if (helpPage) {

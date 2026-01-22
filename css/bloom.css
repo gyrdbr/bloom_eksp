@@ -319,6 +319,14 @@ ul.rw-icon-list__row-buttons {
     padding: 16px;
 }
 
+.frame-container-habits {
+    background-color: #F5F1E9;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px !important;
+}
+
 .rw-help-text {
     padding-top: 2rem;
     padding-left: 17px;

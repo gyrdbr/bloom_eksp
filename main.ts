@@ -2,8 +2,6 @@ const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg') as HTMLButtonElement;
 
 const helpGHabitButton = document.getElementById('help-Ghabit-button');
-
-const goodHabitButton = document.getElementById('habitG-button-svg');
 const badHabitButton = document.getElementById('habitB-button-svg');
 
 const helpBHabitButton = document.getElementById('help-Bhabit-button');
@@ -425,6 +423,8 @@ const infoButton = document.getElementById('info-button-svg') as HTMLButtonEleme
 const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButtonElement;
 const lightGHButton = document.getElementById('lightbulbGH-button') as HTMLButtonElement;
 
+const goodHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
+
 const fysenButton = document.getElementById('fysen-button') as HTMLButtonElement;
 const gameButton = document.getElementById('game-button') as HTMLButtonElement;
 const readButton = document.getElementById('read-button') as HTMLButtonElement;
@@ -437,6 +437,8 @@ const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButto
 
 const infoText = document.getElementById('rw-info-text') as HTMLButtonElement;
 const helpText = document.getElementById('rw-settings-text') as HTMLButtonElement;
+
+const goodHabitsText = document.getElementById('rw-goodHabits-text') as HTMLButtonElement;
 
 
 
@@ -539,6 +541,15 @@ infoButton.addEventListener('click', () => {
     }
 
     infoText.classList.remove("hidden-element");
+});
+
+goodHabitButton.addEventListener('click', () => {
+    console.log("Good habit clicked");
+    for (let i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
+    }
+
+    goodHabitsText.classList.remove("hidden-element");
 });
 
 gearButton.addEventListener('click', () => {
