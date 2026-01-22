@@ -13,6 +13,7 @@ const refsButton = document.getElementById('refs-button-svg');
 const moveHelpTriangle = document.getElementById('rw-help-triangle');
 
 const brakeButton = document.getElementById('brake-button-svg') as HTMLButtonElement;
+const tripButton = document.getElementById('trip-button-svg') as HTMLButtonElement;
 
 
 const helpContent = `
@@ -291,6 +292,11 @@ if (moveHelpTriangle) {
 
 if (brakeButton) {
     brakeButton.innerHTML = brakeContent;
+}
+
+
+if (tripButton) {
+    tripButton.innerHTML = eveningTrip;
 }
 
 if (infoButton) {
