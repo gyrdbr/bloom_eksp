@@ -196,6 +196,13 @@ button.gear-btn {
     top: 10px;
 }
 
+#break_svg {
+    width: 43px;
+    position: absolute;
+    left: 6px;
+    top: -2px;
+}
+
 #fysen_svg, #game_svg {
     width: 49px;
     position: absolute;

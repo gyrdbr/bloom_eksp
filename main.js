@@ -1,7 +1,7 @@
 var helpButton = document.getElementById('help-button-svg');
 var settingsButton = document.getElementById('settings-button-svg');
-var goodHabitButton = document.getElementById('habitG-button-svg');
 var helpGHabitButton = document.getElementById('help-Ghabit-button');
+var goodHabitButton = document.getElementById('habitG-button-svg');
 var badHabitButton = document.getElementById('habitB-button-svg');
 var helpBHabitButton = document.getElementById('help-Bhabit-button');
 var refsButton = document.getElementById('refs-button-svg');
@@ -18,6 +18,7 @@ var referencesWhiteContent = "<svg version=\"1.0\" xmlns=\"http://www.w3.org/200
 var infoButton = document.getElementById('info-button-svg');
 var helpPage = document.getElementById('rw-help-page');
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
+var badHabitsPage = document.getElementById('rw-bad-habits-page');
 var gearButton = document.getElementById("help-button-svg");
 var closeHelpButton = document.getElementById('cross-button-svg');
 var infoText = document.getElementById('rw-info-text');
@@ -39,6 +40,9 @@ if (closeHelpButton) {
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 }
+if (badHabitButton) {
+    badHabitButton.innerHTML = lollipopContent;
+}
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;
 }
@@ -53,12 +57,10 @@ if (refsButton) {
 }
 var header = document.getElementById('rw-page-header');
 var body = document.getElementById('rw-page-header');
-// const main = document.getElementById('rw-main');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
 settingsButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
-        console.log(helpDivs[i], "helpDivs");
         helpDivs[i].classList.add('hidden-element');
     }
     helpText.classList.remove("hidden-element");
@@ -77,6 +79,10 @@ gearButton.addEventListener('click', function () {
     if (goodHabitsPage) {
         goodHabitsPage.classList.remove('visible-element');
         goodHabitsPage.classList.add('hidden-element');
+    }
+    if (badHabitsPage) {
+        badHabitsPage.classList.remove('visible-element');
+        badHabitsPage.classList.add('hidden-element');
     }
     if (header) {
         header.classList.add('hidden-element');
