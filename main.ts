@@ -18,9 +18,9 @@ const tripButton = document.getElementById('trip-button-svg') as HTMLButtonEleme
 const brakeButton = document.getElementById('brake-button-svg') as HTMLButtonElement;
 const lightGHButton = document.getElementById('lightbulbGH-svg') as HTMLButtonElement;
 
-const fysenButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
-const gameButtonSettings = document.getElementById('brake-button-menu') as HTMLButtonElement;
-const readButtonSettings = document.getElementById('lightbulbGH-menu') as HTMLButtonElement;
+const fysenButtonSettings = document.getElementById('fysen-button-menu') as HTMLButtonElement;
+const gameButtonSettings = document.getElementById('game-button-men') as HTMLButtonElement;
+const readButtonSettings = document.getElementById('read-button-menu') as HTMLButtonElement;
 const lightBHButton = document.getElementById('lightbulbBH-menu') as HTMLButtonElement;
 
 const lightContent = `
@@ -469,6 +469,10 @@ if (brakeButton) {
 
 if (tripButtonSettings) {
     tripButtonSettings.innerHTML = eveningTrip;
+}
+
+if (fysenButtonSettings) {
+    fysenButtonSettings.innerHTML = fysenContent;
 }
 
 if (tripButton) {
