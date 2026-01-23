@@ -4,25 +4,6 @@ body {
     background-color: #D8C4BC;
 }
 
-.container {
-    width: 100%;
-    height: 100px;
-    background-color: #f0f0f0;
-    position: relative; /* Container needs relative positioning for the child to move within it */
-    overflow: hidden;
-}
-
-.movable-element {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    position: absolute; /* Position the element with absolute positioning */
-    left: 0;
-    top: 25px;
-    cursor: pointer;
-    transition: transform 0.5s ease; /* Smooth animation effect */
-}
-
 /* The element is hidden by default */
 .hidden-element {
   display: none !important;
