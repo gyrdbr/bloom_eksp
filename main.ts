@@ -2,13 +2,8 @@ const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg') as HTMLButtonElement;
 
 const helpGHabitButton = document.getElementById('help-Ghabit-button');
-
-
 const helpBHabitButton = document.getElementById('help-Bhabit-button');
-
-const refsButton = document.getElementById('refs-button-svg');
-
-
+const refsButton = document.getElementById('refs-button-svg') as HTMLButtonElement;
 
 const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
 const brakeButtonSettings = document.getElementById('brake-button-menu') as HTMLButtonElement;
@@ -447,9 +442,9 @@ const infoText = document.getElementById('rw-info-text') as HTMLButtonElement;
 const helpText = document.getElementById('rw-settings-text') as HTMLButtonElement;
 
 const goodHabitsText = document.getElementById('rw-goodHabits-text') as HTMLButtonElement;
-
 const badHabitsText = document.getElementById('rw-badHabits-text') as HTMLButtonElement;
 
+const referencesText = document.getElementById('rw-references-text') as HTMLButtonElement;
 
 
 
@@ -566,10 +561,6 @@ const helpDivs = document.getElementsByClassName('rw-help-text');
 
 const moveHelpTriangle = document.getElementById('rw-help-triangle') as HTMLButtonElement;
 
-if (moveHelpTriangle) {
-
-}
-
 const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
 moveTriangle(rect);
 
@@ -578,11 +569,21 @@ function moveTriangle(rect: DOMRect) {
     const rectLeft = rect.left;
     const rectWidth = rect.width;
 
-    console.log("Moving triangle to: " + (rectLeft - (rectWidth / 2)));
     // Use transform: translateX() for smooth, performant animation
     // This moves the element 200 pixels to the right from its current position
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)"; 
 }
+
+refsButton.addEventListener('click', () => {
+    const rect = refsButton.getBoundingClientRect(); // find position of button
+    moveTriangle(rect);
+    
+    for (let i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
+    }
+
+    referencesText.classList.remove("hidden-element");
+});
 
 settingsButton.addEventListener('click', () => {
     const rect = settingsButton.getBoundingClientRect(); // find position of button
@@ -628,6 +629,8 @@ badHabitButton.addEventListener('click', () => {
 
     badHabitsText.classList.remove("hidden-element");
 });
+
+
 
 gearButton.addEventListener('click', () => {
 

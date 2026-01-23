@@ -45,6 +45,7 @@ var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
 var badHabitsText = document.getElementById('rw-badHabits-text');
+var referencesText = document.getElementById('rw-references-text');
 if (brakeButtonSettings) {
     brakeButtonSettings.innerHTML = brakeContent;
 }
@@ -125,19 +126,24 @@ var body = document.getElementById('rw-page-header');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
-if (moveHelpTriangle) {
-}
 var rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
 moveTriangle(rect);
 // todo finn metodebeskrivelser i annen fil og legg til her
 function moveTriangle(rect) {
     var rectLeft = rect.left;
     var rectWidth = rect.width;
-    console.log("Moving triangle to: " + (rectLeft - (rectWidth / 2)));
     // Use transform: translateX() for smooth, performant animation
     // This moves the element 200 pixels to the right from its current position
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
 }
+refsButton.addEventListener('click', function () {
+    var rect = refsButton.getBoundingClientRect(); // find position of button
+    moveTriangle(rect);
+    for (var i = 0; i < helpDivs.length; i++) {
+        helpDivs[i].classList.add('hidden-element');
+    }
+    referencesText.classList.remove("hidden-element");
+});
 settingsButton.addEventListener('click', function () {
     var rect = settingsButton.getBoundingClientRect(); // find position of button
     moveTriangle(rect);
