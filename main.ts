@@ -570,18 +570,25 @@ if (moveHelpTriangle) {
 
 }
 
-function moveRight(rect: DOMRect) {
+const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
+moveTriangle(rect);
+
+// todo finn metodebeskrivelser i annen fil og legg til her
+function moveTriangle(rect: DOMRect) {
     const rectLeft = rect.left;
     const rectWidth = rect.width;
 
-    console.log("Moving triangle to: " + (rectLeft - 20));
+    console.log("Moving triangle to: " + (rectLeft - (rectWidth / 2)));
     // Use transform: translateX() for smooth, performant animation
     // This moves the element 200 pixels to the right from its current position
-    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - (rectWidth / 2)) + "px)"; 
+    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)"; 
 }
 
 settingsButton.addEventListener('click', () => {
+    const rect = settingsButton.getBoundingClientRect(); // find position of button
 
+    moveTriangle(rect);
+    
     for (let i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
@@ -591,11 +598,7 @@ settingsButton.addEventListener('click', () => {
 
 infoButton.addEventListener('click', () => {
     const rect = infoButton.getBoundingClientRect();
-
-    console.log("rect", rect)
-    console.log(rect);
-
-    moveRight(rect);
+    moveTriangle(rect);
 
     for (let i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
@@ -605,7 +608,9 @@ infoButton.addEventListener('click', () => {
 });
 
 goodHabitButton.addEventListener('click', () => {
-    console.log("Good habit clicked");
+    const rect = goodHabitButton.getBoundingClientRect();
+    moveTriangle(rect);
+
     for (let i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
@@ -614,7 +619,9 @@ goodHabitButton.addEventListener('click', () => {
 });
 
 badHabitButton.addEventListener('click', () => {
-    console.log("Good habit clicked");
+    const rect = badHabitButton.getBoundingClientRect();
+    moveTriangle(rect);
+
     for (let i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
