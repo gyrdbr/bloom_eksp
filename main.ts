@@ -8,7 +8,7 @@ const helpBHabitButton = document.getElementById('help-Bhabit-button');
 
 const refsButton = document.getElementById('refs-button-svg');
 
-const moveHelpTriangle = document.getElementById('rw-help-triangle');
+
 
 const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
 const brakeButtonSettings = document.getElementById('brake-button-menu') as HTMLButtonElement;
@@ -452,9 +452,7 @@ const badHabitsText = document.getElementById('rw-badHabits-text') as HTMLButton
 
 
 
-if (moveHelpTriangle) {
 
-}
 
 
 
@@ -566,6 +564,22 @@ const gearIcon = document.getElementById('gear-icon');
 
 const helpDivs = document.getElementsByClassName('rw-help-text');
 
+const moveHelpTriangle = document.getElementById('rw-help-triangle') as HTMLButtonElement;
+
+if (moveHelpTriangle) {
+
+}
+
+function moveRight(rect: DOMRect) {
+    const rectLeft = rect.left;
+    const rectWidth = rect.width;
+
+    console.log("Moving triangle to: " + (rectLeft - 20));
+    // Use transform: translateX() for smooth, performant animation
+    // This moves the element 200 pixels to the right from its current position
+    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - (rectWidth / 2)) + "px)"; 
+}
+
 settingsButton.addEventListener('click', () => {
 
     for (let i = 0; i < helpDivs.length; i++) {
@@ -576,6 +590,12 @@ settingsButton.addEventListener('click', () => {
 });
 
 infoButton.addEventListener('click', () => {
+    const rect = infoButton.getBoundingClientRect();
+
+    console.log("rect", rect)
+    console.log(rect);
+
+    moveRight(rect);
 
     for (let i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
@@ -661,6 +681,7 @@ closeHelpButton.addEventListener('click', () => {
         gearIcon.classList.remove('hidden-element');
     }
 });
+
 
 
 

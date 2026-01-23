@@ -3,7 +3,6 @@ var settingsButton = document.getElementById('settings-button-svg');
 var helpGHabitButton = document.getElementById('help-Ghabit-button');
 var helpBHabitButton = document.getElementById('help-Bhabit-button');
 var refsButton = document.getElementById('refs-button-svg');
-var moveHelpTriangle = document.getElementById('rw-help-triangle');
 var tripButtonSettings = document.getElementById('trip-button-menu');
 var brakeButtonSettings = document.getElementById('brake-button-menu');
 var lightGHButtonSettings = document.getElementById('lightbulbGH-menu');
@@ -46,8 +45,6 @@ var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
 var badHabitsText = document.getElementById('rw-badHabits-text');
-if (moveHelpTriangle) {
-}
 if (brakeButtonSettings) {
     brakeButtonSettings.innerHTML = brakeContent;
 }
@@ -127,6 +124,17 @@ var header = document.getElementById('rw-page-header');
 var body = document.getElementById('rw-page-header');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
+var moveHelpTriangle = document.getElementById('rw-help-triangle');
+if (moveHelpTriangle) {
+}
+function moveRight(rect) {
+    var rectLeft = rect.left;
+    var rectWidth = rect.width;
+    console.log("Moving triangle to: " + (rectLeft - 20));
+    // Use transform: translateX() for smooth, performant animation
+    // This moves the element 200 pixels to the right from its current position
+    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - (rectWidth / 2)) + "px)";
+}
 settingsButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
@@ -134,6 +142,10 @@ settingsButton.addEventListener('click', function () {
     helpText.classList.remove("hidden-element");
 });
 infoButton.addEventListener('click', function () {
+    var rect = infoButton.getBoundingClientRect();
+    console.log("rect", rect);
+    console.log(rect);
+    moveRight(rect);
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
