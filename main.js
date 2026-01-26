@@ -126,7 +126,6 @@ var body = document.getElementById('rw-page-header');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
-// const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
 var rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
 moveTriangle(rect);
 // todo finn metodebeskrivelser i annen fil og legg til her
@@ -138,15 +137,43 @@ function moveTriangle(rect) {
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
 }
 tripButtonSettings.addEventListener('click', function () {
-    // tripButtonSettings.classList.add('rw-habit-chosen');
-    console.log(tripButtonSettings.classList, "trip clicked");
     if (tripButtonSettings.classList.contains('rw-habit-chosen')) {
         tripButtonSettings.classList.remove('rw-habit-chosen');
-        // console.log(tripButtonSettings.classList, "before");
     }
     else {
         tripButtonSettings.classList.add('rw-habit-chosen');
-        console.log(tripButtonSettings, tripButtonSettings.classList, "after");
+    }
+});
+brakeButtonSettings.addEventListener('click', function () {
+    if (brakeButtonSettings.classList.contains('rw-habit-chosen')) {
+        brakeButtonSettings.classList.remove('rw-habit-chosen');
+    }
+    else {
+        brakeButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+fysenButtonSettings.addEventListener('click', function () {
+    if (fysenButtonSettings.classList.contains('rw-habit-chosen')) {
+        fysenButtonSettings.classList.remove('rw-habit-chosen');
+    }
+    else {
+        fysenButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+gameButtonSettings.addEventListener('click', function () {
+    if (gameButtonSettings.classList.contains('rw-habit-chosen')) {
+        gameButtonSettings.classList.remove('rw-habit-chosen');
+    }
+    else {
+        gameButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+readButtonSettings.addEventListener('click', function () {
+    if (readButtonSettings.classList.contains('rw-habit-chosen')) {
+        readButtonSettings.classList.remove('rw-habit-chosen');
+    }
+    else {
+        readButtonSettings.classList.add('rw-habit-chosen');
     }
 });
 refsButton.addEventListener('click', function () {

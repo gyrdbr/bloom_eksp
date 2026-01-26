@@ -559,8 +559,6 @@ const gearIcon = document.getElementById('gear-icon');
 const helpDivs = document.getElementsByClassName('rw-help-text');
 const moveHelpTriangle = document.getElementById('rw-help-triangle') as HTMLButtonElement;
 
-// const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
-
 const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
 moveTriangle(rect);
 
@@ -575,14 +573,42 @@ function moveTriangle(rect: DOMRect) {
 }
 
 tripButtonSettings.addEventListener('click', () => {
-    console.log(tripButtonSettings.classList, "trip clicked",);
-
     if (tripButtonSettings.classList.contains('rw-habit-chosen')) {
         tripButtonSettings.classList.remove('rw-habit-chosen');
-        // console.log(tripButtonSettings.classList, "before");
     } else {
         tripButtonSettings.classList.add('rw-habit-chosen');
-        console.log(tripButtonSettings, tripButtonSettings.classList, "after");
+    }
+});
+
+brakeButtonSettings.addEventListener('click', () => {
+    if (brakeButtonSettings.classList.contains('rw-habit-chosen')) {
+        brakeButtonSettings.classList.remove('rw-habit-chosen');
+    } else {
+        brakeButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+
+fysenButtonSettings.addEventListener('click', () => {
+    if (fysenButtonSettings.classList.contains('rw-habit-chosen')) {
+        fysenButtonSettings.classList.remove('rw-habit-chosen');
+    } else {
+        fysenButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+
+gameButtonSettings.addEventListener('click', () => {
+    if (gameButtonSettings.classList.contains('rw-habit-chosen')) {
+        gameButtonSettings.classList.remove('rw-habit-chosen');
+    } else {
+        gameButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+
+readButtonSettings.addEventListener('click', () => {
+    if (readButtonSettings.classList.contains('rw-habit-chosen')) {
+        readButtonSettings.classList.remove('rw-habit-chosen');
+    } else {
+        readButtonSettings.classList.add('rw-habit-chosen');
     }
 });
 
