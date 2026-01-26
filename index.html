@@ -67,27 +67,19 @@
 
       <div class="rw-help-text" id="rw-settings-text">
          <div class="frame-container-help">
-            <span>Vis/skjul blomsterenga</span>
+            <span>Skjul/vis blomsterenga</span>
+            <!-- OBS id-en må være lik som i main.ts for å finne riktig input -->
+             <!-- resultatet brukes naar appen har kommet til -->
             <label class="switch">
-               <input type="checkbox">
-               <span class="slider round"></span>
-            </label>
-
-            <label class="switch">
-               <input type="checkbox" checked>
+               <input id="show-hide-flowers" type="checkbox" checked>
                <span class="slider round"></span>
             </label>
          </div>
 
          <div class="frame-container-help">
-            <span>Vis/skjul resultattavle</span>
+            <span>Skjul/vis resultattavle</span>
             <label class="switch">
-               <input type="checkbox">
-               <span class="slider round"></span>
-            </label>
-
-            <label class="switch">
-               <input type="checkbox" checked>
+               <input id="show-hide-blackboard" type="checkbox" checked>
                <span class="slider round"></span>
             </label>
          </div>
