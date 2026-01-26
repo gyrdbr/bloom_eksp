@@ -122,8 +122,7 @@ button.task-btn {
 }
 
 .rw-habit-chosen {
-    border-color: #B33434;
-    border-width: 4px;
+    outline: 6px solid #B33434;; 
 }
 
 .gear-icon {
