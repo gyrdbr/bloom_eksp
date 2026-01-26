@@ -121,6 +121,11 @@ button.task-btn {
     position: relative; 
 }
 
+.rw-habit-chosen {
+    border-color: #B33434;
+    border-width: 4px;
+}
+
 .gear-icon {
     padding-bottom: 80px;
 }

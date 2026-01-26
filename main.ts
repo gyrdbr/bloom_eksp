@@ -556,10 +556,10 @@ if (refsButton) {
 const header = document.getElementById('rw-page-header');
 const body = document.getElementById('rw-page-header');
 const gearIcon = document.getElementById('gear-icon');
-
 const helpDivs = document.getElementsByClassName('rw-help-text');
-
 const moveHelpTriangle = document.getElementById('rw-help-triangle') as HTMLButtonElement;
+
+// const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
 
 const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
 moveTriangle(rect);
@@ -573,6 +573,18 @@ function moveTriangle(rect: DOMRect) {
     // This moves the element 200 pixels to the right from its current position
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)"; 
 }
+
+tripButtonSettings.addEventListener('click', () => {
+    console.log(tripButtonSettings.classList, "trip clicked",);
+
+    if (tripButtonSettings.classList.contains('rw-habit-chosen')) {
+        tripButtonSettings.classList.remove('rw-habit-chosen');
+        // console.log(tripButtonSettings.classList, "before");
+    } else {
+        tripButtonSettings.classList.add('rw-habit-chosen');
+        console.log(tripButtonSettings, tripButtonSettings.classList, "after");
+    }
+});
 
 refsButton.addEventListener('click', () => {
     const rect = refsButton.getBoundingClientRect(); // find position of button
@@ -696,4 +708,3 @@ closeHelpButton.addEventListener('click', () => {
 
 
 console.log("Welcome");
-console.log("Sjekk a");
