@@ -48,87 +48,6 @@ var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
 var badHabitsText = document.getElementById('rw-badHabits-text');
 var referencesText = document.getElementById('rw-references-text');
-if (brakeButtonSettings) {
-    brakeButtonSettings.innerHTML = brakeContent;
-}
-if (brakeButton) {
-    brakeButton.innerHTML = brakeContent;
-}
-if (tripButtonSettings) {
-    tripButtonSettings.innerHTML = eveningTrip;
-}
-if (tripButton) {
-    tripButton.innerHTML = eveningTrip;
-}
-if (lightButton) {
-    lightButton.innerHTML = lightContent;
-}
-if (lightGHButton) {
-    lightGHButton.innerHTML = lightContent;
-}
-if (infoButton) {
-    infoButton.innerHTML = infoWhiteContent;
-}
-if (fysenButtonSettings) {
-    fysenButtonSettings.innerHTML = fysenContent;
-}
-if (fysenButton) {
-    fysenButton.innerHTML = fysenContent;
-}
-if (gameButton) {
-    gameButton.innerHTML = gameContent;
-}
-if (gameButton) {
-    gameButton.innerHTML = gameContent;
-}
-if (gameButtonSettings) {
-    gameButtonSettings.innerHTML = gameContent;
-}
-if (readButton) {
-    readButton.innerHTML = readContent;
-}
-if (readButtonSettings) {
-    readButtonSettings.innerHTML = readContent;
-}
-if (lightGHButtonSettings) {
-    lightGHButtonSettings.innerHTML = lightContent;
-}
-if (lightGHButton) {
-    lightGHButton.innerHTML = lightContent;
-}
-if (lightBHButtonSettings) {
-    lightBHButtonSettings.innerHTML = lightContent;
-}
-if (helpButton) {
-    helpButton.innerHTML = helpContent;
-}
-if (settingsButton) {
-    settingsButton.innerHTML = helpWhiteContent;
-}
-if (closeHelpButton) {
-    closeHelpButton.innerHTML = crossWhiteContent;
-}
-if (goodHabitButton) {
-    goodHabitButton.innerHTML = carrotContent;
-}
-if (badHabitButton) {
-    badHabitButton.innerHTML = lollipopContent;
-}
-if (chooseGHabitButton) {
-    chooseGHabitButton.innerHTML = carrotWhiteContent;
-}
-if (chooseBHabitButton) {
-    chooseBHabitButton.innerHTML = lollipopWhiteContent;
-}
-if (helpGHabitButton) {
-    helpGHabitButton.innerHTML = carrotWhiteContent;
-}
-if (helpBHabitButton) {
-    helpBHabitButton.innerHTML = lollipopWhiteContent;
-}
-if (refsButton) {
-    refsButton.innerHTML = referencesWhiteContent;
-}
 var header = document.getElementById('rw-page-header');
 var body = document.getElementById('rw-page-header');
 var gearIcon = document.getElementById('gear-icon');
@@ -270,4 +189,85 @@ closeHelpButton.addEventListener('click', function () {
         gearIcon.classList.remove('hidden-element');
     }
 });
+if (brakeButtonSettings) {
+    brakeButtonSettings.innerHTML = brakeContent;
+}
+if (brakeButton) {
+    brakeButton.innerHTML = brakeContent;
+}
+if (tripButtonSettings) {
+    tripButtonSettings.innerHTML = eveningTrip;
+}
+if (tripButton) {
+    tripButton.innerHTML = eveningTrip;
+}
+if (lightButton) {
+    lightButton.innerHTML = lightContent;
+}
+if (lightGHButton) {
+    lightGHButton.innerHTML = lightContent;
+}
+if (infoButton) {
+    infoButton.innerHTML = infoWhiteContent;
+}
+if (fysenButtonSettings) {
+    fysenButtonSettings.innerHTML = fysenContent;
+}
+if (fysenButton) {
+    fysenButton.innerHTML = fysenContent;
+}
+if (gameButton) {
+    gameButton.innerHTML = gameContent;
+}
+if (gameButton) {
+    gameButton.innerHTML = gameContent;
+}
+if (gameButtonSettings) {
+    gameButtonSettings.innerHTML = gameContent;
+}
+if (readButton) {
+    readButton.innerHTML = readContent;
+}
+if (readButtonSettings) {
+    readButtonSettings.innerHTML = readContent;
+}
+if (lightGHButtonSettings) {
+    lightGHButtonSettings.innerHTML = lightContent;
+}
+if (lightGHButton) {
+    lightGHButton.innerHTML = lightContent;
+}
+if (lightBHButtonSettings) {
+    lightBHButtonSettings.innerHTML = lightContent;
+}
+if (helpButton) {
+    helpButton.innerHTML = helpContent;
+}
+if (settingsButton) {
+    settingsButton.innerHTML = helpWhiteContent;
+}
+if (closeHelpButton) {
+    closeHelpButton.innerHTML = crossWhiteContent;
+}
+if (goodHabitButton) {
+    goodHabitButton.innerHTML = carrotContent;
+}
+if (badHabitButton) {
+    badHabitButton.innerHTML = lollipopContent;
+}
+if (chooseGHabitButton) {
+    chooseGHabitButton.innerHTML = carrotWhiteContent;
+}
+if (chooseBHabitButton) {
+    chooseBHabitButton.innerHTML = lollipopWhiteContent;
+}
+if (helpGHabitButton) {
+    helpGHabitButton.innerHTML = carrotWhiteContent;
+}
+if (helpBHabitButton) {
+    helpBHabitButton.innerHTML = lollipopWhiteContent;
+}
+if (refsButton) {
+    refsButton.innerHTML = referencesWhiteContent;
+}
 console.log("Welcome");
