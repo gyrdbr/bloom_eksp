@@ -1,8 +1,6 @@
 const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg') as HTMLButtonElement;
 
-const helpGHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
-const helpBHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
 const refsButton = document.getElementById('refs-button-svg') as HTMLButtonElement;
 
 const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
@@ -17,6 +15,9 @@ const fysenButtonSettings = document.getElementById('fysen-button-menu') as HTML
 const gameButtonSettings = document.getElementById('game-button-menu') as HTMLButtonElement;
 const readButtonSettings = document.getElementById('read-button-menu') as HTMLButtonElement;
 const lightBHButtonSettings = document.getElementById('lightbulbBH-menu') as HTMLButtonElement;
+
+const helpGHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
+const helpBHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
 
 const lightContent = `
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0"
@@ -427,9 +428,6 @@ const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButto
 const goodHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
 const badHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
 
-const chooseGHabitButton = document.getElementById('habitG-button-svg') as HTMLButtonElement;
-const chooseBHabitButton = document.getElementById('habitB-button-svg') as HTMLButtonElement;
-
 const fysenButton = document.getElementById('fysen-button') as HTMLButtonElement;
 const gameButton = document.getElementById('game-button') as HTMLButtonElement;
 const readButton = document.getElementById('read-button') as HTMLButtonElement;
@@ -437,7 +435,6 @@ const readButton = document.getElementById('read-button') as HTMLButtonElement;
 const helpPage = document.getElementById('rw-help-page');
 const goodHabitsPage = document.getElementById('rw-good-habits-page') as HTMLButtonElement;
 const badHabitsPage = document.getElementById('rw-bad-habits-page') as HTMLButtonElement;
-const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
 const closeHelpButton = document.getElementById('cross-button-svg') as HTMLButtonElement;
 
 const infoText = document.getElementById('rw-info-text') as HTMLButtonElement;
@@ -453,8 +450,10 @@ const gearIcon = document.getElementById('gear-icon');
 const helpDivs = document.getElementsByClassName('rw-help-text');
 const moveHelpTriangle = document.getElementById('rw-help-triangle') as HTMLButtonElement;
 
-const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
-moveTriangle(rect);
+const chooseGHabitButton = document.getElementById('habitG-button-svg') as HTMLButtonElement;
+const chooseBHabitButton = document.getElementById('habitB-button-svg') as HTMLButtonElement;
+
+const gearButton = document.getElementById("help-button-svg") as HTMLButtonElement;
 
 // todo finn metodebeskrivelser i annen fil og legg til her
 function moveTriangle(rect: DOMRect) {
@@ -569,6 +568,10 @@ gearButton.addEventListener('click', () => {
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
+
+        const rect = settingsButton.getBoundingClientRect(); // find position of settings-button naar siden aapnes
+
+        moveTriangle(rect);
     }
 
     if (goodHabitsPage) {
