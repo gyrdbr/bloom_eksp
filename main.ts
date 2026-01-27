@@ -539,11 +539,11 @@ if (badHabitButton) {
 }
 
 if (chooseGHabitButton) {
-    chooseGHabitButton.innerHTML = carrotContent;
+    chooseGHabitButton.innerHTML = carrotWhiteContent;
 }
 
 if (chooseBHabitButton) {
-    chooseBHabitButton.innerHTML = lollipopContent;
+    chooseBHabitButton.innerHTML = lollipopWhiteContent;
 }
 
 if (helpGHabitButton) {
