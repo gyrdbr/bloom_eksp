@@ -423,8 +423,20 @@ const readContent = `
     </svg>`;
 
 // ``
+
+/**
+ * show/hide sections
+ */
+
+const goodHabitSettings = document.getElementById('rw-good-habits-page') as HTMLButtonElement;
+const badHabitSettings = document.getElementById('rw-bad-habits-page') as HTMLButtonElement;
+
+/**
+ * Main TS file for handling help page interactions
+ */
 const infoButton = document.getElementById('info-button-svg') as HTMLButtonElement;
 const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButtonElement;
+
 const goodHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
 const badHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
 
@@ -561,6 +573,16 @@ badHabitButton.addEventListener('click', () => {
     badHabitsText.classList.remove("hidden-element");
 });
 
+chooseGHabitButton.addEventListener('click', () => {
+    goodHabitSettings.classList.remove('hidden-element');
+    badHabitSettings.classList.add('hidden-element');
+});
+
+chooseBHabitButton.addEventListener('click', () => {
+    console.log("se uvaner")
+    badHabitSettings.classList.remove('hidden-element');
+    goodHabitSettings.classList.add('hidden-element');
+});
 
 
 gearButton.addEventListener('click', () => {
