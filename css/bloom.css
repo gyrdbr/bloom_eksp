@@ -303,6 +303,10 @@ ul.rw-icon-list__row-buttons {
     padding-right: 1rem;
 }
 
+.button-container {
+    padding: 16px;
+    justify-content: space-around;
+}
 
 .frame-container-help {
     background-color: #F5F1E9;

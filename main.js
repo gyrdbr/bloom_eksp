@@ -33,6 +33,8 @@ var infoButton = document.getElementById('info-button-svg');
 var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 var badHabitButton = document.getElementById('help-Bhabit-button');
+var chooseGHabitButton = document.getElementById('habitG-button-svg');
+var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var fysenButton = document.getElementById('fysen-button');
 var gameButton = document.getElementById('game-button');
 var readButton = document.getElementById('read-button');
@@ -111,6 +113,12 @@ if (goodHabitButton) {
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
+}
+if (chooseGHabitButton) {
+    chooseGHabitButton.innerHTML = carrotContent;
+}
+if (chooseBHabitButton) {
+    chooseBHabitButton.innerHTML = lollipopContent;
 }
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;

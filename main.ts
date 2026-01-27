@@ -1,8 +1,8 @@
 const helpButton = document.getElementById('help-button-svg');
 const settingsButton = document.getElementById('settings-button-svg') as HTMLButtonElement;
 
-const helpGHabitButton = document.getElementById('help-Ghabit-button');
-const helpBHabitButton = document.getElementById('help-Bhabit-button');
+const helpGHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
+const helpBHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
 const refsButton = document.getElementById('refs-button-svg') as HTMLButtonElement;
 
 const tripButtonSettings = document.getElementById('trip-button-menu') as HTMLButtonElement;
@@ -425,8 +425,10 @@ const readContent = `
 const infoButton = document.getElementById('info-button-svg') as HTMLButtonElement;
 const lightButton = document.getElementById('lightbulb-button-svg') as HTMLButtonElement;
 const goodHabitButton = document.getElementById('help-Ghabit-button') as HTMLButtonElement;
-
 const badHabitButton = document.getElementById('help-Bhabit-button') as HTMLButtonElement;
+
+const chooseGHabitButton = document.getElementById('habitG-button-svg') as HTMLButtonElement;
+const chooseBHabitButton = document.getElementById('habitB-button-svg') as HTMLButtonElement;
 
 const fysenButton = document.getElementById('fysen-button') as HTMLButtonElement;
 const gameButton = document.getElementById('game-button') as HTMLButtonElement;
@@ -445,11 +447,6 @@ const goodHabitsText = document.getElementById('rw-goodHabits-text') as HTMLButt
 const badHabitsText = document.getElementById('rw-badHabits-text') as HTMLButtonElement;
 
 const referencesText = document.getElementById('rw-references-text') as HTMLButtonElement;
-
-
-
-
-
 
 if (brakeButtonSettings) {
     brakeButtonSettings.innerHTML = brakeContent;
@@ -539,6 +536,14 @@ if (goodHabitButton) {
 
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
+}
+
+if (chooseGHabitButton) {
+    chooseGHabitButton.innerHTML = carrotContent;
+}
+
+if (chooseBHabitButton) {
+    chooseBHabitButton.innerHTML = lollipopContent;
 }
 
 if (helpGHabitButton) {
