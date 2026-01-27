@@ -121,6 +121,10 @@ button.task-btn {
     position: relative; 
 }
 
+button.habit-button {
+    background-color: white;
+}
+
 .rw-habit-chosen {
     outline: 6px solid #B33434;; 
 }
@@ -231,6 +235,12 @@ ul {
     padding-left: 16px;
     padding-right: 16px;
     background-color: #685650;
+}
+
+.habit-choice-container {
+    padding-top: 32px;
+    background-color: transparent;
+    border: transparent;
 }
 
 .rw-group, .rw-article, .rw-icon-list {
