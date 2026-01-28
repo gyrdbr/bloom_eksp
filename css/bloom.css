@@ -4,6 +4,10 @@ body {
     background-color: #D8C4BC;
 }
 
+body {
+    margin-bottom: 60px; /* Add margin to the bottom of the body equal to the bar's height so content doesn't get hidden behind it */
+}
+
 /* The element is hidden by default */
 .hidden-element {
   display: none !important;
@@ -121,10 +125,6 @@ button.task-btn {
     position: relative; 
 }
 
-button.habit-button {
-    background-color: #685650;
-}
-
 .rw-habit-chosen {
     outline: 6px solid #B33434;; 
 }
@@ -238,9 +238,15 @@ ul {
 }
 
 .habit-choice-container {
-    padding-top: 32px;
-    background-color: transparent;
-    border: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:#F5F1E9;
+    position: fixed; /* Fixes the position relative to the browser window */
+    bottom: 0;      /* Aligns the bar to the bottom edge */
+    left: 0;        /* Stretches the bar from the left edge */
+    right: 0;       /* Stretches the bar to the right edge */
+    width: 100%;    /* Ensures the bar spans the full width */
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.2); /* Optional: adds a shadow */
 }
 
 .rw-group, .rw-article, .rw-icon-list {

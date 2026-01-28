@@ -741,11 +741,11 @@ if (badHabitButton) {
 }
 
 if (chooseGHabitButton) {
-    chooseGHabitButton.innerHTML = carrotWhiteContent;
+    chooseGHabitButton.innerHTML = carrotContent;
 }
 
 if (chooseBHabitButton) {
-    chooseBHabitButton.innerHTML = lollipopWhiteContent;
+    chooseBHabitButton.innerHTML = lollipopContent;
 }
 
 if (helpGHabitButton) {

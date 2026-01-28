@@ -273,10 +273,10 @@ if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
 }
 if (chooseGHabitButton) {
-    chooseGHabitButton.innerHTML = carrotWhiteContent;
+    chooseGHabitButton.innerHTML = carrotContent;
 }
 if (chooseBHabitButton) {
-    chooseBHabitButton.innerHTML = lollipopWhiteContent;
+    chooseBHabitButton.innerHTML = lollipopContent;
 }
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;
