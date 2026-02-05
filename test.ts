@@ -1,5 +1,5 @@
 import *  as sqlite3  from 'sqlite3';
-import { printQueryResults } from './utils';
+// import { printQueryResults } from './utils';
 
 
 // const { printQueryResults } = require('./utils');
