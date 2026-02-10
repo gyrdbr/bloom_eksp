@@ -7,6 +7,7 @@ var lightGHButtonSettings = document.getElementById('lightbulbGH-menu');
 var tripButton = document.getElementById('trip-button-svg');
 var brakeButton = document.getElementById('brake-button-svg');
 var lightGHButton = document.getElementById('lightbulbGH-svg');
+var lightBHButton = document.getElementById('lightbulb-button-svg');
 var fysenButtonSettings = document.getElementById('fysen-button-menu');
 var gameButtonSettings = document.getElementById('game-button-menu');
 var readButtonSettings = document.getElementById('read-button-menu');
@@ -93,12 +94,43 @@ brakeButtonSettings.addEventListener('click', function () {
         brakeButtonSettings.classList.add('rw-habit-chosen');
     }
 });
+brakeButton.addEventListener('click', function () {
+    if (brakeButton.classList.contains('rw-habit-chosen')) {
+        brakeButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        brakeButton.classList.add('rw-habit-chosen');
+    }
+});
+lightGHButton.addEventListener('click', function () {
+    if (lightGHButton.classList.contains('rw-habit-chosen')) {
+        lightGHButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        lightGHButton.classList.add('rw-habit-chosen');
+    }
+});
+lightBHButton.addEventListener('click', function () {
+    if (lightBHButton.classList.contains('rw-habit-chosen')) {
+        lightBHButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+    }
+});
 fysenButtonSettings.addEventListener('click', function () {
     if (fysenButtonSettings.classList.contains('rw-habit-chosen')) {
         fysenButtonSettings.classList.remove('rw-habit-chosen');
     }
     else {
         fysenButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+fysenButton.addEventListener('click', function () {
+    if (fysenButton.classList.contains('rw-habit-chosen')) {
+        fysenButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        fysenButton.classList.add('rw-habit-chosen');
     }
 });
 gameButtonSettings.addEventListener('click', function () {
@@ -109,12 +141,29 @@ gameButtonSettings.addEventListener('click', function () {
         gameButtonSettings.classList.add('rw-habit-chosen');
     }
 });
+gameButton.addEventListener('click', function () {
+    console.log("clicked game button");
+    if (gameButton.classList.contains('rw-habit-chosen')) {
+        gameButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        gameButton.classList.add('rw-habit-chosen');
+    }
+});
 readButtonSettings.addEventListener('click', function () {
     if (readButtonSettings.classList.contains('rw-habit-chosen')) {
         readButtonSettings.classList.remove('rw-habit-chosen');
     }
     else {
         readButtonSettings.classList.add('rw-habit-chosen');
+    }
+});
+readButton.addEventListener('click', function () {
+    if (readButton.classList.contains('rw-habit-chosen')) {
+        readButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        readButton.classList.add('rw-habit-chosen');
     }
 });
 refsButton.addEventListener('click', function () {
