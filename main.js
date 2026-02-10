@@ -89,9 +89,9 @@ tripButton.addEventListener('click', function () {
     else {
         tripButton.classList.add('rw-habit-chosen');
     }
-    // badHabitSettings.classList.add('hidden-element');
-    // goodHabitSettings.classList.add('hidden-element');
-    // growingFlowerSettings.classList.remove('hidden-element');
+    badHabitSettings.classList.add('hidden-element');
+    goodHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.remove('hidden-element');
 });
 brakeButtonSettings.addEventListener('click', function () {
     if (brakeButtonSettings.classList.contains('rw-habit-chosen')) {

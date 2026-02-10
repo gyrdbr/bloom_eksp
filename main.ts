@@ -501,9 +501,9 @@ tripButton.addEventListener('click', () => {
     }
         
 
-    // badHabitSettings.classList.add('hidden-element');
-    // goodHabitSettings.classList.add('hidden-element');
-    // growingFlowerSettings.classList.remove('hidden-element');
+    badHabitSettings.classList.add('hidden-element');
+    goodHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.remove('hidden-element');
 });
 
 brakeButtonSettings.addEventListener('click', () => {
