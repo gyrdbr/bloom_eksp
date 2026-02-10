@@ -431,6 +431,7 @@ const readContent = `
 
 const goodHabitSettings = document.getElementById('rw-good-habits-page') as HTMLButtonElement;
 const badHabitSettings = document.getElementById('rw-bad-habits-page') as HTMLButtonElement;
+const growingFlowerSettings = document.getElementById('rw-growingFlower-page') as HTMLButtonElement;
 
 /**
  * Main TS file for handling help page interactions
@@ -487,11 +488,22 @@ tripButtonSettings.addEventListener('click', () => {
 });
 
 tripButton.addEventListener('click', () => {
+    // const rect = badHabitButton.getBoundingClientRect();
+    // moveTriangle(rect);
+
+    console.log("trip button clicked");
+    
+    
     if (tripButton.classList.contains('rw-habit-chosen')) {
         tripButton.classList.remove('rw-habit-chosen');
     } else {
         tripButton.classList.add('rw-habit-chosen');
     }
+        
+
+    // badHabitSettings.classList.add('hidden-element');
+    // goodHabitSettings.classList.add('hidden-element');
+    // growingFlowerSettings.classList.remove('hidden-element');
 });
 
 brakeButtonSettings.addEventListener('click', () => {

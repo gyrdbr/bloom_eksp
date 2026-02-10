@@ -35,6 +35,7 @@ var readContent = "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\
  */
 var goodHabitSettings = document.getElementById('rw-good-habits-page');
 var badHabitSettings = document.getElementById('rw-bad-habits-page');
+var growingFlowerSettings = document.getElementById('rw-growingFlower-page');
 /**
  * Main TS file for handling help page interactions
  */
@@ -79,12 +80,18 @@ tripButtonSettings.addEventListener('click', function () {
     }
 });
 tripButton.addEventListener('click', function () {
+    // const rect = badHabitButton.getBoundingClientRect();
+    // moveTriangle(rect);
+    console.log("trip button clicked");
     if (tripButton.classList.contains('rw-habit-chosen')) {
         tripButton.classList.remove('rw-habit-chosen');
     }
     else {
         tripButton.classList.add('rw-habit-chosen');
     }
+    // badHabitSettings.classList.add('hidden-element');
+    // goodHabitSettings.classList.add('hidden-element');
+    // growingFlowerSettings.classList.remove('hidden-element');
 });
 brakeButtonSettings.addEventListener('click', function () {
     if (brakeButtonSettings.classList.contains('rw-habit-chosen')) {
@@ -143,7 +150,6 @@ gameButtonSettings.addEventListener('click', function () {
     }
 });
 gameButton.addEventListener('click', function () {
-    console.log("clicked game button");
     if (gameButton.classList.contains('rw-habit-chosen')) {
         gameButton.classList.remove('rw-habit-chosen');
     }
@@ -212,7 +218,6 @@ chooseGHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.add('hidden-element');
 });
 chooseBHabitButton.addEventListener('click', function () {
-    console.log("se uvaner");
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
 });
