@@ -115,6 +115,7 @@ lightBHButton.addEventListener('click', function () {
         lightBHButton.classList.remove('rw-habit-chosen');
     }
     else {
+        lightBHButton.classList.add('rw-habit-chosen');
     }
 });
 fysenButtonSettings.addEventListener('click', function () {

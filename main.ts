@@ -522,6 +522,7 @@ lightBHButton.addEventListener('click', () => {
     if (lightBHButton.classList.contains('rw-habit-chosen')) {
         lightBHButton.classList.remove('rw-habit-chosen');
     } else {
+        lightBHButton.classList.add('rw-habit-chosen');
     }
 });
 
@@ -550,7 +551,6 @@ gameButtonSettings.addEventListener('click', () => {
 });
 
 gameButton.addEventListener('click', () => {
-    console.log("clicked game button");
     if (gameButton.classList.contains('rw-habit-chosen')) {
         gameButton.classList.remove('rw-habit-chosen');
     } else {
@@ -636,7 +636,6 @@ chooseGHabitButton.addEventListener('click', () => {
 });
 
 chooseBHabitButton.addEventListener('click', () => {
-    console.log("se uvaner")
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
 });
