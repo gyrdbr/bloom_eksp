@@ -77,6 +77,14 @@ tripButtonSettings.addEventListener('click', function () {
         tripButtonSettings.classList.add('rw-habit-chosen');
     }
 });
+tripButton.addEventListener('click', function () {
+    if (tripButton.classList.contains('rw-habit-chosen')) {
+        tripButton.classList.remove('rw-habit-chosen');
+    }
+    else {
+        tripButton.classList.add('rw-habit-chosen');
+    }
+});
 brakeButtonSettings.addEventListener('click', function () {
     if (brakeButtonSettings.classList.contains('rw-habit-chosen')) {
         brakeButtonSettings.classList.remove('rw-habit-chosen');
