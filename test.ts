@@ -26,3 +26,5 @@ db.all("SELECT * FROM Dog WHERE breed='Corgi'", (error: string | null, rows: Arr
     console.log("Corgi rows:", rows.length);
   // printQueryResults(rows);
 });
+
+// import *  as betterSqlite3  from 'better-sqlite3';
