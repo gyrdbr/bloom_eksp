@@ -645,11 +645,13 @@ badHabitButton.addEventListener('click', () => {
 chooseGHabitButton.addEventListener('click', () => {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.add('hidden-element');
 });
 
 chooseBHabitButton.addEventListener('click', () => {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.add('hidden-element');
 });
 
 

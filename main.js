@@ -216,10 +216,12 @@ badHabitButton.addEventListener('click', function () {
 chooseGHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.add('hidden-element');
 });
 chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.add('hidden-element');
 });
 gearButton.addEventListener('click', function () {
     if (helpPage) {
