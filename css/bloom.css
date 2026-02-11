@@ -116,6 +116,11 @@ button.choice-btn {
     position: relative; 
 }
 
+.habit-button {
+    background-color: #F5F1E9 !important;
+    border: 2px solid black !important;
+}
+
 button.task-btn {
     background-color: #D8C4BC;
     cursor: pointer; /* Optional: Changes cursor to a hand icon on hover */
@@ -246,7 +251,6 @@ ul {
 .habit-choice-container {
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color:#F5F1E9;
     position: fixed; /* Fixes the position relative to the browser window */
     bottom: 0;      /* Aligns the bar to the bottom edge */
     left: 0;        /* Stretches the bar from the left edge */
