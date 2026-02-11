@@ -240,8 +240,7 @@ ul {
 .frame-container-flower {
     border: 2px solid black;
     border-radius: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
+    background-color: #F5F1E9;
 }
 
 .habit-choice-container {
