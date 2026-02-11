@@ -116,10 +116,12 @@ button.choice-btn {
     position: relative; 
 }
 
+/*
 .habit-button {
     background-color: #F5F1E9 !important;
     border: 2px solid black !important;
 }
+*/
 
 button.task-btn {
     background-color: #D8C4BC;
@@ -257,6 +259,9 @@ ul {
     right: 0;       /* Stretches the bar to the right edge */
     width: 100%;    /* Ensures the bar spans the full width */
     border: transparent;
+    background-color:#F5F1E9;
+    border-top-style: solid; /* Required for the border to be visible */
+    border-top-color: black; /* Color name */
 }
 
 .rw-group, .rw-article, .rw-icon-list {
