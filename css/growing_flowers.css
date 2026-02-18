@@ -1,0 +1,97 @@
+
+body {
+    margin: 10px;
+}
+
+.mainDiv {
+    margin-left: 2%;
+}
+
+.box {
+    display: block;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+#svg-plant {
+    outline: 1px solid black;
+}
+
+.buttons {
+    display: block;
+}
+
+button {
+    float: left;
+    margin-left: 20px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 70px;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    color: gainsboro;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 
+naar den ikke vises
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 2.265;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-opacity: 1;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    opacity: 0;
+    stroke-dashoffset: 0;
+// naar den vises
+
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 2.265;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-opacity: 1;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+
+    // naar den vises II
+    opacity: 0.7;
+    fill: rgb(128, 0, 128);
+    fill-opacity: 1;
+    stroke: rgb(8, 88, 40);
+    stroke-width: 75.5906;
+    stroke-linecap: square;
+    stroke-dasharray: 350px, 2431.05px;
+    stroke-opacity: 1;
+    paint-order: markers stroke;
+    visibility: visible;
+    stroke-dashoffset: 0;
+
+    opacity: 1;
+    fill: rgb(0, 16, 152);
+    fill-opacity: 1;
+    fill-rule: nonzero;
+    stroke: rgb(121, 0, 0);
+    stroke-width: 75.1;
+    stroke-linecap: square;
+    stroke-linejoin: round;
+    stroke-opacity: 1;
+    paint-order: stroke;
+    stroke-dashoffset: 0.001;
+    visibility: visible;
+*/
+
