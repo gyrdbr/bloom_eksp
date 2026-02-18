@@ -1,5 +1,7 @@
 // gsap.config({ trialWarn: false });
 
+// TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
+
 class Leaf {
     constructor(id, transformOrigin, startScale) {
         this.id = id;
