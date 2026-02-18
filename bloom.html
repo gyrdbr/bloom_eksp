@@ -3,13 +3,13 @@
 
 <head>
    <title>Simple growing flowers animations</title>
+   <link rel="stylesheet" href="css/growing_flowers.css">
    <link rel="stylesheet" href="css/bloom.css">
    <meta charset="UTF-8">
    <!-- OBS innstillingene i meta var det som fiksa viewet mht str etc -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js'></script>
-   <!-- link rel="stylesheet" href="css/growing_flowers.css" -->
 </head>
 
 <body>
@@ -703,10 +703,10 @@
     <!-- TODO: determinate Inflorescence. Gi stilkene id-er i rekkefoelge avh av hvordan den vokser. Begynner paa toppen.-->
    </main>
 
-   <!--h2 class="title">Growing flowers</h2>
+   <h2 class="title">Growing flowers</h2>
    <svg width="300mm" height="150mm" viewBox="0 0 90.476448 264.7684" id="svg-plant">
       <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="alienflower"
-         transform="translate(-58.745857,-8.4829782)" class="hidden">
+         transform="translate(-58.745857,-8.4829782)" class="hiddenX">
          <path
             style="fill:#000000;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
             d="m -271.90445,229.33356 -38.45114,65.91623" id="path514" />
@@ -918,7 +918,7 @@
       <button class="flower1" onclick="pickFlower(0, '0 0 300 210')">
          Flower 2</button>
       <button class="playButton" onclick="play()"></button>
-   </div -->
+   </div>
 
    <script type="text/javascript" src="growing_flowers.js"></script>
    <script type="text/javascript" src="main.js"></script>
