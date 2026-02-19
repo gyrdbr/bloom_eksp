@@ -9,6 +9,8 @@ class PinkFlower {
 
 var longFlowerstem = "#pathHovedStilk";
 
+console.log("longFlowerstem", longFlowerstem);
+
 class Tulip {
   constructor(id, transformOrigin) {
       this.id = id;
