@@ -248,6 +248,7 @@ ul {
     border: 2px solid black;
     border-radius: 8px;
     background-color: white;
+    height: 160mm;
 }
 
 .habit-choice-container {
