@@ -1,5 +1,14 @@
 // TODO legg inn knapp for og adde ny stilk og blomst og forstoerre blomsten. Alle synlige blomster skal foelge vinduet
 
+class PinkFlower {
+  constructor(id, transformOrigin) {
+      this.id = id;
+      this.transformOrigin = transformOrigin;
+  }
+}
+
+var longFlowerstem = "#pathHovedStilk";
+
 class Tulip {
   constructor(id, transformOrigin) {
       this.id = id;
