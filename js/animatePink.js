@@ -1,3 +1,5 @@
+// TODO legg inn knapp for og adde ny stilk og blomst og forstoerre blomsten. Alle synlige blomster skal foelge vinduet
+
 class Tulip {
   constructor(id, transformOrigin) {
       this.id = id;
