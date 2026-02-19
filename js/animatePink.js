@@ -1,5 +1,10 @@
 // TODO legg inn knapp for og adde ny stilk og blomst og forstoerre blomsten. Alle synlige blomster skal foelge vinduet
 
+var blomst1Button = document.getElementById('startBlomst1-button-svg');
+var blomst2Button = document.getElementById('startBlomst2-button-svg');
+
+
+
 class PinkFlower {
   constructor(id, transformOrigin) {
       this.id = id;
@@ -18,6 +23,7 @@ class Tulip {
   }
 }
 
+let whole_flower = document.getElementById('whole_flower');
 let leftTulip1 = new Tulip("#left_tulip1", "50% top");
 let leftTulip2 = new Tulip("#left_tulip2", "80% 10%");
 let leftTulip3 = new Tulip("#left_tulip3", "80% 10%");
@@ -112,4 +118,18 @@ gsap.fromTo(longstem,
       }
   });
 
-drawLeafs();
+// drawLeafs();
+
+// TODO gjoer det samme paa rosa-blomsten
+blomst1Button.addEventListener('click', function () {
+    console.log("blomst1Button clicked");
+
+    // activeFlower = flowers[flowerIndex];
+    whole_flower.classList.remove('hidden-element');
+
+    console.log("whole_flower", whole_flower, whole_flower.classList);
+
+    drawLeafs();
+
+ 
+});
