@@ -92,8 +92,10 @@ gsap.fromTo(longstem,
       ease: "linear",
       drawSVG: "0% 100%",
       onComplete: () => {
-          gsap.to('#right_tulip4', {scale: 1, duration: 1, delay: delay, ease: "SlowMo",
-      onComplete: swayAll})
+          gsap.to('#right_tulip4', 
+            {scale: 1, duration: 1, delay: delay, ease: "SlowMo"
+    }
+    )
       }
   });
 
