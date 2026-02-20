@@ -1,4 +1,7 @@
-// var sqlite3 = require("sqlite3");
+console.log("Hello, sqlite3!");
+
+
+var sqlite3 = require("sqlite3");
 
 import sqlite3 from './sqlite3';
 var db = new sqlite3.Database('./db.sqlite');
