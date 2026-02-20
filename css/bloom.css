@@ -23,6 +23,10 @@ body {
   display: block;
 }
 
+#svg-blomsterstand {
+    outline: 1px solid black;
+}
+
 .full-page-element {
   height: 100vh; /* Fills the entire visible browser window height */
 }
