@@ -1,32 +1,13 @@
 // gsap.config({ trialWarn: false });
 // TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
 
-var blomst1Button = document.getElementById('startBlomst-button-svg');
 
-var longFlowerstem = "#pathHovedStilk";
 
-console.log("longFlowerstem", longFlowerstem);
-
-// TODO gjoer det samme paa rosa-blomsten
-blomst1Button.addEventListener('click', function () {
-    console.log("blomstButton clicked");
-
-    // activeFlower = flowers[flowerIndex];
-    /*
-    whole_flower.classList.remove('hidden-element');
-
-    console.log("whole_flower", whole_flower, whole_flower.classList);
-
-    drawLeafs();
-    */
-
- 
-});
-
-class PinkFlower {
-  constructor(id, transformOrigin) {
+class InflorescenceLeaf {
+  constructor(id, transformOrigin, startScale) {
       this.id = id;
       this.transformOrigin = transformOrigin;
+      this.startScale = startScale;
   }
 }
 
@@ -37,6 +18,33 @@ class Leaf {
         this.startScale = startScale;
     }
 }
+
+
+/** blomsterstand */
+
+var blomsterstandFlower = document.getElementById('wholeInflorecence');
+
+var blomstButton = document.getElementById('startBlomst-button-svg');
+var longFlowerstem = "#pathHovedStilk";
+
+console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomsterstandFlower);
+
+function BloomAnimation() {
+    this.phazeIndex = 0;
+    this.button = document.querySelector('#startBlomst-button-svg');
+
+    // utfoer fase 1 for den rosa blomste
+}
+
+BloomAnimation.prototype = {
+    createAndGetBasicFlowerStems: function () {
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
+
+        return [mainStem];
+    }
+}
+
+/** flower1 og flower2 */
 
 var flower1 = document.getElementById('basicFlower');
 var flower2 = document.getElementById('alienflower');
