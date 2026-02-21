@@ -37,7 +37,7 @@ FlowerAnimationTest.prototype = {
         }
     },
     createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "10% bottom", 0.1);
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
 
         console.log("mainStem", mainStem);
 
@@ -89,7 +89,11 @@ FlowerAnimationTest.prototype = {
         this.bloomPhases = [phase1];
 
 
-        gsap.set(longFlowerstem, { opacity: 0 });
+        gsap.set(longFlowerstem, { opacity: 1 });
+
+         this.basicFlowerStems.forEach(stem => {
+            gsap.set(stem.id, { scale: stem.startScale, transformOrigin: stem.transformOrigin });
+        });
 
     },
 }
