@@ -2,29 +2,19 @@
 // TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
 
 
-/** blomsterstand */
-
-var blomstButton = document.getElementById('startBlomst-button-svg');
-
-var blomsterstandFlower = document.getElementById('wholeInflorecence');
-
-var longFlowerstem = "#pathHovedStilk";
-var topPathFlower = document.getElementById('topPathFlower');
-
-console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomsterstandFlower);
-
-
-
-var playBloomButton = document.querySelector('#playBloomButton');
+/* blomsterstand */
 
 class InflorescenceLeaf {
-  constructor(id, transformOrigin, startScale) {
-      this.id = id;
-      this.transformOrigin = transformOrigin;
-      this.startScale = startScale;
-  }
+    constructor(id, transformOrigin, startScale) {
+        this.id = id;
+        this.transformOrigin = transformOrigin;
+        this.startScale = startScale;
+    }
 }
 
+var blomstButton = document.getElementById('startBlomst-button-svg');
+var blomsterstandFlower = document.getElementById('wholeInflorecence');
+var longFlowerstem = "#pathHovedStilk";
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
@@ -47,7 +37,7 @@ FlowerAnimationTest.prototype = {
         }
     },
     createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "10% bottom", 0.1);
 
         console.log("mainStem", mainStem);
 
@@ -133,6 +123,7 @@ function playBloom() {
 
 /*
 
+var topPathFlower = document.getElementById('topPathFlower');
 var bloomFlowerAnim = new BloomAnimation();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
@@ -428,7 +419,7 @@ var bFlowerAnim = new FlowerAnimation();
 bFlowerAnim.setupBasicFlower();
 bFlowerAnim.setupAlienFlower();
 
-console.log("bFlowerAnim", bFlowerAnim);
+// console.log("bFlowerAnim", bFlowerAnim);
 
 function play() {
     pickFlower(0, '0 0 300 210')
