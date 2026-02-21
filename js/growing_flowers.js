@@ -41,7 +41,7 @@ var bloomFlowerAnim = new BloomAnimation();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
 
-// bloomFlowerAnim.setupInflorecence();
+// bloomFlowerAnim.playInflorecenceAnim();
 
 // this.basicFlowerLeafs = this.createAndGetBasicFlowerLeafs();
 
@@ -74,6 +74,7 @@ BloomAnimation.prototype = {
         // this.phazeIndex += 1;
     },
     playInflorecenceAnim: function () {
+        // TODO legg inn her
         console.log("playInflorecenceAnim");
         /*
         if (this.phazeIndex < this.phases.length) {
@@ -87,7 +88,9 @@ BloomAnimation.prototype = {
 
 function playBloom() {
     console.log("playBloom");
-    pickBloomFlower(0, '0 0 210 297')
+    pickBloomFlower(0, '0 0 210 297');
+
+    // TODO legg inn her
 
     // bloomFlowerAnim.playInflorecenceAnim();
 }
@@ -318,6 +321,8 @@ FlowerAnimation.prototype = {
         gsap.to("#alien-tuber3-left-leaf", {duration: 3, scale: 0.9, rotation: -50, transformOrigin: "15% bottom"});
     },
     playAnim: function () {
+        console.log("playAnim");
+        console.log("bFlowerAnim klikket", bFlowerAnim);
         if (this.phazeIndex < this.phases.length) {
             this.phases[this.phazeIndex]();
         } else {
@@ -334,6 +339,7 @@ console.log("bFlowerAnim", bFlowerAnim);
 
 function play() {
     pickFlower(0, '0 0 300 210')
+
     bFlowerAnim.playAnim();
 }
 
