@@ -22,10 +22,12 @@ class Leaf {
 
 /** blomsterstand */
 
+var blomstButton = document.getElementById('startBlomst-button-svg');
+
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 
-var blomstButton = document.getElementById('startBlomst-button-svg');
 var longFlowerstem = "#pathHovedStilk";
+var topPathFlower = document.getElementById('topPathFlower');
 
 console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomsterstandFlower);
 
@@ -41,6 +43,20 @@ BloomAnimation.prototype = {
         let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
 
         return [mainStem];
+    },
+    setupInflorecence: function () {    
+        gsap.set(longFlowerstem, { opacity: 0 });
+        gsap.set(topPathFlower, { opacity: 0 });
+
+    },
+    animateStem: function () {
+         // opacity settes fra 0 til 1 slik at stilken blir synlig
+        gsap.set(longFlowerstem, { opacity: 1 });
+        // visningen av stilken animeres
+        gsap.from(longFlowerstem, 1, {drawSVG: 0, onComplete: this.showFlower, callbackScope: this});
+    },
+    showFlower: function () {
+        gsap.to(topPathFlower, { duration: 1, opacity: 1, onComplete: this.finalPhase, callbackScope: this });
     }
 }
 
