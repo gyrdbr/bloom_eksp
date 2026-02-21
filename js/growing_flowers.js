@@ -11,14 +11,6 @@ class InflorescenceLeaf {
   }
 }
 
-class Leaf {
-    constructor(id, transformOrigin, startScale) {
-        this.id = id;
-        this.transformOrigin = transformOrigin;
-        this.startScale = startScale;
-    }
-}
-
 
 /** blomsterstand */
 
@@ -31,16 +23,27 @@ var topPathFlower = document.getElementById('topPathFlower');
 
 console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomsterstandFlower);
 
-var bloomFlowerAnim = new BloomFlowerAnimation();
 
-// var playBloomButton = document.querySelector('#playBloomButton');
+
+var playBloomButton = document.querySelector('#playBloomButton');
 
 function BloomAnimation() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
 
+     this.bloomPhases = [];
+     this.basicFlowerStems = [];
+
     // utfoer fase 1 for den rosa blomste
 }
+
+var bloomFlowerAnim = new BloomAnimation();
+
+console.log("bloomFlowerAnim", bloomFlowerAnim);
+
+// bloomFlowerAnim.setupInflorecence();
+
+// this.basicFlowerLeafs = this.createAndGetBasicFlowerLeafs();
 
 BloomAnimation.prototype = {
     createAndGetBasicFlowerStems: function () {
@@ -48,7 +51,10 @@ BloomAnimation.prototype = {
 
         return [mainStem];
     },
-    setupInflorecence: function () {    
+    setupInflorecence: function () { 
+        this.phazeIndex = 0;
+
+        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
         gsap.set(longFlowerstem, { opacity: 0 });
         gsap.set(topPathFlower, { opacity: 0 });
 
@@ -67,20 +73,29 @@ BloomAnimation.prototype = {
         // this.setButtonText("Start igjen")
         // this.phazeIndex += 1;
     },
+    playInflorecenceAnim: function () {
+        console.log("playInflorecenceAnim");
+        /*
+        if (this.phazeIndex < this.phases.length) {
+            this.phases[this.phazeIndex]();
+        } else {
+            this.resett();
+        }
+            */
+    }
 }
 
 function playBloom() {
+    console.log("playBloom");
     pickBloomFlower(0, '0 0 210 297')
-    bFlowerAnim.playAnim();
+
+    // bloomFlowerAnim.playInflorecenceAnim();
 }
 
 function pickBloomFlower(flowerIndex, svgVBParams) {
-    var svg = document.getElementById("svg-plant");
-    svg.setAttribute('viewBox', svgVBParams);
+    // var svg = document.getElementById("svg-blomsterstand");
 
-    activeFlower.classList.add('hidden');
     activeFlower = flowers[flowerIndex];
-    activeFlower.classList.remove('hidden');
 
 /*
     activeButton.classList.remove('disabled');
@@ -88,11 +103,19 @@ function pickBloomFlower(flowerIndex, svgVBParams) {
     activeButton.classList.add('disabled');
     */
 
-    bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
+    // bloomFlowerAnim.setPhases(activeFlower.getAttribute('id'));
 }
 
 
 /** flower1 og flower2 */
+
+class Leaf {
+    constructor(id, transformOrigin, startScale) {
+        this.id = id;
+        this.transformOrigin = transformOrigin;
+        this.startScale = startScale;
+    }
+}
 
 var flower1 = document.getElementById('basicFlower');
 var flower2 = document.getElementById('alienflower');
@@ -119,6 +142,7 @@ function FlowerAnimation() {
 
     this.basicFlowerLeafs = [];
 }
+
 
 
 FlowerAnimation.prototype = {
@@ -305,6 +329,8 @@ FlowerAnimation.prototype = {
 var bFlowerAnim = new FlowerAnimation();
 bFlowerAnim.setupBasicFlower();
 bFlowerAnim.setupAlienFlower();
+
+console.log("bFlowerAnim", bFlowerAnim);
 
 function play() {
     pickFlower(0, '0 0 300 210')
