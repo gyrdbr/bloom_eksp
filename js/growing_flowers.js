@@ -31,9 +31,13 @@ var topPathFlower = document.getElementById('topPathFlower');
 
 console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomsterstandFlower);
 
+var bloomFlowerAnim = new BloomFlowerAnimation();
+
+// var playBloomButton = document.querySelector('#playBloomButton');
+
 function BloomAnimation() {
     this.phazeIndex = 0;
-    this.button = document.querySelector('#startBlomst-button-svg');
+    this.button = document.querySelector('#playBloomButton');
 
     // utfoer fase 1 for den rosa blomste
 }
@@ -49,16 +53,44 @@ BloomAnimation.prototype = {
         gsap.set(topPathFlower, { opacity: 0 });
 
     },
-    animateStem: function () {
+    animateInflorecence: function () {
          // opacity settes fra 0 til 1 slik at stilken blir synlig
         gsap.set(longFlowerstem, { opacity: 1 });
         // visningen av stilken animeres
-        gsap.from(longFlowerstem, 1, {drawSVG: 0, onComplete: this.showFlower, callbackScope: this});
+        gsap.from(longFlowerstem, 1, {drawSVG: 0, onComplete: this.showInflorecence, callbackScope: this});
     },
-    showFlower: function () {
-        gsap.to(topPathFlower, { duration: 1, opacity: 1, onComplete: this.finalPhase, callbackScope: this });
-    }
+    showInflorecence: function () {
+        gsap.to(topPathFlower, { duration: 1, opacity: 1, onComplete: this.finalInflorecencePhase, callbackScope: this });
+    },
+    finaInflorecencePhase: function () {
+        console.log("finalInflorecencePhase");
+        // this.setButtonText("Start igjen")
+        // this.phazeIndex += 1;
+    },
 }
+
+function playBloom() {
+    pickBloomFlower(0, '0 0 210 297')
+    bFlowerAnim.playAnim();
+}
+
+function pickBloomFlower(flowerIndex, svgVBParams) {
+    var svg = document.getElementById("svg-plant");
+    svg.setAttribute('viewBox', svgVBParams);
+
+    activeFlower.classList.add('hidden');
+    activeFlower = flowers[flowerIndex];
+    activeFlower.classList.remove('hidden');
+
+/*
+    activeButton.classList.remove('disabled');
+    activeButton = flowerButtons[flowerIndex];
+    activeButton.classList.add('disabled');
+    */
+
+    bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
+}
+
 
 /** flower1 og flower2 */
 
@@ -73,7 +105,7 @@ var activeButton = flower2Button;
 var flowerButtons = [flower1Button, flower2Button];
 var flowers = [flower1, flower2];
 
-var playBbutton = document.querySelector('.playButton');
+var playButton = document.querySelector('.playButton');
 
 
 function FlowerAnimation() {
