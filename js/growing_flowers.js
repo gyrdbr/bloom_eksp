@@ -43,6 +43,7 @@ FlowerAnimationTest.prototype = {
     playAnim: function () {
         console.log("playAnim");
         console.log("bFlowerAnim klikket", bFlowerAnim);
+        console.log("this.phazeIndex", this.phazeIndex, "this.bloomPhases.length", this.bloomPhases.length);
         if (this.phazeIndex < this.bloomPhases.length) {
             this.bloomPhases[this.phazeIndex]();
         } else {
@@ -65,6 +66,7 @@ FlowerAnimationTest.prototype = {
 }
 
 var bloomFlowerAnim = new FlowerAnimationTest();
+bloomFlowerAnim.setupInflorecence();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
 
@@ -371,6 +373,7 @@ FlowerAnimation.prototype = {
     playAnim: function () {
         console.log("playAnim");
         console.log("bFlowerAnim klikket", bFlowerAnim);
+        console.log("this.phazeIndex", this.phazeIndex, "this.phases.length", this.phases.length);
         if (this.phazeIndex < this.phases.length) {
             this.phases[this.phazeIndex]();
         } else {
