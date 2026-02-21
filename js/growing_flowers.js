@@ -2,7 +2,6 @@
 // TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
 
 
-
 class InflorescenceLeaf {
   constructor(id, transformOrigin, startScale) {
       this.id = id;
@@ -10,6 +9,7 @@ class InflorescenceLeaf {
       this.startScale = startScale;
   }
 }
+  
 
 
 /** blomsterstand */
@@ -27,15 +27,71 @@ console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomstersta
 
 var playBloomButton = document.querySelector('#playBloomButton');
 
-function BloomAnimation() {
+
+function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
 
-     this.bloomPhases = [];
-     this.basicFlowerStems = [];
+    this.bloomPhases = [];
+    this.basicFlowerStems = [];
+
 
     // utfoer fase 1 for den rosa blomste
 }
+
+FlowerAnimationTest.prototype = {
+    playAnim: function () {
+        console.log("playAnim");
+        console.log("bFlowerAnim klikket", bFlowerAnim);
+        if (this.phazeIndex < this.bloomPhases.length) {
+            this.bloomPhases[this.phazeIndex]();
+        } else {
+            console.log("No more bloom phases to play");
+        }
+    },
+    createAndGetBasicFlowerStems: function () {
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
+
+        return [mainStem];
+    },
+    setupInflorecence: function () { 
+        this.phazeIndex = 0;
+
+        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
+        gsap.set(longFlowerstem, { opacity: 0 });
+        gsap.set(topPathFlower, { opacity: 0 });
+
+    },
+}
+
+var bloomFlowerAnim = new FlowerAnimationTest();
+
+console.log("bloomFlowerAnim", bloomFlowerAnim);
+
+function pickBloomFlower(flowerIndex, svgVBParams) {
+    // var svg = document.getElementById("svg-blomsterstand");
+
+    activeFlower = flowers[flowerIndex];
+    
+
+
+    // activeButton.classList.remove('disabled');
+    // activeButton = flowerButtons[flowerIndex];
+    // activeButton.classList.add('disabled');
+    
+
+    // bloomFlowerAnim.setPhases(activeFlower.getAttribute('id'));
+}
+
+function playBloom() {
+
+    console.log("playBloom");
+    pickBloomFlower(0, '0 0 210 297');
+
+    bloomFlowerAnim.playAnim();
+}
+
+/*
 
 var bloomFlowerAnim = new BloomAnimation();
 
@@ -76,16 +132,19 @@ BloomAnimation.prototype = {
     playInflorecenceAnim: function () {
         // TODO legg inn her
         console.log("playInflorecenceAnim");
-        /*
+        
+
         if (this.phazeIndex < this.phases.length) {
             this.phases[this.phazeIndex]();
         } else {
             this.resett();
         }
-            */
+            
     }
 }
+*/
 
+/*
 function playBloom() {
     console.log("playBloom");
     pickBloomFlower(0, '0 0 210 297');
@@ -95,19 +154,8 @@ function playBloom() {
     // bloomFlowerAnim.playInflorecenceAnim();
 }
 
-function pickBloomFlower(flowerIndex, svgVBParams) {
-    // var svg = document.getElementById("svg-blomsterstand");
 
-    activeFlower = flowers[flowerIndex];
-
-/*
-    activeButton.classList.remove('disabled');
-    activeButton = flowerButtons[flowerIndex];
-    activeButton.classList.add('disabled');
     */
-
-    // bloomFlowerAnim.setPhases(activeFlower.getAttribute('id'));
-}
 
 
 /** flower1 og flower2 */
