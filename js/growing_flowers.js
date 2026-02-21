@@ -2,16 +2,6 @@
 // TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
 
 
-class InflorescenceLeaf {
-  constructor(id, transformOrigin, startScale) {
-      this.id = id;
-      this.transformOrigin = transformOrigin;
-      this.startScale = startScale;
-  }
-}
-  
-
-
 /** blomsterstand */
 
 var blomstButton = document.getElementById('startBlomst-button-svg');
@@ -27,6 +17,14 @@ console.log("longFlowerstem", longFlowerstem, "blomsterstandFlower", blomstersta
 
 var playBloomButton = document.querySelector('#playBloomButton');
 
+class InflorescenceLeaf {
+  constructor(id, transformOrigin, startScale) {
+      this.id = id;
+      this.transformOrigin = transformOrigin;
+      this.startScale = startScale;
+  }
+}
+
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
@@ -41,8 +39,6 @@ function FlowerAnimationTest() {
 
 FlowerAnimationTest.prototype = {
     playAnim: function () {
-        console.log("playAnim");
-        console.log("bFlowerAnim klikket", bFlowerAnim);
         console.log("this.phazeIndex", this.phazeIndex, "this.bloomPhases.length", this.bloomPhases.length);
         if (this.phazeIndex < this.bloomPhases.length) {
             this.bloomPhases[this.phazeIndex]();
@@ -51,16 +47,58 @@ FlowerAnimationTest.prototype = {
         }
     },
     createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
+
+        console.log("mainStem", mainStem);
 
         return [mainStem];
     },
+    setButtonText: function (text) {
+        this.button.innerHTML = text;
+        this.button.classList.remove('disabled');
+    },
+    updatePhase: function () {
+        if (this.bloomPhases && this.phazeIndex < this.bloomPhases.length) {
+            this.phazeIndex += 1;
+            this.setButtonText("Fase " + String(this.phazeIndex + 1));
+        }
+    },
+    animatePhase(newScale, duration) {
+        this.button.classList.add('disabled');
+        
+        this.basicFlowerStems.forEach((stem, index) => {
+            console.log("Animating stem", "index", index, "stem", stem);
+            if (index === 0) {
+                gsap.to(stem.id, {
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
+                    onComplete: this.updatePhase, callbackScope: this
+                });
+                /*
+                gsap.to(leaf.id, {
+                    duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin,
+                    onComplete: this.updatePhase, callbackScope: this
+                });
+            } else {
+                gsap.to(leaf.id, {
+                    duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin
+                });
+                */
+            }
+        });
+        
+    },
     setupInflorecence: function () { 
         this.phazeIndex = 0;
-
         this.basicFlowerStems = this.createAndGetBasicFlowerStems();
-        gsap.set(longFlowerstem, { opacity: 0 });
-        gsap.set(topPathFlower, { opacity: 0 });
+
+        var phase1 = () => {
+            this.animatePhase(0.5, 3);
+        }
+
+        this.bloomPhases = [phase1];
+
+
+        gsap.set(longFlowerstem, { opacity: 1 });
 
     },
 }
@@ -205,6 +243,8 @@ FlowerAnimation.prototype = {
         let leaf3 = new Leaf("#leaf3", "0 bottom", 0);
         let leaf4 = new Leaf("#leaf4", "0 bottom", 0.2);
 
+        console.log("leaf1", leaf1);
+
         return [leaf1, leaf2, leaf3, leaf4];
     },
     resett: function () {
@@ -248,8 +288,10 @@ FlowerAnimation.prototype = {
         });
     },
     animatePhase(newScale, duration) {
+
         this.button.classList.add('disabled');
         this.basicFlowerLeafs.forEach((leaf, index) => {
+            console.log("Animating basicFlowerLeafs", "index", index, "leaf", leaf);
             if (index === 0) {
                 gsap.to(leaf.id, {
                     duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin,
