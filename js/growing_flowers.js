@@ -55,6 +55,7 @@ FlowerAnimationTest.prototype = {
     },
     animatePhase(newScale, duration) {
         this.button.classList.add('disabled');
+        gsap.set(longFlowerstem, { opacity: 1 });
         
         this.basicFlowerStems.forEach((stem, index) => {
             console.log("Animating stem", "index", index, "stem", stem);
@@ -77,7 +78,7 @@ FlowerAnimationTest.prototype = {
         });
         
     },
-    setupInflorecence: function () { 
+    setupBasicFlower: function () { 
         this.phazeIndex = 0;
         this.basicFlowerStems = this.createAndGetBasicFlowerStems();
 
@@ -88,13 +89,13 @@ FlowerAnimationTest.prototype = {
         this.bloomPhases = [phase1];
 
 
-        gsap.set(longFlowerstem, { opacity: 1 });
+        gsap.set(longFlowerstem, { opacity: 0 });
 
     },
 }
 
 var bloomFlowerAnim = new FlowerAnimationTest();
-bloomFlowerAnim.setupInflorecence();
+bloomFlowerAnim.setupBasicFlower();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
 
