@@ -427,7 +427,7 @@ bFlowerAnim.setupAlienFlower();
 // console.log("bFlowerAnim", bFlowerAnim);
 
 function play() {
-    pickFlower(0, '0 0 300 210')
+    // pickFlower(0, '0 0 300 210')
 
     bFlowerAnim.playAnim();
 }
@@ -440,11 +440,9 @@ function pickFlower(flowerIndex, svgVBParams) {
     activeFlower = flowers[flowerIndex];
     activeFlower.classList.remove('hidden');
 
-/*
     activeButton.classList.remove('disabled');
     activeButton = flowerButtons[flowerIndex];
     activeButton.classList.add('disabled');
-    */
 
     bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
 }
