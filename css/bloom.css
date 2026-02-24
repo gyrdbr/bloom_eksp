@@ -17,6 +17,10 @@ body {
   display: none !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 
 /* This class will show the element when added to it */
 .visible-element {

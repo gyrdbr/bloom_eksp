@@ -117,9 +117,13 @@ FlowerAnimationTest.prototype = {
 
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
+        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 108 });
+        gsap.set(topPathFlower, { transformOrigin: "50% 60%", x: 2, y: 9 });
+
+        /*
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", y: -9 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "100% 100%", x: 2, y: 9 });
-
+`       */
         /*
 
         var phase1 = () => {
@@ -414,6 +418,7 @@ FlowerAnimation.prototype = {
         this.button.classList.add('disabled');
         gsap.to("#alien-tuber1", { duration: 1, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
         gsap.to("#alien-stem1", { duration: 1, y: 9 - dist });
+
         gsap.to("#alien-tuber2", { duration: 1, y: 16 - dist });
     },
     alienPhase1b: function () {
