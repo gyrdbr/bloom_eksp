@@ -117,9 +117,21 @@ FlowerAnimationTest.prototype = {
 
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
+        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 0 });
+
+        /*
+
+        var phase1 = () => {
+            this.alienPhase1();
+        }
+
+        this.alienphases = [phase1];
+
+        this.setButtonText("Fase " + String(this.phazeIndex + 1));
+
         gsap.set(longFlowerstem, { scale: 0.5, transformOrigin: "50% 80%", y: 9 });
         gsap.set(topPathFlower, { transformOrigin: "50% 60%", y: 9 });
-
+        */
     }
 }
 
