@@ -142,7 +142,7 @@ FlowerAnimationTest.prototype = {
 
 var bloomFlowerAnim = new FlowerAnimationTest();
 // bloomFlowerAnim.setupBasicFlower();
-bloomFlowerAnim.setupAlienFlower();
+// bloomFlowerAnim.setupAlienFlower();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
 
