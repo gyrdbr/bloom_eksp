@@ -118,6 +118,7 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", y: -9 });
+        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "100% 100%", x: 2, y: 9 });
 
         /*
 
