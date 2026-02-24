@@ -15,6 +15,7 @@ class InflorescenceLeaf {
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
+var topPathFlower = "#topPathFlower";
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
@@ -22,6 +23,8 @@ function FlowerAnimationTest() {
 
     this.bloomPhases = [];
     this.basicFlowerStems = [];
+    this.alienphases = [];
+
 
 
     // utfoer fase 1 for den rosa blomste
@@ -96,10 +99,33 @@ FlowerAnimationTest.prototype = {
         });
 
     },
+     alienPhase1: function () {
+        var dist = 9;
+        this.button.classList.add('disabled');
+        gsap.to(longFlowerstem, { duration: 1, y: 9 - dist });
+        gsap.to(topPathFlower, { duration: 1, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
+        
+    },
+    setupAlienFlower: function () {
+        this.phazeIndex = 0;
+
+        var phase1 = () => {
+            this.alienPhase1();
+        }
+
+        this.alienphases = [phase1];
+
+        this.setButtonText("Fase " + String(this.phazeIndex + 1));
+
+        gsap.set(longFlowerstem, { scale: 0.5, transformOrigin: "50% 80%", y: 9 });
+        gsap.set(topPathFlower, { transformOrigin: "50% 60%", y: 9 });
+
+    }
 }
 
 var bloomFlowerAnim = new FlowerAnimationTest();
-bloomFlowerAnim.setupBasicFlower();
+// bloomFlowerAnim.setupBasicFlower();
+bloomFlowerAnim.setupAlienFlower();
 
 console.log("bloomFlowerAnim", bloomFlowerAnim);
 
