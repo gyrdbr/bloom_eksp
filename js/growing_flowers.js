@@ -31,13 +31,18 @@ function FlowerAnimationTest() {
 }
 
 FlowerAnimationTest.prototype = {
+    resett: function () {
+        this.phazeIndex = 0;
+        this.setupAlienFlower();
+    },
     playAnim: function () {
-        console.log("this.phazeIndex", this.phazeIndex, "this.bloomPhases.length", this.bloomPhases.length);
+        console.log("this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length);
 
-        if (this.phazeIndex < this.bloomPhases.length) {
-            this.bloomPhases[this.phazeIndex]();
+        if (this.phazeIndex < this.alienphases.length) {
+            this.alienphases[this.phazeIndex]();
         } else {
-            console.log("No more bloom phases to play");
+            console.log("No more alien phases to play");
+            this.resett();
         }
     },
     createAndGetBasicFlowerStems: function () {
@@ -52,6 +57,7 @@ FlowerAnimationTest.prototype = {
         this.button.classList.remove('disabled');
     },
     updatePhase: function () {
+        console.log("updatePhase", "current phazeIndex", this.phazeIndex, "bloomPhases length", this.bloomPhases.length);
         if (this.bloomPhases && this.phazeIndex < this.bloomPhases.length) {
             this.phazeIndex += 1;
             this.setButtonText("Fase " + String(this.phazeIndex + 1));
@@ -134,7 +140,11 @@ FlowerAnimationTest.prototype = {
             this.alienPhase1();
         }
 
-        this.alienphases = [phase1];
+        var phase2 = () => {
+            this.alienPhase2();
+        }
+
+        this.alienphases = [phase1, phase2];
 
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
