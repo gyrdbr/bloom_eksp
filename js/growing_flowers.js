@@ -17,6 +17,9 @@ var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
 var topPathFlower = "#topPathFlower";
 
+var pathLeft1 = "#pathLeft1";
+var leftPath1Flower = "#leftPath1Flower";
+
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
@@ -74,16 +77,8 @@ FlowerAnimationTest.prototype = {
                     duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
                     onComplete: this.updatePhase, callbackScope: this
                 });
-                /*
-                gsap.to(leaf.id, {
-                    duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin,
-                    onComplete: this.updatePhase, callbackScope: this
-                });
             } else {
-                gsap.to(leaf.id, {
-                    duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin
-                });
-                */
+               console.log("Animating stem without callback", "index", index, "stem", stem);
             }
         });
         
@@ -116,10 +111,6 @@ FlowerAnimationTest.prototype = {
         
     },
     alienPhase2b: function () {
-        //var fullScale = 0.89;
-
-        // her skal jeg ha blomsten som vokser = tuber2
-
         gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% bottom", y: 115,
         onComplete: this.updatePhase, callbackScope: this });
     },
@@ -132,6 +123,9 @@ FlowerAnimationTest.prototype = {
     alienPhase1b: function () {
         gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115,
         onComplete: this.updatePhase, callbackScope: this });
+    },
+    alienPhase3: function () {
+
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
@@ -150,6 +144,10 @@ FlowerAnimationTest.prototype = {
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+
+        // storrelsen, ikke posisjonen skal endres, slik som i basicFlower i animatePhase
+        gsap.set(pathLeft1, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });        
+        gsap.set(leftPath1Flower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
         this.bloomPhases = [phase1];
  
