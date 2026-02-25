@@ -108,29 +108,29 @@ FlowerAnimationTest.prototype = {
         });
 
     },
+     alienPhase2: function () {
+        var dist = 9;
+        this.button.classList.add('disabled');
+        gsap.to(longFlowerstem, { duration: 1, y: 9 - dist });
+        gsap.to(topPathFlower, { duration: 1, y: 9 - dist,  callbackScope: this });
+        
+    },
     alienPhase2b: function () {
         //var fullScale = 0.89;
 
         // her skal jeg ha blomsten som vokser = tuber2
 
-        gsap.to(topPathFlower, { duration: 3, scale: 1, transformOrigin: "50% bottom", y: 0,
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% bottom", y: 115,
         onComplete: this.updatePhase, callbackScope: this });
-    },
-     alienPhase2: function () {
-        var dist = 9;
-        this.button.classList.add('disabled');
-        gsap.to(longFlowerstem, { duration: 1, y: 9 - dist });
-        gsap.to(topPathFlower, { duration: 1, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
-        
     },
      alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(longFlowerstem, { duration: 5, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
-        gsap.to(topPathFlower, { duration: 5, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
+        gsap.to(longFlowerstem, { duration: 3, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
+        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
     },
     alienPhase1b: function () {
-        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% 60%", y: 115,
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115,
         onComplete: this.updatePhase, callbackScope: this });
     },
     setupAlienFlower: function () {
