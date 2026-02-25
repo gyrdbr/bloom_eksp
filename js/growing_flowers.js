@@ -102,7 +102,7 @@ FlowerAnimationTest.prototype = {
         });
 
     },
-    alienPhase1b: function () {
+    alienPhase2b: function () {
         //var fullScale = 0.89;
 
         // her skal jeg ha blomsten som vokser = tuber2
@@ -110,17 +110,25 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: 3, scale: 1, transformOrigin: "50% bottom", y: 0,
         onComplete: this.updatePhase, callbackScope: this });
     },
-     alienPhase1: function () {
+     alienPhase2: function () {
         var dist = 9;
         this.button.classList.add('disabled');
         gsap.to(longFlowerstem, { duration: 1, y: 9 - dist });
         gsap.to(topPathFlower, { duration: 1, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
         
     },
+     alienPhase1: function () {
+        this.button.classList.add('disabled');
+
+        gsap.to(longFlowerstem, { duration: 5, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
+        gsap.to(topPathFlower, { duration: 5, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
+    },
+    alienPhase1b: function () {
+        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% 60%", y: 115,
+        onComplete: this.updatePhase, callbackScope: this });
+    },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
-
-        
 
         var phase1 = () => {
             this.alienPhase1();
@@ -132,13 +140,6 @@ FlowerAnimationTest.prototype = {
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
-
-        /*
-
-        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 108 });
-        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 115 });
-
-        */
 
         this.bloomPhases = [phase1];
  
