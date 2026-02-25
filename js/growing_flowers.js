@@ -33,6 +33,7 @@ function FlowerAnimationTest() {
 FlowerAnimationTest.prototype = {
     playAnim: function () {
         console.log("this.phazeIndex", this.phazeIndex, "this.bloomPhases.length", this.bloomPhases.length);
+
         if (this.phazeIndex < this.bloomPhases.length) {
             this.bloomPhases[this.phazeIndex]();
         } else {
@@ -99,6 +100,14 @@ FlowerAnimationTest.prototype = {
         });
 
     },
+    alienPhase1b: function () {
+        //var fullScale = 0.89;
+
+        // her skal jeg ha blomsten som vokser = tuber2
+
+        gsap.to(topPathFlower, { duration: 3, scale: 1, transformOrigin: "50% bottom", y: 0,
+        onComplete: this.updatePhase, callbackScope: this });
+    },
      alienPhase1: function () {
         var dist = 9;
         this.button.classList.add('disabled');
@@ -108,6 +117,8 @@ FlowerAnimationTest.prototype = {
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
+
+        
 
         var phase1 = () => {
             this.alienPhase1();
@@ -120,6 +131,8 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 108 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 115 });
 
+
+        this.bloomPhases = [phase1];
         /*
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", y: -9 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "100% 100%", x: 2, y: 9 });
@@ -161,13 +174,7 @@ function pickBloomFlower(flowerIndex, svgVBParams) {
     // bloomFlowerAnim.setPhases(activeFlower.getAttribute('id'));
 }
 
-function playBloom() {
 
-    console.log("playBloom");
-    pickBloomFlower(0, '0 0 210 297');
-
-    bloomFlowerAnim.playAnim();
-}
 
 /*
 
@@ -469,6 +476,14 @@ bFlowerAnim.setupBasicFlower();
 bFlowerAnim.setupAlienFlower();
 
 // console.log("bFlowerAnim", bFlowerAnim);
+
+function playBloom() {
+
+    console.log("playBloom");
+    pickBloomFlower(0, '0 0 210 297');
+
+    bloomFlowerAnim.playAnim();
+}
 
 function play() {
     // pickFlower(0, '0 0 300 210')
