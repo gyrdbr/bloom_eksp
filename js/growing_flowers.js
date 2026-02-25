@@ -83,6 +83,8 @@ FlowerAnimationTest.prototype = {
         
     },
     setupBasicFlower: function () { 
+        // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
+        // Full hoyde skal ikke gis ennaa
         this.phazeIndex = 0;
         this.basicFlowerStems = this.createAndGetBasicFlowerStems();
 
@@ -128,28 +130,18 @@ FlowerAnimationTest.prototype = {
 
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
+        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
+        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+
+        /*
+
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 108 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 115 });
 
+        */
 
         this.bloomPhases = [phase1];
-        /*
-        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", y: -9 });
-        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "100% 100%", x: 2, y: 9 });
-`       */
-        /*
-
-        var phase1 = () => {
-            this.alienPhase1();
-        }
-
-        this.alienphases = [phase1];
-
-        this.setButtonText("Fase " + String(this.phazeIndex + 1));
-
-        gsap.set(longFlowerstem, { scale: 0.5, transformOrigin: "50% 80%", y: 9 });
-        gsap.set(topPathFlower, { transformOrigin: "50% 60%", y: 9 });
-        */
+ 
     }
 }
 
