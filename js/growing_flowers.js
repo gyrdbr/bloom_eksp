@@ -39,9 +39,9 @@ FlowerAnimationTest.prototype = {
         this.setupAlienFlower();
     },
     playAnim: function () {
-        console.log("this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length);
-
+        console.log("playAnim", "this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length);
         if (this.phazeIndex < this.alienphases.length) {
+            console.log("this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length)
             this.alienphases[this.phazeIndex]();
         } else {
             console.log("No more alien phases to play");
@@ -60,8 +60,8 @@ FlowerAnimationTest.prototype = {
         this.button.classList.remove('disabled');
     },
     updatePhase: function () {
-        console.log("updatePhase", "current phazeIndex", this.phazeIndex, "bloomPhases length", this.bloomPhases.length);
-        if (this.bloomPhases && this.phazeIndex < this.bloomPhases.length) {
+        console.log("updatePhase", "current phazeIndex", this.phazeIndex, "alienphases length", this.alienphases.length);
+        if ((this.bloomPhases  || this.alienphases) && this.phazeIndex < (this.bloomPhases.length || this.alienphases.length)) {
             this.phazeIndex += 1;
             this.setButtonText("Fase " + String(this.phazeIndex + 1));
         }
@@ -78,10 +78,12 @@ FlowerAnimationTest.prototype = {
                     onComplete: this.updatePhase, callbackScope: this
                 });
             } else {
+                gsap.to(stem.id, {
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin
+                });
                console.log("Animating stem without callback", "index", index, "stem", stem);
             }
         });
-        
     },
     setupBasicFlower: function () { 
         // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
@@ -125,7 +127,16 @@ FlowerAnimationTest.prototype = {
         onComplete: this.updatePhase, callbackScope: this });
     },
     alienPhase3: function () {
+        this.button.classList.add('disabled');
 
+        console.log("alienPhase3");
+        var dist = 9;
+        this.button.classList.add('disabled');
+        gsap.to(pathLeft1, { duration: 1, scale: 1.1, transformOrigin: "100% 100%", y: 50,
+            onComplete: this.updatePhase, callbackScope: this
+         });
+        // gsap.to(topPathFlower, { duration: 1, y: 9 - dist,  callbackScope: this });
+        
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
@@ -138,7 +149,13 @@ FlowerAnimationTest.prototype = {
             this.alienPhase2();
         }
 
-        this.alienphases = [phase1, phase2];
+        var phase3 = () => {
+            this.alienPhase3();
+        }
+
+        // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
+        //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
+        this.alienphases = [phase1, phase3, phase2];
 
         this.setButtonText("Fase " + String(this.phazeIndex + 1));
 
@@ -146,8 +163,10 @@ FlowerAnimationTest.prototype = {
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
         // storrelsen, ikke posisjonen skal endres, slik som i basicFlower i animatePhase
-        gsap.set(pathLeft1, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });        
-        gsap.set(leftPath1Flower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+        // gsap.set(pathLeft1, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });        
+        // gsap.set(leftPath1Flower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+
+        gsap.set(pathLeft1, { scale: 0.2, transformOrigin: "50% bottom", y: 50 });
 
         this.bloomPhases = [phase1];
  
