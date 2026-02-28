@@ -352,4 +352,4 @@ if (helpBHabitButton) {
 if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
 }
-console.log("Welcome");
+// console.log("Welcome");

@@ -48,30 +48,36 @@ FlowerAnimationTest.prototype = {
             this.resett();
         }
     },
-    createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
-
-        console.log("mainStem", mainStem);
-
-        return [mainStem];
-    },
-    setButtonText: function (text) {
-        this.button.innerHTML = text;
-        this.button.classList.remove('disabled');
-    },
     updatePhase: function () {
         console.log("updatePhase", "current phazeIndex", this.phazeIndex, "alienphases length", this.alienphases.length);
         if ((this.bloomPhases  || this.alienphases) && this.phazeIndex < (this.bloomPhases.length || this.alienphases.length)) {
             this.phazeIndex += 1;
-            this.setButtonText("Fase " + String(this.phazeIndex + 1));
+            this.setButtonText("Fase ");
         }
     },
-    onComplete: this.updatePhase, callbackScope: this(newScale, duration) {
+    finalPhase: function () {
+        console.log("finalPhase");
+        this.phazeIndex += 1;
+        this.setButtonText("Start igjen ")
+    },
+    createAndGetBasicFlowerStems: function () {
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
+
+        // console.log("mainStem", mainStem);
+
+        return [mainStem];
+    },
+    setButtonText: function (text) {
+        // console.log("setButtonText", "text", text, "phazeIndex", this.phazeIndex);
+        this.button.innerHTML = text + String(this.phazeIndex + 1);
+        this.button.classList.remove('disabled');
+    },
+    animatePhase(newScale, duration) {
         this.button.classList.add('disabled');
         gsap.set(longFlowerstem, { opacity: 1 });
         
         this.basicFlowerStems.forEach((stem, index) => {
-            console.log("Animating stem", "index", index, "stem", stem);
+            // onsole.log("Animating stem", "index", index, "stem", stem);
             if (index === 0) {
                 gsap.to(stem.id, {
                     duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
@@ -79,11 +85,11 @@ FlowerAnimationTest.prototype = {
                 });
             } else {
                 gsap.to(stem.id, {
-                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
-                    onComplete: this.updatePhase, callbackScope: this
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin
                 });
-               console.log("index", index, "stem", stem);
+               // console.log("Animating stem without callback", "index", index, "stem", stem);
             }
+        });
     },
     setupBasicFlower: function () { 
         // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
@@ -105,6 +111,16 @@ FlowerAnimationTest.prototype = {
         });
 
     },
+    alienPhase1: function () {
+        this.button.classList.add('disabled');
+
+        gsap.to(longFlowerstem, { duration: 3, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
+        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
+    },
+    alienPhase1b: function () {
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115,
+        onComplete: this.updatePhase, callbackScope: this });
+    },
      alienPhase2: function () {
         var dist = 9;
         this.button.classList.add('disabled');
@@ -116,27 +132,22 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% bottom", y: 115,
         onComplete: this.updatePhase, callbackScope: this });
     },
-     alienPhase1: function () {
-        this.button.classList.add('disabled');
-
-        gsap.to(longFlowerstem, { duration: 3, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
-        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
-    },
-    alienPhase1b: function () {
-        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115,
-        onComplete: this.updatePhase, callbackScope: this });
-    },
     alienPhase3: function () {
         this.button.classList.add('disabled');
 
-        console.log("alienPhase3");
+        // console.log("alienPhase3");
         var dist = 9;
         this.button.classList.add('disabled');
         gsap.to(pathLeft1, { duration: 1, scale: 1.1, transformOrigin: "100% 100%", y: 50,
-            onComplete: this.updatePhase, callbackScope: this
+            onComplete: this.finalPhase, callbackScope: this
          });
         // gsap.to(topPathFlower, { duration: 1, y: 9 - dist,  callbackScope: this });
         
+    },
+    alienPhase3b: function () {
+        console.log("alienPhase3b");
+        gsap.to(leftPath1Flower, { duration: 1, scale: 1.1, transformOrigin: "100% 100%", y: 115,
+        onComplete: this.updatePhase, callbackScope: this });
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
@@ -157,7 +168,7 @@ FlowerAnimationTest.prototype = {
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
         this.alienphases = [phase1, phase3, phase2];
 
-        this.setButtonText("Fase " + String(this.phazeIndex + 1));
+        this.setButtonText("Fase ");
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
@@ -177,7 +188,7 @@ var bloomFlowerAnim = new FlowerAnimationTest();
 // bloomFlowerAnim.setupBasicFlower();
 bloomFlowerAnim.setupAlienFlower();
 
-console.log("bloomFlowerAnim", bloomFlowerAnim);
+// console.log("bloomFlowerAnim", bloomFlowerAnim);
 
 function pickBloomFlower(flowerIndex, svgVBParams) {
     // var svg = document.getElementById("svg-blomsterstand");
@@ -309,7 +320,7 @@ FlowerAnimation.prototype = {
         let leaf3 = new Leaf("#leaf3", "0 bottom", 0);
         let leaf4 = new Leaf("#leaf4", "0 bottom", 0.2);
 
-        console.log("leaf1", leaf1);
+        // console.log("leaf1", leaf1);
 
         return [leaf1, leaf2, leaf3, leaf4];
     },
@@ -322,7 +333,8 @@ FlowerAnimation.prototype = {
         }
     },
     setButtonText: function (text) {
-        this.button.innerHTML = text;
+        // console.log("setButtonText", "text", text, "phazeIndex", this.phazeIndex + 1);
+        this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
     },
     setupBasicFlower: function () {
@@ -344,7 +356,7 @@ FlowerAnimation.prototype = {
 
         this.basicphases = [phase1, phase2, phase3];
 
-        this.setButtonText("Fase " + String(this.phazeIndex + 1));
+        this.setButtonText("Fase ");
 
         gsap.set("#stem", { opacity: 0 });
         gsap.set("#flower", { opacity: 0 });
@@ -357,7 +369,7 @@ FlowerAnimation.prototype = {
 
         this.button.classList.add('disabled');
         this.basicFlowerLeafs.forEach((leaf, index) => {
-            console.log("Animating basicFlowerLeafs", "index", index, "leaf", leaf);
+            // console.log("Animating basicFlowerLeafs", "index", index, "leaf", leaf);
             if (index === 0) {
                 gsap.to(leaf.id, {
                     duration: duration, scale: newScale, transformOrigin: leaf.transformOrigin,
@@ -371,22 +383,24 @@ FlowerAnimation.prototype = {
         });
     },
     animateStem: function () {
+        console.log("animateStem");
          // opacity settes fra 0 til 1 slik at stilken blir synlig
         gsap.set("#stem", { opacity: 1 });
         // visningen av stilken animeres
-        gsap.from("#stem", 1, {drawSVG: 0, onComplete: this.showFlower, callbackScope: this});
+        gsap.from("#stem", 1, {drawSVG: 0, onComplete: this.finalPhase, callbackScope: this});
     },
     showFlower: function () {
         gsap.to("#flower", { duration: 1, opacity: 1, onComplete: this.finalPhase, callbackScope: this });
     },
     finalPhase: function () {
-        this.setButtonText("Start igjen")
+        this.setButtonText("Start igjen ")
         this.phazeIndex += 1;
     },
     updatePhase: function () {
+        console.log("updatePhase", "current phazeIndex", this.phazeIndex, "alienphases length", this.alienphases.length);
         if (this.phases && this.phazeIndex < this.phases.length) {
             this.phazeIndex += 1;
-            this.setButtonText("Fase " + String(this.phazeIndex + 1));
+            this.setButtonText("Fase ");
         }
     },
     setPhases: function (flower) {
@@ -413,7 +427,7 @@ FlowerAnimation.prototype = {
 
         this.alienphases = [phase1, phase2, phase3];
 
-        this.setButtonText("Fase " + String(this.phazeIndex + 1));
+        this.setButtonText("Fase ");
 
 
         gsap.set("#alien-tuber1", { transformOrigin: "50% 60%", y: 9 });
@@ -480,9 +494,9 @@ FlowerAnimation.prototype = {
         gsap.to("#alien-tuber3-left-leaf", {duration: 3, scale: 0.9, rotation: -50, transformOrigin: "15% bottom"});
     },
     playAnim: function () {
-        console.log("playAnim");
-        console.log("bFlowerAnim klikket", bFlowerAnim);
-        console.log("this.phazeIndex", this.phazeIndex, "this.phases.length", this.phases.length);
+        // console.log("playAnim");
+        // console.log("bFlowerAnim klikket", bFlowerAnim);
+        // console.log("this.phazeIndex", this.phazeIndex, "this.phases.length", this.phases.length);
         if (this.phazeIndex < this.phases.length) {
             this.phases[this.phazeIndex]();
         } else {
@@ -499,7 +513,7 @@ bFlowerAnim.setupAlienFlower();
 
 function playBloom() {
 
-    console.log("playBloom");
+    // console.log("playBloom");
     pickBloomFlower(0, '0 0 210 297');
 
     bloomFlowerAnim.playAnim();
