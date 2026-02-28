@@ -66,7 +66,7 @@ FlowerAnimationTest.prototype = {
             this.setButtonText("Fase " + String(this.phazeIndex + 1));
         }
     },
-    animatePhase(newScale, duration) {
+    onComplete: this.updatePhase, callbackScope: this(newScale, duration) {
         this.button.classList.add('disabled');
         gsap.set(longFlowerstem, { opacity: 1 });
         
@@ -79,11 +79,11 @@ FlowerAnimationTest.prototype = {
                 });
             } else {
                 gsap.to(stem.id, {
-                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
+                    onComplete: this.updatePhase, callbackScope: this
                 });
-               console.log("Animating stem without callback", "index", index, "stem", stem);
+               console.log("index", index, "stem", stem);
             }
-        });
     },
     setupBasicFlower: function () { 
         // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
