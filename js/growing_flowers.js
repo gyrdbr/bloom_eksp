@@ -116,24 +116,16 @@ FlowerAnimationTest.prototype = {
     alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.alienPhase1b, callbackScope: this });
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.updatePhase, callbackScope: this });
         gsap.to(longFlowerstem, { duration: 1, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
-    },
-    alienPhase1b: function () {
-        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115,
-        onComplete: this.updatePhase, callbackScope: this });
     },
      alienPhase2: function () {
         var dist = 9;
         this.button.classList.add('disabled');
         gsap.to(longFlowerstem, { duration: 1, y: 9 - dist,  
-            onComplete: this.alienPhase2b, callbackScope: this });
+            onComplete: this.updatePhase, callbackScope: this });
         gsap.to(topPathFlower, { duration: 1, y: 9 - dist });
         
-    },
-    alienPhase2b: function () {
-        gsap.to(topPathFlower, { duration: 3, scale: 1.1, transformOrigin: "50% bottom", y: 115,
-        onComplete: this.updatePhase, callbackScope: this });
     },
     alienPhase3: function () {
         this.button.classList.add('disabled');
