@@ -103,8 +103,8 @@ FlowerAnimationTest.prototype = {
     alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.updatePhase, callbackScope: this });
-        gsap.to(longFlowerstem, { duration: 1, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, y: 115 , onComplete: this.updatePhase, callbackScope: this });
+        gsap.to(longFlowerstem, { duration: 1, scale: 1.1, y: 108  });
     },
      alienPhase2: function () {
         var dist = 9;
