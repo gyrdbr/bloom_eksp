@@ -147,7 +147,7 @@ FlowerAnimationTest.prototype = {
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2, phase3];
+        this.alienphases = [phase1, phase3];
 
         this.setButtonText("Fase ");
 
