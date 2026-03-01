@@ -152,7 +152,8 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
-        gsap.to(pathLeft1, {  scale: 0, transformOrigin: "100% 100%", x: 55,y: 30 });
+        gsap.to(pathLeft1, {  scale: 0, transformOrigin: "100% 100%", x: 155,y: 30 });
+        
         gsap.to(leftPath1Flower, {  scale: 1.1, transformOrigin: "100% 100%", x: 0, y: 0 });
 
         // this.bloomPhases = [phase1];
