@@ -103,8 +103,8 @@ FlowerAnimationTest.prototype = {
     alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(topPathFlower, { duration: 1, scale: 1, transformOrigin: "50% 60%", y: 115 , onComplete: this.updatePhase, callbackScope: this });
-        gsap.to(longFlowerstem, { duration: 1, scale: 1, transformOrigin: "50% 80%", y: 108  });
+        gsap.to(topPathFlower, { duration: 1, scale: 1.1, transformOrigin: "50% 60%", y: 115 , onComplete: this.updatePhase, callbackScope: this });
+        gsap.to(longFlowerstem, { duration: 1, scale: 1.1, transformOrigin: "50% 80%", y: 108  });
     },
      alienPhase2: function () {
         var dist = 9;
@@ -118,9 +118,11 @@ FlowerAnimationTest.prototype = {
         console.log("alienPhase3");
         this.button.classList.add('disabled');
 
+        
         gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
+         
         
     },
     alienPhase3b: function () {
@@ -145,15 +147,21 @@ FlowerAnimationTest.prototype = {
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2];
+        this.alienphases = [phase1, phase2, phase3];
 
         this.setButtonText("Fase ");
 
-        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "50% 80%", y: 290 });
-        gsap.set(topPathFlower, { scale: 1, transformOrigin: "50% 60%", y: 290 });
+        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
+        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
-        // gsap.to(pathLeft1, {  scale: 0, transformOrigin: "100% 100%", x: 155,y: 30 }); 
-        // gsap.to(leftPath1Flower, {  scale: 1, transformOrigin: "100% 100%", x: 0, y: 0 });
+        // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
+        //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
+
+        gsap.set(pathLeft1, {  scale: 0.2, transformOrigin: "100% 100%", x: 100, y: 50 }); 
+
+        // gsap.set(leftPath1Flower, {  scale: 1, transformOrigin: "100% 100%", x: 5, y: 0 });
+
+        // gsap.set(pathLeft1, {  scale: 0.1, transformOrigin: "100% 100%", x: 59, y: 30 }); 
 
         // this.bloomPhases = [phase1];
  
