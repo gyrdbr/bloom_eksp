@@ -28,9 +28,6 @@ function FlowerAnimationTest() {
     this.basicFlowerStems = [];
     this.alienphases = [];
 
-
-
-    // utfoer fase 1 for den rosa blomste
 }
 
 FlowerAnimationTest.prototype = {
@@ -118,16 +115,17 @@ FlowerAnimationTest.prototype = {
         
     },
     alienPhase3: function () {
+        console.log("alienPhase3");
         this.button.classList.add('disabled');
 
-        gsap.to(pathLeft1, { duration: 3, scale: 1.1, transformOrigin: "100% 100%", y: 50,
+        gsap.to(pathLeft1, { duration: 3, scale: 1.1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
         
     },
     alienPhase3b: function () {
 
-        gsap.to(leftPath1Flower, { duration: 1, scale: 1.1, transformOrigin: "100% 100%", y: 115,
+        gsap.to(leftPath1Flower, { duration: 1, scale: 1.1, transformOrigin: "100% 100%", x: 30,y: 30,
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
@@ -154,11 +152,8 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
         gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
-        // storrelsen, ikke posisjonen skal endres, slik som i basicFlower i animatePhase
-        // gsap.set(pathLeft1, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });        
-        // gsap.set(leftPath1Flower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
-
-        gsap.set(pathLeft1, { scale: 0.2, transformOrigin: "50% bottom", y: 50 });
+        gsap.to(pathLeft1, {  scale: 0, transformOrigin: "100% 100%", x: 55,y: 30 });
+        gsap.to(leftPath1Flower, {  scale: 1.1, transformOrigin: "100% 100%", x: 0, y: 0 });
 
         // this.bloomPhases = [phase1];
  
