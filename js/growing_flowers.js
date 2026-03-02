@@ -147,17 +147,17 @@ FlowerAnimationTest.prototype = {
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase3];
+        this.alienphases = [phase1, phase2, phase3];
 
         this.setButtonText("Fase ");
 
-        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
-        gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+        // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
+        // gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
 
         // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
         //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
 
-        gsap.set(pathLeft1, {  scale: 0.2, transformOrigin: "100% 100%", x: 100, y: 50 }); 
+        // gsap.set(pathLeft1, {  scale: 0.2, transformOrigin: "100% 100%", x: 100, y: 50 }); 
 
         // gsap.set(leftPath1Flower, {  scale: 1, transformOrigin: "100% 100%", x: 5, y: 0 });
 
