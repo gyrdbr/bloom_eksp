@@ -48,7 +48,7 @@ function drawLeafs() {
           drawSVG: "0% 0%"
       },
       {
-          duration: 1,
+          duration: 3,
           delay: 0.5,
           ease: "linear",
           drawSVG: "0% 100%",
@@ -62,7 +62,7 @@ function drawLeafs() {
               drawSVG: "0% 0%"
           },
           {
-              duration: 1,
+              duration: 3,
               delay: (index + 2) * 0.4,
               ease: "linear",
               drawSVG: "0% 100%",

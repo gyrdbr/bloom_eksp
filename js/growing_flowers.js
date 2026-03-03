@@ -4,13 +4,6 @@
 
 /* blomsterstand */
 
-/*
-function onComplete() {
-    console.log("Animation complete!");
-    gsap.to(topPathFlowerMovable, { duration: 1, y: 0 });
-}
-    */
-
 class InflorescenceLeaf {
     constructor(id, transformOrigin, startScale) {
         this.id = id;
@@ -29,9 +22,10 @@ class BlomsterstandBlomst {
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
-// var topPathFlowerMovable = "#topPathFlowerMovable";
+var topPathFlowerMovable = "#topPathFlowerMovable";
 
-// let topPathFlowerMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
+let topBlomstMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
+
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -117,7 +111,6 @@ FlowerAnimationTest.prototype = {
 
     },
      alienPhase1: function () {
-        var dist = 9;
         this.button.classList.add('disabled');
 
         gsap.to(longFlowerstem, { duration: 1, y: 0,  
@@ -134,24 +127,30 @@ FlowerAnimationTest.prototype = {
         
     },
     alienPhase2: function () {
-        console.log("alienPhase2");
         this.button.classList.add('disabled');
 
         gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
-         
-        
     },
     alienPhase3b: function () {
 
         gsap.to(leftPath1Flower, { duration: 1, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
         onComplete: this.finalPhase, callbackScope: this });
     },
+    initTulips: function () {
+        gsap.set(topPathFlowerMovable, { scale: 0 });
+
+        gsap.set(topPathFlowerMovable, { scale: 0, transformOrigin: topPathFlowerMovable.transformOrigin });
+
+        /*
+        tulips.forEach(tulip => {
+            gsap.set(tulip.id, { scale: 0, transformOrigin: tulip.transformOrigin });
+        });
+        */
+    },
     setupAlienFlower: function () {
         // this.createAndGetBasicFlowerStems()
-
-        let topPathFlowerMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
 
         this.phazeIndex = 0;
 
