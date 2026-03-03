@@ -124,12 +124,13 @@ FlowerAnimationTest.prototype = {
     alienPhase1b: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: 1, delay: 0.5, ease: "SlowMo",
+                    {scale: 1, duration: 1, transformOrigin: "50% bottom",
                         onComplete: this.finalPhase, 
                         callbackScope: this
             });
     },
     alienPhase2: function () {
+        /* TODO: soerg foer at blomsten vokser fra midten og ut, ikke fra ytterste hoyre */
         this.button.classList.add('disabled');
 
         gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
@@ -161,7 +162,7 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase ");
 
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
-        gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "100% 100%" });
+        gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom" });
  
     }
 }
