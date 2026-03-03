@@ -122,34 +122,12 @@ FlowerAnimationTest.prototype = {
         
     },
     alienPhase1b: function () {
-        /*
-        gsap.to(topPathFlowerMovable, { duration: 1, y: 0,  
-            onComplete: this.finalPhase, 
-            callbackScope: this});
-            */
 
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: 1, delay: 0.5, ease: "SlowMo",
                         onComplete: this.finalPhase, 
                         callbackScope: this
             });
-
-            /*
-        gsap.fromTo(longFlowerstem,
-            {
-                drawSVG: "0% 0%"
-            },
-            {
-                duration: 3,
-                ease: "linear",
-                drawSVG: "0% 100%",
-                onComplete: () => {
-                    gsap.to(topPathFlowerMovable, 
-                        {scale: 1, duration: 1, delay: delay, ease: "SlowMo"
-                })}
-            });
-            */
-        
     },
     alienPhase2: function () {
         this.button.classList.add('disabled');
@@ -164,32 +142,13 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { duration: 1, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
         onComplete: this.finalPhase, callbackScope: this });
     },
-    initTulips: function () {
-        gsap.set(topPathFlowerMovable, { scale: 0 });
-
-        gsap.set(topPathFlowerMovable, { scale: 0.2, transformOrigin: topPathFlowerMovable.transformOrigin,
-            onComplete: this.finalPhase, callbackScope: this });
-
-        /*
-        tulips.forEach(tulip => {
-            gsap.set(tulip.id, { scale: 0, transformOrigin: tulip.transformOrigin });
-        });
-        */
-    },
     setupAlienFlower: function () {
-        // this.createAndGetBasicFlowerStems()
 
         this.phazeIndex = 0;
 
         var phase1 = () => {
             this.alienPhase1();
         }
-
-        /*
-        var phase2 = () => {
-            this.alienPhase3();
-        }
-            */
 
         var phase2 = () => {
             this.alienPhase2();
@@ -203,17 +162,6 @@ FlowerAnimationTest.prototype = {
 
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
         gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "100% 100%" });
-
-        // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
-        //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
-
-        // gsap.set(pathLeft1, {  scale: 0.2, transformOrigin: "100% 100%", x: 100, y: 50 }); 
-
-        // gsap.set(leftPath1Flower, {  scale: 1, transformOrigin: "100% 100%", x: 5, y: 0 });
-
-        // gsap.set(pathLeft1, {  scale: 0.1, transformOrigin: "100% 100%", x: 59, y: 30 }); 
-
-        // this.bloomPhases = [phase1];
  
     }
 }
@@ -223,18 +171,7 @@ var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
 
 function pickBloomFlower(flowerIndex, svgVBParams) {
-    // var svg = document.getElementById("svg-blomsterstand");
-
     activeFlower = flowers[flowerIndex];
-    
-
-
-    // activeButton.classList.remove('disabled');
-    // activeButton = flowerButtons[flowerIndex];
-    // activeButton.classList.add('disabled');
-    
-
-    // bloomFlowerAnim.setPhases(activeFlower.getAttribute('id'));
 }
 
 
