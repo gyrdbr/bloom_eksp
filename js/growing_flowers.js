@@ -15,7 +15,7 @@ class InflorescenceLeaf {
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
-var topPathFlower = "#topPathFlower";
+var topPathFlower = "#topPathFlowerMovable";
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -100,21 +100,15 @@ FlowerAnimationTest.prototype = {
         });
 
     },
-    alienPhase1: function () {
-        this.button.classList.add('disabled');
-
-        gsap.to(topPathFlower, { duration: 1, y: 115 , onComplete: this.updatePhase, callbackScope: this });
-        gsap.to(longFlowerstem, { duration: 1, y: 108  });
-    },
-     alienPhase2: function () {
+     alienPhase1: function () {
         var dist = 9;
         this.button.classList.add('disabled');
-        gsap.to(longFlowerstem, { duration: 1, y: 9 - dist,  
+        gsap.to(longFlowerstem, { duration: 1, y: 0,  
             onComplete: this.finalPhase, callbackScope: this });
-        gsap.to(topPathFlower, { duration: 1, y: 9 - dist });
+        gsap.to(topPathFlower, { duration: 1, y: 0 });
         
     },
-    alienPhase3: function () {
+    alienPhase2: function () {
         console.log("alienPhase3");
         this.button.classList.add('disabled');
 
@@ -134,25 +128,21 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
 
         var phase1 = () => {
-            this.alienPhase1();
-        }
-
-        var phase2 = () => {
             this.alienPhase2();
         }
 
-        var phase3 = () => {
+        var phase2 = () => {
             this.alienPhase3();
         }
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2, phase3];
+        this.alienphases = [phase1,phase2];
 
         this.setButtonText("Fase ");
 
-        // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "50% 80%", y: 290 });
-        // gsap.set(topPathFlower, { scale: 1.1, transformOrigin: "50% 60%", y: 290 });
+        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
+        gsap.set(topPathFlower, { scale: 1, transformOrigin: "100% 100%", y: 240 });
 
         // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
         //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
