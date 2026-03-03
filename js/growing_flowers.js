@@ -4,10 +4,12 @@
 
 /* blomsterstand */
 
+/*
 function onComplete() {
     console.log("Animation complete!");
     gsap.to(topPathFlowerMovable, { duration: 1, y: 0 });
 }
+    */
 
 class InflorescenceLeaf {
     constructor(id, transformOrigin, startScale) {
@@ -27,7 +29,9 @@ class BlomsterstandBlomst {
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
-var topPathFlowerMovable = "#topPathFlowerMovable";
+// var topPathFlowerMovable = "#topPathFlowerMovable";
+
+// let topPathFlowerMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -115,12 +119,16 @@ FlowerAnimationTest.prototype = {
      alienPhase1: function () {
         var dist = 9;
         this.button.classList.add('disabled');
+
         gsap.to(longFlowerstem, { duration: 1, y: 0,  
-            // onComplete: this.updatePhase, 
-            callbackScope: this,
-            onComplete: onComplete
+            onComplete: this.alienPhase1b, 
+            callbackScope: this
         });
-        gsap.to(topPathFlower, { duration: 1, y: 0,  
+        gsap.to(topPathFlower, { duration: 1, y: 0});
+        
+    },
+    alienPhase1b: function () {
+        gsap.to(topPathFlowerMovable, { duration: 1, y: 0,  
             onComplete: this.finalPhase, 
             callbackScope: this});
         
@@ -141,6 +149,10 @@ FlowerAnimationTest.prototype = {
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
+        // this.createAndGetBasicFlowerStems()
+
+        let topPathFlowerMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
+
         this.phazeIndex = 0;
 
         var phase1 = () => {
@@ -153,18 +165,18 @@ FlowerAnimationTest.prototype = {
         }
             */
 
-           var phase2 = () => {
+        var phase2 = () => {
             this.alienPhase2();
         }
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2];
+        this.alienphases = [phase1];
 
         this.setButtonText("Fase ");
 
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
-        gsap.set(topPathFlowerMovable, { scale: 1, transformOrigin: "100% 100%", y: 240 });
+        gsap.set("#topPathFlowerMovable", { scale: 1, transformOrigin: "100% 100%", y: 240 });
 
         // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
         //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
