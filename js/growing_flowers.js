@@ -4,6 +4,11 @@
 
 /* blomsterstand */
 
+function onComplete() {
+    console.log("Animation complete!");
+    gsap.to(topPathFlower, { duration: 1, y: 0 });
+}
+
 class InflorescenceLeaf {
     constructor(id, transformOrigin, startScale) {
         this.id = id;
@@ -104,15 +109,17 @@ FlowerAnimationTest.prototype = {
         var dist = 9;
         this.button.classList.add('disabled');
         gsap.to(longFlowerstem, { duration: 1, y: 0,  
-            onComplete: this.updatePhase, callbackScope: this });
-        gsap.to(topPathFlower, { duration: 1, y: 0 });
+            // onComplete: this.updatePhase, 
+            callbackScope: this,
+            onComplete: onComplete
+        });
+        // gsap.to(topPathFlower, { duration: 1, y: 0 });
         
     },
     alienPhase2: function () {
         console.log("alienPhase2");
         this.button.classList.add('disabled');
 
-        
         gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
