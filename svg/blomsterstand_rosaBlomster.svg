@@ -12,8 +12,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-   <defs
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
    id="defs1"><linearGradient
      id="swatch13"
      inkscape:swatch="solid"><stop
@@ -43,8 +42,26 @@
      x2="-61.152802"
      y2="68.184784"
      gradientUnits="userSpaceOnUse"
-     gradientTransform="matrix(0.57414536,0,0,4.9574231,151.09788,-237.39332)" />
-     </defs>
+     gradientTransform="matrix(0.57434766,0,0,4.8586996,151.11895,-232.85125)" /></defs><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:document-units="mm"
+   inkscape:zoom="0.66466541"
+   inkscape:cx="495.73815"
+   inkscape:cy="655.21688"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="-8"
+   inkscape:window-y="180"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer4"
+   showgrid="false" />
  <g
    inkscape:groupmode="layer"
    id="wholeInflorecence"
@@ -236,17 +253,22 @@
      ry="2.3366978" /><path
      id="rect2395-7"
      style="display:inline;fill:#a05a2c;fill-opacity:1;stroke-width:0.193224"
-     d="m 112.89074,154.51408 0.91933,4.67362 h 63.7992 l 1.00304,-4.67362 z" /></g><g
-   inkscape:groupmode="layer"
-   id="layer4"
-   inkscape:label="rectangle"
-   style="display:inline"><rect
-     style="opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.68709;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-     id="rect2"
-     width="47.081306"
-     height="219.04753"
-     x="67.757683"
-     y="-8.8962803" /></g></g><g
+     d="m 112.89074,154.51408 0.91933,4.67362 h 63.7992 l 1.00304,-4.67362 z" /></g>
+     <g
+      inkscape:groupmode="layer"
+      id="layer4"
+      inkscape:label="rectangle"
+      style="display:inline">
+      <rect
+        style="opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.6705;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+        id="rect2"
+        width="47.097897"
+        height="214.68535"
+        x="67.74939"
+        y="-8.9045744" />
+        </g>
+      </g>
+     <g
    inkscape:groupmode="layer"
    id="layer3"
    inkscape:label="blomstLayer"
@@ -472,6 +494,6 @@
      inkscape:label="topPathFlowerMovable" /><path
      d="m 37.934518,253.66561 c -0.299832,0.61322 -0.71358,1.22479 -1.186724,1.71696 -0.417323,0.49556 -1.205835,0.35494 -1.760534,0.23477 -1.73854,-0.31532 -3.402743,-0.9085 -4.904846,-1.84929 -1.393985,-0.90594 -2.772895,-1.99496 -3.611746,-3.45981 -0.35064,-0.54213 -0.533133,-1.1556 -0.854145,-1.71274 l -0.0082,-0.0239 c -0.05015,-0.39093 -0.145023,-0.77008 -0.228876,-1.15394 -0.367854,-1.83813 0.02572,-3.82826 0.987352,-5.42911 0.165163,-0.25304 0.35971,-0.4803 0.615086,-0.6467 0.283642,0.24991 0.460669,0.58619 0.731931,0.8571 0.367407,0.37067 0.760124,0.72481 1.193986,1.01593 1.492456,0.95961 2.807044,2.0014 4.63669,2.21354 0.14839,-0.39748 0.118243,-0.78461 0.03201,-1.19117 -0.04772,-0.32987 -0.07399,-0.66424 -0.1349,-0.99215 -0.101642,-0.57126 -0.397593,-1.01293 -0.359838,-1.61348 0.731243,0.24862 1.36796,0.81622 1.948426,1.31407 1.18813,1.04515 2.312392,2.02615 3.13072,3.40094 0.547691,0.9166 0.79875,1.95152 0.836077,3.01216 -0.04493,0.27335 -0.08989,0.54671 -0.116643,0.82267 -0.103859,1.19187 -0.481518,2.3861 -0.945782,3.48416 z"
      fill="#f49dfa"
-     id="path3"
+     id="leftPath1Flower"
      style="stroke-width:0.110686"
      inkscape:label="leftPath1Flower" /></g></svg>
