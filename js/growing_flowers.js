@@ -6,7 +6,7 @@
 
 function onComplete() {
     console.log("Animation complete!");
-    gsap.to(topPathFlower, { duration: 1, y: 0 });
+    gsap.to(topPathFlowerMovable, { duration: 1, y: 0 });
 }
 
 class InflorescenceLeaf {
@@ -17,10 +17,17 @@ class InflorescenceLeaf {
     }
 }
 
+class BlomsterstandBlomst {
+  constructor(id, transformOrigin) {
+      this.id = id;
+      this.transformOrigin = transformOrigin;
+  }
+}
+
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
-var topPathFlower = "#topPathFlowerMovable";
+var topPathFlowerMovable = "#topPathFlowerMovable";
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -113,7 +120,9 @@ FlowerAnimationTest.prototype = {
             callbackScope: this,
             onComplete: onComplete
         });
-        // gsap.to(topPathFlower, { duration: 1, y: 0 });
+        gsap.to(topPathFlower, { duration: 1, y: 0,  
+            onComplete: this.finalPhase, 
+            callbackScope: this});
         
     },
     alienPhase2: function () {
@@ -155,7 +164,7 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase ");
 
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
-        gsap.set(topPathFlower, { scale: 1, transformOrigin: "100% 100%", y: 240 });
+        gsap.set(topPathFlowerMovable, { scale: 1, transformOrigin: "100% 100%", y: 240 });
 
         // gsap.set("#alien-tuber2-left-leaf", { scale: 0, rotation: -50, transformOrigin: "15% bottom" });
         //  gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
