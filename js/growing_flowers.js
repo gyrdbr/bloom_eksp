@@ -130,7 +130,6 @@ FlowerAnimationTest.prototype = {
             });
     },
     alienPhase2: function () {
-        /* TODO: soerg foer at blomsten vokser fra midten og ut, ikke fra ytterste hoyre */
         this.button.classList.add('disabled');
 
         gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
