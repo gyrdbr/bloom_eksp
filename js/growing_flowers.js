@@ -104,12 +104,12 @@ FlowerAnimationTest.prototype = {
         var dist = 9;
         this.button.classList.add('disabled');
         gsap.to(longFlowerstem, { duration: 1, y: 0,  
-            onComplete: this.finalPhase, callbackScope: this });
+            onComplete: this.updatePhase, callbackScope: this });
         gsap.to(topPathFlower, { duration: 1, y: 0 });
         
     },
     alienPhase2: function () {
-        console.log("alienPhase3");
+        console.log("alienPhase2");
         this.button.classList.add('disabled');
 
         
@@ -128,16 +128,22 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
 
         var phase1 = () => {
-            this.alienPhase2();
+            this.alienPhase1();
         }
 
+        /*
         var phase2 = () => {
             this.alienPhase3();
+        }
+            */
+
+           var phase2 = () => {
+            this.alienPhase2();
         }
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1,phase2];
+        this.alienphases = [phase1, phase2];
 
         this.setButtonText("Fase ");
 
