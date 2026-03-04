@@ -64,11 +64,6 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex += 1;
         this.setButtonText("Start igjen ")
     },
-    createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
-
-        return [mainStem];
-    },
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
