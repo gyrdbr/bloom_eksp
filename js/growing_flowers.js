@@ -35,8 +35,6 @@ function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
 
-    this.bloomPhases = [];
-    this.basicFlowerStems = [];
     this.alienphases = [];
 
 }
@@ -55,7 +53,7 @@ FlowerAnimationTest.prototype = {
     },
     updatePhase: function () {
 
-        if ((this.bloomPhases  || this.alienphases) && this.phazeIndex < (this.bloomPhases.length || this.alienphases.length)) {
+        if ((this.alienphases) && this.phazeIndex < (this.alienphases.length)) {
             this.phazeIndex += 1;
             this.setButtonText("Fase ");
         }
@@ -90,26 +88,6 @@ FlowerAnimationTest.prototype = {
                 });
             }
         });
-    },
-    setupBasicFlower: function () { 
-        // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
-        // Full hoyde skal ikke gis ennaa
-        this.phazeIndex = 0;
-        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
-
-        var phase1 = () => {
-            this.animatePhase(0.5, 3);
-        }
-
-        this.bloomPhases = [phase1];
-
-
-        gsap.set(longFlowerstem, { opacity: 1 });
-
-         this.basicFlowerStems.forEach(stem => {
-            gsap.set(stem.id, { scale: stem.startScale, transformOrigin: stem.transformOrigin });
-        });
-
     },
      alienPhase1: function () {
         this.button.classList.add('disabled');
