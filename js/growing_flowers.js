@@ -24,6 +24,7 @@ var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
 var topPathFlowerMovable = "#topPathFlowerMovable";
 var delay = 0;
+var durationTime = 1;
 
 let topBlomstMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
 
@@ -71,23 +72,6 @@ FlowerAnimationTest.prototype = {
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
-    },
-    animatePhase(newScale, duration) {
-        this.button.classList.add('disabled');
-        gsap.set(longFlowerstem, { opacity: 1 });
-        
-        this.basicFlowerStems.forEach((stem, index) => {
-            if (index === 0) {
-                gsap.to(stem.id, {
-                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
-                    onComplete: this.updatePhase, callbackScope: this
-                });
-            } else {
-                gsap.to(stem.id, {
-                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin
-                });
-            }
-        });
     },
      alienPhase1: function () {
         this.button.classList.add('disabled');
@@ -146,82 +130,11 @@ FlowerAnimationTest.prototype = {
 }
 
 var bloomFlowerAnim = new FlowerAnimationTest();
-// bloomFlowerAnim.setupBasicFlower();
 bloomFlowerAnim.setupAlienFlower();
 
 function pickBloomFlower(flowerIndex, svgVBParams) {
     activeFlower = flowers[flowerIndex];
 }
-
-
-
-/*
-
-var topPathFlower = document.getElementById('topPathFlower');
-var bloomFlowerAnim = new BloomAnimation();
-
-console.log("bloomFlowerAnim", bloomFlowerAnim);
-
-// bloomFlowerAnim.playInflorecenceAnim();
-
-// this.basicFlowerLeafs = this.createAndGetBasicFlowerLeafs();
-
-BloomAnimation.prototype = {
-    createAndGetBasicFlowerStems: function () {
-        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
-
-        return [mainStem];
-    },
-    setupInflorecence: function () { 
-        this.phazeIndex = 0;
-
-        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
-        gsap.set(longFlowerstem, { opacity: 0 });
-        gsap.set(topPathFlower, { opacity: 0 });
-
-    },
-    animateInflorecence: function () {
-         // opacity settes fra 0 til 1 slik at stilken blir synlig
-        gsap.set(longFlowerstem, { opacity: 1 });
-        // visningen av stilken animeres
-        gsap.from(longFlowerstem, 1, {drawSVG: 0, onComplete: this.showInflorecence, callbackScope: this});
-    },
-    showInflorecence: function () {
-        gsap.to(topPathFlower, { duration: 1, opacity: 1, onComplete: this.finalInflorecencePhase, callbackScope: this });
-    },
-    finaInflorecencePhase: function () {
-        console.log("finalInflorecencePhase");
-        // this.setButtonText("Start igjen")
-        // this.phazeIndex += 1;
-    },
-    playInflorecenceAnim: function () {
-        // TODO legg inn her
-        console.log("playInflorecenceAnim");
-        
-
-        if (this.phazeIndex < this.phases.length) {
-            this.phases[this.phazeIndex]();
-        } else {
-            this.resett();
-        }
-            
-    }
-}
-*/
-
-/*
-function playBloom() {
-    console.log("playBloom");
-    pickBloomFlower(0, '0 0 210 297');
-
-    // TODO legg inn her
-
-    // bloomFlowerAnim.playInflorecenceAnim();
-}
-
-
-    */
-
 
 /** flower1 og flower2 */
 
