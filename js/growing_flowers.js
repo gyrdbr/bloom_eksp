@@ -76,17 +76,17 @@ FlowerAnimationTest.prototype = {
      alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(longFlowerstem, { duration: 1, y: 0,  
+        gsap.to(longFlowerstem, { duration: durationTime, y: 0,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
         });
-        gsap.to(topPathFlower, { duration: 1, y: 0});
+        gsap.to(topPathFlower, { duration: durationTime, y: 0});
         
     },
     alienPhase1b: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: 1, delay: 0.5, ease: "SlowMo", transformOrigin: "50% bottom",
+                    {scale: 1, duration: durationTime, delay: 0.5, ease: "SlowMo", transformOrigin: "50% bottom",
                         onComplete: this.finalPhase, 
                         callbackScope: this
             });
@@ -95,14 +95,14 @@ FlowerAnimationTest.prototype = {
         /* TODO: soerg foer at blomsten vokser fra midten og ut, ikke fra ytterste hoyre */
         this.button.classList.add('disabled');
 
-        gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
+        gsap.to(pathLeft1, { duration: durationTime + 2, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
 
     },
     alienPhase3b: function () {
 
-        gsap.to(leftPath1Flower, { duration: 1, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
+        gsap.to(leftPath1Flower, { duration: durationTime, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
