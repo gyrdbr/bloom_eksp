@@ -1,4 +1,6 @@
 // gsap.config({ trialWarn: false });
+// TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
+
 
 /* blomsterstand */
 
@@ -22,9 +24,9 @@ var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
 var topPathFlowerMovable = "#topPathFlowerMovable";
 var delay = 0;
-var durationTime = 1;
 
 let topBlomstMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
+
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -33,6 +35,7 @@ function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
 
+    this.bloomPhases = [];
     this.basicFlowerStems = [];
     this.alienphases = [];
 
@@ -52,7 +55,7 @@ FlowerAnimationTest.prototype = {
     },
     updatePhase: function () {
 
-        if (this.alienphases && this.phazeIndex <  this.alienphases.length) {
+        if ((this.bloomPhases  || this.alienphases) && this.phazeIndex < (this.bloomPhases.length || this.alienphases.length)) {
             this.phazeIndex += 1;
             this.setButtonText("Fase ");
         }
@@ -62,39 +65,82 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex += 1;
         this.setButtonText("Start igjen ")
     },
+    createAndGetBasicFlowerStems: function () {
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 0.4);
+
+        return [mainStem];
+    },
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
     },
+    animatePhase(newScale, duration) {
+        this.button.classList.add('disabled');
+        gsap.set(longFlowerstem, { opacity: 1 });
+        
+        this.basicFlowerStems.forEach((stem, index) => {
+            if (index === 0) {
+                gsap.to(stem.id, {
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin,
+                    onComplete: this.updatePhase, callbackScope: this
+                });
+            } else {
+                gsap.to(stem.id, {
+                    duration: duration, scale: newScale, transformOrigin: stem.transformOrigin
+                });
+            }
+        });
+    },
+    setupBasicFlower: function () { 
+        // TODO: fase1 skal la blomsten vokse fra hoyde 0 til der den er etter phase 1. 
+        // Full hoyde skal ikke gis ennaa
+        this.phazeIndex = 0;
+        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
+
+        var phase1 = () => {
+            this.animatePhase(0.5, 3);
+        }
+
+        this.bloomPhases = [phase1];
+
+
+        gsap.set(longFlowerstem, { opacity: 1 });
+
+         this.basicFlowerStems.forEach(stem => {
+            gsap.set(stem.id, { scale: stem.startScale, transformOrigin: stem.transformOrigin });
+        });
+
+    },
      alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(longFlowerstem, { duration: durationTime, y: 0,  
+        gsap.to(longFlowerstem, { duration: 1, y: 0,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
         });
-        gsap.to(topPathFlower, { duration: durationTime, y: 0});
+        gsap.to(topPathFlower, { duration: 1, y: 0});
         
     },
     alienPhase1b: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, transformOrigin: "50% bottom",
+                    {scale: 1, duration: 1, delay: 0.5, ease: "SlowMo", transformOrigin: "50% bottom",
                         onComplete: this.finalPhase, 
                         callbackScope: this
             });
     },
     alienPhase2: function () {
+        /* TODO: soerg foer at blomsten vokser fra midten og ut, ikke fra ytterste hoyre */
         this.button.classList.add('disabled');
 
-        gsap.to(pathLeft1, { duration: durationTime + 2, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
+        gsap.to(pathLeft1, { duration: 3, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
             onComplete: this.finalPhase, callbackScope: this
          });
 
     },
     alienPhase3b: function () {
 
-        gsap.to(leftPath1Flower, { duration: durationTime, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
+        gsap.to(leftPath1Flower, { duration: 1, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
@@ -122,11 +168,81 @@ FlowerAnimationTest.prototype = {
 }
 
 var bloomFlowerAnim = new FlowerAnimationTest();
+// bloomFlowerAnim.setupBasicFlower();
 bloomFlowerAnim.setupAlienFlower();
 
 function pickBloomFlower(flowerIndex, svgVBParams) {
     activeFlower = flowers[flowerIndex];
 }
+
+
+
+/*
+
+var topPathFlower = document.getElementById('topPathFlower');
+var bloomFlowerAnim = new BloomAnimation();
+
+console.log("bloomFlowerAnim", bloomFlowerAnim);
+
+// bloomFlowerAnim.playInflorecenceAnim();
+
+// this.basicFlowerLeafs = this.createAndGetBasicFlowerLeafs();
+
+BloomAnimation.prototype = {
+    createAndGetBasicFlowerStems: function () {
+        let mainStem = new InflorescenceLeaf("#pathHovedStilk", "100% bottom", 1);
+
+        return [mainStem];
+    },
+    setupInflorecence: function () { 
+        this.phazeIndex = 0;
+
+        this.basicFlowerStems = this.createAndGetBasicFlowerStems();
+        gsap.set(longFlowerstem, { opacity: 0 });
+        gsap.set(topPathFlower, { opacity: 0 });
+
+    },
+    animateInflorecence: function () {
+         // opacity settes fra 0 til 1 slik at stilken blir synlig
+        gsap.set(longFlowerstem, { opacity: 1 });
+        // visningen av stilken animeres
+        gsap.from(longFlowerstem, 1, {drawSVG: 0, onComplete: this.showInflorecence, callbackScope: this});
+    },
+    showInflorecence: function () {
+        gsap.to(topPathFlower, { duration: 1, opacity: 1, onComplete: this.finalInflorecencePhase, callbackScope: this });
+    },
+    finaInflorecencePhase: function () {
+        console.log("finalInflorecencePhase");
+        // this.setButtonText("Start igjen")
+        // this.phazeIndex += 1;
+    },
+    playInflorecenceAnim: function () {
+        // TODO legg inn her
+        console.log("playInflorecenceAnim");
+        
+
+        if (this.phazeIndex < this.phases.length) {
+            this.phases[this.phazeIndex]();
+        } else {
+            this.resett();
+        }
+            
+    }
+}
+*/
+
+/*
+function playBloom() {
+    console.log("playBloom");
+    pickBloomFlower(0, '0 0 210 297');
+
+    // TODO legg inn her
+
+    // bloomFlowerAnim.playInflorecenceAnim();
+}
+
+
+    */
 
 
 /** flower1 og flower2 */
@@ -178,11 +294,43 @@ FlowerAnimation.prototype = {
     },
     resett: function () {
         this.phazeIndex = 0;
-        this.setupAlienFlower();
+        if (activeFlower.getAttribute('id') === 'basicFlower') {
+            this.setupBasicFlower();
+        } else {
+            this.setupAlienFlower();
+        }
     },
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
+    },
+    setupBasicFlower: function () {
+        this.phazeIndex = 0;
+        this.basicFlowerLeafs = this.createAndGetBasicFlowerLeafs();
+
+        var phase1 = () => {
+            this.animatePhase(0.5, 3);
+        }
+
+        var phase2 = () => {
+            this.animatePhase(1, 3);
+        }
+
+        var phase3 = () => {
+            this.button.classList.add('disabled');
+            this.animateStem();
+        }
+
+        this.basicphases = [phase1, phase2, phase3];
+
+        this.setButtonText("Fase ");
+
+        gsap.set("#stem", { opacity: 0 });
+        gsap.set("#flower", { opacity: 0 });
+
+        this.basicFlowerLeafs.forEach(leaf => {
+            gsap.set(leaf.id, { scale: leaf.startScale, transformOrigin: leaf.transformOrigin });
+        });
     },
     animatePhase(newScale, duration) {
 
@@ -207,7 +355,7 @@ FlowerAnimation.prototype = {
         gsap.from("#stem", 1, {drawSVG: 0, onComplete: this.finalPhase, callbackScope: this});
     },
     showFlower: function () {
-        gsap.to("#flower", { duration: durationTime, opacity: 1, onComplete: this.finalPhase, callbackScope: this });
+        gsap.to("#flower", { duration: 1, opacity: 1, onComplete: this.finalPhase, callbackScope: this });
     },
     finalPhase: function () {
         this.phazeIndex += 1;
@@ -274,41 +422,41 @@ FlowerAnimation.prototype = {
     alienPhase1: function () {
         var dist = 9;
         this.button.classList.add('disabled');
-        gsap.to("#alien-tuber1", { duration: durationTime, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
-        gsap.to("#alien-stem1", { duration: durationTime, y: 9 - dist });
+        gsap.to("#alien-tuber1", { duration: 1, y: 9 - dist, onComplete: this.alienPhase1b, callbackScope: this });
+        gsap.to("#alien-stem1", { duration: 1, y: 9 - dist });
 
-        gsap.to("#alien-tuber2", { duration: durationTime, y: 16 - dist });
+        gsap.to("#alien-tuber2", { duration: 1, y: 16 - dist });
     },
     alienPhase1b: function () {
         var fullScale = 0.89;
 
-        gsap.to("#alien-tuber2", { duration: durationTime + 2, scale: 1, transformOrigin: "50% bottom", y: 0,
+        gsap.to("#alien-tuber2", { duration: 3, scale: 1, transformOrigin: "50% bottom", y: 0,
         onComplete: this.updatePhase, callbackScope: this });
-        gsap.to("#alien-stem1", { duration: durationTime + 2, scale: 1, transformOrigin: "50% 80%", y: 0 });
+        gsap.to("#alien-stem1", { duration: 3, scale: 1, transformOrigin: "50% 80%", y: 0 });
 
-        gsap.to("#alien-tuber1-right-leaf", { duration: durationTime + 2, scale: fullScale, transformOrigin: "0 90%" });
-        gsap.to("#alien-tuber1-left-leaf", { duration: durationTime + 2, scale: fullScale, transformOrigin: "15% bottom" });
+        gsap.to("#alien-tuber1-right-leaf", { duration: 3, scale: fullScale, transformOrigin: "0 90%" });
+        gsap.to("#alien-tuber1-left-leaf", { duration: 3, scale: fullScale, transformOrigin: "15% bottom" });
     },
     alienPhase2: function () {
         this.button.classList.add('disabled');
 
-        gsap.to("#alien-stem2", { duration: durationTime + 2, scale: 1, transformOrigin: "50% 80%", onComplete: this.alienPhase2b, callbackScope: this });
-        gsap.to("#alien-tuber3", { duration: durationTime + 2, scale: 0.2, transformOrigin: "50% bottom", y: 0 });
+        gsap.to("#alien-stem2", { duration: 3, scale: 1, transformOrigin: "50% 80%", onComplete: this.alienPhase2b, callbackScope: this });
+        gsap.to("#alien-tuber3", { duration: 3, scale: 0.2, transformOrigin: "50% bottom", y: 0 });
 
-        gsap.to("#alien-tuber2-right-leaf", { duration: durationTime + 2, scale: 0.7, transformOrigin: "0 90%" });
-        gsap.to("#alien-tuber2-left-leaf", { duration: durationTime + 2, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
+        gsap.to("#alien-tuber2-right-leaf", { duration: 3, scale: 0.7, transformOrigin: "0 90%" });
+        gsap.to("#alien-tuber2-left-leaf", { duration: 3, scale: 0.7, rotation: -50, transformOrigin: "15% bottom" });
 
     },
     alienPhase2b: function () {
-        gsap.to("#alien-tuber3", { duration: durationTime + 2, scale: 1, transformOrigin: "50% bottom",
+        gsap.to("#alien-tuber3", { duration: 3, scale: 1, transformOrigin: "50% bottom",
         onComplete: this.updatePhase, callbackScope: this  });
     },
     alienPhase3: function () {
         this.button.classList.add('disabled');
-        gsap.to("#alien-tuber4", { duration: durationTime + 2, scale: 1, transformOrigin: "50% 90%", onComplete: this.finalPhase, callbackScope: this });
+        gsap.to("#alien-tuber4", { duration: 3, scale: 1, transformOrigin: "50% 90%", onComplete: this.finalPhase, callbackScope: this });
 
-        gsap.to("#alien-tuber3-right-leaf", { duration: durationTime + 2, scale: 1, transformOrigin: "0 90%" });
-        gsap.to("#alien-tuber3-left-leaf", {duration: durationTime + 2, scale: 0.9, rotation: -50, transformOrigin: "15% bottom"});
+        gsap.to("#alien-tuber3-right-leaf", { duration: 3, scale: 1, transformOrigin: "0 90%" });
+        gsap.to("#alien-tuber3-left-leaf", {duration: 3, scale: 0.9, rotation: -50, transformOrigin: "15% bottom"});
     },
     playAnim: function () {
         if (this.phazeIndex < this.phases.length) {
@@ -320,6 +468,7 @@ FlowerAnimation.prototype = {
 }
 
 var bFlowerAnim = new FlowerAnimation();
+bFlowerAnim.setupBasicFlower();
 bFlowerAnim.setupAlienFlower();
 
 
