@@ -1,6 +1,4 @@
 // gsap.config({ trialWarn: false });
-// TODO lag variable for inflorescence og animer denne slik som flower1 og flower2. Lag en knapp for å starte animasjonen av inflorescence og legg denne i htmlen. Lag en funksjon som animerer inflorescence og kall denne i playAnim() når inflorescence er valgt.
-
 
 /* blomsterstand */
 
@@ -27,7 +25,6 @@ var delay = 0;
 var durationTime = 1;
 
 let topBlomstMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
-
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -68,7 +65,7 @@ FlowerAnimationTest.prototype = {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.classList.remove('disabled');
     },
-     alienPhase1: function () {
+    alienPhase1: function () {
         this.button.classList.add('disabled');
 
         gsap.to(longFlowerstem, { duration: durationTime, y: 0,  
