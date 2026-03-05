@@ -124,8 +124,8 @@ FlowerAnimationTest.prototype = {
 var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
 
-function pickBloomFlower(flowerIndex, svgVBParams) {
-    activeFlower = flowers[flowerIndex];
+function playFlowerBloom() {
+    bloomFlowerAnim.playAnim();
 }
 
 /** flower1 og flower2 */
@@ -356,8 +356,6 @@ bFlowerAnim.setupAlienFlower();
 
 
 function playBloom() {
-
-    pickBloomFlower(0, '0 0 210 297');
 
     bloomFlowerAnim.playAnim();
 }

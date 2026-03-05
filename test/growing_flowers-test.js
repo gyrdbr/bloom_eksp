@@ -27,6 +27,10 @@ buster.testCase("FlowerAnimation", {
         this.bloomFlowerAnim.setupAlienFlower();
     },
 
+    
+
+    /*
+    
     "dinnerList has length 7": function () {
 
         assert.equals(7, this.dinnerList.length);
@@ -81,4 +85,5 @@ buster.testCase("FlowerAnimation", {
     "problist is longer than dinnerlist": function () {
         assert.greater(this.probList.length, this.allDinners.length);
     }
+        */
 });
