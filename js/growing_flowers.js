@@ -124,6 +124,8 @@ FlowerAnimationTest.prototype = {
 var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
 
+console.log("bloomFlowerAnim", bloomFlowerAnim, "phazeIndex", bloomFlowerAnim.phazeIndex);
+
 function playFlowerBloom() {
     bloomFlowerAnim.playAnim();
 }

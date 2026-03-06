@@ -27,7 +27,10 @@ buster.testCase("FlowerAnimation", {
         this.bloomFlowerAnim.setupAlienFlower();
     },
 
-    
+    "phazeIndex is 0 before playAnim is called": function () {
+
+        assert.equals(0, this.bloomFlowerAnim.phazeIndex);
+    }
 
     /*
     
