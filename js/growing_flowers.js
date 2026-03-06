@@ -94,7 +94,7 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase2b: function () {
 
-        gsap.to(leftPath1Flower, { scale: 1, duration: durationTime, ease: "expo.out",  transformOrigin: "100% bottom", 
+        gsap.to(leftPath1Flower, { scale: 1, duration: durationTime,
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
@@ -118,7 +118,7 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
         gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom" });
 
-        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left", x: 56,y: 35 });
+        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
  
     }
