@@ -79,7 +79,7 @@ FlowerAnimationTest.prototype = {
 
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: durationTime, delay: 0.5, ease: "SlowMo", transformOrigin: "50% bottom",
-                        onComplete: this.finalPhase, 
+                        onComplete: this.updatePhase, 
                         callbackScope: this
             });
     },
@@ -87,14 +87,14 @@ FlowerAnimationTest.prototype = {
         /* TODO: soerg foer at blomsten vokser fra midten og ut, ikke fra ytterste hoyre */
         this.button.classList.add('disabled');
 
-        gsap.to(pathLeft1, { duration: durationTime + 2, scale: 1, transformOrigin: "100% 100%", x: 55,y: 30,
-            onComplete: this.finalPhase, callbackScope: this
+        gsap.to(pathLeft1, { duration: durationTime, scale: 1, scaleX: 1, transformOrigin: "left", 
+            onComplete: this.alienPhase2b, callbackScope: this
          });
 
     },
-    alienPhase3b: function () {
+    alienPhase2b: function () {
 
-        gsap.to(leftPath1Flower, { duration: durationTime, scale: 1, transformOrigin: "100% 100%", x: 30,y: 30,
+        gsap.to(leftPath1Flower, { scale: 1, duration: durationTime, delay: 0.5, ease: "SlowMo",  transformOrigin: "100% 100%", 
         onComplete: this.finalPhase, callbackScope: this });
     },
     setupAlienFlower: function () {
@@ -111,12 +111,15 @@ FlowerAnimationTest.prototype = {
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1];
+        this.alienphases = [phase1, phase2];
 
         this.setButtonText("Fase ");
 
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
         gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom" });
+
+        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left", x: 59,y: 30 });
+        gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% 100%" });
  
     }
 }
