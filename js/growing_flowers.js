@@ -115,8 +115,9 @@ FlowerAnimationTest.prototype = {
 
         this.setButtonText("Fase ");
 
-        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", y: 240 });
-        gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom" });
+        // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
+        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
+        gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
