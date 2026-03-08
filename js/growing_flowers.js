@@ -97,7 +97,7 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { scale: 1, duration: durationTime,
         onComplete: this.finalPhase, callbackScope: this });
     },
-    alienSetupStems: function () {
+    alienSetupStems1: function () {
         const groupElement = document.getElementById('g2');
 
         if (groupElement) {
@@ -109,7 +109,7 @@ FlowerAnimationTest.prototype = {
             console.error('Group element with ID "myGroup" not found.');
         }
     },
-    alienSetupFlowers: function () {
+    alienSetupFlowers1: function () {
         const groupElement = document.getElementById('g4');
 
         if (groupElement) {
@@ -123,12 +123,43 @@ FlowerAnimationTest.prototype = {
             console.error('Group element with ID "myGroup" not found.');
         }
     },
+    alienSetupPathScales1: function () {
+        const stemGroupElement = document.getElementById('g2');
+        const flowerGroupElement = document.getElementById('g4');
+
+        /**
+         *  gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
+            gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
+         */
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = path.id;
+                console.log(`Stilk path ${index + 1} 'id' attribute:`, id);
+            });
+        } else {
+            console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            console.log(`Found ${paths.length} flower paths in the group:`);
+            paths.forEach((path, index) => {
+                console.log(`Flower path ${index + 1} 'd' attribute:`, path.getAttribute('d'));
+            });
+        } else {
+            console.error('Group element with ID "myGroup" not found.');
+        }
+    },
     setupAlienFlower: function () {
 
         this.phazeIndex = 0;
 
-        this.alienSetupStems();
-        this.alienSetupFlowers();
+        // this.alienSetupStems1();
+        // this.alienSetupFlowers1();
+        this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -145,6 +176,7 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase ");
 
         // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
+        // viser under utvikling. skal skjules i produksjon
         // gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
         gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
