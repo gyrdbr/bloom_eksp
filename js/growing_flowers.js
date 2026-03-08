@@ -97,9 +97,38 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { scale: 1, duration: durationTime,
         onComplete: this.finalPhase, callbackScope: this });
     },
+    alienSetupStems: function () {
+        const groupElement = document.getElementById('g2');
+
+        if (groupElement) {
+            const paths = groupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                console.log(`Stilk path ${index + 1} 'd' attribute:`, path.getAttribute('d'));
+            });
+        } else {
+            console.error('Group element with ID "myGroup" not found.');
+        }
+    },
+    alienSetupFlowers: function () {
+        const groupElement = document.getElementById('g4');
+
+        if (groupElement) {
+            const paths = groupElement.querySelectorAll('path');
+
+            console.log(`Found ${paths.length} flower paths in the group:`);
+            paths.forEach((path, index) => {
+                console.log(`Flower path ${index + 1} 'd' attribute:`, path.getAttribute('d'));
+            });
+        } else {
+            console.error('Group element with ID "myGroup" not found.');
+        }
+    },
     setupAlienFlower: function () {
 
         this.phazeIndex = 0;
+
+        this.alienSetupStems();
+        this.alienSetupFlowers();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -116,7 +145,7 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase ");
 
         // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
-        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
+        // gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
         gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
