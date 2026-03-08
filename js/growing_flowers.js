@@ -20,11 +20,11 @@ class BlomsterstandBlomst {
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
-var topPathFlowerMovable = "#topPathFlowerMovable";
+var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 1;
 
-let topBlomstMovable = new BlomsterstandBlomst("#topPathFlowerMovable", "0 0");
+let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 
 var pathLeft1 = "#pathLeft1";
 var leftPath1Flower = "#leftPath1Flower";
@@ -145,9 +145,9 @@ FlowerAnimationTest.prototype = {
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
-            console.log(`Found ${paths.length} flower paths in the group:`);
             paths.forEach((path, index) => {
-                console.log(`Flower path ${index + 1} 'd' attribute:`, path.getAttribute('d'));
+                const id = path.id;
+                console.log(`Flower path ${index + 1} 'id' attribute:`, id);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -178,7 +178,7 @@ FlowerAnimationTest.prototype = {
         // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
         // viser under utvikling. skal skjules i produksjon
         // gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
-        gsap.set("#topPathFlowerMovable", { scale: 0, transformOrigin: "50% bottom", x: -1 });
+        gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
