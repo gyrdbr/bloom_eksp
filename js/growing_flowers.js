@@ -95,9 +95,25 @@ FlowerAnimationTest.prototype = {
     alienPhase2b: function () {
 
         gsap.to(leftPath1Flower, { scale: 1, duration: durationTime,
-        onComplete: this.finalPhase, callbackScope: this });
+        onComplete: this.updatePhase, callbackScope: this });
+    },
+    alienPhase3: function () {
+        this.button.classList.add('disabled');
+        const id = "#pathLeft2";
+        
+        gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, transformOrigin: "left", 
+                        onComplete: this.alienPhase3b, callbackScope: this
+        });
+    },
+    alienPhase3b: function () {
+        const id = "#path2";
+
+         gsap.to(id, { duration: durationTime, scale: 1, 
+            onComplete: this.finalPhase, callbackScope: this
+         });
     },
     alienSetupStems1: function () {
+        const stems = []; // index === 4
         const groupElement = document.getElementById('g2');
 
         if (groupElement) {
@@ -117,13 +133,6 @@ FlowerAnimationTest.prototype = {
             console.error('Group element with ID "myGroup" not found.');
         }
     },
-    alienPhase3b: function () {
-        const id = "#path2";
-
-         gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, transformOrigin: "left", 
-            onComplete: this.finalPhase, callbackScope: this
-         });
-    },
     alienSetupFlowers1: function () {
         const groupElement = document.getElementById('g4');
 
@@ -137,9 +146,12 @@ FlowerAnimationTest.prototype = {
                     console.log(`Flower path ${index} 'id' attribute:`, id);
                     gsap.set(id, { scale: 0.1, transformOrigin: "100% bottom"});
 
+                    /*
                     gsap.to(id, { scale: 1, duration: durationTime,
                         onComplete: this.finalPhase, callbackScope: this });
                     }
+                        */
+                }
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -162,7 +174,7 @@ FlowerAnimationTest.prototype = {
                 if (index === 4) {
                     console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                    gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "left"});
+                    gsap.set(id, { scale: 0.1, scaleX: 0, transformOrigin: "left"});
                 }
             });
         } else {
@@ -190,7 +202,7 @@ FlowerAnimationTest.prototype = {
 
         // this.alienSetupStems1();
         // this.alienSetupFlowers1();
-        // this.alienSetupPathScales1();
+        this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -200,9 +212,13 @@ FlowerAnimationTest.prototype = {
             this.alienPhase2();
         }
 
+        var phase3 = () => {
+            this.alienPhase3();
+        }
+
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2];
+        this.alienphases = [phase1, phase2, phase3];
 
         this.setButtonText("Fase ");
 
@@ -211,7 +227,7 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
-        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
+        gsap.set(pathLeft1, { scale: 0.1, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
  
     }
