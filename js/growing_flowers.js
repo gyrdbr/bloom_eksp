@@ -208,7 +208,7 @@ FlowerAnimationTest.prototype = {
 
         // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
         // viser under utvikling. skal skjules i produksjon
-        gsap.set(longFlowerstem, { scale: 0, transformOrigin: "100% 100%", x: -13,y: 240 });
+        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
