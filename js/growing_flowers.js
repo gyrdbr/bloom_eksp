@@ -171,9 +171,9 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                if (index === 4) {
-                    console.log(`Stilk path ${index} 'id' attribute:`, id);
+                console.log(`Stilk path ${index} 'id' attribute:`, id);
 
+                if (index === 0) {                    
                     gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
                 }
             });
@@ -187,8 +187,8 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                if (index === 0) {
-                    console.log(`Flower path ${index} 'id' attribute:`, id);
+                console.log(`Flower path ${index} 'id' attribute:`, id);
+                if (index === 0) {                    
                     gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
                 }
             });
