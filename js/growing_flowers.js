@@ -101,7 +101,7 @@ FlowerAnimationTest.prototype = {
         this.button.classList.add('disabled');
         const id = "#pathLeft2";
         
-        gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, transformOrigin: "left", 
+        gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase3b, callbackScope: this
         });
     },
@@ -124,7 +124,7 @@ FlowerAnimationTest.prototype = {
                 if (index === 4) {
                     console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                    gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, transformOrigin: "left", 
+                    gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, 
                         onComplete: this.alienPhase3b, callbackScope: this
                     });
                 }
@@ -174,7 +174,7 @@ FlowerAnimationTest.prototype = {
                 if (index === 4) {
                     console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                    gsap.set(id, { scale: 0.1, scaleX: 0, transformOrigin: "left"});
+                    gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
                 }
             });
         } else {
@@ -189,7 +189,7 @@ FlowerAnimationTest.prototype = {
 
                 if (index === 0) {
                     console.log(`Flower path ${index} 'id' attribute:`, id);
-                    gsap.set(id, { scale: 0, transformOrigin: "100% bottom"});
+                    gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
                 }
             });
         } else {
@@ -227,7 +227,7 @@ FlowerAnimationTest.prototype = {
         gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
-        gsap.set(pathLeft1, { scale: 0.1, scaleX: 0, transformOrigin: "left"});
+        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
  
     }
