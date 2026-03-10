@@ -115,17 +115,24 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase4: function () {
         this.button.classList.add('disabled');
-        const id = "#path1"; // stem
+        // const id = "#path1"; // flower
+        const id = "#pathLeft3"; // stem
+        
         
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase4b, callbackScope: this
         });
-        console.log("alienPhase3")
+        
+
+        // gsap.set(id, { duration: durationTime + 3, scale: 0.2 });
+
+        console.log("alienPhase4")
     },
     alienPhase4b: function () {
-        const id = "#path2"; // flower
+        const id = "#path1"; // flower
+        // const id = "#pathLeft3"; // stem
 
-         gsap.to(id, { duration: durationTime, scale: 1, x: -3,
+         gsap.to(id, { duration: durationTime, scale: 0.1,
             onComplete: this.finalPhase, callbackScope: this
          });
     },
@@ -175,7 +182,7 @@ FlowerAnimationTest.prototype = {
                 */
 
                 if (id === "#" + "path1") {
-                    gsap.to(id, { duration: durationTime, scale: 1, 
+                    gsap.to(id, { duration: durationTime, scale: 1,
                         onComplete: this.updatePhase, callbackScope: this
                     });
                 }
@@ -200,9 +207,18 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log(`Stilk path ${index} 'id' attribute:`, id);
+                console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                // gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+
+
+                if (id === "#" + "pathLeft2") {
+                    gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                }
+
+                if (id === "#" + "pathLeft3") {
+                    gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                }
 
             });
         } else {
@@ -224,7 +240,7 @@ FlowerAnimationTest.prototype = {
 
                 
                 if (id === "#" + "path1") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+                    gsap.set(id, { duration: durationTime + 3, scale: 0 });
                 }
 
                 if (id === "#" + "pathLeft2") {
