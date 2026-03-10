@@ -113,20 +113,20 @@ FlowerAnimationTest.prototype = {
          });
     },
     alienSetupStems1: function () {
-        let stemAnims = this.alienSetupFlowers1()
-        const groupElement = document.getElementById('g2');
+        // let stemAnims = this.alienSetupFlowers1()
+        const groupElement = document.getElementById('layer1');
 
         if (groupElement) {
             const paths = groupElement.querySelectorAll('path');
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Stilk path ${index} 'id' attribute:`, id);
+                // console.log(`Stilk path ${index} 'id' attribute:`, id);
 
                 let stemAnim = gsap.to(id, { duration: durationTime, scale: 1, 
-                    onComplete: stemAnims[index], callbackScope: this
+                    onComplete: this.finalPhase, callbackScope: this
                 });
-                stemAnims.push(stemAnim);
+                // stemAnims.push(stemAnim);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -136,25 +136,30 @@ FlowerAnimationTest.prototype = {
     alienSetupFlowers1: function () {
         const flowerAnims = []; // index === 4
         const groupElement = document.getElementById('g4');
-        let phase = this.finalPhase;
+        // let phase = this.finalPhase;
 
         if (groupElement) {
             const paths = groupElement.querySelectorAll('path');
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
+                /*
                 if (index === path.lengt - 1) {
                     phase = this.finalPhase;
                 }
+                    */
 
-                console.log(`Flower path ${index} 'id' attribute:`, id);
+                // console.log(`Flower path ${index} 'id' attribute:`, id);
 
-                if (index === 0) {
-                    gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: phase, callbackScope: this
-                    });
+                var flowerGsap = gsap.to(id, { duration: durationTime, scale: 1, 
+                    onComplete: this.updatePhase, callbackScope: this
+                });
+                flowerAnims.push(flowerGsap);
+
+                if (id === "#" + "path1") {
+                    console.log("hello");
+                    // console.log("flowerGsap", flowerGsap)
                 }
-                // flowerAnims.push(flowerGsap);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -172,7 +177,7 @@ FlowerAnimationTest.prototype = {
 
                 // console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
 
             });
         } else {
@@ -187,7 +192,7 @@ FlowerAnimationTest.prototype = {
 
                 // console.log(`Flower path ${index} 'id' attribute:`, id);
 
-                gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
+                gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
 
             });
         } else {
@@ -198,7 +203,7 @@ FlowerAnimationTest.prototype = {
 
         this.phazeIndex = 0;
 
-        // var stemAnims = this.alienSetupStems1();
+        var stemAnims = this.alienSetupStems1();
 
         // this.alienSetupFlowers1();
         this.alienSetupPathScales1();
@@ -215,6 +220,8 @@ FlowerAnimationTest.prototype = {
         var phase3 = () => {
             this.alienPhase3();
         }
+        // stems[0]
+            
             
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
