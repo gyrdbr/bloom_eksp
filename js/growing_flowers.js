@@ -99,21 +99,21 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase3: function () {
         this.button.classList.add('disabled');
-        const id = "#pathLeft2";
+        const id = "#pathLeft2"; // stem
         
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase3b, callbackScope: this
         });
     },
     alienPhase3b: function () {
-        const id = "#path2";
+        const id = "#path2"; // flower
 
          gsap.to(id, { duration: durationTime, scale: 1, 
             onComplete: this.finalPhase, callbackScope: this
          });
     },
     alienSetupStems1: function () {
-        const stems = []; // index === 4
+        let stemAnims = this.alienSetupFlowers1()
         const groupElement = document.getElementById('g2');
 
         if (groupElement) {
@@ -121,50 +121,47 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                if (index === 4) {
-                    console.log(`Stilk path ${index} 'id' attribute:`, id);
+                console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                    gsap.to(id, { duration: durationTime, scale: 1, scaleX: 1, 
-                        onComplete: this.alienPhase3b, callbackScope: this
-                    });
-                }
+                let stemAnim = gsap.to(id, { duration: durationTime, scale: 1, 
+                    onComplete: stemAnims[index], callbackScope: this
+                });
+                stemAnims.push(stemAnim);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
         }
+        return stemAnims;
     },
     alienSetupFlowers1: function () {
+        const flowerAnims = []; // index === 4
         const groupElement = document.getElementById('g4');
+        let phase = this.finalPhase;
 
         if (groupElement) {
             const paths = groupElement.querySelectorAll('path');
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-
-                if (index === 0) {
-                    console.log(`Flower path ${index} 'id' attribute:`, id);
-                    gsap.set(id, { scale: 0.1, transformOrigin: "100% bottom"});
-
-                    /*
-                    gsap.to(id, { scale: 1, duration: durationTime,
-                        onComplete: this.finalPhase, callbackScope: this });
-                    }
-                        */
+                if (index === path.lengt - 1) {
+                    phase = this.finalPhase;
                 }
+
+                console.log(`Flower path ${index} 'id' attribute:`, id);
+
+                let flowerGsap = gsap.to(id, { duration: durationTime, scale: 1, 
+                    onComplete: phase, callbackScope: this
+                });
+                flowerAnims.push(flowerGsap);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
         }
+        return flowerAnims;
     },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('g2');
         const flowerGroupElement = document.getElementById('g4');
-
-        /**
-         *  gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
-            gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
-         */
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
@@ -187,10 +184,8 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Flower path ${index} 'id' attribute:`, id);
-                if (index === 0) {                    
-                    gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
-                }
+                console.log(`Flower path ${index} 'id' attribute:`, id);                   
+                gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -200,9 +195,10 @@ FlowerAnimationTest.prototype = {
 
         this.phazeIndex = 0;
 
-        // this.alienSetupStems1();
+        // var stemAnims = this.alienSetupStems1();
+
         // this.alienSetupFlowers1();
-        this.alienSetupPathScales1();
+        // this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -212,9 +208,11 @@ FlowerAnimationTest.prototype = {
             this.alienPhase2();
         }
 
+        
         var phase3 = () => {
             this.alienPhase3();
         }
+            
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
