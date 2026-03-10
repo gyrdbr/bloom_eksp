@@ -162,7 +162,7 @@ FlowerAnimationTest.prototype = {
         return flowerAnims;
     },
     alienSetupPathScales1: function () {
-        const stemGroupElement = document.getElementById('g2');
+        const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
 
         if (stemGroupElement) {
@@ -170,11 +170,10 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Stilk path ${index} 'id' attribute:`, id);
+                // console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                if (index === 4) {                    
-                    gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
-                }
+                gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+
             });
         } else {
            // console.error('Group element with ID "myGroup" not found.');
@@ -186,10 +185,10 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Flower path ${index} 'id' attribute:`, id);
-                if (index === 0) {                 
-                    gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
-                }
+                // console.log(`Flower path ${index} 'id' attribute:`, id);
+
+                gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
+
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
