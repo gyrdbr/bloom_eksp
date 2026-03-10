@@ -152,10 +152,18 @@ FlowerAnimationTest.prototype = {
 
                 // console.log(`Flower path ${index} 'id' attribute:`, id);
 
+                /*
                 var flowerGsap = gsap.to(id, { duration: durationTime, scale: 1, 
                     onComplete: this.updatePhase, callbackScope: this
                 });
-                flowerAnims.push(flowerGsap);
+                */
+
+                if (id === "#" + "path1") {
+                    gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.updatePhase, callbackScope: this
+                    });
+                }
+                // flowerAnims.push(flowerGsap);
 
                 if (id === "#" + "path1") {
                     console.log("hello");
@@ -206,7 +214,7 @@ FlowerAnimationTest.prototype = {
 
         // var stemAnims = this.alienSetupStems1();
 
-        // this.alienSetupFlowers1();
+        this.alienSetupFlowers1();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
