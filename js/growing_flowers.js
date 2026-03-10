@@ -149,10 +149,12 @@ FlowerAnimationTest.prototype = {
 
                 console.log(`Flower path ${index} 'id' attribute:`, id);
 
-                let flowerGsap = gsap.to(id, { duration: durationTime, scale: 1, 
-                    onComplete: phase, callbackScope: this
-                });
-                flowerAnims.push(flowerGsap);
+                if (index === 0) {
+                    gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: phase, callbackScope: this
+                    });
+                }
+                // flowerAnims.push(flowerGsap);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -170,7 +172,7 @@ FlowerAnimationTest.prototype = {
 
                 console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                if (index === 0) {                    
+                if (index === 4) {                    
                     gsap.set(id, { scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
                 }
             });
@@ -184,8 +186,10 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Flower path ${index} 'id' attribute:`, id);                   
-                gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
+                console.log(`Flower path ${index} 'id' attribute:`, id);
+                if (index === 0) {                 
+                    gsap.set(id, { scale: 0, transformOrigin: "left", x: -3});
+                }
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
@@ -198,7 +202,7 @@ FlowerAnimationTest.prototype = {
         // var stemAnims = this.alienSetupStems1();
 
         // this.alienSetupFlowers1();
-        // this.alienSetupPathScales1();
+        this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
