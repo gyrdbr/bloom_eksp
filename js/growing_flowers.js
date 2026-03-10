@@ -198,8 +198,9 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
+                // path1
 
-                // console.log(`Flower path ${index} 'id' attribute:`, id);
+                console.log(`Flower path ${index} 'id' attribute:`, id);
 
                 gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
 
