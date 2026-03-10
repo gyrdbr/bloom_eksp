@@ -214,7 +214,7 @@ FlowerAnimationTest.prototype = {
 
         // var stemAnims = this.alienSetupStems1();
 
-        this.alienSetupFlowers1();
+        // this.alienSetupFlowers1();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
