@@ -104,6 +104,7 @@ FlowerAnimationTest.prototype = {
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase3b, callbackScope: this
         });
+        console.log("alienPhase3")
     },
     alienPhase3b: function () {
         const id = "#path2"; // flower
@@ -124,14 +125,14 @@ FlowerAnimationTest.prototype = {
                 // console.log(`Stilk path ${index} 'id' attribute:`, id);
 
                 let stemAnim = gsap.to(id, { duration: durationTime, scale: 1, 
-                    onComplete: this.finalPhase, callbackScope: this
+                    onComplete: this.updatePhase, callbackScope: this
                 });
                 // stemAnims.push(stemAnim);
             });
         } else {
             console.error('Group element with ID "myGroup" not found.');
         }
-        return stemAnims;
+        // return stemAnims;
     },
     alienSetupFlowers1: function () {
         const flowerAnims = []; // index === 4
@@ -203,7 +204,7 @@ FlowerAnimationTest.prototype = {
 
         this.phazeIndex = 0;
 
-        var stemAnims = this.alienSetupStems1();
+        // var stemAnims = this.alienSetupStems1();
 
         // this.alienSetupFlowers1();
         this.alienSetupPathScales1();
