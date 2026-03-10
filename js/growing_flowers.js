@@ -109,7 +109,7 @@ FlowerAnimationTest.prototype = {
     alienPhase3b: function () {
         const id = "#path2"; // flower
 
-         gsap.to(id, { duration: durationTime, scale: 1, 
+         gsap.to(id, { duration: durationTime, scale: 1, x: -3,
             onComplete: this.finalPhase, callbackScope: this
          });
     },
@@ -196,13 +196,29 @@ FlowerAnimationTest.prototype = {
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
+
+
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
                 // path1
 
                 console.log(`Flower path ${index} 'id' attribute:`, id);
 
-                gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+                gsap.set(id, {scale: 0});
+
+                
+                if (id === "#" + "path1") {
+                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+                }
+
+                if (id === "#" + "pathLeft2") {
+                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+                }
+                    
+
+                // gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+
+                
 
             });
         } else {
