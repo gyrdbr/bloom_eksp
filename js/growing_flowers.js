@@ -177,7 +177,7 @@ FlowerAnimationTest.prototype = {
                 }
             });
         } else {
-            console.error('Group element with ID "myGroup" not found.');
+           // console.error('Group element with ID "myGroup" not found.');
         }
 
         if (flowerGroupElement) {

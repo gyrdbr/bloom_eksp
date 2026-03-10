@@ -52,15 +52,15 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="mm"
-   inkscape:zoom="0.46998942"
-   inkscape:cx="-240.43094"
-   inkscape:cy="306.38988"
+   inkscape:zoom="0.66466541"
+   inkscape:cx="24.82452"
+   inkscape:cy="562.68913"
    inkscape:window-width="1722"
    inkscape:window-height="1000"
    inkscape:window-x="97"
    inkscape:window-y="188"
    inkscape:window-maximized="0"
-   inkscape:current-layer="groupRightTop3"
+   inkscape:current-layer="layer4"
    showgrid="false" />
  <g
    inkscape:groupmode="layer"
@@ -245,7 +245,7 @@
    id="layer4"
    inkscape:label="rectangle"
    style="display:inline"><rect
-     style="display:none;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.67745;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.67745;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
      id="rect2"
      width="47.090942"
      height="216.508"
@@ -307,8 +307,6 @@
        id="path2"
        style="stroke-width:0.114655"
        inkscape:label="leftPath2Flower" /></g><g
-     inkscape:label="groupRightTop3"
-     id="g7" /><g
      id="groupLeftTop"
      transform="translate(130.4745,-36.244371)"><path
        d="m -66.506884,176.156 c 0.176725,-0.24627 0.388982,-0.46541 0.576837,-0.70319 0.07716,-0.01 0.154232,-0.0193 0.231528,-0.0276 0.399784,-0.51696 0.997888,-0.59221 1.605896,-0.50418 0.298201,0.34856 0.679085,0.36531 1.084726,0.51933 0.765072,0.26901 1.537189,0.61691 2.246917,1.0106 0.789465,0.47202 1.520559,1.05146 2.194042,1.67536 0.577024,0.55772 1.108379,1.12791 1.503711,1.83218 0.509309,0.8536 0.824125,1.80037 0.982209,2.77945 0.25113,1.50984 -0.04401,3.07595 -0.77113,4.4181 -0.248775,0.43668 -0.610692,0.81936 -0.910085,1.22611 -0.313299,-0.16075 -0.400629,-0.45915 -0.621881,-0.72901 -0.481082,-0.59035 -1.042652,-1.10139 -1.663263,-1.54164 -0.977238,-0.76615 -2.201977,-1.67639 -3.473104,-1.82108 -0.100565,0.61463 -0.09125,1.2322 -0.04432,1.85107 0.03765,0.50216 0.226883,0.97057 0.264714,1.47411 -0.504592,-0.13863 -0.926203,-0.57518 -1.295436,-0.93187 -0.921196,-0.94885 -1.824969,-1.80466 -2.52134,-2.94187 -0.542672,-0.86537 -0.878241,-1.84044 -0.881048,-2.86789 0.0028,-0.50121 0.06072,-1.02254 0.168925,-1.51175 0.279679,-1.12818 0.717018,-2.21322 1.322094,-3.2063 z"
