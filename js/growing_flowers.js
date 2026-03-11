@@ -22,7 +22,7 @@ var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
 var topPathFlowerMovable = "#path3";
 var delay = 0;
-var durationTime = 1;
+var durationTime = 0.2; // skal vaere 1 i endelig versjon
 
 let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 
@@ -149,7 +149,7 @@ FlowerAnimationTest.prototype = {
     alienPhase6: function () {
         this.button.classList.add('disabled');
         const id = "#path103"; // stem
-        const moveLeft = -3;
+        const moveLeft = -4;
         
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase6b, callbackScope: this, x: moveLeft, y: 7
