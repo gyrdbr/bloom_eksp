@@ -26,8 +26,8 @@ var durationTime = 1;
 
 let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 
-var pathLeft1 = "#pathLeft1";
-var leftPath1Flower = "#leftPath1Flower";
+var pathLeft1 = "#pathLeft1"; // stilk
+var leftPath1Flower = "#leftPath1Flower"; // blomst
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
