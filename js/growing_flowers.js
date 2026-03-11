@@ -138,14 +138,21 @@ FlowerAnimationTest.prototype = {
         this.button.classList.add('disabled');
         // const id = "#path1"; // flower
         const id = "#path104"; // stem
-        const moveLeft = -4;
+        const moveLeft = -3;
         
         gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.finalPhase, callbackScope: this, x: moveLeft
+                        onComplete: this.alienPhase5b, callbackScope: this, x: moveLeft
         });
         
 
         // gsap.set(id, { duration: durationTime + 3, scale: 0.2 });
+    },
+    alienPhase5b: function () {
+        const id = "#path1-8"; // flower
+
+         gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+            onComplete: this.finalPhase, callbackScope: this
+         });
     },
     alienSetupStems1: function () {
         // let stemAnims = this.alienSetupFlowers1()
@@ -225,15 +232,15 @@ FlowerAnimationTest.prototype = {
 
 
                 if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                    gsap.set(id, { duration: durationTime, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
                 }
 
                 if (id === "#" + "pathLeft3") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: moveLeft });
+                    gsap.set(id, { duration: durationTime, scale: 0, scaleX: 0, transformOrigin: "right", x: moveLeft });
                 }
 
                 if (id === "#" + "path104") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "right", x: moveLeft});
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right", x: moveLeft});
                 }
 
             });
@@ -256,12 +263,18 @@ FlowerAnimationTest.prototype = {
 
                 
                 if (id === "#" + "path1") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, x: moveLeftThree });
+                    gsap.set(id, { duration: durationTime, scale: 0, x: moveLeftThree });
                 }
 
                 if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3});
                 }
+
+                if (id === "#" + "path1-8") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3, y: 7});
+                }
+
+
                     
 
                 // gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
