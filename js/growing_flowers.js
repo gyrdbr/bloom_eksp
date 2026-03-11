@@ -22,7 +22,7 @@ var blomsterstandFlower = document.getElementById('wholeInflorecence');
 var longFlowerstem = "#pathHovedStilk";
 var topPathFlowerMovable = "#path3";
 var delay = 0;
-var durationTime = 0.2; // skal vaere 1 i endelig versjon
+var durationTime = 0.5; // skal vaere 1 i endelig versjon
 
 let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 
@@ -142,7 +142,7 @@ FlowerAnimationTest.prototype = {
     alienPhase5b: function () {
         const id = "#path1-8"; // flower
 
-         gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+         gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: -3, y: 7,
             onComplete: this.updatePhase, callbackScope: this
          });
     },
@@ -242,36 +242,14 @@ FlowerAnimationTest.prototype = {
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
-        const moveLeft = -3;
-        const moveLeftThree = -78;
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-
                 // console.log(`Stilk path ${index} 'id' attribute:`, id);
-                // TODO lag metode for alle 
 
-                if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "pathLeft3") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "path104") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "path103") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "path102") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
         } else {
@@ -281,34 +259,10 @@ FlowerAnimationTest.prototype = {
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
-
-
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                gsap.set(id, {scale: 0});
-
-                // TODO lag metode for alle 
-                
-                if (id === "#" + "path1") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
-                }
-
-                if (id === "#" + "path1-8") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
-                }
-
-                if (id === "#" + "path1-5") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#" + "path3-1") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
+                gsap.set(id, { duration: durationTime, scale: 0 });
 
             });
         } else {
