@@ -131,8 +131,21 @@ FlowerAnimationTest.prototype = {
         // const id = "#pathLeft3"; // stem
 
          gsap.to(id, { duration: durationTime, scale: 0.1, x: moveLeftThree,
-            onComplete: this.finalPhase, callbackScope: this
+            onComplete: this.updatePhase, callbackScope: this
          });
+    },
+    alienPhase5: function () {
+        this.button.classList.add('disabled');
+        // const id = "#path1"; // flower
+        const id = "#path104"; // stem
+        const moveLeft = -4;
+        
+        gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.finalPhase, callbackScope: this, x: moveLeft
+        });
+        
+
+        // gsap.set(id, { duration: durationTime + 3, scale: 0.2 });
     },
     alienSetupStems1: function () {
         // let stemAnims = this.alienSetupFlowers1()
@@ -219,6 +232,10 @@ FlowerAnimationTest.prototype = {
                     gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: moveLeft });
                 }
 
+                if (id === "#" + "path104") {
+                    gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "right", x: moveLeft});
+                }
+
             });
         } else {
            // console.error('Group element with ID "myGroup" not found.');
@@ -278,16 +295,20 @@ FlowerAnimationTest.prototype = {
             this.alienPhase3();
         }
 
-         var phase4 = () => {
+        var phase4 = () => {
             this.alienPhase4();
         }
         // stems[0]
+
+         var phase5 = () => {
+            this.alienPhase5();
+        }
             
             
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2, phase3, phase4];
+        this.alienphases = [phase1, phase2, phase3, phase4, phase5];
 
         this.setButtonText("Fase ");
 
