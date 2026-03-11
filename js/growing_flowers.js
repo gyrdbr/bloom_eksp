@@ -127,7 +127,7 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase4b: function () {
         const id = "#path1"; // flower
-        const moveLeftThree = -77;
+        const moveLeftThree = -78;
         // const id = "#pathLeft3"; // stem
 
          gsap.to(id, { duration: durationTime, scale: 0.1, x: moveLeftThree,
@@ -199,7 +199,7 @@ FlowerAnimationTest.prototype = {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
         const moveLeft = -4;
-        const moveLeftThree = -77;
+        const moveLeftThree = -78;
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
@@ -263,7 +263,7 @@ FlowerAnimationTest.prototype = {
         // var stemAnims = this.alienSetupStems1();
 
         // this.alienSetupFlowers1();
-        // this.alienSetupPathScales1();
+        this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -296,13 +296,13 @@ FlowerAnimationTest.prototype = {
         
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
-        /*
+        
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
         
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
-        */
+        
  
     }
 }
