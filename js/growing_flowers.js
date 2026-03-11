@@ -182,6 +182,16 @@ FlowerAnimationTest.prototype = {
             onComplete: this.finalPhase, callbackScope: this
          });
     },
+    alienStemPhases: function() {
+        const pathIds = [pathLeft1];
+        const onCompleteMethods = [this.alienPhase2b];
+
+        this.button.classList.add('disabled');
+
+        gsap.to(pathIds[0], { duration: durationTime, scale: 1, 
+            onComplete: onCompleteMethods[0], callbackScope: this
+         });
+    },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
@@ -223,9 +233,9 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase2 = () => {
-            this.alienPhase2();
+            // denne erstatter alienPhase2. skal brukes til aa erstatte alle i et array?
+            this.alienStemPhases();
         }
-
         
         var phase3 = () => {
             this.alienPhase3();
@@ -234,7 +244,6 @@ FlowerAnimationTest.prototype = {
         var phase4 = () => {
             this.alienPhase4();
         }
-        // stems[0]
 
         var phase5 = () => {
             this.alienPhase5();
