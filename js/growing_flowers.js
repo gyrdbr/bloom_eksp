@@ -143,6 +143,23 @@ FlowerAnimationTest.prototype = {
         const id = "#path1-8"; // flower
 
          gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+            onComplete: this.updatePhase, callbackScope: this
+         });
+    },
+    alienPhase6: function () {
+        this.button.classList.add('disabled');
+        const id = "#path103"; // stem
+        const moveLeft = -3;
+        
+        gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.alienPhase6b, callbackScope: this, x: moveLeft, y: 7
+        });
+
+    },
+    alienPhase6b: function () {
+        const id = "#path1-5"; // flower
+
+         gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
             onComplete: this.finalPhase, callbackScope: this
          });
     },
@@ -230,6 +247,10 @@ FlowerAnimationTest.prototype = {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right", x: moveLeft});
                 }
 
+                  if (id === "#" + "path103") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right", x: moveLeft});
+                }
+
             });
         } else {
            // console.error('Group element with ID "myGroup" not found.');
@@ -245,6 +266,7 @@ FlowerAnimationTest.prototype = {
 
                 gsap.set(id, {scale: 0});
 
+                // TODO lag metode for alle og har x og y i array?
                 
                 if (id === "#" + "path1") {
                     gsap.set(id, { duration: durationTime, scale: 0, x: moveLeftThree });
@@ -256,6 +278,10 @@ FlowerAnimationTest.prototype = {
 
                 if (id === "#" + "path1-8") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3, y: 7});
+                }
+
+                if (id === "#" + "path1-5") {
+                    gsap.set(id, { duration: durationTime, scale: 0, x: -3, y: 7 });
                 }
 
             });
@@ -290,15 +316,19 @@ FlowerAnimationTest.prototype = {
         }
         // stems[0]
 
-         var phase5 = () => {
+        var phase5 = () => {
             this.alienPhase5();
+        }
+
+        var phase6 = () => {
+            this.alienPhase6();
         }
             
             
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2, phase3, phase4, phase5];
+        this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6];
 
         this.setButtonText("Fase ");
 
