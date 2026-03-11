@@ -160,6 +160,23 @@ FlowerAnimationTest.prototype = {
         const id = "#path1-5"; // flower
 
          gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+            onComplete: this.updatePhase, callbackScope: this
+         });
+    },
+    alienPhase7: function () {
+        this.button.classList.add('disabled');
+        const id = "#path102"; // stem
+        const moveLeft = -4;
+        
+        gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.alienPhase7b, callbackScope: this, x: moveLeft, y: 7
+        });
+
+    },
+    alienPhase7b: function () {
+        const id = "#path3-1"; // flower
+
+         gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
             onComplete: this.finalPhase, callbackScope: this
          });
     },
@@ -233,7 +250,7 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log(`Stilk path ${index} 'id' attribute:`, id);
+                // console.log(`Stilk path ${index} 'id' attribute:`, id);
                 // TODO lag metode for alle 
 
                 if (id === "#" + "pathLeft2") {
@@ -249,6 +266,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#" + "path103") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#" + "path102") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
 
@@ -282,6 +303,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#" + "path1-5") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
+                if (id === "#" + "path3-1") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
@@ -324,12 +349,14 @@ FlowerAnimationTest.prototype = {
         var phase6 = () => {
             this.alienPhase6();
         }
-            
-            
+
+        var phase7 = () => {
+            this.alienPhase7();
+        }
 
         // problemet er at playAnim ikke kalles igjen naar den er ferdig med fase 1.
         //  Det er fordi updatePhase ikke oppdaterer phazeIndex for alien phases. Det er fordi updatePhase sjekker bloom
-        this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6];
+        this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7];
 
         this.setButtonText("Fase ");
 
