@@ -267,22 +267,22 @@ FlowerAnimationTest.prototype = {
 
                 gsap.set(id, {scale: 0});
 
-                // TODO lag metode for alle og har x og y i array?
+                // TODO lag metode for alle 
                 
                 if (id === "#" + "path1") {
-                    gsap.set(id, { duration: durationTime, scale: 0, x: moveLeftThree });
+                    gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
                 if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3});
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
                 }
 
                 if (id === "#" + "path1-8") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3, y: 7});
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
                 }
 
                 if (id === "#" + "path1-5") {
-                    gsap.set(id, { duration: durationTime, scale: 0, x: -3, y: 7 });
+                    gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
             });
