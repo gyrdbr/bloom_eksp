@@ -114,21 +114,16 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase4: function () {
         this.button.classList.add('disabled');
-        // const id = "#path1"; // flower
         const id = "#pathLeft3"; // stem
         const moveLeft = -4;
         
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
         });
-        
-
-        // gsap.set(id, { duration: durationTime + 3, scale: 0.2 });
     },
     alienPhase4b: function () {
         const id = "#path1"; // flower
         const moveLeftThree = -78;
-        // const id = "#pathLeft3"; // stem
 
          gsap.to(id, { duration: durationTime, scale: 0.1, x: moveLeftThree,
             onComplete: this.updatePhase, callbackScope: this
@@ -136,16 +131,13 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase5: function () {
         this.button.classList.add('disabled');
-        // const id = "#path1"; // flower
         const id = "#path104"; // stem
         const moveLeft = -3;
         
         gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase5b, callbackScope: this, x: moveLeft
         });
-        
 
-        // gsap.set(id, { duration: durationTime + 3, scale: 0.2 });
     },
     alienPhase5b: function () {
         const id = "#path1-8"; // flower
@@ -155,7 +147,6 @@ FlowerAnimationTest.prototype = {
          });
     },
     alienSetupStems1: function () {
-        // let stemAnims = this.alienSetupFlowers1()
         const groupElement = document.getElementById('layer1');
 
         if (groupElement) {
@@ -178,7 +169,6 @@ FlowerAnimationTest.prototype = {
     alienSetupFlowers1: function () {
         const flowerAnims = []; // index === 4
         const groupElement = document.getElementById('g4');
-        // let phase = this.finalPhase;
 
         if (groupElement) {
             const paths = groupElement.querySelectorAll('path');
@@ -228,9 +218,6 @@ FlowerAnimationTest.prototype = {
 
                 // console.log(`Stilk path ${index} 'id' attribute:`, id);
 
-                // gsap.set(id, { duration: durationTime + 3, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
-
-
                 if (id === "#" + "pathLeft2") {
                     gsap.set(id, { duration: durationTime, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
                 }
@@ -255,9 +242,6 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // path1
-
-                // console.log(`Flower path ${index} 'id' attribute:`, id);
 
                 gsap.set(id, {scale: 0});
 
@@ -273,13 +257,6 @@ FlowerAnimationTest.prototype = {
                 if (id === "#" + "path1-8") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left", x: -3, y: 7});
                 }
-
-
-                    
-
-                // gsap.set(id, { duration: durationTime + 3, scale: 0, transformOrigin: "left", x: -3});
-
-                
 
             });
         } else {
