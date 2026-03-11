@@ -225,7 +225,7 @@ FlowerAnimationTest.prototype = {
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
-        const moveLeft = -4;
+        const moveLeft = -3;
         const moveLeftThree = -78;
 
         if (stemGroupElement) {
@@ -233,22 +233,23 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log(`Stilk path ${index} 'id' attribute:`, id);
+                console.log(`Stilk path ${index} 'id' attribute:`, id);
+                // TODO lag metode for alle 
 
                 if (id === "#" + "pathLeft2") {
-                    gsap.set(id, { duration: durationTime, scale: 0, scaleX: 0, transformOrigin: "right", x: -3 });
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
 
                 if (id === "#" + "pathLeft3") {
-                    gsap.set(id, { duration: durationTime, scale: 0, scaleX: 0, transformOrigin: "right", x: moveLeft });
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
 
                 if (id === "#" + "path104") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right", x: moveLeft});
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
 
-                  if (id === "#" + "path103") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right", x: moveLeft});
+                if (id === "#" + "path103") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
 
             });
