@@ -68,7 +68,7 @@ FlowerAnimationTest.prototype = {
     alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(longFlowerstem, { duration: durationTime, y: 0,  
+        gsap.to(longFlowerstem, { duration: durationTime, y: -9,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
         });
@@ -263,7 +263,7 @@ FlowerAnimationTest.prototype = {
         // var stemAnims = this.alienSetupStems1();
 
         // this.alienSetupFlowers1();
-        this.alienSetupPathScales1();
+        // this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -293,11 +293,16 @@ FlowerAnimationTest.prototype = {
 
         // TODO: denne maa ha x: -13 fordi den flyttes noen pixler naar den vokser
         // viser under utvikling. skal skjules i produksjon
-        gsap.set(longFlowerstem, { scale: 1, transformOrigin: "100% 100%", x: -13,y: 240 });
+        
+        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+
+        /*
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
 
+        
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
+        */
  
     }
 }
