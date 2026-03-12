@@ -192,6 +192,9 @@ FlowerAnimationTest.prototype = {
             onComplete: onCompleteMethods[0], callbackScope: this
          });
     },
+    alienSetupStems1: function () {
+
+    },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('g4');
@@ -233,8 +236,9 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase2 = () => {
+            this.alienPhase2();
             // denne erstatter alienPhase2. skal brukes til aa erstatte alle i et array?
-            this.alienStemPhases();
+            // this.alienStemPhases();
         }
         
         var phase3 = () => {
