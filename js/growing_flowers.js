@@ -68,7 +68,7 @@ FlowerAnimationTest.prototype = {
     alienPhase1: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(longFlowerstem, { duration: durationTime, y: -9,  
+        gsap.to("#pathHovedStilk", { duration: durationTime, y: -9,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
         });
@@ -199,6 +199,7 @@ FlowerAnimationTest.prototype = {
         const alienPhases = [];
         const idGsapArr = [];
 
+        
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
             paths.forEach((path, index) => {
@@ -208,22 +209,32 @@ FlowerAnimationTest.prototype = {
                 // TODO lag metode for alle 
 
                 if (id === "#" + "pathLeft2") {
-                    const stem0 = gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase3b, callbackScope: this
-                    });
+                    const stem0 = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: this.alienPhase3b, callbackScope: this
+                        });
+                    }
+                  
                     idGsapArr.push(stem0);
                 }
 
                 if (id === "#" + "pathLeft3") {
                     const stem1 = 
-                    gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
-                    });
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
+                            });
+                        }
                     idGsapArr.push(stem1);
                 }
 
+                console.log("idGsapArr", idGsapArr[0], idGsapArr[1]);
+            })
+        }
+            
 
-                /*
+                            /*
                 if (id === "#" + "pathLeft3") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
@@ -241,11 +252,9 @@ FlowerAnimationTest.prototype = {
                 }
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 */
-
-            });
-        }
-        return [1, 2];
-        // return idGsapArr;
+        
+        // return [1, 2];
+        return idGsapArr;
     },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
@@ -281,27 +290,27 @@ FlowerAnimationTest.prototype = {
 
         this.phazeIndex = 0;
 
-        // var idGsapArr = this.alienSetupStems1();
+        var idGsapArr = this.alienSetupStems1();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
             this.alienPhase1();
         }
 
+        console.log("phase1", phase1);
+
         var phase2 = () => {
-            // idGsapArr[0]
             this.alienPhase2();
-            // denne erstatter alienPhase2. skal brukes til aa erstatte alle i et array?
-            // this.alienStemPhases();
         }
         
         var phase3 = () => {
-            // dGsapArr[1]
-            this.alienPhase3();
+            idGsapArr[0];
+            // this.alienPhase3();
         }
 
         var phase4 = () => {
-            this.alienPhase4();
+            idGsapArr[1];
+            // this.alienPhase4();
         }
 
         var phase5 = () => {
