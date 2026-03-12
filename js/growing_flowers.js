@@ -192,8 +192,60 @@ FlowerAnimationTest.prototype = {
             onComplete: onCompleteMethods[0], callbackScope: this
          });
     },
-    alienSetupStems1: function () {
+    alienSetupStems1: function () {        const stemGroupElement = document.getElementById('groupStilkLeftBottom');
+        const flowerGroupElement = document.getElementById('g4');
+        const moveLeft = -3;
+        const moveLeftThree = -78;
+        const alienPhases = [];
+        const idGsapArr = [];
 
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                // console.log(`Stilk path ${index} 'id' attribute:`, id);
+                // TODO lag metode for alle 
+
+                if (id === "#" + "pathLeft2") {
+                    const stem0 = gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.alienPhase3b, callbackScope: this
+                    });
+                    idGsapArr.push(stem0);
+                }
+
+                if (id === "#" + "pathLeft3") {
+                    const stem1 = 
+                    gsap.to(id, { duration: durationTime, scale: 1, 
+                        onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
+                    });
+                    idGsapArr.push(stem1);
+                }
+
+
+                /*
+                if (id === "#" + "pathLeft3") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#" + "path104") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#" + "path103") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#" + "path102") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                */
+
+            });
+        }
+        return [1, 2];
+        // return idGsapArr;
     },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
@@ -229,6 +281,7 @@ FlowerAnimationTest.prototype = {
 
         this.phazeIndex = 0;
 
+        // var idGsapArr = this.alienSetupStems1();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
@@ -236,12 +289,14 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase2 = () => {
+            // idGsapArr[0]
             this.alienPhase2();
             // denne erstatter alienPhase2. skal brukes til aa erstatte alle i et array?
             // this.alienStemPhases();
         }
         
         var phase3 = () => {
+            // dGsapArr[1]
             this.alienPhase3();
         }
 
