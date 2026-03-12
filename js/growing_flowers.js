@@ -54,7 +54,6 @@ FlowerAnimationTest.prototype = {
         if ((this.alienphases) && this.phazeIndex < (this.alienphases.length)) {
             this.phazeIndex += 1;
 
-            console.log("updatePhase", "this.phazeIndex", this.phazeIndex);
             this.setButtonText("Fase ");
         }
     },
@@ -79,9 +78,6 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase1b: function () {
 
-
-        console.log("alienPhase1b updatePhase", "this.phazeIndex", this.phazeIndex);
-
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: durationTime, transformOrigin: "50% bottom",
                         onComplete: this.updatePhase, 
@@ -90,8 +86,6 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase2: function () {
         this.button.classList.add('disabled');
-
-        console.log("alienPhase2 updatePhase", "this.phazeIndex", this.phazeIndex);
 
         gsap.to(pathLeft1, { duration: durationTime, scale: 1, 
             onComplete: this.alienPhase2b, callbackScope: this
@@ -103,27 +97,18 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { duration: durationTime, scale: 1,
             onComplete: this.updatePhase, callbackScope: this });
 
-        console.log("alienPhase2b updatePhase", "this.phazeIndex", this.phazeIndex);
-
     },
     alienPhase3: function () {
         this.button.classList.add('disabled');
         // const id = "#pathLeft2"; // stem
-
-        console.log("alienPhase3 updatePhase", "this.phazeIndex", this.phazeIndex);
-
         
-        gsap.to("#pathLeft2", { duration: durationTime, scale: 1, 
+        gsap.to(id, { duration: durationTime, scale: 1, 
                         onComplete: this.alienPhase3b, callbackScope: this
         });
     },
     alienPhase3b: function () {
         const id = "#path2"; // flower
         const moveLeft = -3;
-
-        console.log("why are you not calling alienPhase3b");
-        console.log("alienPhase3b updatePhase", "this.phazeIndex", this.phazeIndex);
-
 
         gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
            onComplete: this.updatePhase, callbackScope: this
@@ -221,30 +206,24 @@ FlowerAnimationTest.prototype = {
                     const stem0 = 
                     function () {
                         gsap.to(id, { duration: durationTime, scale: 1, 
-                            onComplete: this.alienPhase3b, callbackScope: this
+                            onComplete: self.alienPhase3b, callbackScope: self
                         });
                     }
                   
                     idGsapArr.push(stem0);
 
-                    console.log("stem0", stem0);
                 }
 
-                /*
+                
                 if (id === "#" + "pathLeft3") {
                     const stem1 = 
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
+                                onComplete: self.alienPhase4b, callbackScope: self, x: moveLeft
                             });
                         }
                     idGsapArr.push(stem1);
-
-                    console.log("stem1", stem1);
-                }
-                    */
-
-                
+                }                
             })
         }
             
@@ -314,22 +293,16 @@ FlowerAnimationTest.prototype = {
 
         var phase2 = () => {
             this.alienPhase2();
-
-            console.log("alienPhase2", this.alienPhase2);
         }
         
         var phase3 = () => {
             idGsapArr[0]();
 
-            console.log("phase3 alienPhase3");
             // this.alienPhase3();
         }
 
         var phase4 = () => {
-            // idGsapArr[1]();
-
-            // console.log("phase4", "idGsapArr[1]", idGsapArr[1])
-            this.alienPhase4();
+            idGsapArr[1]();
         }
 
         var phase5 = () => {
