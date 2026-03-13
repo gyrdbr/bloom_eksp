@@ -223,16 +223,25 @@ FlowerAnimationTest.prototype = {
                             });
                         }
                     idGsapArr.push(stem1);
-                }                
+                }
+                
+                if (id === "#" + "path104") {
+                    const stem2 =
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.alienPhase5b, callbackScope: self, x: moveLeft
+                        });
+                    }
+                        
+                    idGsapArr.push(stem2);
+                }
+                    
             })
         }
             
             
 
                             /*
-                if (id === "#" + "pathLeft3") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
 
                 if (id === "#" + "path104") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
@@ -306,7 +315,8 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase5 = () => {
-            this.alienPhase5();
+            idGsapArr[2]();
+            // this.alienPhase5();
         }
 
         var phase6 = () => {
