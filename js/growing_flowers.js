@@ -247,27 +247,20 @@ FlowerAnimationTest.prototype = {
                     idGsapArr.push(stem3);
                 }
 
+                if (id === "#" + "path102") {
+                    const stem4 =
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.alienPhase7b, callbackScope: self, x: moveLeft, y: 7
+                        });
+                    }
+                        
+                    idGsapArr.push(stem4);
+                }
+
                     
             })
         }
-            
-            
-
-                            /*
-
-                if (id === "#" + "path104") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "path103") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#" + "path102") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                */
         
         return idGsapArr;
     },
@@ -337,7 +330,8 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase7 = () => {
-            this.alienPhase7();
+            idGsapArr[4]();
+            // this.alienPhase7();
         }
 
         // todo lag tabell for x og y til blomsteranimasjonene
