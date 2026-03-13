@@ -235,6 +235,18 @@ FlowerAnimationTest.prototype = {
                         
                     idGsapArr.push(stem2);
                 }
+
+                if (id === "#" + "path103") {
+                    const stem3 =
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.alienPhase6b, callbackScope: self, x: moveLeft, y: 7
+                        });
+                    }
+                        
+                    idGsapArr.push(stem3);
+                }
+
                     
             })
         }
@@ -320,7 +332,8 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase6 = () => {
-            this.alienPhase6();
+            idGsapArr[3]();
+            // this.alienPhase6();
         }
 
         var phase7 = () => {
