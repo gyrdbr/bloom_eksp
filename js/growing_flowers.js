@@ -87,7 +87,7 @@ FlowerAnimationTest.prototype = {
     alienPhase2: function () {
         this.button.classList.add('disabled');
 
-        gsap.to(pathLeft1, { duration: durationTime, scale: 1, 
+        gsap.to("#pathLeft1", { duration: durationTime, scale: 1, 
             onComplete: this.alienPhase2b, callbackScope: this
          });
 
@@ -98,29 +98,12 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updatePhase, callbackScope: this });
 
     },
-    alienPhase3: function () {
-        this.button.classList.add('disabled');
-        // const id = "#pathLeft2"; // stem
-        
-        gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase3b, callbackScope: this
-        });
-    },
     alienPhase3b: function () {
         const id = "#path2"; // flower
         const moveLeft = -3;
 
         gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
            onComplete: this.updatePhase, callbackScope: this
-        });
-    },
-    alienPhase4: function () {
-        this.button.classList.add('disabled');
-        const id = "#pathLeft3"; // stem
-        const moveLeft = -4;
-        
-        gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase4b, callbackScope: this, x: moveLeft
         });
     },
     alienPhase4b: function () {
@@ -131,16 +114,6 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updatePhase, callbackScope: this
          });
     },
-    alienPhase5: function () {
-        this.button.classList.add('disabled');
-        const id = "#path104"; // stem
-        const moveLeft = -3;
-        
-        gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase5b, callbackScope: this, x: moveLeft
-        });
-
-    },
     alienPhase5b: function () {
         const id = "#path1-8"; // flower
         const moveLeft = -3;
@@ -149,32 +122,12 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updatePhase, callbackScope: this
          });
     },
-    alienPhase6: function () {
-        this.button.classList.add('disabled');
-        const id = "#path103"; // stem
-        const moveLeft = -4;
-        
-        gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase6b, callbackScope: this, x: moveLeft, y: 7
-        });
-
-    },
     alienPhase6b: function () {
         const id = "#path1-5"; // flower
 
          gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
             onComplete: this.updatePhase, callbackScope: this
          });
-    },
-    alienPhase7: function () {
-        this.button.classList.add('disabled');
-        const id = "#path102"; // stem
-        const moveLeft = -4;
-        
-        gsap.to(id, { duration: durationTime, scale: 1, 
-                        onComplete: this.alienPhase7b, callbackScope: this, x: moveLeft, y: 7
-        });
-
     },
     alienPhase7b: function () {
         const id = "#path3-1"; // flower
@@ -199,9 +152,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log(`Stilk path ${index} 'id' attribute:`, id);
-                // TODO lag metode for alle 
-
                 if (id === "#" + "pathLeft2") {
                     const stem0 = 
                     function () {
@@ -213,8 +163,7 @@ FlowerAnimationTest.prototype = {
                     idGsapArr.push(stem0);
 
                 }
-
-                
+            
                 if (id === "#" + "pathLeft3") {
                     const stem1 = 
                         function () {
@@ -257,7 +206,6 @@ FlowerAnimationTest.prototype = {
                         
                     idGsapArr.push(stem4);
                 }
-
                     
             })
         }
