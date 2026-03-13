@@ -154,10 +154,9 @@ FlowerAnimationTest.prototype = {
                             });
 
                         }
-
-                    idGsapArr.push(stem0);
-     
-                    }})
+                        idGsapArr.push(stem0);
+                    }
+                });
                         
         }
 
