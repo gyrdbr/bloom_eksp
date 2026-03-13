@@ -108,9 +108,9 @@ FlowerAnimationTest.prototype = {
     },
     alienPhase4b: function () {
         const id = "#path1"; // flower
-        const moveLeftThree = -78;
+        const moveLeftThree = -77;
 
-         gsap.to(id, { duration: durationTime, scale: 0.1, x: moveLeftThree,
+         gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
             onComplete: this.updatePhase, callbackScope: this
          });
     },
