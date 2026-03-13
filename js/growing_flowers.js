@@ -136,10 +136,36 @@ FlowerAnimationTest.prototype = {
             onComplete: this.finalPhase, callbackScope: this
          });
     },
+    alienSetupFlowers1Left: function () {
+        const flowerGroupElement = document.getElementById('g4');
+        const idGsapArr = [];
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                
+                if (id === "#" + "path2") {
+
+                    const stem0 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
+                                onComplete: this.updatePhase, callbackScope: this
+                            });
+
+                        }
+
+                    idGsapArr.push(stem0);
+     
+                    }})
+                        
+        }
+
+        return idGsapArr;
+    },
     alienSetupStems1: function () {        
         this.button.classList.add('disabled');
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
-        const flowerGroupElement = document.getElementById('g4');
         const moveLeft = -3;
         const moveLeftThree = -78;
         const alienPhases = [];
@@ -164,8 +190,7 @@ FlowerAnimationTest.prototype = {
                   
                 idGsapArr.push(stemFn);
             })
-        }
-        
+        }      
         return idGsapArr;
     },
     alienSetupPathScales1: function () {
@@ -203,6 +228,7 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
 
         var idGsapArr = this.alienSetupStems1();
+        const flowersLeftBottom = this.alienSetupFlowers1Left();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
