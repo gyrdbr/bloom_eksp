@@ -146,67 +146,23 @@ FlowerAnimationTest.prototype = {
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
 
+        var alienPhaseArr = [this.alienPhase3b, this.alienPhase4b, this.alienPhase5b, this.alienPhase6b, this.alienPhase7b];
+        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
+        var yArr = [null, null, null, 7, 7];
         
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
+     
             paths.forEach((path, index) => {
-                const id = "#" +path.id;
-
-                if (id === "#" + "pathLeft2") {
-                    const stem0 = 
+                const id = "#" +path.id;              
+                var stemFn = 
                     function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, 
-                            onComplete: self.alienPhase3b, callbackScope: self
+                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                            onComplete: alienPhaseArr[index], callbackScope: self
                         });
-                    }
+                    };
                   
-                    idGsapArr.push(stem0);
-
-                }
-            
-                if (id === "#" + "pathLeft3") {
-                    const stem1 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: self.alienPhase4b, callbackScope: self, x: moveLeft
-                            });
-                        }
-                    idGsapArr.push(stem1);
-                }
-                
-                if (id === "#" + "path104") {
-                    const stem2 =
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, 
-                            onComplete: self.alienPhase5b, callbackScope: self, x: moveLeft
-                        });
-                    }
-                        
-                    idGsapArr.push(stem2);
-                }
-
-                if (id === "#" + "path103") {
-                    const stem3 =
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, 
-                            onComplete: self.alienPhase6b, callbackScope: self, x: moveLeft, y: 7
-                        });
-                    }
-                        
-                    idGsapArr.push(stem3);
-                }
-
-                if (id === "#" + "path102") {
-                    const stem4 =
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, 
-                            onComplete: self.alienPhase7b, callbackScope: self, x: moveLeft, y: 7
-                        });
-                    }
-                        
-                    idGsapArr.push(stem4);
-                }
-                    
+                idGsapArr.push(stemFn);
             })
         }
         
