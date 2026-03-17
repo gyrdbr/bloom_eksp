@@ -174,6 +174,18 @@ FlowerAnimationTest.prototype = {
                             idGsapArr.push(stem1);
                 }
 
+                if (id === "#path1-8") {
+
+                    const stem2 =
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: 7,
+                                    onComplete: self.updatePhase, callbackScope: self
+                                });
+
+                            };
+                            idGsapArr.push(stem2);
+                }
+
                 });
                         
         }
@@ -188,7 +200,7 @@ FlowerAnimationTest.prototype = {
         var self = this; // bruke denne i loopen?
         var flowers1LeftArr = this.alienSetupFlowers1Left();
 
-        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], this.alienPhase5b, this.alienPhase6b, this.alienPhase7b];
+        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], flowers1LeftArr[2], this.alienPhase6b, this.alienPhase7b];
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
         
