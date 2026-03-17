@@ -29,6 +29,20 @@ let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 var pathLeft1 = "#pathLeft1"; // stilk
 var leftPath1Flower = "#leftPath1Flower"; // blomst
 
+// TODO fjern class fra svg-en. sett i svg-en. naar den skal vises settes display 
+// til inline slik som i blomsterstandStyle
+function blomsterstandStyle () {
+    const rect = document.getElementById('rect2');
+
+    rect.style.display = 'inline';
+
+    console.log("blomsterstandStyle", "rect", rect);
+}
+
+blomsterstandStyle();
+
+
+
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
