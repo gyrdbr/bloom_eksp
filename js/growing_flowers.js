@@ -98,30 +98,6 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updatePhase, callbackScope: this });
 
     },
-    alienPhase3b: function () {
-        const id = "#path2"; // flower
-        const moveLeft = -3;
-
-        gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
-           onComplete: this.updatePhase, callbackScope: this
-        });
-    },
-    alienPhase4b: function () {
-        const id = "#path1"; // flower
-        const moveLeftThree = -77;
-
-        gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
-           onComplete: this.updatePhase, callbackScope: this
-        });
-    },
-    alienPhase5b: function () {
-        const id = "#path1-8"; // flower
-        const moveLeft = -3;
-
-        gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: 7,
-            onComplete: this.updatePhase, callbackScope: this
-        });
-    },
     alienPhase6b: function () {
         const id = "#path1-5"; // flower
 
@@ -186,6 +162,17 @@ FlowerAnimationTest.prototype = {
                             idGsapArr.push(stem2);
                 }
 
+                if (id === "#path1-5") {
+
+                    const stem3 =
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+                                    onComplete: self.updatePhase, callbackScope: self
+                                });
+                            };
+                            idGsapArr.push(stem3);
+                }
+
                 });
                         
         }
@@ -200,7 +187,7 @@ FlowerAnimationTest.prototype = {
         var self = this; // bruke denne i loopen?
         var flowers1LeftArr = this.alienSetupFlowers1Left();
 
-        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], flowers1LeftArr[2], this.alienPhase6b, this.alienPhase7b];
+        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], flowers1LeftArr[2], flowers1LeftArr[3], this.alienPhase7b];
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
         
