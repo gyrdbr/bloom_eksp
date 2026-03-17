@@ -103,14 +103,79 @@ FlowerAnimationTest.prototype = {
         const idGsapArr = [];
         var self = this;
         const moveLeft = -3;
+        const moveDown = 7;
         const moveLeftThree = -77;
+
+        // var xArr = [moveLeft, moveLeftThree, moveLeft, moveLeft, moveLeft];
+        // var yArr = [null, moveDown, moveDown, moveDown];
 
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
             paths.forEach((path, index) => {
                 const id = "#" + path.id;
+                var xVal = moveLeft;
+                var yVal = moveDown;
+                var phase = self.updatePhase;
+                var scaleVal = 1;
+
+                if (id === "#path1") {
+                    scaleVal = 0.11;
+                    xVal = moveLeftThree;
+                    yVal = null; 
+                } else if (id === "#path3-1") {
+                    phase = self.finalPhase;
+                }
                 
+                const flowerFn = 
+                    
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: scaleVal, x: xVal, y: yVal - 5,
+                            onComplete: phase, callbackScope: self
+                        });
+                    };
+
+                console.log("id", id, "y", "index", index, "x", xVal, "y", yVal);
+
+                // TODO bytt ut path1 i svg-en til en med riktig str saa det ikke trengs spesialverdier
+                    
+                
+                /*
+                if (id === "#path1") {
+                    flowerFn =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                } else if (id === "#path3-1") {
+                    flowerFn =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft, y: moveDown,
+                                onComplete: self.finalPhase, callbackScope: self
+                            });
+                        };
+                }  else {
+
+                    // skal vaere 7 for path1-8
+                    console.log("id", id, "y", "index", index, "yArr[index]", yArr[index]);
+
+                    flowerFn = 
+
+                    
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                        
+                }
+                        */
+                idGsapArr.push(flowerFn);
+                
+                
+                
+                /*
                 if (id === "#" + "path2") {
 
                     const stem0 = 
@@ -137,9 +202,11 @@ FlowerAnimationTest.prototype = {
 
                 if (id === "#path1-8") {
 
+                    console.log(id, "y", moveDown);
+
                     const stem2 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: 7,
+                            gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: moveDown,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
 
@@ -151,7 +218,7 @@ FlowerAnimationTest.prototype = {
 
                     const stem3 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft, y: moveDown,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
@@ -162,17 +229,17 @@ FlowerAnimationTest.prototype = {
 
                     const stem4 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -3, y: 7,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft, y: moveDown,
                                 onComplete: self.finalPhase, callbackScope: self
                             });
                         };
                         idGsapArr.push(stem4);
                 }
+                        */
+                        
 
                 });
-
-                
-                        
+               
         }
 
         return idGsapArr;
@@ -241,6 +308,7 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
 
         var idGsapArr = this.alienSetupStems1();
+
         // const flowersLeftBottom = this.alienSetupFlowers1Left();
         this.alienSetupPathScales1();
 
