@@ -110,17 +110,17 @@ FlowerAnimationTest.prototype = {
         const id = "#path1"; // flower
         const moveLeftThree = -77;
 
-         gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
-            onComplete: this.updatePhase, callbackScope: this
-         });
+        gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
+           onComplete: this.updatePhase, callbackScope: this
+        });
     },
     alienPhase5b: function () {
         const id = "#path1-8"; // flower
         const moveLeft = -3;
 
-         gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: 7,
+        gsap.to(id, { duration: durationTime, scale: 1, transformOrigin: "left", x: moveLeft, y: 7,
             onComplete: this.updatePhase, callbackScope: this
-         });
+        });
     },
     alienPhase6b: function () {
         const id = "#path1-5"; // flower
@@ -147,9 +147,8 @@ FlowerAnimationTest.prototype = {
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
-
             paths.forEach((path, index) => {
-                const id = "#" +path.id;
+                const id = "#" + path.id;
                 
                 if (id === "#" + "path2") {
 
@@ -159,11 +158,11 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updatePhase, callbackScope: self
                             });
 
-                        }
+                        };
                         idGsapArr.push(stem0);
                 }
 
-                if (id === "#" + "path1") {}
+                if (id === "#path1") {
 
                     const stem1 =
                             function () {
@@ -171,8 +170,9 @@ FlowerAnimationTest.prototype = {
                                     onComplete: self.updatePhase, callbackScope: self
                                 });
 
-                            }
-                            // idGsapArr.push(stem1);
+                            };
+                            idGsapArr.push(stem1);
+                }
 
                 });
                         
@@ -188,7 +188,7 @@ FlowerAnimationTest.prototype = {
         var self = this; // bruke denne i loopen?
         var flowers1LeftArr = this.alienSetupFlowers1Left();
 
-        var alienPhaseArr = [flowers1LeftArr[0], this.alienPhase4b, this.alienPhase5b, this.alienPhase6b, this.alienPhase7b];
+        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], this.alienPhase5b, this.alienPhase6b, this.alienPhase7b];
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
         
@@ -244,7 +244,7 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
 
         var idGsapArr = this.alienSetupStems1();
-        const flowersLeftBottom = this.alienSetupFlowers1Left();
+        // const flowersLeftBottom = this.alienSetupFlowers1Left();
         this.alienSetupPathScales1();
 
         var phase1 = () => {
