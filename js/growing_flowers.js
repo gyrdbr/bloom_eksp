@@ -341,6 +341,8 @@ FlowerAnimationTest.prototype = {
         
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
+
+        // gsap.set for pathLeft2 og leftPath2Flower
         
  
     }
