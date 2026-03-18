@@ -174,7 +174,7 @@ FlowerAnimationTest.prototype = {
 
                     const stem1 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
 
