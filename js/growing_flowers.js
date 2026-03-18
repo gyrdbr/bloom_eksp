@@ -114,7 +114,7 @@ FlowerAnimationTest.prototype = {
 
     },
     alienSetupFlowers1Left: function () {
-        const flowerGroupElement = document.getElementById('g4');
+        const flowerGroupElement = document.getElementById('groupLeftBottom');
         const idGsapArr = [];
         var self = this;
         const moveLeft = -3;
@@ -256,7 +256,7 @@ FlowerAnimationTest.prototype = {
     },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
-        const flowerGroupElement = document.getElementById('g4');
+        const flowerGroupElement = document.getElementById('groupLeftBottom');
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
@@ -281,7 +281,7 @@ FlowerAnimationTest.prototype = {
 
             });
         } else {
-            console.error('Group element with ID "myGroup" not found.');
+            // console.error('Group element with ID "myGroup" not found.');
         }
     },
     setupAlienFlower: function () {
