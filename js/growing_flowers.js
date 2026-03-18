@@ -36,10 +36,11 @@ function blomsterstandStyle () {
 
     rect.style.display = 'inline';
 
-    console.log("blomsterstandStyle", "rect", rect);
+    // console.log("blomsterstandStyle", "rect", rect);
 }
 
-blomsterstandStyle();
+// TODO rectangle skal med, men maa flyttes oppover etterhvert
+// blomsterstandStyle();
 
 
 
@@ -133,6 +134,7 @@ FlowerAnimationTest.prototype = {
                 var phase = self.updatePhase;
                 var scaleVal = 1;
 
+                /*
                 if (id === "#path1") {
                     scaleVal = 0.11;
                     xVal = moveLeftThree;
@@ -151,45 +153,11 @@ FlowerAnimationTest.prototype = {
 
                 console.log("id", id, "y", "index", index, "x", xVal, "y", yVal);
 
-                // TODO bytt ut path1 i svg-en til en med riktig str saa det ikke trengs spesialverdier
-                    
-                
-                /*
-                if (id === "#path1") {
-                    flowerFn =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 0.11, x: moveLeftThree,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                } else if (id === "#path3-1") {
-                    flowerFn =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft, y: moveDown,
-                                onComplete: self.finalPhase, callbackScope: self
-                            });
-                        };
-                }  else {
-
-                    // skal vaere 7 for path1-8
-                    console.log("id", id, "y", "index", index, "yArr[index]", yArr[index]);
-
-                    flowerFn = 
-
-                    
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                        
-                }
-                        */
                 idGsapArr.push(flowerFn);
-                
-                
-                
-                /*
+                */
+
+                // TODO bytt ut path1 i svg-en til en med riktig str saa det ikke trengs spesialverdier
+
                 if (id === "#" + "path2") {
 
                     const stem0 = 
@@ -249,7 +217,6 @@ FlowerAnimationTest.prototype = {
                         };
                         idGsapArr.push(stem4);
                 }
-                        */
                         
 
                 });
