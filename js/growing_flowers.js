@@ -228,6 +228,7 @@ FlowerAnimationTest.prototype = {
         var self = this;
         const moveLeft = -3;
         const moveDown = 7;
+        const moveLeftThree = -131; // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
 
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
@@ -247,7 +248,19 @@ FlowerAnimationTest.prototype = {
                             });
 
                         };
-                        idGsapArr.push(stem0);
+                    idGsapArr.push(stem0);
+                }
+
+                if (id === "#" + "path3-5") {
+
+                    const stem1 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeftThree,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+
+                        };
+                    idGsapArr.push(stem1);
                 }
             });
         }
@@ -291,7 +304,7 @@ FlowerAnimationTest.prototype = {
         const moveDown = 7;
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
-        var alienPhaseArr = [flowers2LeftArr[0]];
+        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -381,6 +394,10 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
 
                 if (id === "#path1-8-7") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
+                if (id === "#path3-5") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
