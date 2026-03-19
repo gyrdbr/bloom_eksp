@@ -29,14 +29,10 @@ let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 var pathLeft1 = "#pathLeft1"; // stilk
 var leftPath1Flower = "#leftPath1Flower"; // blomst
 
-// TODO fjern class fra svg-en. sett i svg-en. naar den skal vises settes display 
-// til inline slik som i blomsterstandStyle
 function blomsterstandStyle () {
     const rect = document.getElementById('rect2');
 
     rect.style.display = 'inline';
-
-    // console.log("blomsterstandStyle", "rect", rect);
 }
 
 // TODO rectangle skal med, men maa flyttes oppover etterhvert
@@ -155,8 +151,6 @@ FlowerAnimationTest.prototype = {
                 idGsapArr.push(flowerFn);
                 */
 
-                // TODO bytt ut path1 i svg-en til en med riktig str saa det ikke trengs spesialverdier
-
                 if (id === "#" + "path2") {
 
                     const stem0 = 
@@ -260,7 +254,23 @@ FlowerAnimationTest.prototype = {
                             });
 
                         };
+
                     idGsapArr.push(stem1);
+                }
+
+                
+                if (id === "#" + "path3-1-9") {
+
+                    const stem2 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -131, y: 36,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
+                    console.log("alienSetupFlowers2Left updatePhase path3-1-9");
+                    idGsapArr.push(stem2);
+
                 }
             });
         }
@@ -302,15 +312,20 @@ FlowerAnimationTest.prototype = {
         const idGsapArr = [];
         const moveLeft = -3;
         const moveDown = 7;
+        const moveLeftThree = -131;
+
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
-        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1]];
+        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
+
+                console.log("index", index);
+                // TODO: finn ut hvorfor denne kalles to ganger saa indexen oeker
 
                 if (id === "#path89") {
                     const stem0 =
@@ -335,14 +350,16 @@ FlowerAnimationTest.prototype = {
                 if (id === "#path81") {
                     const stem2 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeft,
-                                onComplete: alienPhaseArr[index], callbackScope: self
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[2], callbackScope: self
                             });
                         };
+                        // console.log("hvorfor kalles ikke blomsten her");
                         idGsapArr.push(stem2);
                 }
             })
-        }      
+        }
+
         return idGsapArr;
     },
     alienSetupPathScales1: function () {
@@ -400,8 +417,6 @@ FlowerAnimationTest.prototype = {
         }
 
         if (flowerGroupTopElement) {
-            // TODO
-
             const paths = flowerGroupTopElement.querySelectorAll('path');
 
             paths.forEach((path) => {
@@ -415,6 +430,10 @@ FlowerAnimationTest.prototype = {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
+                if (id === "#path3-1-9") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
             });
         }
     },
@@ -424,6 +443,8 @@ FlowerAnimationTest.prototype = {
 
         var idGsapArr = this.alienSetupStems1();
         var idGsapArrTopLeft = this.alienSetupStems2();
+
+        // console.log("idGsapArrTopLeft", idGsapArrTopLeft);
 
         // const flowersLeftBottom = this.alienSetupFlowers1Left();
         this.alienSetupPathScales1();
@@ -470,12 +491,9 @@ FlowerAnimationTest.prototype = {
         var phase10 = () => {
             idGsapArrTopLeft[2]();
         }
-            
-
-        // todo lag tabell for x og y til blomsteranimasjonene
 
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10];
+        this.alienphases = [phase1, phase8, phase9, phase10 ]; // hva skjer i phase10. blas den ikke oppover
 
         this.setButtonText("Fase ");
 
