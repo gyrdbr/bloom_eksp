@@ -308,6 +308,16 @@ FlowerAnimationTest.prototype = {
                         };
                         idGsapArr.push(stem0);
                 }
+
+                if (id === "#path77") {
+                    const stem1 =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, x: 0,
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+                        idGsapArr.push(stem1);
+                }
             })
         }      
         return idGsapArr;
@@ -353,6 +363,10 @@ FlowerAnimationTest.prototype = {
                 const id = "#" + path.id;
 
                 if (id === "#path89") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#path77") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
             });
@@ -417,10 +431,16 @@ FlowerAnimationTest.prototype = {
             idGsapArrTopLeft[0]();
         }
 
+        
+         var phase9 = () => {
+            idGsapArrTopLeft[1]();
+        }
+            
+
         // todo lag tabell for x og y til blomsteranimasjonene
 
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8];
+        this.alienphases = [phase1, phase8, phase9];
 
         this.setButtonText("Fase ");
 
