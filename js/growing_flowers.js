@@ -233,6 +233,8 @@ FlowerAnimationTest.prototype = {
 
                 if (id === "#" + "path1-8-7") {
 
+                    console.log("index", index, "id", id);
+
                     const stem0 = 
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: moveDown,
@@ -240,17 +242,19 @@ FlowerAnimationTest.prototype = {
                             });
 
                         };
+                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem0);
                 }
 
-                if (id === "#" + "path3-5") {
+                if (id === "#" + "path3-2-7-8") {
+
+                    console.log("index", index, "id", id);
 
                     const stem1 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeftThree,
+                            gsap.to(id, { duration: durationTime, scale: 1,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
-
                         };
 
                     idGsapArr.push(stem1);
@@ -261,7 +265,7 @@ FlowerAnimationTest.prototype = {
 
                     const stem2 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -131, y: 36,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeftThree, y: 36,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
@@ -578,8 +582,8 @@ FlowerAnimationTest.prototype = {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
-                if (id === "#path3-5") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
+                if (id === "#path3-2-7-8") {
+                    gsap.set(id, { duration: durationTime, scale: 0.2 });
                 }
 
                 if (id === "#path3-1-9") {
