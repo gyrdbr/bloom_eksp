@@ -146,8 +146,6 @@ FlowerAnimationTest.prototype = {
                         });
                     };
 
-                console.log("id", id, "y", "index", index, "x", xVal, "y", yVal);
-
                 idGsapArr.push(flowerFn);
                 */
 
@@ -268,7 +266,6 @@ FlowerAnimationTest.prototype = {
                             });
                         };
                     // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
-                    console.log("alienSetupFlowers2Left updatePhase path3-1-9");
                     idGsapArr.push(stem2);
 
                 }
@@ -324,9 +321,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log("index", index);
-                // TODO: finn ut hvorfor denne kalles to ganger saa indexen oeker
-
                 if (id === "#path89") {
                     const stem0 =
                         function () {
@@ -351,10 +345,9 @@ FlowerAnimationTest.prototype = {
                     const stem2 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[2], callbackScope: self
+                                onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        // console.log("hvorfor kalles ikke blomsten her");
                         idGsapArr.push(stem2);
                 }
             })
@@ -444,9 +437,6 @@ FlowerAnimationTest.prototype = {
         var idGsapArr = this.alienSetupStems1();
         var idGsapArrTopLeft = this.alienSetupStems2();
 
-        // console.log("idGsapArrTopLeft", idGsapArrTopLeft);
-
-        // const flowersLeftBottom = this.alienSetupFlowers1Left();
         this.alienSetupPathScales1();
         this.alienSetupPathScales2();
 
@@ -515,8 +505,6 @@ FlowerAnimationTest.prototype = {
 
 var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
-
-// console.log("bloomFlowerAnim", bloomFlowerAnim, "phazeIndex", bloomFlowerAnim.phazeIndex);
 
 function playFlowerBloom() {
     bloomFlowerAnim.playAnim();
