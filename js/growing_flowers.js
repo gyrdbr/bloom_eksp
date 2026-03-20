@@ -379,9 +379,7 @@ FlowerAnimationTest.prototype = {
     alienSetupStems2: function () {        
         const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
         const idGsapArr = [];
-        const moveLeft = -3;
-        const moveDown = 7;
-        const moveLeftThree = -131;
+        var stemFn = null;
 
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
@@ -389,11 +387,13 @@ FlowerAnimationTest.prototype = {
             flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
             flowers2LeftArr[7], flowers2LeftArr[8], flowers2LeftArr[9]];
 
-        // var xArr = [-5, null, -1, null, -1, null, null];
-        // var yArr = [7, null, null, null, null, null, null];
-
-        var xArr = [-5];
-        var yArr = [7];
+        const xYPairObjArr = [
+            { x: -5, y: 7 },
+            { x: false, y: false },
+            { x: -1, y: false },
+            { x: false, y: false },
+            { x: -1, y: false }
+            ];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -401,110 +401,48 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                /*
-                var stemFn = 
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                    };
-                  
+                if (index < xYPairObjArr.length) {
+                    let xy = xYPairObjArr[index];
+                    if (xy.x && xy.y) {
+                        stemFn = 
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, x: xy.x, y: xy.y,
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                                });
+                            };
+                    } else if (xy.x) {
+                        stemFn = 
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, x: xy.x, 
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                                });
+                            };
+                    } else if (xy.y) {
+                        stemFn = 
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, y: xy.y, 
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                                });
+                            };
+                    } else {
+                        stemFn = 
+                            function () {
+                                gsap.to(id, { duration: durationTime, scale: 1, 
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                                });
+                            };
+                    }
+                } else {
+                    stemFn = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+                }
+
                 idGsapArr.push(stemFn);
-                */
-
-                
-                if (id === "#path89") {
-                    const stem0 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: xArr[0], y: yArr[0],
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem0);
-                }
-
-                if (id === "#path77") {
-                    const stem1 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem1);
-                }
-
-                if (id === "#path81") {
-                    const stem2 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem2);
-                }
-
-                if (id === "#path83") {
-                    const stem3 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem3);
-                }
-
-                if (id === "#path82") {
-                    const stem4 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem4);
-                }
-
-                if (id === "#path78") {
-                    const stem5 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem5);
-                }
-
-                if (id === "#path80") {
-                    const stem6 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: null, y: null,
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem6);
-                }
-
-                if (id === "#path79") {
-                    const stem7 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem7);
-                }
-
-                if (id === "#path76") {
-                    const stem8 =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                        idGsapArr.push(stem8);
-                }
-                        
-                        
-            })
+            });
         }
 
         return idGsapArr;
