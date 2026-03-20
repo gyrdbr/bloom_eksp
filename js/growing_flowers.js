@@ -231,24 +231,20 @@ FlowerAnimationTest.prototype = {
                 var yVal = moveDown;
                 var phase = self.updatePhase;
 
+                // blomsten path1-8-7-1-1 er lik x og y som stilken path89, som har blitt flytta litt
                 if (id === "#" + "path1-8-7-1-1") {
-
-                    console.log("index", index, "id", id);
 
                     const stem0 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: moveDown,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
 
                         };
-                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem0);
                 }
 
                 if (id === "#" + "path3-2-7-8") {
-
-                    console.log("index", index, "id", id);
 
                     const stem1 = 
                         function () {
@@ -289,7 +285,7 @@ FlowerAnimationTest.prototype = {
 
                     const stem4 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
@@ -422,7 +418,7 @@ FlowerAnimationTest.prototype = {
                 if (id === "#path81") {
                     const stem2 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
@@ -442,7 +438,7 @@ FlowerAnimationTest.prototype = {
                 if (id === "#path82") {
                     const stem3 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
