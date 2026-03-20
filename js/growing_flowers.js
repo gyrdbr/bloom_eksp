@@ -313,7 +313,7 @@ FlowerAnimationTest.prototype = {
 
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
-        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2]];
+        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2], flowers2LeftArr[3]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -349,6 +349,16 @@ FlowerAnimationTest.prototype = {
                             });
                         };
                         idGsapArr.push(stem2);
+                }
+
+                if (id === "#path83") {
+                    const stem3 =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+                        idGsapArr.push(stem3);
                 }
             })
         }
@@ -404,6 +414,12 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path81") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                // TODO: animere path 83
+
+                if (id === "#path83") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
             });
@@ -482,8 +498,12 @@ FlowerAnimationTest.prototype = {
             idGsapArrTopLeft[2]();
         }
 
+        var phase11 = () => {
+            idGsapArrTopLeft[3]();
+        }
+
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10 ]; // hva skjer i phase10. blas den ikke oppover
+        this.alienphases = [phase1, phase8, phase9, phase10, phase11 ]; // hva skjer i phase10. blas den ikke oppover
 
         this.setButtonText("Fase ");
 
