@@ -282,6 +282,19 @@ FlowerAnimationTest.prototype = {
                     idGsapArr.push(stem3);
 
                 }
+
+                if (id === "#" + "path1-7") {
+
+                    const stem4 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
+                    idGsapArr.push(stem4);
+
+                }
             });
         }
 
@@ -469,6 +482,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path1-8-7-1") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
+                if (id === "#path1-7") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
