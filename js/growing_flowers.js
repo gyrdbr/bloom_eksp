@@ -339,7 +339,8 @@ FlowerAnimationTest.prototype = {
 
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
-        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2], flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5]];
+        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
+            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -395,6 +396,16 @@ FlowerAnimationTest.prototype = {
                             });
                         };
                         idGsapArr.push(stem3);
+                }
+
+                 if (id === "#path78") {
+                    const stem4 =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+                        idGsapArr.push(stem4);
                 }
             })
         }
@@ -458,6 +469,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path82") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#path78") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
             });
@@ -552,8 +567,12 @@ FlowerAnimationTest.prototype = {
             idGsapArrTopLeft[4]();
         }
 
+        var phase13 = () => {
+            idGsapArrTopLeft[5]();
+        }
+
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12 ]; // hva skjer i phase10. blas den ikke oppover
+        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13 ]; // hva skjer i phase10. blas den ikke oppover
 
         this.setButtonText("Fase ");
 
