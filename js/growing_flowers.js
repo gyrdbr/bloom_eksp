@@ -261,11 +261,11 @@ FlowerAnimationTest.prototype = {
                 }
 
                 
-                if (id === "#" + "path3-1-9") {
+                if (id === "#" + "path3-1-9-1-5") {
 
                     const stem2 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: moveLeftThree, y: 36,
+                            gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
@@ -583,10 +583,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path3-2-7-8") {
-                    gsap.set(id, { duration: durationTime, scale: 0.2 });
+                    gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
-                if (id === "#path3-1-9") {
+                if (id === "#path3-1-9-1-5") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
