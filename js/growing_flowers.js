@@ -389,8 +389,11 @@ FlowerAnimationTest.prototype = {
             flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
             flowers2LeftArr[7], flowers2LeftArr[8], flowers2LeftArr[9]];
 
-        var xArr = [-5, null, -1, null, -1, null, null];
-        var yArr = [7, null, null, null, null, null, null];
+        // var xArr = [-5, null, -1, null, -1, null, null];
+        // var yArr = [7, null, null, null, null, null, null];
+
+        var xArr = [-5];
+        var yArr = [7];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -413,7 +416,7 @@ FlowerAnimationTest.prototype = {
                 if (id === "#path89") {
                     const stem0 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: 7,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: xArr[0], y: yArr[0],
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
