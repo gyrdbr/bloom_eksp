@@ -412,7 +412,17 @@ FlowerAnimationTest.prototype = {
                         idGsapArr.push(stem3);
                 }
 
-                 if (id === "#path78") {
+                if (id === "#path78") {
+                    const stem4 =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+                        idGsapArr.push(stem4);
+                }
+
+                if (id === "#path80") {
                     const stem4 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
@@ -487,6 +497,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path78") {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+                }
+
+                if (id === "#path80") {
                     gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                 }
             });
@@ -590,8 +604,12 @@ FlowerAnimationTest.prototype = {
             idGsapArrTopLeft[5]();
         }
 
+         var phase14 = () => {
+            idGsapArrTopLeft[6]();
+        }
+
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13 ]; // hva skjer i phase10. blas den ikke oppover
+        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13, phase14 ]; // hva skjer i phase10. blas den ikke oppover
 
         this.setButtonText("Fase ");
 
