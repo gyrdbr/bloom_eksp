@@ -231,13 +231,13 @@ FlowerAnimationTest.prototype = {
                 var yVal = moveDown;
                 var phase = self.updatePhase;
 
-                if (id === "#" + "path1-8-7") {
+                if (id === "#" + "path1-8-7-1-1") {
 
                     console.log("index", index, "id", id);
 
                     const stem0 = 
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: moveDown,
+                            gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: self.updatePhase, callbackScope: self
                             });
 
@@ -269,7 +269,6 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
-                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem2);
 
                 }
@@ -578,7 +577,7 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path) => {
                 const id = "#" +path.id;
 
-                if (id === "#path1-8-7") {
+                if (id === "#path1-8-7-1-1") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
