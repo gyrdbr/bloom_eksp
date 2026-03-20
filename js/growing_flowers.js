@@ -388,6 +388,9 @@ FlowerAnimationTest.prototype = {
         var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
             flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
             flowers2LeftArr[7], flowers2LeftArr[8], flowers2LeftArr[9]];
+
+        var xArr = [-5, null, -1, null, -1, null, null];
+        var yArr = [7, null, null, null, null, null, null];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -395,10 +398,22 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
+                /*
+                var stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                    };
+                  
+                idGsapArr.push(stemFn);
+                */
+
+                
                 if (id === "#path89") {
                     const stem0 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: moveDown,
+                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: 7,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
@@ -408,7 +423,7 @@ FlowerAnimationTest.prototype = {
                 if (id === "#path77") {
                     const stem1 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: 0,
+                            gsap.to(id, { duration: durationTime, scale: 1,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
@@ -436,54 +451,56 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path82") {
-                    const stem3 =
+                    const stem4 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, x: -1,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        idGsapArr.push(stem3);
+                        idGsapArr.push(stem4);
                 }
 
                 if (id === "#path78") {
-                    const stem4 =
+                    const stem5 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        idGsapArr.push(stem4);
+                        idGsapArr.push(stem5);
                 }
 
                 if (id === "#path80") {
-                    const stem4 =
+                    const stem6 =
                         function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
+                            gsap.to(id, { duration: durationTime, scale: 1, x: null, y: null,
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        idGsapArr.push(stem4);
+                        idGsapArr.push(stem6);
                 }
 
                 if (id === "#path79") {
-                    const stem4 =
+                    const stem7 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        idGsapArr.push(stem4);
+                        idGsapArr.push(stem7);
                 }
 
                 if (id === "#path76") {
-                    const stem4 =
+                    const stem8 =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: alienPhaseArr[index], callbackScope: self
                             });
                         };
-                        idGsapArr.push(stem4);
+                        idGsapArr.push(stem8);
                 }
+                        
+                        
             })
         }
 
