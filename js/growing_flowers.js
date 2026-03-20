@@ -317,6 +317,18 @@ FlowerAnimationTest.prototype = {
                     idGsapArr.push(stem5);
 
                 }
+
+                if (id === "#" + "path3-1-9-1") {
+
+                    const stem5 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                    idGsapArr.push(stem5);
+
+                }
             });
         }
 
@@ -362,7 +374,8 @@ FlowerAnimationTest.prototype = {
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
         var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
-            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6], flowers2LeftArr[7]];
+            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
+            flowers2LeftArr[7], flowers2LeftArr[8]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -560,6 +573,10 @@ FlowerAnimationTest.prototype = {
                 }
 
                 if (id === "#path3-1-9-2") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
+                if (id === "#path3-1-9-1") {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
