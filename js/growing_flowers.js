@@ -278,7 +278,6 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
-                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem3);
 
                 }
@@ -291,12 +290,10 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
-                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem4);
 
                 }
 
-                // todo: feil plassert?
                 if (id === "#" + "path3-2") {
 
                     const stem4 = 
@@ -305,8 +302,19 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updatePhase, callbackScope: self
                             });
                         };
-                    // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
                     idGsapArr.push(stem4);
+
+                }
+                
+                if (id === "#" + "path3-1-9-2") {
+
+                    const stem5 = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1,
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                        };
+                    idGsapArr.push(stem5);
 
                 }
             });
@@ -354,7 +362,7 @@ FlowerAnimationTest.prototype = {
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
         var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
-            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6]];
+            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6], flowers2LeftArr[7]];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
@@ -537,6 +545,10 @@ FlowerAnimationTest.prototype = {
                     gsap.set(id, { duration: durationTime, scale: 0 });
                 }
 
+                if (id === "#path3-1-9-2") {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
+
             });
         }
     },
@@ -609,8 +621,8 @@ FlowerAnimationTest.prototype = {
         }
 
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13, phase14 ]; // hva skjer i phase10. blas den ikke oppover
-
+        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13, phase14 ]; 
+        
         this.setButtonText("Fase ");
 
         // viser under utvikling. skal skjules i produksjon
