@@ -376,7 +376,7 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    getXYPair: function (index) {
+    getXYPairStems2: function (index) {
         let xyPair = null;
 
         if (index === 0) {
@@ -401,7 +401,7 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let xyPair = this.getXYPair(index);
+                let xyPair = this.getXYPairStems2(index);
 
                 let stemFn = 
                     function () {
@@ -409,6 +409,7 @@ FlowerAnimationTest.prototype = {
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
                         if (xyPair) {
+                            // legger til gsap som skal ha x (og evt y)
                             gsap.to(id, xyPair);
                         }
                     };
