@@ -459,41 +459,7 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path) => {
                 const id = "#" + path.id;
 
-                if (id === "#path89") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path77") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path81") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path83") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path82") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path78") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path80") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path79") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
-
-                if (id === "#path76") {
-                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-                }
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
             });
         }
 
@@ -503,43 +469,7 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path) => {
                 const id = "#" +path.id;
 
-                if (id === "#path1-8-7-1-1") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path3-2-7-8") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path3-1-9-1-5") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path1-8-7-1") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path1-7") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                
-                if (id === "#path3-2") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path3-1-9-2") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                if (id === "#path3-1-9-1") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
-                 if (id === "#path3-2-7") {
-                    gsap.set(id, { duration: durationTime, scale: 0 });
-                }
-
+                gsap.set(id, { duration: durationTime, scale: 0 });
             });
         }
     },
