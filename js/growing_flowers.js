@@ -197,9 +197,7 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
-        var flowers1LeftArr = this.alienSetupFlowers1Left();
-
-        var alienPhaseArr = [flowers1LeftArr[0], flowers1LeftArr[1], flowers1LeftArr[2], flowers1LeftArr[3], flowers1LeftArr[4]];
+        var alienPhaseArr = this.alienSetupFlowers1Left();
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
         
@@ -234,11 +232,7 @@ FlowerAnimationTest.prototype = {
     alienSetupStems2: function () {        
         const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
         const idGsapArr = [];
-        var flowers2LeftArr = this.alienSetupFlowers2Left();
-
-        var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
-            flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
-            flowers2LeftArr[7], flowers2LeftArr[8], flowers2LeftArr[9]];
+        var alienPhaseArr = this.alienSetupFlowers2Left();
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
