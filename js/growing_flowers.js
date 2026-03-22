@@ -477,14 +477,11 @@ FlowerAnimationTest.prototype = {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
 
-        // console.log("idGsapArr", idGsapArr);
-
-        idGsapArr.forEach((index) => {
+        idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
-                idGsapArr[index];
+                idGsapArr[index]();
             }
 
-           // console.log("idGsapFn", idGsapFn);
             alienphases.push(idGsapFn);
         });
 
@@ -494,11 +491,9 @@ FlowerAnimationTest.prototype = {
         var idGsapArrTopLeft = this.alienSetupStems2();
         let alienphases = [];
 
-        // console.log("idGsapArrTopLeft", idGsapArrTopLeft);
-
-        idGsapArrTopLeft.forEach((index) => {
+        idGsapArrTopLeft.forEach((alien, index) => {
             let idGsapFn = () => {
-                idGsapArrTopLeft[index];
+                idGsapArrTopLeft[index]();
             }
             alienphases.push(idGsapFn);
         });
@@ -507,9 +502,6 @@ FlowerAnimationTest.prototype = {
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
-
-        var idGsapArr = this.alienSetupStems1();
-        var idGsapArrTopLeft = this.alienSetupStems2();
 
         this.alienSetupPathScales1();
         this.alienSetupPathScales2();
@@ -521,86 +513,15 @@ FlowerAnimationTest.prototype = {
         var phase2 = () => {
             this.alienPhase2();
         }
-        
-        var phase3 = () => {
-            idGsapArr[0]();
-
-        }
-
-        var phase4 = () => {
-            idGsapArr[1]();
-        }
-
-        var phase5 = () => {
-            idGsapArr[2]();
-        }
-
-        var phase6 = () => {
-            idGsapArr[3]();
-        }
-
-        var phase7 = () => {
-            idGsapArr[4]();
-        }
-
-        var phase8 = () => {
-            idGsapArrTopLeft[0]();
-        }
-
-        
-        var phase9 = () => {
-            idGsapArrTopLeft[1]();
-        }
-
-        var phase10 = () => {
-            idGsapArrTopLeft[2]();
-        }
-
-        var phase11 = () => {
-            idGsapArrTopLeft[3]();
-        }
-
-        var phase12 = () => {
-            idGsapArrTopLeft[4]();
-        }
-
-        var phase13 = () => {
-            idGsapArrTopLeft[5]();
-        }
-
-        var phase14 = () => {
-            idGsapArrTopLeft[6]();
-        }
-
-        var phase15 = () => {
-            idGsapArrTopLeft[7]();
-        }
-
-        var phase16 = () => {
-            idGsapArrTopLeft[8]();
-        }
 
         let alienPhasesGsapArr = this.getIdGsapArr();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr);
-
-        console.log("alienPhasesGsapArr", alienPhasesGsapArr, "this.alienphases", this.alienphases);
-        
-        // console.log(" this.alienphases",  this.alienphases);
-
-        // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        /*
-        this.alienphases = [phase1,  phase2, phase3, phase4, phase5, phase6, phase7,
-            phase8, phase9, phase10, phase11, phase12, phase13, phase14, phase15,
-            phase16
-         ];
-         */ 
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrTopLeft);
 
         this.setButtonText("Fase ");
 
-        // viser under utvikling. skal skjules i produksjon
-        
+        // viser under utvikling. skal skjules i produksjon   
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
         
