@@ -376,71 +376,42 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
+    getXYPair: function (index) {
+        let xyPair = null;
+
+        if (index === 0) {
+            xyPair = {x: -5, y: 7};
+        } else if (index === 2 || index === 4) {
+             xyPair = {x: -1};
+        }
+
+        return xyPair;
+    },
     alienSetupStems2: function () {        
         const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
         const idGsapArr = [];
-        var stemFn = null;
-
         var flowers2LeftArr = this.alienSetupFlowers2Left();
 
         var alienPhaseArr = [flowers2LeftArr[0], flowers2LeftArr[1], flowers2LeftArr[2],
             flowers2LeftArr[3], flowers2LeftArr[4], flowers2LeftArr[5], flowers2LeftArr[6],
             flowers2LeftArr[7], flowers2LeftArr[8], flowers2LeftArr[9]];
-
-        const xYPairObjArr = [
-            { x: -5, y: 7 },
-            { x: false, y: false },
-            { x: -1, y: false },
-            { x: false, y: false },
-            { x: -1, y: false }
-            ];
         
         if (stemGroupTopElement) {
             const paths = stemGroupTopElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
+                let xyPair = this.getXYPair(index);
 
-                if (index < xYPairObjArr.length) {
-                    let xy = xYPairObjArr[index];
-                    if (xy.x && xy.y) {
-                        stemFn = 
-                            function () {
-                                gsap.to(id, { duration: durationTime, scale: 1, x: xy.x, y: xy.y,
-                                    onComplete: alienPhaseArr[index], callbackScope: self
-                                });
-                            };
-                    } else if (xy.x) {
-                        stemFn = 
-                            function () {
-                                gsap.to(id, { duration: durationTime, scale: 1, x: xy.x, 
-                                    onComplete: alienPhaseArr[index], callbackScope: self
-                                });
-                            };
-                    } else if (xy.y) {
-                        stemFn = 
-                            function () {
-                                gsap.to(id, { duration: durationTime, scale: 1, y: xy.y, 
-                                    onComplete: alienPhaseArr[index], callbackScope: self
-                                });
-                            };
-                    } else {
-                        stemFn = 
-                            function () {
-                                gsap.to(id, { duration: durationTime, scale: 1, 
-                                    onComplete: alienPhaseArr[index], callbackScope: self
-                                });
-                            };
-                    }
-                } else {
-                    stemFn = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        };
-                }
-
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                        if (xyPair) {
+                            gsap.to(id, xyPair);
+                        }
+                    };
                 idGsapArr.push(stemFn);
             });
         }
