@@ -473,8 +473,39 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
-    setupAlienFlower: function () {
+    getIdGsapArr: function () {
+        var idGsapArr = this.alienSetupStems1();
+        let alienphases = [];
 
+        // console.log("idGsapArr", idGsapArr);
+
+        idGsapArr.forEach((index) => {
+            let idGsapFn = () => {
+                idGsapArr[index];
+            }
+
+           // console.log("idGsapFn", idGsapFn);
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    getIdGsapArrTopLeft: function () {
+        var idGsapArrTopLeft = this.alienSetupStems2();
+        let alienphases = [];
+
+        // console.log("idGsapArrTopLeft", idGsapArrTopLeft);
+
+        idGsapArrTopLeft.forEach((index) => {
+            let idGsapFn = () => {
+                idGsapArrTopLeft[index];
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    setupAlienFlower: function () {
         this.phazeIndex = 0;
 
         var idGsapArr = this.alienSetupStems1();
@@ -549,10 +580,22 @@ FlowerAnimationTest.prototype = {
             idGsapArrTopLeft[8]();
         }
 
+        let alienPhasesGsapArr = this.getIdGsapArr();
+        let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
+
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr);
+
+        console.log("alienPhasesGsapArr", alienPhasesGsapArr, "this.alienphases", this.alienphases);
+        
+        // console.log(" this.alienphases",  this.alienphases);
+
         // this.alienphases = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
-        this.alienphases = [phase1, phase8, phase9, phase10, phase11, phase12, phase13, phase14, phase15,
+        /*
+        this.alienphases = [phase1,  phase2, phase3, phase4, phase5, phase6, phase7,
+            phase8, phase9, phase10, phase11, phase12, phase13, phase14, phase15,
             phase16
-         ]; 
+         ];
+         */ 
 
         this.setButtonText("Fase ");
 
