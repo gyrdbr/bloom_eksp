@@ -214,134 +214,41 @@ FlowerAnimationTest.prototype = {
 
         return idGsapArr;
     },
+    getXYPairFlowers2: function (index) {
+        let xyPair = null;
+
+        if (index === 0) {
+            xyPair = {x: -5, y: 7};
+        } else if (index === 4) {
+             xyPair = {x: -1};
+        }
+
+        return xyPair;
+    },
     alienSetupFlowers2Left: function () {
         const flowerGroupElement = document.getElementById('groupLeftTop');
         const idGsapArr = [];
         var self = this;
-        const moveLeft = -3;
-        const moveDown = 7;
-        const moveLeftThree = -131; // TODO legge inn denne paa nytt i SVG-en, saa man ikke trenger aa flytte saa langt
-
+        
         if (flowerGroupElement) {
             const paths = flowerGroupElement.querySelectorAll('path');
 
             paths.forEach((path, index) => {
-                const id = "#" + path.id;
-                var xVal = moveLeft;
-                var yVal = moveDown;
-                var phase = self.updatePhase;
+                const id = "#" +path.id;
+                let xyPair = this.getXYPairFlowers2(index);
 
-                // blomsten path1-8-7-1-1 er lik x og y som stilken path89, som har blitt flytta litt
-                if (id === "#" + "path1-8-7-1-1") {
-
-                    const stem0 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -5, y: moveDown,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-
-                        };
-                    idGsapArr.push(stem0);
-                }
-
-                if (id === "#" + "path3-2-7-8") {
-
-                    const stem1 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-
-                    idGsapArr.push(stem1);
-                }
-
-                
-                if (id === "#" + "path3-1-9-1-5") {
-
-                    const stem2 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, 
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem2);
-
-                }
-
-                if (id === "#" + "path1-8-7-1") {
-
-                    const stem3 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem3);
-
-                }
-
-                if (id === "#" + "path1-7") {
-
-                    const stem4 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1, x: -1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem4);
-
-                }
-
-                if (id === "#" + "path3-2") {
-
-                    const stem4 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem4);
-
-                }
-                
-                if (id === "#" + "path3-1-9-2") {
-
-                    const stem5 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem5);
-
-                }
-
-                if (id === "#" + "path3-1-9-1") {
-
-                    const stem5 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem5);
-
-                }
-
-                // path3-2-7
-                if (id === "#" + "path3-2-7") {
-
-                    const stem5 = 
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updatePhase, callbackScope: self
-                            });
-                        };
-                    idGsapArr.push(stem5);
-
-                }
-            });
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.updatePhase, callbackScope: self
+                        });
+                        if (xyPair) {
+                            // legger til gsap som skal ha x (og evt y)
+                            gsap.to(id, xyPair);
+                        }
+                    };
+                idGsapArr.push(stemFn);
+                });
         }
 
         return idGsapArr;
@@ -531,8 +438,6 @@ FlowerAnimationTest.prototype = {
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
 
         // gsap.set for pathLeft2 og leftPath2Flower
-        
- 
     }
 }
 
