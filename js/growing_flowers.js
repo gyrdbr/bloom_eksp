@@ -38,8 +38,6 @@ function blomsterstandStyle () {
 // TODO rectangle skal med, men maa flyttes oppover etterhvert
 // blomsterstandStyle();
 
-
-
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
@@ -187,9 +185,7 @@ FlowerAnimationTest.prototype = {
                 idGsapArr.push(stemFn);
                 });
         }
-
-        return idGsapArr;
-            
+        return idGsapArr;       
     },
     alienSetupStems1: function () {        
         this.button.classList.add('disabled');
