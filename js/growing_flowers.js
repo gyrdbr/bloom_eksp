@@ -381,7 +381,7 @@ FlowerAnimationTest.prototype = {
                     const id = "#" + path.id;
 
                     if (id === "#pathRight1") {
-                        gsap.set(id, { duration: durationTime, scale: 0.2, transformOrigin: "right" });
+                        gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                     }
                 });
         }
@@ -393,7 +393,7 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
 
                  if (id === "#path4-1") {
-                        gsap.set(id, { duration: durationTime, scale: 0.2 });
+                        gsap.set(id, { duration: durationTime, scale: 0 });
                     }
             });
         }
@@ -459,13 +459,11 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
 
-        var phase8 = () => {
-            this.getIdGsapArrBottomRight();
-        }
+        let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight()
 
         // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr); //.concat(alienPhasesGsapArrTopLeft);
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat([phase8]);
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrBottomRight);
 
         // console.log("phase1", phase1);
         // console.log("phase8", phase8);
