@@ -187,6 +187,33 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;       
     },
+    alienSetupFlowers1Right: function () {
+        const flowerGroupElement = document.getElementById('groupLeftTop');
+        const idGsapArr = [];
+        var self = this;
+        
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let xyPair = this.getXYPairFlowers2(index);
+
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.updatePhase, callbackScope: self
+                        });
+                        if (xyPair) {
+                            // legger til gsap som skal ha x (og evt y)
+                            gsap.to(id, xyPair);
+                        }
+                    };
+                idGsapArr.push(stemFn);
+                });
+        }
+        return idGsapArr;       
+    },
     alienSetupStems1: function () {        
         this.button.classList.add('disabled');
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
@@ -226,6 +253,34 @@ FlowerAnimationTest.prototype = {
         return xyPair;
     },
     alienSetupStems2: function () {        
+        const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
+        const idGsapArr = [];
+        var alienPhaseArr = this.alienSetupFlowers2Left();
+        
+        if (stemGroupTopElement) {
+            const paths = stemGroupTopElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let xyPair = this.getXYPairStems2(index);
+
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                        if (xyPair) {
+                            // legger til gsap som skal ha x (og evt y)
+                            gsap.to(id, xyPair);
+                        }
+                    };
+                idGsapArr.push(stemFn);
+            });
+        }
+
+        return idGsapArr;
+    },
+    alienSetupRightStems1: function () {        
         const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
         const idGsapArr = [];
         var alienPhaseArr = this.alienSetupFlowers2Left();
@@ -307,6 +362,30 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
+    alienSetupPathScalesRight1: function () {
+        const stemGroupTopElement = document.getElementById('groupStilkLeftTop');
+        const flowerGroupTopElement = document.getElementById('groupLeftTop');
+
+        if (stemGroupTopElement) {
+            const paths = stemGroupTopElement.querySelectorAll('path');
+
+            paths.forEach((path) => {
+                const id = "#" + path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+            });
+        }
+
+        if (flowerGroupTopElement) {
+            const paths = flowerGroupTopElement.querySelectorAll('path');
+
+            paths.forEach((path) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+            });
+        }
+    },
     getIdGsapArr: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -351,7 +430,7 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArr = this.getIdGsapArr();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrTopLeft);
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr); //.concat(alienPhasesGsapArrTopLeft);
 
         this.setButtonText("Fase ");
 
