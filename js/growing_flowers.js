@@ -62,12 +62,12 @@ FlowerAnimationTest.prototype = {
     },
     updatePhase: function () {
 
-        console.log("updatePhase", "this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length);
+        // console.log("updatePhase", "this.phazeIndex", this.phazeIndex, "this.alienphases.length", this.alienphases.length);
 
         if ((this.alienphases) && this.phazeIndex < (this.alienphases.length)) {
             this.phazeIndex += 1;
 
-            console.log("updatePhase", "this.phazeIndex", this.phazeIndex);
+            // console.log("updatePhase", "this.phazeIndex", this.phazeIndex);
 
             this.setButtonText("Fase ");
         }
@@ -206,7 +206,18 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 // let xyPair = this.getXYPairFlowers2(index);
 
-                if (id === "#path4-1") {
+                console.log("id", id, "index", index);
+                let stemFn = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: self.updatePhase, callbackScope: self
+                            });                    
+                        };
+                    idGsapArr.push(stemFn);
+
+                    
+                if (id === "#path4-1") {                    
+                    /*
                     let stem0 = 
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
@@ -214,7 +225,9 @@ FlowerAnimationTest.prototype = {
                             });                    
                         };
                     idGsapArr.push(stem0);
+                    */
                 }
+                    
                 });
         }
 
@@ -298,7 +311,16 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 // let xyPair = this.getXYPairStems2(index);
 
-                // registreres klikket?
+                 let stemFn = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+
+                    idGsapArr.push(stemFn);
+
+                /*
                 if (id === "#pathRight1") {
                     let stem0 = 
                         function () {
@@ -309,10 +331,11 @@ FlowerAnimationTest.prototype = {
 
                     idGsapArr.push(stem0);
                 }
+                    */
             });
         }
 
-        console.log("idGsapArr", idGsapArr);
+        // console.log("idGsapArr", idGsapArr);
 
         return idGsapArr;
     },
@@ -373,6 +396,7 @@ FlowerAnimationTest.prototype = {
     alienSetupPathScalesRight1: function () {
         const stemGroupRightBottomElement = document.getElementById('groupStilkRightBottom');
         const flowerGroupRightBottomElement = document.getElementById('groupRightBottom');
+  
 
         if (stemGroupRightBottomElement) {
             const paths = stemGroupRightBottomElement.querySelectorAll('path');
@@ -380,6 +404,7 @@ FlowerAnimationTest.prototype = {
                 paths.forEach((path) => {
                     const id = "#" + path.id;
 
+                    // todo: gjoer denne for alle stilkene
                     if (id === "#pathRight1") {
                         gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                     }
@@ -436,7 +461,7 @@ FlowerAnimationTest.prototype = {
             alienphases.push(idGsapFn);
         });
 
-        console.log("getIdGsapArrBottomRight alienphases", alienphases);
+        // console.log("getIdGsapArrBottomRight alienphases", alienphases);
 
         return alienphases;
     },
@@ -465,15 +490,11 @@ FlowerAnimationTest.prototype = {
 
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrBottomRight);
 
-        // console.log("phase1", phase1);
-        // console.log("phase8", phase8);
-
         this.setButtonText("Fase ");
 
         // viser under utvikling. skal skjules i produksjon   
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
-        
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
         
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
