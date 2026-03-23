@@ -206,7 +206,8 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 // let xyPair = this.getXYPairFlowers2(index);
 
-                console.log("id", id, "index", index);
+                console.log('flower id', id);
+
                 let stemFn = 
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
@@ -405,9 +406,12 @@ FlowerAnimationTest.prototype = {
                     const id = "#" + path.id;
 
                     // todo: gjoer denne for alle stilkene
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
+                    /*
                     if (id === "#pathRight1") {
                         gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
                     }
+                        */
                 });
         }
 
@@ -417,9 +421,13 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path) => {
                 const id = "#" +path.id;
 
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+                /*
                  if (id === "#path4-1") {
                         gsap.set(id, { duration: durationTime, scale: 0 });
                     }
+                        */
             });
         }
     },
@@ -461,7 +469,7 @@ FlowerAnimationTest.prototype = {
             alienphases.push(idGsapFn);
         });
 
-        // console.log("getIdGsapArrBottomRight alienphases", alienphases);
+        console.log("getIdGsapArrBottomRight alienphases", alienphases);
 
         return alienphases;
     },
