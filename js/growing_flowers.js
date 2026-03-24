@@ -187,7 +187,6 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;       
     },
-    // TODO alienSetupFlowersMiddleRight og alienSetupFlowersTopRight m.m.
     alienSetupFlowers1Right: function () {
         const flowerGroupElement = document.getElementById('groupRightBottom');
         const idGsapArr = [];
@@ -204,6 +203,44 @@ FlowerAnimationTest.prototype = {
                             gsap.to(id, { duration: durationTime, scale: 1, 
                                 onComplete: self.updatePhase, callbackScope: self
                             });                    
+                        };
+                    idGsapArr.push(stemFn);
+                    
+                });
+        }
+
+        return idGsapArr;       
+    },
+    getXFlowersMiddleRight: function (index) {
+        let xVal = null;
+
+        if (index === 0) {
+            xVal = {x: 4};
+        } 
+
+        return xVal;
+    },
+    alienSetupFlowersMiddleRight: function () {
+        const flowerGroupElement = document.getElementById('groupPathRightMiddleFlower');
+        const idGsapArr = [];
+        var self = this;
+        
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let xVal = this.getXFlowersMiddleRight(index);
+
+                let stemFn = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: self.updatePhase, callbackScope: self
+                            });
+                            if (xVal) {
+                                // legger til gsap som skal ha x 
+                                gsap.to(id, xVal);
+                            }                 
                         };
                     idGsapArr.push(stemFn);
                     
@@ -302,6 +339,30 @@ FlowerAnimationTest.prototype = {
 
         return idGsapArr;
     },
+    alienSetupRightStemsMiddle: function () {
+        const groupStilkRightMiddle = document.getElementById('groupStilkRightMiddle');
+        const idGsapArr = [];
+        var alienPhaseArr = this.alienSetupFlowersMiddleRight();
+        
+        if (groupStilkRightMiddle) {
+            const paths = groupStilkRightMiddle.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                 let stemFn = 
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1, 
+                                onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        };
+
+                    idGsapArr.push(stemFn);
+            });
+        }
+
+        return idGsapArr;
+    },
     alienSetupPathScales1: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('groupLeftBottom');
@@ -380,6 +441,30 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
+    alienSetupPathScalesRightMiddle: function () {
+        const stemGroupRightMiddleElement = document.getElementById('groupStilkRightMiddle');
+        const flowerGroupRightMiddleElement = document.getElementById('groupPathRightMiddleFlower');
+  
+        if (stemGroupRightMiddleElement) {
+            const paths = stemGroupRightMiddleElement.querySelectorAll('path');
+
+                paths.forEach((path) => {
+                    const id = "#" + path.id;
+
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "left" });
+                });
+        }
+
+        if (flowerGroupRightMiddleElement) {
+            const paths = flowerGroupRightMiddleElement.querySelectorAll('path');
+
+            paths.forEach((path) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+            });
+        }
+    },
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -420,12 +505,26 @@ FlowerAnimationTest.prototype = {
 
         return alienphases;
     },
+    getIdGsapArrMiddleRight: function () {
+        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
+        let alienphases = [];
+
+        idGsapArrMiddleRight.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArrMiddleRight[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
 
         this.alienSetupPathScales1();
         this.alienSetupPathScales2();
         this.alienSetupPathScalesRight1();
+        this.alienSetupPathScalesRightMiddle();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -437,11 +536,14 @@ FlowerAnimationTest.prototype = {
 
 
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
-        let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight()
+        let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
+        let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr)
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrMiddleRight);
+        /* .concat(alienPhasesGsapArr)
         .concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft);
+        */
 
         this.setButtonText("Fase ");
 
