@@ -254,6 +254,10 @@ FlowerAnimationTest.prototype = {
 
         if (index === 0) {
             xyPair = {x: +2};
+        } else if (index === 1) {
+            xyPair = {x: 56 };
+        } else if (index === 2) {
+            xyPair = {x: 57, y: 2};
         }
 
         return xyPair;
@@ -405,7 +409,7 @@ FlowerAnimationTest.prototype = {
         let xyPair = null;
 
         if (index === 1 || index === 2) {
-             xyPair = {x: 2};
+             xyPair = {y: 6};
         }
 
         return xyPair;
@@ -432,6 +436,7 @@ FlowerAnimationTest.prototype = {
                                 // legger til gsap som skal ha x 
                                 gsap.to(id, xyVal);
                             }
+                                
 
                     idGsapArr.push(stemFn);
             });
