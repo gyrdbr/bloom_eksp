@@ -570,6 +570,76 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
+    /*
+    getStemsAndFlowerseIndex: function () {
+        var idGsapArrBottomRight = this.alienSetupRightStems1();
+        var idGsapArrBottomLeft = this.alienSetupStems1();
+        var idGsapArrTopLeft = this.alienSetupStems2();
+        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
+        var idGsapArrTopRight = this.alienSetupRightStemsTop();
+
+        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
+        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
+
+        var organisedArrAll;
+
+    },
+    getBottomTopLeftRightPathsAndFlowers: function () {
+        var idGsapArrBottomRight = this.alienSetupRightStems1();
+        var idGsapArrBottomLeft = this.alienSetupStems1();
+        var idGsapArrTopLeft = this.alienSetupStems2();
+        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
+        var idGsapArrTopRight = this.alienSetupRightStemsTop();
+
+        let alienphases = [];
+
+        var idGsapArrAll = idGsapArrBottomLeft.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
+        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
+
+        
+        idGsapArrBottomRight.forEach((alien, index) => {
+
+        });
+
+        idGsapArrBottomRight.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArrAll[index]();
+            }
+
+            alienphases.push(idGsapFn);
+        });
+        
+
+        return alienphases;
+    },*/
+    getIdGsapArrAll: function () {
+        var idGsapArrBottomLeft = this.alienSetupStems1();
+        var idGsapArrBottomRight = this.alienSetupRightStems1();
+        var idGsapArrTopLeft = this.alienSetupStems2();
+        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
+        var idGsapArrTopRight = this.alienSetupRightStemsTop();
+
+        var idGsapArrAll = [];
+
+        let alienphases = [];
+
+        this.getBottomTopLeftRightPathsAndFlowers();
+
+        /*
+        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
+        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
+        */
+
+        idGsapArrAll.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArrAll[index]();
+            }
+
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -643,7 +713,7 @@ FlowerAnimationTest.prototype = {
         this.alienSetupPathScales2();
         this.alienSetupPathScalesRight1();
         this.alienSetupPathScalesRightMiddle();
-         this.alienSetupPathScalesRightTop();
+        this.alienSetupPathScalesRightTop();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -659,8 +729,14 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
+        // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
+
+        // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+
+        
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
+        
 
         this.setButtonText("Fase ");
 
