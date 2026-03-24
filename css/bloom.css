@@ -294,14 +294,17 @@ ul {
     display: flex;
 }
 
+.rw-icon-list__button:disabled {
+    display: flex;
+    cursor: not-allowed; /* Change cursor to "not-allowed" on hover */
+    opacity: 0.6; /* Add some opacity for visual effect */
+    pointer-events: none; /* Disable all mouse events (optional but recommended) 
+}
+
 
 
 .rw-icon-list__item {
     margin-bottom: 42px;
-    display: flex;
-}
-
-.rw-icon-list__button {
     display: flex;
 }
 
