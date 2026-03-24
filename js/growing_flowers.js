@@ -77,7 +77,6 @@ FlowerAnimationTest.prototype = {
         this.button.disabled = false;
     },
     alienPhase1: function () {
-        this.button.disabled = true;
 
         gsap.to("#pathHovedStilk", { duration: durationTime, y: -9,  
             onComplete: this.alienPhase1b, 
@@ -95,7 +94,7 @@ FlowerAnimationTest.prototype = {
             });
     },
     alienPhase2: function () {
-        this.button.disabled = true;
+        
 
         gsap.to("#pathLeft1", { duration: durationTime, scale: 1, 
             onComplete: this.alienPhase2b, callbackScope: this
@@ -300,7 +299,7 @@ FlowerAnimationTest.prototype = {
         var alienPhaseArr = this.alienSetupFlowers1Left();
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
-        this.button.disabled = true;
+        
         
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
@@ -363,7 +362,7 @@ FlowerAnimationTest.prototype = {
         const groupStilkRightBottom = document.getElementById('groupStilkRightBottom');
         const idGsapArr = [];
         var alienPhaseArr = this.alienSetupFlowers1Right();
-        this.button.disabled = true;
+        
         
         if (groupStilkRightBottom) {
             const paths = groupStilkRightBottom.querySelectorAll('path');
@@ -622,7 +621,7 @@ FlowerAnimationTest.prototype = {
         var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
         var idGsapArrTopRight = this.alienSetupRightStemsTop();
 
-        this.button.disabled = true;
+        
 
         var idGsapArrAll = [];
 
@@ -648,7 +647,7 @@ FlowerAnimationTest.prototype = {
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
-        this.button.disabled = true;
+        
 
         idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
@@ -662,7 +661,7 @@ FlowerAnimationTest.prototype = {
     getIdGsapArrTopLeft: function () {
         var idGsapArrTopLeft = this.alienSetupStems2();
         let alienphases = [];
-        this.button.disabled = true;
+        
 
         idGsapArrTopLeft.forEach((alien, index) => {
             let idGsapFn = () => {
@@ -676,7 +675,7 @@ FlowerAnimationTest.prototype = {
     getIdGsapArrBottomRight: function () {
         var idGsapArrBottomRight = this.alienSetupRightStems1();
         let alienphases = [];
-        this.button.disabled = true;
+        
 
 
         idGsapArrBottomRight.forEach((alien, index) => {
@@ -691,7 +690,7 @@ FlowerAnimationTest.prototype = {
     getIdGsapArrMiddleRight: function () {
         var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
         let alienphases = [];
-        this.button.disabled = true;
+        
 
         idGsapArrMiddleRight.forEach((alien, index) => {
             let idGsapFn = () => {
@@ -705,7 +704,7 @@ FlowerAnimationTest.prototype = {
     getIdGsapArrTopRight: function () {
         var idGsapArrTopRight = this.alienSetupRightStemsTop();
         let alienphases = [];
-        this.button.disabled = true;
+        
 
         idGsapArrTopRight.forEach((alien, index) => {
             let idGsapFn = () => {
