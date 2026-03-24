@@ -358,11 +358,20 @@ FlowerAnimationTest.prototype = {
 
         return idGsapArr;
     },
+    alienSetupAllStems: function () { 
+        const groupStilkRightBottom = document.getElementById('groupStilkRightBottom');
+        const groupStilkRightMiddle = document.getElementById('groupStilkRightMiddle')
+        const groupStilkRightTop = document.getElementById('groupStilkRightModeTop');
+        const groupStilkLeftBottom = document.getElementById('groupStilkLeftBottom');
+        const groupStilkLeftTop = document.getElementById('groupStilkLeftTop');
+
+        const idGsapArr = [];
+
+    },
     alienSetupRightStems1: function () {        
         const groupStilkRightBottom = document.getElementById('groupStilkRightBottom');
         const idGsapArr = [];
         var alienPhaseArr = this.alienSetupFlowers1Right();
-        
         
         if (groupStilkRightBottom) {
             const paths = groupStilkRightBottom.querySelectorAll('path');
@@ -572,18 +581,38 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
-    /*
     getStemsAndFlowerseIndex: function () {
         var idGsapArrBottomRight = this.alienSetupRightStems1();
         var idGsapArrBottomLeft = this.alienSetupStems1();
         var idGsapArrTopLeft = this.alienSetupStems2();
         var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
         var idGsapArrTopRight = this.alienSetupRightStemsTop();
+        const idGsapArr = [];
 
+        const groupStilkRightBottomIndex = [0, 2, 4, 5, 6, 7, 8];
+        const groupStilkLeftBottomIndex = [1, 3, 9, 10, 11];
+        const groupStilkRightMiddleIndex = [12, 13, 14, 15, 25];
+        const groupStilkLeftTopIndex = [16, 17, 18, 19, 20, 21, 22, 23, 24, 26];
+        const groupStilkRightTopIndex = [27, 28, 29, 30, 31];
+
+        const xYPairObjArr = [
+            { x: -5, y: 7 },
+            { x: false, y: false },
+            { x: -1, y: false },
+            { x: false, y: false },
+            { x: -1, y: false }];
+
+        /*
         var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
         .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-
+        */
         var organisedArrAll;
+
+        if (idGsapArrBottomRight && idGsapArrBottomLeft && idGsapArrTopLeft &&
+             idGsapArrMiddleRight && idGsapArrTopRight) {
+            // TODO  push stemFn i stimappe avh av index
+            // if (index =  )
+        }
 
     },
     getBottomTopLeftRightPathsAndFlowers: function () {
@@ -594,6 +623,8 @@ FlowerAnimationTest.prototype = {
         var idGsapArrTopRight = this.alienSetupRightStemsTop();
 
         let alienphases = [];
+
+        this.getStemsAndFlowerseIndex();
 
         var idGsapArrAll = idGsapArrBottomLeft.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
         .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
@@ -613,7 +644,7 @@ FlowerAnimationTest.prototype = {
         
 
         return alienphases;
-    },*/
+    },
     getIdGsapArrAll: function () {
         var idGsapArrBottomLeft = this.alienSetupStems1();
         var idGsapArrBottomRight = this.alienSetupRightStems1();
@@ -738,14 +769,14 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
-        // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
+        let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
 
-        
+        /*
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
-        
+        */
 
         this.setButtonText("Fase ");
 
