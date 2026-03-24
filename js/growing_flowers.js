@@ -659,14 +659,8 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
-        /** TODO: minke visning av svg-en, saa de ytterste blomstene til hoyre ogaa blir vist */
-
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
-
-        /* .concat(alienPhasesGsapArr)
-        .concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft);
-        */
 
         this.setButtonText("Fase ");
 
