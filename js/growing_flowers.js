@@ -769,14 +769,14 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
-        let alienPhasesGsapArrAll = this.getIdGsapArrAll();
+        // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+       // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
 
-        /*
+        
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
-        */
+        
 
         this.setButtonText("Fase ");
 
