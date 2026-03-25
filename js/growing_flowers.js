@@ -146,7 +146,7 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsFlowersAll(index);
+                let gsapVals = this.getGsapValsAllFlowers(index);
 
                 let stemFn = 
                     function () {
@@ -168,7 +168,7 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupFlowers1Left();
+        var alienPhaseArr = this.alienSetupAllFlowers();
         var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
         var yArr = [null, null, null, 7, 7];
         
