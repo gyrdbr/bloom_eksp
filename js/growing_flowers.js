@@ -686,69 +686,6 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
-    /*
-    getBottomTopLeftRightPathsAndFlowers: function () {
-        var idGsapArrBottomRight = this.alienSetupRightStems1();
-        var idGsapArrBottomLeft = this.alienSetupStems1();
-        var idGsapArrTopLeft = this.alienSetupStems2();
-        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
-        var idGsapArrTopRight = this.alienSetupRightStemsTop();
-
-        let alienphases = [];
-
-        this.getStemsAndFlowerseIndex();
-
-        var idGsapArrAll = idGsapArrBottomLeft.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
-        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-
-        
-        idGsapArrBottomRight.forEach((alien, index) => {
-
-        });
-
-        idGsapArrBottomRight.forEach((alien, index) => {
-            let idGsapFn = () => {
-                idGsapArrAll[index]();
-            }
-
-            alienphases.push(idGsapFn);
-        });        
-
-        return alienphases;
-    },
-    */
-    /*
-    getIdGsapArrAll: function () {
-        var idGsapArrBottomLeft = this.alienSetupStems1();
-        var idGsapArrBottomRight = this.alienSetupRightStems1();
-        var idGsapArrTopLeft = this.alienSetupStems2();
-        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
-        var idGsapArrTopRight = this.alienSetupRightStemsTop();
-
-        
-
-        var idGsapArrAll = [];
-
-        let alienphases = [];
-
-        this.getBottomTopLeftRightPathsAndFlowers();
-
-        
-        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
-        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-        
-
-        idGsapArrAll.forEach((alien, index) => {
-            let idGsapFn = () => {
-                idGsapArrAll[index]();
-            }
-
-            alienphases.push(idGsapFn);
-        });
-
-        return alienphases;
-    },
-    */
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -849,7 +786,7 @@ FlowerAnimationTest.prototype = {
 
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-       this.alienphases = alienPhasesGsapArrAll;
+       this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
 
         
        /*
