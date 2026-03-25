@@ -581,6 +581,35 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
+    alienSetupPathScalesAll: function () {
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const flowerGroupElement = document.getElementById('blomstLayer');
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+            // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
     /*
     alienSetupPathScalesAll: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
@@ -812,11 +841,15 @@ FlowerAnimationTest.prototype = {
     setupAlienFlower: function () {
         this.phazeIndex = 0;
 
+        /*
         this.alienSetupPathScales1();
         this.alienSetupPathScales2();
         this.alienSetupPathScalesRight1();
         this.alienSetupPathScalesRightMiddle();
         this.alienSetupPathScalesRightTop();
+        */
+
+        this.alienSetupPathScalesAll();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -826,18 +859,24 @@ FlowerAnimationTest.prototype = {
             this.alienPhase2();
         }
 
+        /*
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
         let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
+        */
+
+        let alienPhaths = this.alienSetupPathScalesAll();
 
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+        this.alienphases = [phase1,  phase2].concat(alienPhaths);
 
+        /*
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
+        */
 
         this.setButtonText("Fase ");
 
