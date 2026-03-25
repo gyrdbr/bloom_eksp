@@ -70,7 +70,7 @@ FlowerAnimationTest.prototype = {
  
         this.phazeIndex += 1;
 
-        this.setButtonText("Start igjen ")
+        this.setButtonText("Start igjen ");
     },
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
@@ -106,6 +106,119 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { duration: durationTime, scale: 1,
             onComplete: this.updatePhase, callbackScope: this });
 
+    },
+    getGsapValsAllFlowers: function (index) {
+        let gsapVals = null;
+        const moveLeft = -3;
+        const moveDown = 7;
+
+        if (index === 0 || index === 1) {
+            gsapVals = {x: moveLeft};
+        } else if (index === 2) {
+             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
+        } else if (index === 3 || index === 4) {
+             gsapVals = {x: moveLeft, y: moveDown};
+        }
+
+        return gsapVals;
+    },
+    getIdGsapArrAll: function () {
+        var idGsapArr = this.alienSetupAllStems();
+        let alienphases = [];
+        
+
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    alienSetupAllFlowers: function () {
+        const flowerGroupElement = document.getElementById('blomstLayer');
+        const idGsapArr = [];
+        var self = this;
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let gsapVals = this.getGsapValsFlowersAll(index);
+
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.updatePhase, callbackScope: self
+                        });
+                        if (gsapVals) {
+                            // legger til gsap som skal ha flere values
+                            gsap.to(id, gsapVals);
+                        }
+                    };
+                idGsapArr.push(stemFn);
+                });      
+        }
+        return idGsapArr;
+    },
+    alienSetupAllStems: function () {        
+        const stemGroupElement = document.getElementById('stilkLayerflat');
+        const moveLeft = -3;
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        var alienPhaseArr = this.alienSetupFlowers1Left();
+        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
+        var yArr = [null, null, null, 7, 7];
+        
+        
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                // self.button.disabled = true;
+                var stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                    };
+                  
+                idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
+    },
+    alienSetupAllPathScales: function () {
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const flowerGroupElement = document.getElementById('blomstLayer');
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+            // console.error('Group element with ID "myGroup" not found.');
+        }
     },
     getGsapValsFlowers1: function (index) {
         let gsapVals = null;
@@ -358,16 +471,6 @@ FlowerAnimationTest.prototype = {
 
         return idGsapArr;
     },
-    alienSetupAllStems: function () { 
-        const groupStilkRightBottom = document.getElementById('groupStilkRightBottom');
-        const groupStilkRightMiddle = document.getElementById('groupStilkRightMiddle')
-        const groupStilkRightTop = document.getElementById('groupStilkRightModeTop');
-        const groupStilkLeftBottom = document.getElementById('groupStilkLeftBottom');
-        const groupStilkLeftTop = document.getElementById('groupStilkLeftTop');
-
-        const idGsapArr = [];
-
-    },
     alienSetupRightStems1: function () {        
         const groupStilkRightBottom = document.getElementById('groupStilkRightBottom');
         const idGsapArr = [];
@@ -581,40 +684,7 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
-    getStemsAndFlowerseIndex: function () {
-        var idGsapArrBottomRight = this.alienSetupRightStems1();
-        var idGsapArrBottomLeft = this.alienSetupStems1();
-        var idGsapArrTopLeft = this.alienSetupStems2();
-        var idGsapArrMiddleRight = this.alienSetupRightStemsMiddle();
-        var idGsapArrTopRight = this.alienSetupRightStemsTop();
-        const idGsapArr = [];
-
-        const groupStilkRightBottomIndex = [0, 2, 4, 5, 6, 7, 8];
-        const groupStilkLeftBottomIndex = [1, 3, 9, 10, 11];
-        const groupStilkRightMiddleIndex = [12, 13, 14, 15, 25];
-        const groupStilkLeftTopIndex = [16, 17, 18, 19, 20, 21, 22, 23, 24, 26];
-        const groupStilkRightTopIndex = [27, 28, 29, 30, 31];
-
-        const xYPairObjArr = [
-            { x: -5, y: 7 },
-            { x: false, y: false },
-            { x: -1, y: false },
-            { x: false, y: false },
-            { x: -1, y: false }];
-
-        /*
-        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
-        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-        */
-        var organisedArrAll;
-
-        if (idGsapArrBottomRight && idGsapArrBottomLeft && idGsapArrTopLeft &&
-             idGsapArrMiddleRight && idGsapArrTopRight) {
-            // TODO  push stemFn i stimappe avh av index
-            // if (index =  )
-        }
-
-    },
+    /*
     getBottomTopLeftRightPathsAndFlowers: function () {
         var idGsapArrBottomRight = this.alienSetupRightStems1();
         var idGsapArrBottomLeft = this.alienSetupStems1();
@@ -640,11 +710,12 @@ FlowerAnimationTest.prototype = {
             }
 
             alienphases.push(idGsapFn);
-        });
-        
+        });        
 
         return alienphases;
     },
+    */
+    /*
     getIdGsapArrAll: function () {
         var idGsapArrBottomLeft = this.alienSetupStems1();
         var idGsapArrBottomRight = this.alienSetupRightStems1();
@@ -660,10 +731,10 @@ FlowerAnimationTest.prototype = {
 
         this.getBottomTopLeftRightPathsAndFlowers();
 
-        /*
+        
         var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
         .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-        */
+        
 
         idGsapArrAll.forEach((alien, index) => {
             let idGsapFn = () => {
@@ -675,6 +746,7 @@ FlowerAnimationTest.prototype = {
 
         return alienphases;
     },
+    */
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -755,6 +827,8 @@ FlowerAnimationTest.prototype = {
         this.alienSetupPathScalesRightMiddle();
         this.alienSetupPathScalesRightTop();
 
+        this.alienSetupAllPathScales();
+
         var phase1 = () => {
             this.alienPhase1();
         }
@@ -769,14 +843,17 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
+        let alienPhasesGsapArrAll = this.getIdGsapArrAll();
+
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-       // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+       this.alienphases = alienPhasesGsapArrAll;
 
         
+       /*
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
-        
+        */
 
         this.setButtonText("Fase ");
 
