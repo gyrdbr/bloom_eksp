@@ -581,6 +581,7 @@ FlowerAnimationTest.prototype = {
             });
         }
     },
+    /*
     alienSetupPathScalesAll: function () {
         const stemGroupElement = document.getElementById('groupStilkLeftBottom');
         const flowerGroupElement = document.getElementById('groupLeftBottom');
@@ -663,11 +664,6 @@ FlowerAnimationTest.prototype = {
         const groupStilkRightMiddleIndex = [12, 13, 14, 15, 25];
         const groupStilkLeftTopIndex = [16, 17, 18, 19, 20, 21, 22, 23, 24, 26];
         const groupStilkRightTopIndex = [27, 28, 29, 30, 31];
-
-        /*
-        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
-        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-        */
   
 
         if (idGsapArrBottomRight && idGsapArrBottomLeft && idGsapArrTopLeft &&
@@ -677,6 +673,8 @@ FlowerAnimationTest.prototype = {
         }
 
     },
+    */
+   /*
     getBottomTopLeftRightPathsAndFlowers: function () {
         var idGsapArrBottomRight = this.alienSetupRightStems1();
         var idGsapArrBottomLeft = this.alienSetupStems1();
@@ -729,11 +727,6 @@ FlowerAnimationTest.prototype = {
 
         this.getBottomTopLeftRightPathsAndFlowers();
 
-        /*
-        var idGsapArrAll = idGsapArr.concat(idGsapArrTopLeft).concat(idGsapArrTopRight).concat(idGsapArrTopLeft)
-        .concat(idGsapArrBottomRight).concat(idGsapArrMiddleRight);
-        */
-
         idGsapArrAll.forEach((alien, index) => {
             let idGsapFn = () => {
                 idGsapArrAll[index]();
@@ -744,6 +737,7 @@ FlowerAnimationTest.prototype = {
 
         return alienphases;
     },
+    */
     getIdGsapArrBottomLeft: function () {
         var idGsapArr = this.alienSetupStems1();
         let alienphases = [];
@@ -838,7 +832,7 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
-        let alienPhasesGsapArrAll = this.getIdGsapArrAll();
+        // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
         // this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
 
