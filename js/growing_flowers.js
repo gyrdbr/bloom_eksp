@@ -106,6 +106,63 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { duration: durationTime, scale: 1,
             onComplete: this.updatePhase, callbackScope: this });
     },
+    getIdGsapArrAll: function () {
+        var idGsapArr = this.alienSetupAllStems();
+        let alienphases = [];
+        
+
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    getGsapValsFlowersAll: function (index) {
+        let gsapVals = null;
+        const moveLeft = -3;
+        const moveDown = 7;
+
+        if (index === 0 || index === 1) {
+            gsapVals = {x: moveLeft};
+        } else if (index === 2) {
+             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
+        } else if (index === 3 || index === 4) {
+             gsapVals = {x: moveLeft, y: moveDown};
+        }
+
+        return gsapVals;
+    },
+    alienSetupAllStems: function () {        
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const moveLeft = -3;
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        var alienPhaseArr = this.alienSetupFlowersAll();
+        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
+        var yArr = [null, null, null, 7, 7];
+        
+        
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                // self.button.disabled = true;
+                var stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                    };
+                  
+                idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
+    },
     alienSetupPathScalesAll: function () {
         const stemGroupElement = document.getElementById('stilkLayer');
         const flowerGroupElement = document.getElementById('blomstLayer');
@@ -135,21 +192,6 @@ FlowerAnimationTest.prototype = {
             // console.error('Group element with ID "myGroup" not found.');
         }
     },
-    getGsapValsFlowersAll: function (index) {
-        let gsapVals = null;
-        const moveLeft = -3;
-        const moveDown = 7;
-
-        if (index === 0 || index === 1) {
-            gsapVals = {x: moveLeft};
-        } else if (index === 2) {
-             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
-        } else if (index === 3 || index === 4) {
-             gsapVals = {x: moveLeft, y: moveDown};
-        }
-
-        return gsapVals;
-    },
     alienSetupFlowersAll: function () {
         const flowerGroupElement = document.getElementById('blomstLayer');
         const idGsapArr = [];
@@ -174,34 +216,6 @@ FlowerAnimationTest.prototype = {
                     };
                 idGsapArr.push(stemFn);
                 });      
-        }
-        return idGsapArr;
-    },
-    alienSetupAllStems: function () {        
-        const stemGroupElement = document.getElementById('stilkLayer');
-        const moveLeft = -3;
-        const idGsapArr = [];
-        var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.getGsapValsFlowersAll();
-        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
-        var yArr = [null, null, null, 7, 7];
-        
-        
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
-     
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                // self.button.disabled = true;
-                var stemFn = 
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                    };
-                  
-                idGsapArr.push(stemFn);
-            })
         }
         return idGsapArr;
     },
@@ -750,6 +764,7 @@ FlowerAnimationTest.prototype = {
         this.alienSetupPathScalesRightMiddle();
         this.alienSetupPathScalesRightTop();
         */
+       
 
         this.alienSetupPathScalesAll();
 
@@ -769,11 +784,13 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
         */
 
-        let alienPhaths = this.alienSetupPathScalesAll();
+        let alienPhasesGsapArrAll = this.getIdGsapArrAll()
+
+        // let alienPhaths = this.alienSetupPathScalesAll();
 
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhaths);
+        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
 
         /*
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
