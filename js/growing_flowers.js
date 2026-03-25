@@ -146,17 +146,19 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsAllFlowers(index);
+                // let gsapVals = this.getGsapValsAllFlowers(index);
 
                 let stemFn = 
                     function () {
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
                         });
+                        /*
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
+                            */
                     };
                 idGsapArr.push(stemFn);
                 });      
