@@ -164,7 +164,7 @@ FlowerAnimationTest.prototype = {
         return idGsapArr;
     },
     alienSetupAllStems: function () {        
-        const stemGroupElement = document.getElementById('stilkLayerflat');
+        const stemGroupElement = document.getElementById('stilkLayer');
         const moveLeft = -3;
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
