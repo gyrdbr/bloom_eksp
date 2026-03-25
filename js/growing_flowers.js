@@ -73,8 +73,11 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Start igjen ")
     },
     setButtonText: function (text) {
+
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.disabled = false;
+
+        console.log("setButtonText", this.button.disabled);
     },
     alienPhase1: function () {
 
@@ -108,6 +111,8 @@ FlowerAnimationTest.prototype = {
     },
     getIdGsapArrAll: function () {
         var idGsapArr = this.alienSetupAllStems();
+
+        console.log("getIdGsapArrAll", "idGsapArr", idGsapArr);
         let alienphases = [];
         
 
@@ -147,10 +152,11 @@ FlowerAnimationTest.prototype = {
         
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
+
+            console.log("alienSetupAllStems path", paths, paths.length);
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // self.button.disabled = true;
                 var stemFn = 
                     function () {
                         gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
@@ -169,6 +175,8 @@ FlowerAnimationTest.prototype = {
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
+
+            console.log("alienSetupPathScalesAll path", paths, paths.length);
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
@@ -202,7 +210,7 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsFlowers1(index);
+                let gsapVals = this.alienSetupFlowersAll(index);
 
                 let stemFn = 
                     function () {
@@ -418,7 +426,6 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // self.button.disabled = true;
                 var stemFn = 
                     function () {
                         gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
@@ -480,7 +487,6 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // self.button.disabled = true;
                 let stemFn = 
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1, 
@@ -756,17 +762,14 @@ FlowerAnimationTest.prototype = {
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
-
-        /*
+        
         this.alienSetupPathScales1();
         this.alienSetupPathScales2();
         this.alienSetupPathScalesRight1();
         this.alienSetupPathScalesRightMiddle();
         this.alienSetupPathScalesRightTop();
-        */
-       
-
-        this.alienSetupPathScalesAll();
+        
+        // this.alienSetupPathScalesAll();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -776,26 +779,26 @@ FlowerAnimationTest.prototype = {
             this.alienPhase2();
         }
 
-        /*
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
         let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
-        */
+        
+        // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        let alienPhasesGsapArrAll = this.getIdGsapArrAll()
+        // console.log("alienPhasesGsapArrAll", alienPhasesGsapArrAll);
 
         // let alienPhaths = this.alienSetupPathScalesAll();
 
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-        this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+        // this.alienphases = alienPhasesGsapArrAll;
 
-        /*
+        
         this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArr).concat(alienPhasesGsapArrBottomRight).concat(alienPhasesGsapArrTopLeft).
         concat(alienPhasesGsapArrMiddleRight).concat(alienPhasesGsapArrTopRight);
-        */
+        
 
         this.setButtonText("Fase ");
 
