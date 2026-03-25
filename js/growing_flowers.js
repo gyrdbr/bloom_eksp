@@ -135,6 +135,76 @@ FlowerAnimationTest.prototype = {
             // console.error('Group element with ID "myGroup" not found.');
         }
     },
+    getGsapValsFlowersAll: function (index) {
+        let gsapVals = null;
+        const moveLeft = -3;
+        const moveDown = 7;
+
+        if (index === 0 || index === 1) {
+            gsapVals = {x: moveLeft};
+        } else if (index === 2) {
+             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
+        } else if (index === 3 || index === 4) {
+             gsapVals = {x: moveLeft, y: moveDown};
+        }
+
+        return gsapVals;
+    },
+    alienSetupFlowersAll: function () {
+        const flowerGroupElement = document.getElementById('blomstLayer');
+        const idGsapArr = [];
+        var self = this;
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let gsapVals = this.getGsapValsFlowers1(index);
+
+                let stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.updatePhase, callbackScope: self
+                        });
+                        if (gsapVals) {
+                            // legger til gsap som skal ha flere values
+                            gsap.to(id, gsapVals);
+                        }
+                    };
+                idGsapArr.push(stemFn);
+                });      
+        }
+        return idGsapArr;
+    },
+    alienSetupAllStems: function () {        
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const moveLeft = -3;
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        var alienPhaseArr = this.getGsapValsFlowersAll();
+        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
+        var yArr = [null, null, null, 7, 7];
+        
+        
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                // self.button.disabled = true;
+                var stemFn = 
+                    function () {
+                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                    };
+                  
+                idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
+    },
     getGsapValsFlowers1: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
