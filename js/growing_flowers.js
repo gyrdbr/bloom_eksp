@@ -77,8 +77,10 @@ FlowerAnimationTest.prototype = {
         this.button.disabled = false;
     },
     alienPhase1: function () {
+        // TODO: x og y-verdiene til stilkene og blomstene har endra seg
 
-        gsap.to("#pathHovedStilk", { duration: durationTime, y: -9,  
+        console.log("alienPhase1");
+        gsap.to("#pathHovedStilk", { duration: durationTime, y: 128,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
         });
@@ -126,7 +128,6 @@ FlowerAnimationTest.prototype = {
         var idGsapArr = this.alienSetupAllStems();
         let alienphases = [];
         
-
         idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
                 idGsapArr[index]();
@@ -167,6 +168,8 @@ FlowerAnimationTest.prototype = {
     },
     alienSetupAllStems: function () {        
         const stemGroupElement = document.getElementById('stilkLayer');
+        const pathHovedStilk = document.getElementById('pathHovedStilk');
+        // TODO pathHovedStilk boer vaere utenfor stilkLayer
         const moveLeft = -3;
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
@@ -786,7 +789,7 @@ FlowerAnimationTest.prototype = {
 
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-       this.alienphases = [phase1,  phase2].concat(alienPhasesGsapArrAll);
+       this.alienphases = [phase1]; /*.concat(alienPhasesGsapArrAll); */
 
         
        /*
@@ -797,7 +800,9 @@ FlowerAnimationTest.prototype = {
         this.setButtonText("Fase ");
 
         // viser under utvikling. skal skjules i produksjon   
-        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+        gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 320 });
+
+        // console.log("longFlowerstem", longFlowerstem);
 
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
         
