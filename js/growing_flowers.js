@@ -118,16 +118,30 @@ FlowerAnimationTest.prototype = {
             gsapVals = {x: moveLeft};
         } else if (index === 10) {
             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
+        } else if (index === 11) {
+                gsapVals = {x: -5, y: moveDown};
         }
+
+        return gsapVals;
+    },
+    getGsapValsAllStems: function (index) {
+        let gsapVals = 0;
+        const moveLeft = -3;
+        const moveDown = 7;
+
+        if (index === 11 ) {
+            gsapVals = {x: -5, y: moveDown};
+        }
+
         /*
-        if (index === 0 || index === 1) {
-            gsapVals = {x: moveLeft};
-        } else if (index === 2) {
-             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
-        } else if (index === 3 || index === 4) {
-             gsapVals = {x: moveLeft, y: moveDown};
+        if (index === 12 ) {
+            gsapVals = {x: -moveLeft, y: moveDown};
         }
-             */
+            */
+
+        if (index === 16) {
+            // gsapVals = {x: moveLeft, y: moveDown};
+        }
 
         return gsapVals;
     },
@@ -173,27 +187,26 @@ FlowerAnimationTest.prototype = {
     },
     alienSetupAllStems: function () {        
         const stemGroupElement = document.getElementById('stilkLayer');
-        const pathHovedStilk = document.getElementById('pathHovedStilk');
-        // TODO pathHovedStilk boer vaere utenfor stilkLayer
-        const moveLeft = -3;
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupAllFlowers();
-        var xArr = [null, moveLeft, moveLeft, -4, moveLeft];
-        var yArr = [null, null, null, 7, 7];
-        
+        var alienPhaseArr = this.alienSetupAllFlowers();   
         
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // self.button.disabled = true;
+                let gsapVals = this.getGsapValsAllStems(index);
+                
                 var stemFn = 
                     function () {
-                        gsap.to(id, { duration: durationTime, scale: 1, x: xArr[index], y: yArr[index],
+                        gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
+                        if (gsapVals) {
+                            // legger til gsap som skal ha flere values
+                            gsap.to(id, gsapVals);
+                        }
                     };
                   
                 idGsapArr.push(stemFn);
