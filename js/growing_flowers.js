@@ -114,6 +114,12 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const moveDown = 7;
 
+        if (index === 2) {
+            gsapVals = {x: moveLeft};
+        } else if (index === 10) {
+            gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
+        }
+        /*
         if (index === 0 || index === 1) {
             gsapVals = {x: moveLeft};
         } else if (index === 2) {
@@ -121,6 +127,7 @@ FlowerAnimationTest.prototype = {
         } else if (index === 3 || index === 4) {
              gsapVals = {x: moveLeft, y: moveDown};
         }
+             */
 
         return gsapVals;
     },
@@ -147,19 +154,17 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsAllFlowers(index);
+                let gsapVals = this.getGsapValsAllFlowers(index);
 
                 let stemFn = 
                     function () {
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
-                        });
-                        /*
+                        });                    
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
-                            */
                     };
                 idGsapArr.push(stemFn);
                 });      
