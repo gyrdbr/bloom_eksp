@@ -160,9 +160,8 @@ FlowerAnimationTest.prototype = {
 
         return gsapVals;
     },
-    getGsapValsAllStems: function (index) {
+    getGsapValsBottomStems: function (index) {
         let gsapVals = 0;
-        const moveDown = 7;
         const moveLeft = -3;
 
         if (index === 0) {
@@ -172,14 +171,34 @@ FlowerAnimationTest.prototype = {
         } else if (index === 4) {
             gsapVals = {x: -5  };
         }
-        else if (index === 11 || index === 18) {
+
+        return gsapVals;
+    },
+    getGsapValsRestStems: function (index) {
+        let gsapVals = 0;
+        const moveDown = 7;
+
+        if (index === 6 || index === 3) {
             gsapVals = {x: -5, y: moveDown};
         }
 
         return gsapVals;
     },
-    getIdGsapArrAll: function () {
-        var idGsapArr = this.alienSetupAllStems();
+    getIdGsapArrBottom: function () {
+        var idGsapArr = this.alienSetupBottomStems();
+        let alienphases = [];
+        
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    getIdGsapArrRest: function () {
+        var idGsapArr = this.alienSetupRestStems();
         let alienphases = [];
         
         idGsapArr.forEach((alien, index) => {
@@ -269,7 +288,7 @@ FlowerAnimationTest.prototype = {
                     console.log("index", index, "id1", id, "#rightPath3sub1");
                 } 
                 
-                var stemFn = 
+                var stemFn =
                     function () {
                         console.log("index2", index, "id2", id, "#rightPath3sub1");   
                         gsap.to(id, { duration: durationTime, scale: 1,
@@ -938,7 +957,9 @@ FlowerAnimationTest.prototype = {
         this.alienSetupPathScalesRightMiddle();
         this.alienSetupPathScalesRightTop();
 
-        this.alienSetupAllPathScales();
+        // this.alienSetupAllPathScales();
+        this.alienSetupBottomStems();
+        this.alienSetupRestStems();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -954,11 +975,12 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrMiddleRight = this.getIdGsapArrMiddleRight();
         let alienPhasesGsapArrTopRight = this.getIdGsapArrTopRight();
 
-        let alienPhasesGsapArrAll = this.getIdGsapArrAll();
-
         // let alienPhasesGsapArrAll = this.getIdGsapArrAll();
 
-       this.alienphases = [phase1].concat(alienPhasesGsapArrAll); 
+        let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
+        let alienPhasesGsapArrRest = this.getIdGsapArrRest();
+        
+        this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat(alienPhasesGsapArrRest);
 
         
        /*
