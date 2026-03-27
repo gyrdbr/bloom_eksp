@@ -113,7 +113,6 @@ FlowerAnimationTest.prototype = {
         // start y: y="-8.9010983" 
         // flytt 1 y: -12.416543
         // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
-       // console.log("moveRectangleAndMidFlowerUp");
 
         
         gsap.to(rectangleMovable, { duration: durationTime, y: -13,
@@ -152,6 +151,7 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const moveDown = 7;
 
+        // todo oppdater index
         if (index === 0) {
             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
         } else if (index === 6 || index === 3) {
@@ -163,6 +163,9 @@ FlowerAnimationTest.prototype = {
     getGsapValsBottomStems: function (index) {
         let gsapVals = 0;
         const moveLeft = -3;
+
+        console.log("getGsapValsBottomStems", "index", index);
+        // todo oppdater index
 
         if (index === 0) {
             gsapVals = {x: 110, y: 55};
@@ -287,11 +290,7 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsBottomStems(index);
 
-                /*
-                if (id === "#rightPath3sub1") {
-                    console.log("index", index, "id1", id, "#rightPath3sub1");
-                } 
-                    */
+                console.log("gsapVals", gsapVals, "index", index, "id", id);
                 
                 var stemFn =
                     function () {
@@ -303,6 +302,7 @@ FlowerAnimationTest.prototype = {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
+                        // console.log("alienSetupBottomStems", "index", index, "id1", id, "#rightPath3sub1");
                         /*
                         if (index === 4) { // TODO dette maa ordnes paa en annen maate. 
                         // // hvorfor forsvinner pathRight3 naar jeg flytter stilken
@@ -368,9 +368,12 @@ FlowerAnimationTest.prototype = {
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
+
+            console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
+                console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
@@ -965,8 +968,8 @@ FlowerAnimationTest.prototype = {
         this.alienSetupPathScalesRightTop();
 
         // this.alienSetupAllPathScales();
-        this.alienSetupBottomStems();
-        this.alienSetupRestStems();
+        this.alienSetupBottomPathScales();
+        this.alienSetupRestPathScales();
 
         var phase1 = () => {
             this.alienPhase1();
