@@ -109,17 +109,19 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updatePhase, callbackScope: this });
 
     },
-    moveRectangleAndMidFlowerUp: function () {
+    moveRectangleAndMidFlowerUp: function (index) {
         // start y: y="-8.9010983" 
         // flytt 1 y: -12.416543
         // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
-        console.log("moveRectangleAndMidFlowerUp");
+        console.log("moveRectangleAndMidFlowerUp", "index", index);
 
-        gsap.to(rectangleMovable, { duration: durationTime, y: -13,
-            onComplete: this.moveTopPathFlowerMovable, 
-            callbackScope: this
-        });
-        gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
+        if (index === 5) {
+            gsap.to(rectangleMovable, { duration: durationTime, y: -13,
+                onComplete: this.moveTopPathFlowerMovable, 
+                callbackScope: this
+            });
+            gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
+        }
     },
     moveTopPathFlowerMovable: function () {
 
@@ -192,7 +194,7 @@ FlowerAnimationTest.prototype = {
                 let gsapVals = this.getGsapValsAllFlowers(index);
 
                 let stemFn = 
-                    function () {
+                    function () {                        
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
                         });                    
@@ -200,15 +202,17 @@ FlowerAnimationTest.prototype = {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
-                         if (index === 4) {
-                            // self.moveRectangleAndMidFlowerUp();
-                        }
+                        if (id === "#path2-3") {
+                            console.log("id", id, "index", index);
+                            self.moveRectangleAndMidFlowerUp(index);
+                        }                        
                     };
                 idGsapArr.push(stemFn);
                 });      
         }
         return idGsapArr;
     },
+    /*
     onCompletealienSetupAllStemsFour: function (index) {
         var alienPhaseArr = this.alienSetupAllFlowers();  
 
@@ -218,6 +222,7 @@ FlowerAnimationTest.prototype = {
             alienPhaseArr[index];
         }
     },
+    */
     alienSetupAllStems: function () {        
         const stemGroupElement = document.getElementById('stilkLayer');
         const idGsapArr = [];
@@ -229,10 +234,13 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
+                // console.log("id1", id, "pathRight3");
+                // her er pathRight3 med
                 let gsapVals = this.getGsapValsAllStems(index);
                 
                 var stemFn = 
                     function () {
+                        // console.log("id", id, "pathRight3");
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
@@ -240,9 +248,14 @@ FlowerAnimationTest.prototype = {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
-                        if (index === 4) {
-                            // self.moveRectangleAndMidFlowerUp();
+                        /*
+                        if (index === 4) { // TODO dette maa ordnes paa en annen maate. 
+                        // // hvorfor forsvinner pathRight3 naar jeg flytter stilken
+                                gsap.to("#pathRight3", { duration: durationTime, scale: 1,
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                            });
                         }
+                            */
                     };
                   
                 idGsapArr.push(stemFn);
