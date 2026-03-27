@@ -19,9 +19,9 @@ class BlomsterstandBlomst {
 
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
-var rectangleMovableInSvg = document.getElementById('rect2');
+var rectangleMovableInSvg = document.getElementById('rect1');
 var longFlowerstem = "#pathHovedStilk";
-var rectangleMovable = "#rect2"; // middle rectangle hiding upper stem
+var rectangleMovable = "#rect1"; // middle rectangle hiding upper stem
 var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 0.5; // skal vaere 1 i endelig versjon
@@ -32,7 +32,7 @@ var pathLeft1 = "#pathLeft1"; // stilk
 var leftPath1Flower = "#leftPath1Flower"; // blomst
 
 function blomsterstandStyle () {
-    const rect = document.getElementById('rect2');
+    const rect = document.getElementById('rect1');
 
     rect.style.display = 'inline';
 }
@@ -208,7 +208,7 @@ FlowerAnimationTest.prototype = {
                             gsap.to(id, gsapVals);
                         }
                         if (id === "#path4-1-2") {// midstilken vokser naar man kommer hit
-                            self.moveRectangleAndMidFlowerUp();
+                            // self.moveRectangleAndMidFlowerUp();
                         }                        
                     };
                 idGsapArr.push(stemFn);
@@ -286,6 +286,20 @@ FlowerAnimationTest.prototype = {
         } else {
             // console.error('Group element with ID "myGroup" not found.');
         }
+    },
+    getIdGsapArrBottomLeft: function () {
+        var idGsapArr = this.alienSetupStems1();
+        let alienphases = [];
+        
+
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
     },
     getGsapValsFlowers1: function (index) {
         let gsapVals = null;
@@ -750,20 +764,6 @@ FlowerAnimationTest.prototype = {
                 gsap.set(id, { duration: durationTime, scale: 0 });
             });
         }
-    },
-    getIdGsapArrBottomLeft: function () {
-        var idGsapArr = this.alienSetupStems1();
-        let alienphases = [];
-        
-
-        idGsapArr.forEach((alien, index) => {
-            let idGsapFn = () => {
-                idGsapArr[index]();
-            }
-            alienphases.push(idGsapFn);
-        });
-
-        return alienphases;
     },
     getIdGsapArrTopLeft: function () {
         var idGsapArrTopLeft = this.alienSetupStems2();
