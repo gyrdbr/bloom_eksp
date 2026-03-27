@@ -19,7 +19,9 @@ class BlomsterstandBlomst {
 
 var blomstButton = document.getElementById('startBlomst-button-svg');
 var blomsterstandFlower = document.getElementById('wholeInflorecence');
+var rectangleMovableInSvg = document.getElementById('rect2');
 var longFlowerstem = "#pathHovedStilk";
+var rectangleMovable = "#rect2"; // middle rectangle hiding upper stem
 var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 0.5; // skal vaere 1 i endelig versjon
@@ -77,9 +79,7 @@ FlowerAnimationTest.prototype = {
         this.button.disabled = false;
     },
     alienPhase1: function () {
-        // TODO: x og y-verdiene til stilkene og blomstene har endra seg
 
-        console.log("alienPhase1");
         gsap.to("#pathHovedStilk", { duration: durationTime, y: -9,  
             onComplete: this.alienPhase1b, 
             callbackScope: this
@@ -108,6 +108,26 @@ FlowerAnimationTest.prototype = {
         gsap.to(leftPath1Flower, { duration: durationTime, scale: 1,
             onComplete: this.updatePhase, callbackScope: this });
 
+    },
+    moveRectangleAndMidFlowerUp: function () {
+        // start y: y="-8.9010983" 
+        // flytt 1 y: -12.416543
+        // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+        console.log("moveRectangleAndMidFlowerUp");
+
+        gsap.to(rectangleMovable, { duration: durationTime, y: -13,
+            onComplete: this.moveTopPathFlowerMovable, 
+            callbackScope: this
+        });
+        gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
+    },
+    moveTopPathFlowerMovable: function () {
+
+        gsap.to(topPathFlowerMovable, 
+                    {scale: 1, duration: durationTime,
+                        onComplete: this.updatePhase, 
+                        callbackScope: this
+            });
     },
     getGsapValsAllFlowers: function (index) {
         let gsapVals = null;
@@ -180,11 +200,23 @@ FlowerAnimationTest.prototype = {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
+                         if (index === 4) {
+                            // self.moveRectangleAndMidFlowerUp();
+                        }
                     };
                 idGsapArr.push(stemFn);
                 });      
         }
         return idGsapArr;
+    },
+    onCompletealienSetupAllStemsFour: function (index) {
+        var alienPhaseArr = this.alienSetupAllFlowers();  
+
+        if (index === 4) {
+            this.moveRectangleAndMidFlowerUp();
+        } else {
+            alienPhaseArr[index];
+        }
     },
     alienSetupAllStems: function () {        
         const stemGroupElement = document.getElementById('stilkLayer');
@@ -207,6 +239,9 @@ FlowerAnimationTest.prototype = {
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
+                        }
+                        if (index === 4) {
+                            // self.moveRectangleAndMidFlowerUp();
                         }
                     };
                   
