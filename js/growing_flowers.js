@@ -215,7 +215,7 @@ FlowerAnimationTest.prototype = {
         return alienphases;
     },
     alienSetupBottomFlowers: function () {
-        const flowerGroupElement = document.getElementById('blomstLayer');
+        const flowerGroupElement = document.getElementById('groupBottomFlowers');
         const idGsapArr = [];
         var self = this;
 
@@ -242,7 +242,7 @@ FlowerAnimationTest.prototype = {
         return idGsapArr;
     },
     alienSetupRestFlowers: function () {
-        const flowerGroupElement = document.getElementById('blomstLayer');
+        const flowerGroupElement = document.getElementById('groupRestFlowers');
         const idGsapArr = [];
         var self = this;
 
@@ -319,7 +319,7 @@ FlowerAnimationTest.prototype = {
         return idGsapArr;
     },
     alienSetupRestStems: function () {        
-        const stemGroupElement = document.getElementById('stilkLayer');
+        const stemGroupElement = document.getElementById('groupRestStems');
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
         var alienPhaseArr = this.alienSetupRestFlowers();   
@@ -362,7 +362,7 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    alienSetupBottomPathScales: function () {
+    alienSetupBottomPathScales: function () { // denne er korrekt
         const stemGroupElement = document.getElementById('groupBottomStems');
         const flowerGroupElement = document.getElementById('groupBottomFlowers');
 
@@ -394,9 +394,9 @@ FlowerAnimationTest.prototype = {
             // console.error('Group element with ID "myGroup" not found.');
         }
     },
-    alienSetupRestPathScales: function () {
-        const stemGroupElement = document.getElementById('stilkLayer');
-        const flowerGroupElement = document.getElementById('blomstLayer');
+    alienSetupRestPathScales: function () { // denne er fail
+        const stemGroupElement = document.getElementById('groupRestStems');
+        const flowerGroupElement = document.getElementById('groupRestFlowers');
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
