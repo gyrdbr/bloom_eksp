@@ -113,7 +113,7 @@ FlowerAnimationTest.prototype = {
         // start y: y="-8.9010983" 
         // flytt 1 y: -12.416543
         // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
-        console.log("moveRectangleAndMidFlowerUp");
+       // console.log("moveRectangleAndMidFlowerUp");
 
         
         gsap.to(rectangleMovable, { duration: durationTime, y: -13,
@@ -188,6 +188,7 @@ FlowerAnimationTest.prototype = {
         var idGsapArr = this.alienSetupBottomStems();
         let alienphases = [];
         
+        // er feilen her?
         idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
                 idGsapArr[index]();
@@ -248,13 +249,15 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsRestFlowers(index);
+                /*
                 if (id === "#path4-1-2") {
                     console.log("index1", index, "id1", id, "path4-1-2");
-                }                
+                } 
+                    */               
 
                 let stemFn = 
                     function () {   
-                        console.log("index2", index, "id2", id, "path4-1-2");                     
+                        // console.log("index2", index, "id2", id, "path4-1-2");                     
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
                         });                    
@@ -284,13 +287,15 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsBottomStems(index);
 
+                /*
                 if (id === "#rightPath3sub1") {
                     console.log("index", index, "id1", id, "#rightPath3sub1");
                 } 
+                    */
                 
                 var stemFn =
                     function () {
-                        console.log("index2", index, "id2", id, "#rightPath3sub1");   
+                        // console.log("index2", index, "id2", id, "#rightPath3sub1");   
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
@@ -326,13 +331,15 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsRestStems(index);
 
+                /*
                 if (id === "#rightPath3sub1") {
                     console.log("index", index, "id1", id, "#rightPath3sub1");
                 } 
+                    */
                 
                 var stemFn = 
                     function () {
-                        console.log("index2", index, "id2", id, "#rightPath3sub1");   
+                        // console.log("index2", index, "id2", id, "#rightPath3sub1");   
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
@@ -356,8 +363,8 @@ FlowerAnimationTest.prototype = {
         return idGsapArr;
     },
     alienSetupBottomPathScales: function () {
-        const stemGroupElement = document.getElementById('stilkLayer');
-        const flowerGroupElement = document.getElementById('blomstLayer');
+        const stemGroupElement = document.getElementById('groupBottomStems');
+        const flowerGroupElement = document.getElementById('groupBottomFlowers');
 
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
