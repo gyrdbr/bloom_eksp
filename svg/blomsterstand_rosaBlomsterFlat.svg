@@ -59,14 +59,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="mm"
    inkscape:zoom="0.70710678"
-   inkscape:cx="316.78384"
-   inkscape:cy="612.35447"
-   inkscape:window-width="1676"
+   inkscape:cx="702.15703"
+   inkscape:cy="654.78088"
+   inkscape:window-width="1613"
    inkscape:window-height="1000"
-   inkscape:window-x="228"
+   inkscape:window-x="298"
    inkscape:window-y="188"
    inkscape:window-maximized="0"
-   inkscape:current-layer="wholeInflorecence"
+   inkscape:current-layer="layer4"
    showgrid="false" />
  <g
    inkscape:groupmode="layer"
@@ -233,7 +233,7 @@
    id="layer4"
    inkscape:label="rectangle"
    style="display:inline"><rect
-     style="display:none;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.67745;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.67745;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
      id="rect2"
      width="47.090942"
      height="216.508"

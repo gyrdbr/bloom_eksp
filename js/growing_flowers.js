@@ -115,7 +115,7 @@ FlowerAnimationTest.prototype = {
         const moveDown = 7;
 
         if (index === 0) {
-            gsapVals = {x: 15, y: -7};
+            gsapVals = {x: 15 , y: 16};
         } else if (index === 2) {
             gsapVals = {x: moveLeft};
         } else if (index === 10) {
@@ -131,7 +131,7 @@ FlowerAnimationTest.prototype = {
         const moveDown = 7;
 
         if (index === 0) {
-            gsapVals = {x: 110};
+            gsapVals = {x: 110, y: 55};
         } else if (index === 11 || index === 18) {
             gsapVals = {x: -5, y: moveDown};
         }
