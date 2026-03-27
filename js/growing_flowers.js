@@ -132,7 +132,7 @@ FlowerAnimationTest.prototype = {
                         callbackScope: this
             });
     },
-    getGsapValsAllFlowers: function (index) {
+    getGsapValsBottomFlowers: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
         const moveDown = 7;
@@ -143,9 +143,18 @@ FlowerAnimationTest.prototype = {
             gsapVals = {x: moveLeft, y: 5};
         } else if (index === 4) {
             gsapVals = {x: -5 };
-        } else if (index === 10) {
+        } 
+
+        return gsapVals;
+    },
+    getGsapValsRestFlowers: function (index) {
+        let gsapVals = null;
+        const moveLeft = -3;
+        const moveDown = 7;
+
+        if (index === 0) {
             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
-        } else if (index === 11 || index === 18) {
+        } else if (index === 6 || index === 3) {
                 gsapVals = {x: -5, y: moveDown};
         }
 
@@ -182,7 +191,7 @@ FlowerAnimationTest.prototype = {
 
         return alienphases;
     },
-    alienSetupAllFlowers: function () {
+    alienSetupBottomFlowers: function () {
         const flowerGroupElement = document.getElementById('blomstLayer');
         const idGsapArr = [];
         var self = this;
@@ -192,7 +201,34 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsAllFlowers(index);
+                let gsapVals = this.getGsapValsBottomFlowers(index);            
+
+                let stemFn = 
+                    function () {                      
+                        gsap.to(id, { duration: durationTime, scale: 1, 
+                            onComplete: self.updatePhase, callbackScope: self
+                        });                    
+                        if (gsapVals) {
+                            // legger til gsap som skal ha flere values
+                            gsap.to(id, gsapVals);
+                        }                     
+                    };
+                idGsapArr.push(stemFn);
+                });      
+        }
+        return idGsapArr;
+    },
+    alienSetupRestFlowers: function () {
+        const flowerGroupElement = document.getElementById('blomstLayer');
+        const idGsapArr = [];
+        var self = this;
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let gsapVals = this.getGsapValsRestFlowers(index);
                 if (id === "#path4-1-2") {
                     console.log("index1", index, "id1", id, "path4-1-2");
                 }                
@@ -216,18 +252,18 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    alienSetupAllStems: function () {        
-        const stemGroupElement = document.getElementById('stilkLayer');
+    alienSetupBottomStems: function () {        
+        const stemGroupElement = document.getElementById('groupBottomStems');
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupAllFlowers();   
+        var alienPhaseArr = this.alienSetupBottomFlowers();   
         
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsAllStems(index);
+                let gsapVals = this.getGsapValsBottomStems(index);
 
                 if (id === "#rightPath3sub1") {
                     console.log("index", index, "id1", id, "#rightPath3sub1");
@@ -258,7 +294,78 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    alienSetupAllPathScales: function () {
+    alienSetupRestStems: function () {        
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        var alienPhaseArr = this.alienSetupRestFlowers();   
+        
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let gsapVals = this.getGsapValsRestStems(index);
+
+                if (id === "#rightPath3sub1") {
+                    console.log("index", index, "id1", id, "#rightPath3sub1");
+                } 
+                
+                var stemFn = 
+                    function () {
+                        console.log("index2", index, "id2", id, "#rightPath3sub1");   
+                        gsap.to(id, { duration: durationTime, scale: 1,
+                            onComplete: alienPhaseArr[index], callbackScope: self
+                        });
+                        if (gsapVals) {
+                            // legger til gsap som skal ha flere values
+                            gsap.to(id, gsapVals);
+                        }
+                        /*
+                        if (index === 4) { // TODO dette maa ordnes paa en annen maate. 
+                        // // hvorfor forsvinner pathRight3 naar jeg flytter stilken
+                                gsap.to("#pathRight3", { duration: durationTime, scale: 1,
+                                    onComplete: alienPhaseArr[index], callbackScope: self
+                            });
+                        }
+                            */
+                    };
+                  
+                idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
+    },
+    alienSetupBottomPathScales: function () {
+        const stemGroupElement = document.getElementById('stilkLayer');
+        const flowerGroupElement = document.getElementById('blomstLayer');
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+            // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
+    alienSetupRestPathScales: function () {
         const stemGroupElement = document.getElementById('stilkLayer');
         const flowerGroupElement = document.getElementById('blomstLayer');
 
