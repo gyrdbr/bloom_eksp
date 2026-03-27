@@ -117,7 +117,9 @@ FlowerAnimationTest.prototype = {
         if (index === 0) {
             gsapVals = {x: 15 , y: 16};
         } else if (index === 2) {
-            gsapVals = {x: moveLeft};
+            gsapVals = {x: moveLeft, y: 5};
+        } else if (index === 4) {
+            gsapVals = {x: -5 };
         } else if (index === 10) {
             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
         } else if (index === 11 || index === 18) {
@@ -129,10 +131,16 @@ FlowerAnimationTest.prototype = {
     getGsapValsAllStems: function (index) {
         let gsapVals = 0;
         const moveDown = 7;
+        const moveLeft = -3;
 
         if (index === 0) {
             gsapVals = {x: 110, y: 55};
-        } else if (index === 11 || index === 18) {
+        } else if (index === 2) {
+            gsapVals = {x: moveLeft, y: 5 };        
+        } else if (index === 4) {
+            gsapVals = {x: -5  };
+        }
+        else if (index === 11 || index === 18) {
             gsapVals = {x: -5, y: moveDown};
         }
 
