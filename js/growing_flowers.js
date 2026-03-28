@@ -112,21 +112,17 @@ FlowerAnimationTest.prototype = {
 
     },
     moveRectangleAndMidFlowerUp: function () {
-        // start y: y="-8.9010983" 
-        // flytt 1 y: -12.416543
-        // gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
-
-        
+           
         gsap.to(rectangleMovable, { duration: durationTime, y: -13,
-            onComplete: this.moveTopPathFlowerMovableb, 
+            onComplete: this.moveTopPathFlowerMovable,
             callbackScope: this
         });
         gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
     },
-    moveTopPathFlowerMovableb: function () {
+    moveTopPathFlowerMovable: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime,
+                    {scale: 1, duration: durationTime, x: -3,
                         onComplete: this.updatePhase, 
                         callbackScope: this
             });
@@ -134,7 +130,6 @@ FlowerAnimationTest.prototype = {
     getGsapValsBottomFlowers: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
-        const moveDown = 7;
 
         // todo oppdater index
         if (index === 0) {
@@ -152,7 +147,6 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const moveDown = 7;
 
-        // todo oppdater index
         if (index === 0) {
             gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
         } else if (index === 6 || index === 3) {
@@ -174,17 +168,6 @@ FlowerAnimationTest.prototype = {
             gsapVals = {x: moveLeft, y: 5 };        
         } else if (index === 4) {
             gsapVals = {x: -5  };
-        }
-
-        return gsapVals;
-    },
-    getGsapValsRestStems: function (index) {
-        let gsapVals = 0;
-        const moveDown = 7;
-
-        // todo oppdater index
-        if (index === 6 || index === 3) {
-            gsapVals = {x: -5, y: moveDown};
         }
 
         return gsapVals;
@@ -254,11 +237,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsRestFlowers(index);
-                /*
-                if (id === "#path4-1-2") {
-                    console.log("index1", index, "id1", id, "path4-1-2");
-                } 
-                    */               
 
                 let stemFn = 
                     function () {   
@@ -328,17 +306,9 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsRestStems(index);
-
-                /*
-                if (id === "#rightPath3sub1") {
-                    console.log("index", index, "id1", id, "#rightPath3sub1");
-                } 
-                    */
                 
                 var stemFn = 
-                    function () {
-                        // console.log("index2", index, "id2", id, "#rightPath3sub1");   
+                    function () {   
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
@@ -346,14 +316,6 @@ FlowerAnimationTest.prototype = {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
-                        /*
-                        if (index === 4) { // TODO dette maa ordnes paa en annen maate. 
-                        // // hvorfor forsvinner pathRight3 naar jeg flytter stilken
-                                gsap.to("#pathRight3", { duration: durationTime, scale: 1,
-                                    onComplete: alienPhaseArr[index], callbackScope: self
-                            });
-                        }
-                            */
                     };
                   
                 idGsapArr.push(stemFn);
