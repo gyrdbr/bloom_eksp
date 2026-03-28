@@ -56,6 +56,8 @@ FlowerAnimationTest.prototype = {
     playAnim: function () {
         this.button.disabled = true;
         if (this.phazeIndex < this.alienphases.length) {
+            console.log("playAnim", "this.alienphases", this.alienphases);
+            console.log("this.phazeIndex", this.phazeIndex);
             this.alienphases[this.phazeIndex]();
         } else {
             this.resett();
@@ -116,7 +118,7 @@ FlowerAnimationTest.prototype = {
 
         
         gsap.to(rectangleMovable, { duration: durationTime, y: -13,
-            onComplete: this.updatePhase, 
+            onComplete: this.moveTopPathFlowerMovable, 
             callbackScope: this
         });
         /*
@@ -136,6 +138,7 @@ FlowerAnimationTest.prototype = {
         const moveLeft = -3;
         const moveDown = 7;
 
+        // todo oppdater index
         if (index === 0) {
             gsapVals = {x: 15 , y: 16};
         } else if (index === 2) {
@@ -164,7 +167,7 @@ FlowerAnimationTest.prototype = {
         let gsapVals = 0;
         const moveLeft = -3;
 
-        console.log("getGsapValsBottomStems", "index", index);
+        // console.log("getGsapValsBottomStems", "index", index);
         // todo oppdater index
 
         if (index === 0) {
@@ -181,6 +184,7 @@ FlowerAnimationTest.prototype = {
         let gsapVals = 0;
         const moveDown = 7;
 
+        // todo oppdater index
         if (index === 6 || index === 3) {
             gsapVals = {x: -5, y: moveDown};
         }
@@ -267,10 +271,7 @@ FlowerAnimationTest.prototype = {
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
-                        }
-                        if (id === "#path4-1-2") {// midstilken vokser naar man kommer hit
-                            // self.moveRectangleAndMidFlowerUp();
-                        }                        
+                        }                      
                     };
                 idGsapArr.push(stemFn);
                 });      
@@ -290,7 +291,7 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +path.id;
                 let gsapVals = this.getGsapValsBottomStems(index);
 
-                console.log("gsapVals", gsapVals, "index", index, "id", id);
+                // console.log("gsapVals", gsapVals, "index", index, "id", id);
                 
                 var stemFn =
                     function () {
@@ -369,11 +370,11 @@ FlowerAnimationTest.prototype = {
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
 
-            console.log("alienSetupBottomPathScales");
+            // console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                console.log("id", id);
+                // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
@@ -970,6 +971,7 @@ FlowerAnimationTest.prototype = {
         // this.alienSetupAllPathScales();
         this.alienSetupBottomPathScales();
         this.alienSetupRestPathScales();
+        
 
         var phase1 = () => {
             this.alienPhase1();
@@ -989,8 +991,10 @@ FlowerAnimationTest.prototype = {
 
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
+        // let movedMidFlowerUp = this.moveRectangleAndMidFlowerUp();
         
-        this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat(alienPhasesGsapArrRest);
+        this.alienphases = [phase1].concat(alienPhasesGsapArrBottom)
+        .concat(alienPhasesGsapArrRest);
 
         
        /*
