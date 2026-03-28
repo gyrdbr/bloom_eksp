@@ -186,6 +186,32 @@ FlowerAnimationTest.prototype = {
 
         return alienphases;
     },
+    getIdGsapArrGroup2: function () {
+        var idGsapArr = this.alienSetupStemGroup2();
+        let alienphases = [];
+        
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
+    getIdGsapArrGroup3: function () {
+        var idGsapArr = this.alienSetupStemGroup3();
+        let alienphases = [];
+        
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            alienphases.push(idGsapFn);
+        });
+
+        return alienphases;
+    },
     getIdGsapArrRest: function () {
         var idGsapArr = this.alienSetupRestStems();
         let alienphases = [];
@@ -222,7 +248,7 @@ FlowerAnimationTest.prototype = {
                         }                     
                     };
                 idGsapArr.push(stemFn);
-                });      
+                });
         }
         return idGsapArr;
     },
@@ -351,16 +377,17 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsBottomStems(index);
+                // let gsapVals = this.getGsapValsBottomStems(index);
                 
                 var stemFn =
                     function () {  
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
+                        /*
                         if (gsapVals) {
                             gsap.to(id, gsapVals);
-                        }
+                        } */
                     };
                   
                 idGsapArr.push(stemFn);
@@ -378,17 +405,21 @@ FlowerAnimationTest.prototype = {
             const paths = stemGroupElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                let gsapVals = this.getGsapValsBottomStems(index);
+                // let gsapVals = this.getGsapValsBottomStems(index);
+
+                // console.log("path", path);
+                console.log("alienSetupStemGroup3", "alienPhaseArr", alienPhaseArr);
                 
                 var stemFn =
                     function () {  
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
+                        /*
                         if (gsapVals) {
                             gsap.to(id, gsapVals);
                         }
+                            */
                     };
                   
                 idGsapArr.push(stemFn);
@@ -438,6 +469,70 @@ FlowerAnimationTest.prototype = {
 
                 // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+            // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
+    alienSetupGroup2PathScales: function () { // denne er korrekt
+        const stemGroupElement = document.getElementById('group2');
+        const flowerGroupElement = document.getElementById('group2Flowers');
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+
+            // console.log("alienSetupBottomPathScales");
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                // console.log("id", id);
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+
+        if (flowerGroupElement) {
+            const paths = flowerGroupElement.querySelectorAll('path');
+
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+            // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
+    alienSetupGroup3PathScales: function () { // denne er korrekt
+        const stemGroupElement = document.getElementById('group3');
+        const flowerGroupElement = document.getElementById('group3Flowers');
+
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+
+            // console.log("alienSetupBottomPathScales");
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                // console.log("id", id);
+                gsap.set(id, { duration: durationTime, scale: 0 });
 
             });
         } else {
@@ -1033,7 +1128,8 @@ FlowerAnimationTest.prototype = {
         // this.alienSetupAllPathScales();
         this.alienSetupBottomPathScales();
         this.alienSetupRestPathScales();
-        
+        this.alienSetupGroup2PathScales();
+        this.alienSetupGroup3PathScales();
 
         var phase1 = () => {
             this.alienPhase1();
@@ -1047,6 +1143,8 @@ FlowerAnimationTest.prototype = {
             this.moveRectangleAndMidFlowerUp();
         }
 
+        // todo: lage phase4
+
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
         let alienPhasesGsapArrBottomRight = this.getIdGsapArrBottomRight();
         let alienPhasesGsapArrTopLeft = this.getIdGsapArrTopLeft();
@@ -1058,8 +1156,12 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
         // let movedMidFlowerUp = this.moveRectangleAndMidFlowerUp();
+        let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
+         let alienPhasesGsapArrGroup3 = this.getIdGsapArrGroup3();
+
         
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
+        .concat(alienPhasesGsapArrGroup2).concat(alienPhasesGsapArrGroup3)
         .concat(alienPhasesGsapArrRest);
 
         
