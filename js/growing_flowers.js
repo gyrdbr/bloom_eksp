@@ -39,9 +39,6 @@ function blomsterstandStyle () {
     rect.style.display = 'inline';
 }
 
-// TODO rectangle skal med, men maa flyttes oppover etterhvert
-// blomsterstandStyle();
-
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
@@ -156,6 +153,8 @@ FlowerAnimationTest.prototype = {
                         callbackScope: this
             });
     },
+    // TODO moveTopPathFlowerMovable4 skal skjule rektanglet
+    // resten av blomsten skal vises
     getGsapValsBottomFlowers: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
@@ -757,7 +756,8 @@ FlowerAnimationTest.prototype = {
 
         
         this.alienphases = [phase1].concat([phase4])
-        .concat(alienPhasesGsapArrGroup3).concat([phase5]).concat(alienPhasesGsapArrGroup4);
+        .concat(alienPhasesGsapArrGroup3).concat([phase5]).concat(alienPhasesGsapArrGroup4).
+        concat(alienPhasesGsapArrRest);
         
         /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
