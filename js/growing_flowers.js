@@ -112,6 +112,9 @@ FlowerAnimationTest.prototype = {
 
     },
     moveRectangleAndMidFlowerUp: function () {
+
+        // opprinelig height 216.59503
+         // ny height 203.6
            
         gsap.to(rectangleMovable, { duration: durationTime, y: -13,
             onComplete: this.moveTopPathFlowerMovable,
@@ -123,7 +126,25 @@ FlowerAnimationTest.prototype = {
 
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: durationTime, x: -3,
-                        onComplete: this.updatePhase, 
+                        onComplete: this.updatePhase,
+                        callbackScope: this
+            });
+    },
+    moveRectangleAndMidFlowerUp2: function () {
+           
+        // opprinnelig height 216.6 
+        // ny height 161.4
+        gsap.to(rectangleMovable, { duration: durationTime, y: -55,
+            onComplete: this.moveTopPathFlowerMovable2,
+            callbackScope: this
+        });
+        gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
+    },
+    moveTopPathFlowerMovable2: function () {
+
+        gsap.to(topPathFlowerMovable, 
+                    {scale: 1, duration: durationTime, x: -3,
+                        onComplete: this.updatePhase,
                         callbackScope: this
             });
     },
@@ -405,10 +426,8 @@ FlowerAnimationTest.prototype = {
             const paths = stemGroupElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
+                const id = "#" +path.id;
                 // let gsapVals = this.getGsapValsBottomStems(index);
-
-                // console.log("path", path);
-                console.log("alienSetupStemGroup3", "alienPhaseArr", alienPhaseArr);
                 
                 var stemFn =
                     function () {  
@@ -1143,6 +1162,10 @@ FlowerAnimationTest.prototype = {
             this.moveRectangleAndMidFlowerUp();
         }
 
+        var phase4 = () => {
+            this.moveRectangleAndMidFlowerUp2();
+        }
+
         // todo: lage phase4
 
         let alienPhasesGsapArr = this.getIdGsapArrBottomLeft();
@@ -1155,13 +1178,12 @@ FlowerAnimationTest.prototype = {
 
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
-        // let movedMidFlowerUp = this.moveRectangleAndMidFlowerUp();
         let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
          let alienPhasesGsapArrGroup3 = this.getIdGsapArrGroup3();
 
         
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
-        .concat(alienPhasesGsapArrGroup2).concat(alienPhasesGsapArrGroup3)
+        .concat(alienPhasesGsapArrGroup2).concat([phase4]).concat(alienPhasesGsapArrGroup3)
         .concat(alienPhasesGsapArrRest);
 
         
