@@ -403,17 +403,19 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsRestFlowers(index);
+                // let gsapVals = this.getGsapValsRestFlowers(index);
 
                 let stemFn = 
                     function () {                   
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
-                        });                    
+                        });
+                        /*        
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
-                        }                      
+                        }
+                            */                
                     };
                 idGsapArr.push(stemFn);
                 });      
@@ -545,17 +547,19 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsRestFlowers(index); 
+                // let gsapVals = this.getGsapValsRestFlowers(index); 
                 
                 var stemFn = 
                     function () {   
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
+                        /*
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
+                            */
                     };
                   
                 idGsapArr.push(stemFn);
@@ -702,6 +706,7 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
+                // fjerne "right"
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
