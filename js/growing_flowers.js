@@ -97,20 +97,6 @@ FlowerAnimationTest.prototype = {
                         callbackScope: this
             });
     },
-    alienPhase2: function () {
-        
-
-        gsap.to("#pathLeft1", { duration: durationTime, scale: 1, 
-            onComplete: this.alienPhase2b, callbackScope: this
-         });
-
-    },
-    alienPhase2b: function () {
-
-        gsap.to(leftPath1Flower, { duration: durationTime, scale: 1,
-            onComplete: this.updatePhase, callbackScope: this });
-
-    },
     moveRectangleAndMidFlowerUp: function () {
 
         // opprinelig height 216.59503
@@ -167,6 +153,16 @@ FlowerAnimationTest.prototype = {
 
         return gsapVals;
     },
+    getGsapValsFlowers3: function (index) {
+        let gsapVals = null;
+
+        // todo oppdater index
+         if (index === 0) {
+            gsapVals = {x: -5, y: 5};
+        }
+
+        return gsapVals;
+    },
     getGsapValsRestFlowers: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
@@ -184,15 +180,21 @@ FlowerAnimationTest.prototype = {
         let gsapVals = 0;
         const moveLeft = -3;
 
-        // console.log("getGsapValsBottomStems", "index", index);
-        // todo oppdater index
-
         if (index === 0) {
             gsapVals = {x: 110, y: 55};
         } else if (index === 2) {
             gsapVals = {x: moveLeft, y: 5 };        
         } else if (index === 4) {
             gsapVals = {x: -5  };
+        }
+
+        return gsapVals;
+    },
+    getGsapValsStems3: function (index) {
+        let gsapVals = 0;
+
+        if (index === 0) {
+            gsapVals = {x: -5, y: 5};
         }
 
         return gsapVals;
@@ -287,7 +289,6 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsBottomFlowers(index);            
 
                 let stemFn = 
                     function () {                      
@@ -315,20 +316,20 @@ FlowerAnimationTest.prototype = {
             const paths = flowerGroupElement.querySelectorAll('path');
 
             paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsBottomFlowers(index);            
+                const id = "#" +path.id;                
+                let gsapVals = this.getGsapValsFlowers3(index);
+
+                console.log("alienSetupFlowersGroup3", "index", index, "id", id);   
 
                 let stemFn = 
                     function () {                      
                         gsap.to(id, { duration: durationTime, scale: 1, 
                             onComplete: self.updatePhase, callbackScope: self
-                        });
-                        /*                
+                        });                        
                         if (gsapVals) {
                             // legger til gsap som skal ha flere values
                             gsap.to(id, gsapVals);
                         }
-                            */
                     };
                 idGsapArr.push(stemFn);
                 });      
@@ -402,7 +403,6 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsBottomStems(index);
                 
                 var stemFn =
                     function () {  
@@ -431,18 +431,18 @@ FlowerAnimationTest.prototype = {
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsBottomStems(index);
+                let gsapVals = this.getGsapValsStems3(index);
+
+                console.log("alienSetupStemGroup3", "index", index, "id", id);
                 
                 var stemFn =
                     function () {  
                         gsap.to(id, { duration: durationTime, scale: 1,
                             onComplete: alienPhaseArr[index], callbackScope: self
                         });
-                        /*
                         if (gsapVals) {
                             gsap.to(id, gsapVals);
                         }
-                            */
                     };
                   
                 idGsapArr.push(stemFn);
