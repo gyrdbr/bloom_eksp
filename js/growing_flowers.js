@@ -124,6 +124,10 @@ FlowerAnimationTest.prototype = {
     },
     moveTopPathFlowerMovable: function () {
 
+        // opprinelig x -4.8, y 1.6
+        // ny x -3, y 0
+        // TODO: flytt blomsten smooth samtidig med at stilken flyttes opp, og ikke etter at stilken er ferdig flyttet opp
+
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: durationTime, x: -3,
                         onComplete: this.updatePhase,
@@ -138,12 +142,12 @@ FlowerAnimationTest.prototype = {
             onComplete: this.moveTopPathFlowerMovable2,
             callbackScope: this
         });
-        gsap.to(topPathFlowerMovable, { duration: durationTime, x: - 5, y: -13}); // trengs denne?
+        gsap.to(topPathFlowerMovable, { duration: durationTime, x: 8, y: -51, rotation: 35 }); // trengs denne?
     },
     moveTopPathFlowerMovable2: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, x: -3,
+                    {scale: 0.9, duration: durationTime, x: 8, y: -51, rotation: 35,
                         onComplete: this.updatePhase,
                         callbackScope: this
             });
