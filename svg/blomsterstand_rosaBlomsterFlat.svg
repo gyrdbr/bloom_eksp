@@ -46,7 +46,7 @@
    x2="-61.152802"
    y2="68.184784"
    gradientUnits="userSpaceOnUse"
-   gradientTransform="matrix(0.51600526,0,0,4.9019194,142.6102,-234.88338)" />
+   gradientTransform="matrix(0.51615939,0,0,4.8243563,142.62637,-231.31455)" />
        
        </defs><sodipodi:namedview
    id="namedview1"
@@ -59,11 +59,11 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="mm"
    inkscape:zoom="1"
-   inkscape:cx="195.5"
+   inkscape:cx="375"
    inkscape:cy="609"
-   inkscape:window-width="943"
+   inkscape:window-width="1306"
    inkscape:window-height="962"
-   inkscape:window-x="935"
+   inkscape:window-x="572"
    inkscape:window-y="213"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer4"
@@ -239,12 +239,12 @@
    id="layer4"
    inkscape:label="rectangle"
    style="display:inline"><rect
-     style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.59041;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:1.57801;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
      id="rect1"
-     width="41.5"
-     height="216.59503"
-     x="67.709351"
-     y="-8.9446192" /><rect
+     width="41.512398"
+     height="213.16785"
+     x="67.703156"
+     y="-8.9508181" /><rect
      style="display:inline;opacity:1;fill:#c8b7b7;stroke:#f5f1e9;stroke-width:1.35921;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
      id="rect2"
      width="41.694168"

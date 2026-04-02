@@ -116,7 +116,7 @@ FlowerAnimationTest.prototype = {
         // opprinelig height 216.59503
          // ny height 203.6
            
-        gsap.to(rectangleMovable, { duration: durationTime, y: -13,
+        gsap.to(rectangleMovable, { duration: durationTime, y: -16,
             onComplete: this.moveTopPathFlowerMovable,
             callbackScope: this
         });
@@ -630,14 +630,15 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
         let alienPhasesGsapArrGroup3 = this.getIdGsapArrGroup3();
 
-        /*
+        
         this.alienphases = [phase1].concat(alienPhasesGsapArrGroup2).concat([phase4])
         .concat(alienPhasesGsapArrGroup3);
-        */
-
+        
+        /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
         .concat(alienPhasesGsapArrGroup2).concat([phase4]).concat(alienPhasesGsapArrGroup3)
         .concat(alienPhasesGsapArrRest);
+        */
 
         this.setButtonText("Fase ");
 
