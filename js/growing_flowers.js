@@ -130,7 +130,7 @@ FlowerAnimationTest.prototype = {
     moveTopPathFlowerMovable2: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 0.9, duration: durationTime, x: 8, y: -51, rotation: 35,
+                    {scale: 1, duration: durationTime, x: 12, y: -55, rotation: 35,
                         onComplete: this.updatePhase,
                         callbackScope: this
             });
@@ -148,7 +148,23 @@ FlowerAnimationTest.prototype = {
     moveTopPathFlowerMovable3: function () {
 
         gsap.to(topPathFlowerMovable, 
-                    {scale: 0.9, duration: durationTime, x: 25, y: -80,
+                    {scale: 1, duration: durationTime, x: 28, y: -80,
+                        onComplete: this.updatePhase,
+                        callbackScope: this
+            });
+    },
+    moveRectangleAndMidFlowerUpRest: function () {
+           
+        gsap.to(rectangleMovable, { scale: 0, duration: durationTime, 
+            onComplete: this.moveTopPathFlowerMovableRest,
+            callbackScope: this
+        });
+        gsap.to(topPathFlowerMovable, { duration: durationTime, rotation: -2 }); 
+    },
+    moveTopPathFlowerMovableRest: function () {
+
+        gsap.to(topPathFlowerMovable, 
+                    {scale: 1, duration: durationTime, x: 12, y: -192, rotation: -2,
                         onComplete: this.updatePhase,
                         callbackScope: this
             });
@@ -753,6 +769,10 @@ FlowerAnimationTest.prototype = {
             this.moveRectangleAndMidFlowerUp3();
         }
 
+        var phase6 = () => {
+            this.moveRectangleAndMidFlowerUpRest();
+        }
+
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
         let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
@@ -760,9 +780,8 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrGroup4 = this.getIdGsapArrGroup4();
 
         
-        this.alienphases = [phase1].concat([phase4])
-        .concat(alienPhasesGsapArrGroup3).concat([phase5]).concat(alienPhasesGsapArrGroup4).
-        concat(alienPhasesGsapArrRest);
+        this.alienphases = [phase1].concat([phase5]).concat([phase6])
+        .concat(alienPhasesGsapArrRest);
         
         /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
