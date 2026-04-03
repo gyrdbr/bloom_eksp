@@ -88,6 +88,15 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: durationTime, y: 0});
         
     },
+    alienPhaseExp: function () {
+
+         this.tl.add('start')
+        .to("g#hovedStilkBlomst", { duration: durationTime, y: -9 }, 'start')
+        .to("#topPathFlower2", { scale: 1,
+                        onComplete: this.updatePhase, 
+                        callbackScope: this }, 'start');
+        
+    },
     alienPhase1b: function () {
 
         gsap.to(topPathFlowerMovable, 
@@ -730,14 +739,7 @@ FlowerAnimationTest.prototype = {
         }
     },
     setupAlienFlower: function () {
-        this.phazeIndex = 0;
-
-        /*
-        gsap.set("#topPathFlower2", { scale: 0.4 });
-         this.tl.add('start')
-        .to("g#hovedStilkBlomst", { duration: 1, x: 100, y: 50 }, 'start')
-        .to("#topPathFlower2", { scale: 1 }, 'start');
-        */
+        this.phazeIndex = 0;        
 
         // this.alienSetupAllPathScales();
         this.alienSetupBottomPathScales();
@@ -766,6 +768,10 @@ FlowerAnimationTest.prototype = {
             this.moveRectangleAndMidFlowerUpRest();
         }
 
+        var phase7 = () => {
+            this.alienPhaseExp();
+        }
+
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
         let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
@@ -773,7 +779,7 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrGroup4 = this.getIdGsapArrGroup4();
 
         
-        this.alienphases = [phase1].concat([phase5]).concat([phase6])
+        this.alienphases = [phase7].concat([phase1]).concat([phase5]).concat([phase6])
         .concat(alienPhasesGsapArrRest);
         
         /*
@@ -784,7 +790,17 @@ FlowerAnimationTest.prototype = {
 
         this.setButtonText("Fase ");
 
-        // viser under utvikling. skal skjules i produksjon   
+                
+        /*
+         this.tl.add('start')
+        .to("g#hovedStilkBlomst", { duration: 1, x: 100, y: 50 }, 'start')
+        .to("#topPathFlower2", { scale: 1 }, 'start');
+        */
+
+        // viser under utvikling. skal skjules i produksjon
+        gsap.set("#topPathFlower2", { scale: 0.4 });
+        gsap.set("g#hovedStilkBlomst", { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
         // console.log("longFlowerstem", longFlowerstem);
