@@ -19,14 +19,15 @@ class BlomsterstandBlomst {
   }
 }
 
-var blomstButton = document.getElementById('startBlomst-button-svg');
-var blomsterstandFlower = document.getElementById('wholeInflorecence');
-var rectangleMovableInSvg = document.getElementById('rect1');
 var longFlowerstem = "#pathHovedStilk";
 var rectangleMovable = "#rect1"; // middle rectangle hiding upper stem
 var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 0.5; // skal vaere 1 i endelig versjon
+
+// var hovedStilkBlomst = document.getElementById('hovedStilkBlomst');
+var hovedStilkBlomst = '#hovedStilkBlomst';
+
 
 let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
 
@@ -730,6 +731,11 @@ FlowerAnimationTest.prototype = {
     },
     setupAlienFlower: function () {
         this.phazeIndex = 0;
+
+        gsap.set("#topPathFlower2", { scale: 0.4 });
+         this.tl.add('start')
+        .to("g#hovedStilkBlomst", { duration: 1, x: 100, y: 50 }, 'start')
+        .to("#topPathFlower2", { scale: 1 }, 'start');
 
         // this.alienSetupAllPathScales();
         this.alienSetupBottomPathScales();
