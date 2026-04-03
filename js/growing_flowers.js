@@ -732,10 +732,12 @@ FlowerAnimationTest.prototype = {
     setupAlienFlower: function () {
         this.phazeIndex = 0;
 
+        /*
         gsap.set("#topPathFlower2", { scale: 0.4 });
          this.tl.add('start')
         .to("g#hovedStilkBlomst", { duration: 1, x: 100, y: 50 }, 'start')
         .to("#topPathFlower2", { scale: 1 }, 'start');
+        */
 
         // this.alienSetupAllPathScales();
         this.alienSetupBottomPathScales();
