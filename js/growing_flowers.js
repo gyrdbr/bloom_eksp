@@ -110,7 +110,6 @@ FlowerAnimationTest.prototype = {
 
         // opprinelig x -4.8, y 1.6
         // ny x -3, y 0
-        // TODO: flytt blomsten smooth samtidig med at stilken flyttes opp, og ikke etter at stilken er ferdig flyttet opp
 
         gsap.to(topPathFlowerMovable, 
                     {scale: 1, duration: durationTime, x: -3,
@@ -141,18 +140,26 @@ FlowerAnimationTest.prototype = {
         // ny height 138
         
         this.tl.add('start')
-        .to(rectangleMovable, { x: 25, y: -80 }, 'start')
+        .to(rectangleMovable, { duration: durationTime,x: 25, y: -80 }, 'start')
         .to(topPathFlowerMovable, { x: 28, y: -80, onComplete: this.updatePhase,
             callbackScope: this
         }, 'start');
     },
     moveRectangleAndMidFlowerUpRest: function () {
+
+        this.tl.add('start')
+        .to(rectangleMovable, { scale: 0, duration: 1 }, 'start')
+        .to(topPathFlowerMovable, { x: 12, y: -192, rotation: -2, onComplete: this.updatePhase,
+            callbackScope: this
+        }, 'start');
            
+        /*
         gsap.to(rectangleMovable, { scale: 0, duration: durationTime, 
             onComplete: this.moveTopPathFlowerMovableRest,
             callbackScope: this
         });
         gsap.to(topPathFlowerMovable, { duration: durationTime, rotation: -2 }); 
+        */
     },
     moveTopPathFlowerMovableRest: function () {
 
