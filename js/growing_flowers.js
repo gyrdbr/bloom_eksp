@@ -152,22 +152,7 @@ FlowerAnimationTest.prototype = {
         .to(topPathFlowerMovable, { x: 12, y: -192, rotation: -2, onComplete: this.updatePhase,
             callbackScope: this
         }, 'start');
-           
-        /*
-        gsap.to(rectangleMovable, { scale: 0, duration: durationTime, 
-            onComplete: this.moveTopPathFlowerMovableRest,
-            callbackScope: this
-        });
-        gsap.to(topPathFlowerMovable, { duration: durationTime, rotation: -2 }); 
-        */
-    },
-    moveTopPathFlowerMovableRest: function () {
 
-        gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, x: 12, y: -192, rotation: -2,
-                        onComplete: this.updatePhase,
-                        callbackScope: this
-            });
     },
     // TODO moveTopPathFlowerMovable4 skal skjule rektanglet
     // resten av blomsten skal vises
