@@ -44,6 +44,7 @@ function FlowerAnimationTest() {
     this.button = document.querySelector('#playBloomButton');
 
     this.alienphases = [];
+    this.tl = gsap.timeline();
 
 }
 
@@ -136,22 +137,14 @@ FlowerAnimationTest.prototype = {
             });
     },
     moveRectangleAndMidFlowerUp3: function () {
-           
         // opprinnelig height 161.4
         // ny height 138
-        gsap.to(rectangleMovable, { duration: durationTime, x: 25, y: -80,
-            onComplete: this.moveTopPathFlowerMovable3,
+        
+        this.tl.add('start')
+        .to(rectangleMovable, { x: 25, y: -80 }, 'start')
+        .to(topPathFlowerMovable, { x: 28, y: -80, onComplete: this.updatePhase,
             callbackScope: this
-        });
-        gsap.to(topPathFlowerMovable, { duration: durationTime, }); // trengs denne?
-    },
-    moveTopPathFlowerMovable3: function () {
-
-        gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, x: 28, y: -80,
-                        onComplete: this.updatePhase,
-                        callbackScope: this
-            });
+        }, 'start');
     },
     moveRectangleAndMidFlowerUpRest: function () {
            
