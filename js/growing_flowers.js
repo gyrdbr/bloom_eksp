@@ -88,7 +88,7 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: durationTime, y: 0});
         
     },
-    alienPhaseExp: function () {
+    hovedStilkBlomstAnim: function () {
         // TODO: legg inn svg-en fra blomsterstand_rosaBlomsterV3.svg
         // behold den originale svg-en og funksjonene og legg inn en og en for den nye
 
@@ -771,7 +771,7 @@ FlowerAnimationTest.prototype = {
         }
 
         var phase7 = () => {
-            this.alienPhaseExp();
+            this.hovedStilkBlomstAnim();
         }
 
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
@@ -801,19 +801,14 @@ FlowerAnimationTest.prototype = {
 
         // viser under utvikling. skal skjules i produksjon
         gsap.set("#topPathFlower-group", { scale: 0.2, transformOrigin: "center" });
-        // gsap.set("g#hovedStilkBlomst", { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
         gsap.set("g#hovedStilkBlomst", { scale: 1.1, x: 0, y: 220 });
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
-
-        // console.log("longFlowerstem", longFlowerstem);
 
         gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
         
         gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
         gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
-
-        // gsap.set for pathLeft2 og leftPath2Flower
     }
 }
 
