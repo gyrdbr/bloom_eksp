@@ -93,7 +93,7 @@ FlowerAnimationTest.prototype = {
         // behold den originale svg-en og funksjonene og legg inn en og en for den nye
 
          this.tl.add('start')
-        .to("g#hovedStilkBlomst", { duration: durationTime, y: 25 }, 'start')
+        .to("g#hovedStilkBlomst", { duration: durationTime, y: 9 }, 'start')
         .to("#topPathFlower-group", { scale: 1,
                         onComplete: this.updatePhase, 
                         callbackScope: this }, 'start');
@@ -800,8 +800,9 @@ FlowerAnimationTest.prototype = {
         */
 
         // viser under utvikling. skal skjules i produksjon
-        gsap.set("#topPathFlower-group", { scale: 0.4 });
-        gsap.set("g#hovedStilkBlomst", { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+        gsap.set("#topPathFlower-group", { scale: 0.2, transformOrigin: "center" });
+        // gsap.set("g#hovedStilkBlomst", { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
+        gsap.set("g#hovedStilkBlomst", { scale: 1.1, x: 0, y: 220 });
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
