@@ -42,9 +42,12 @@ function blomsterstandStyle () {
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
+    this.sfPhazeIndex = 0;
     this.button = document.querySelector('#playBloomButton');
+    this.buttonSF = document.querySelector('#playBloomStemButton');
 
     this.alienphases = [];
+    this.sfPhases= [];
     this.tl = gsap.timeline();
 
 }
@@ -54,12 +57,24 @@ FlowerAnimationTest.prototype = {
         this.phazeIndex = 0;
         this.setupAlienFlower();
     },
+    resettSF: function () {
+        this.sfPhazeIndex = 0;
+        this.setupSFFlower();
+    },
     playAnim: function () {
         this.button.disabled = true;
         if (this.phazeIndex < this.alienphases.length) {
             this.alienphases[this.phazeIndex]();
         } else {
             this.resett();
+        }
+    },
+    playSFAnim: function () {
+        this.buttonSF.disabled = true;
+        if (this.sfPhazeIndex < this.sfPhases.length) {
+            this.sfPhases[this.sfPhazeIndex]();
+        } else {
+            this.resettSF();
         }
     },
     updatePhase: function () {
@@ -69,15 +84,32 @@ FlowerAnimationTest.prototype = {
             this.setButtonText("Fase ");
         }
     },
+    updateSFPhase: function () {
+        if ((this.sfPhases) && this.sfPhazeIndex < (this.sfPhases.length)) {
+            this.sfPhazeIndex += 1;
+
+            this.setButtonSFText("Fase ");
+        }
+    },
     finalPhase: function () {
  
         this.phazeIndex += 1;
 
         this.setButtonText("Start igjen ");
     },
+    finalSFPhase: function () {
+ 
+        this.sfPhazeIndex += 1;
+
+        this.setButtonSFText("Start igjen ");
+    },
     setButtonText: function (text) {
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.disabled = false;
+    },
+    setButtonSFText: function (text) {
+        this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
+        this.buttonSF.disabled = false;
     },
     alienPhase1: function () {
 
@@ -228,6 +260,20 @@ FlowerAnimationTest.prototype = {
         }
 
         return gsapVals;
+    },
+    getIdGsapSFArrBottom: function () {
+        var idGsapArr = this.alienSetupBottomStemsAndFlowers();
+        let sfPhases = [];
+        
+        // er feilen her?
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            sfPhases.push(idGsapFn);
+        });
+
+        return sfPhases;
     },
     getIdGsapArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStems();
@@ -464,22 +510,22 @@ FlowerAnimationTest.prototype = {
         return idGsapArr;
     },
     alienSetupBottomStemsAndFlowers: function () {        
-        const stemGroupElement = document.getElementById('groupBottomStems-group');
+        const stemFlowerGroupElement = document.getElementById('groupBottomStems-group');
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
         // var alienPhaseArr = this.alienSetupBottomFlowers();   
         
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
+        if (stemFlowerGroupElement) {
+            const paths = stemFlowerGroupElement.querySelectorAll('path');
      
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-                let gsapVals = this.getGsapValsBottomStems(index);
+                // let gsapVals = this.getGsapValsBottomStems(index);
                 
                 var stemFn =
                     function () {  
                         gsap.to(id, { duration: durationTime, scale: 1,
-                            onComplete: self.updatePhase, callbackScope: self
+                            onComplete: this.updateSFPhase, callbackScope: self
                         });
                         /*
                         if (gsapVals) {
@@ -642,6 +688,24 @@ FlowerAnimationTest.prototype = {
             // console.error('Group element with ID "myGroup" not found.');
         }
     },
+    alienSetupBottomStemsAndFlowersPathScales: function () { // denne er korrekt
+        const stemFlowerGroupElement = document.getElementById('groupBottomStems-group');
+
+        if (stemFlowerGroupElement) {
+            const paths = stemFlowerGroupElement.querySelectorAll('path');
+
+            // console.log("alienSetupBottomPathScales");
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+
+                // console.log("id", id);
+                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
     alienSetupGroup2PathScales: function () { // denne er korrekt
         const stemGroupElement = document.getElementById('group2');
         const flowerGroupElement = document.getElementById('group2Flowers');
@@ -780,6 +844,8 @@ FlowerAnimationTest.prototype = {
         this.alienSetupGroup3PathScales();
         this.alienSetupGroup4PathScales();
 
+        this.alienSetupBottomStemsAndFlowersPathScales();
+
         var phase1 = () => {
             this.alienPhase1();
         }
@@ -810,8 +876,11 @@ FlowerAnimationTest.prototype = {
         let alienPhasesGsapArrGroup3 = this.getIdGsapArrGroup3();
         let alienPhasesGsapArrGroup4 = this.getIdGsapArrGroup4();
 
-        
-        this.alienphases = [phase7].concat([phase1]).concat([phase5]).concat([phase6])
+        let alienPhasesGsapSFArrBottom = this.getIdGsapSFArrBottom();
+
+        this.sfPhases = [phase7].concat(alienPhasesGsapSFArrBottom);
+
+        this.alienphases = [phase1].concat([phase5]).concat([phase6])
         .concat(alienPhasesGsapArrRest);
         
         /*
@@ -847,6 +916,10 @@ bloomFlowerAnim.setupAlienFlower();
 
 function playFlowerBloom() {
     bloomFlowerAnim.playAnim();
+}
+
+function playStemFlowerBloom() {
+    bloomFlowerAnim.playSFAnim();
 }
 
 /** flower1 og flower2 */
