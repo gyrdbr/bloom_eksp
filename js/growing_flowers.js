@@ -88,8 +88,6 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: durationTime, y: 0});
         
     },
-    // rightPathFlower1-1
-    // leftPath1Flower
     hovedStilkBlomstAnim: function () {
         // TODO: legg inn svg-en fra blomsterstand_rosaBlomsterV3.svg
         // behold den originale svg-en og funksjonene og legg inn en og en for den nye
@@ -458,6 +456,36 @@ FlowerAnimationTest.prototype = {
                         if (gsapVals) {
                             gsap.to(id, gsapVals);
                         }
+                    };
+                  
+                idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
+    },
+    alienSetupBottomStemsAndFlowers: function () {        
+        const stemGroupElement = document.getElementById('groupBottomStems-group');
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        // var alienPhaseArr = this.alienSetupBottomFlowers();   
+        
+        if (stemGroupElement) {
+            const paths = stemGroupElement.querySelectorAll('path');
+     
+            paths.forEach((path, index) => {
+                const id = "#" +path.id;
+                let gsapVals = this.getGsapValsBottomStems(index);
+                
+                var stemFn =
+                    function () {  
+                        gsap.to(id, { duration: durationTime, scale: 1,
+                            onComplete: self.updatePhase, callbackScope: self
+                        });
+                        /*
+                        if (gsapVals) {
+                            gsap.to(id, gsapVals);
+                        }
+                            */
                     };
                   
                 idGsapArr.push(stemFn);
