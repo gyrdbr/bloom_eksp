@@ -111,8 +111,11 @@ FlowerAnimationTest.prototype = {
         this.setButtonSFText("Start igjen ");
     },
     setButtonText: function (text) {
+
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.disabled = false;
+
+        console.log("setButtonText", this.button.disabled);
     },
     setButtonSFText: function (text) {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
