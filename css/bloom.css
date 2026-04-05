@@ -127,6 +127,10 @@ button.choice-btn {
 }
 */
 
+button.task-btn#playBloomStemButton {
+    background-color: #FFE4C4;
+}
+
 button.task-btn {
     background-color: #D8C4BC;
     cursor: pointer; /* Optional: Changes cursor to a hand icon on hover */
