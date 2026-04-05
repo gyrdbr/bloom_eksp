@@ -58,14 +58,13 @@ FlowerAnimationTest.prototype = {
     },
     resettSF: function () {
         this.sfPhazeIndex = 0;
-        this.setupSFFlower();
+        this.setupAlienFlower();
     },
     playAnim: function () {
         this.button.disabled = true;
 
         if (this.phazeIndex < this.alienphases.length) {
             this.alienphases[this.phazeIndex]();
-            console.log("playAnim", "this.phazeIndex", this.phazeIndex);
         } else {
             this.resett();
         }
@@ -74,13 +73,11 @@ FlowerAnimationTest.prototype = {
         this.buttonSF.disabled = true;
         if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
-           console.log("playSFAnim", "this.sfPhazeIndex", this.sfPhazeIndex);
         } else {
             this.resettSF();
         }
     },
     updatePhase: function () {
-        console.log("updatePhase", "alienphases.length", this.alienphases.length, "this.phazeIndex", this.phazeIndex);  
         if ((this.alienphases) && this.phazeIndex < (this.alienphases.length)) {
             this.phazeIndex += 1;
 
@@ -88,13 +85,10 @@ FlowerAnimationTest.prototype = {
         }
     },
     updateSFPhase: function () {
-        console.log("updateSFPhase", "this.sfPhazeIndex", this.sfPhazeIndex);
-
          if ((this.sfPhases) && this.sfPhazeIndex < (this.sfPhases.length)) {
 
             this.sfPhazeIndex += 1;
-            console.log("inside updateSFPhase", "this.sfPhazeIndex", this.sfPhazeIndex);
-
+ 
             this.setButtonSFText("Fase ");
         }
     },
@@ -114,8 +108,6 @@ FlowerAnimationTest.prototype = {
 
         this.button.innerHTML = text + String(this.phazeIndex + 1);
         this.button.disabled = false;
-
-        console.log("setButtonText", this.button.disabled);
     },
     setButtonSFText: function (text) {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
@@ -274,8 +266,6 @@ FlowerAnimationTest.prototype = {
     getIdGsapSFArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStemsAndFlowers();
         let sfPhases = [];
-
-        console.log("getIdGsapSFArrBottom", "idGsapArr", idGsapArr);
 
         idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
@@ -732,7 +722,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0 });
 
             });
@@ -763,7 +752,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0 });
 
             });
@@ -794,7 +782,6 @@ FlowerAnimationTest.prototype = {
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log("stem id", id);
                 gsap.set(id, { duration: durationTime, scale: 0 });
 
             });
@@ -807,8 +794,6 @@ FlowerAnimationTest.prototype = {
 
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
-
-                // console.log("flower id", id);
 
                 gsap.set(id, { duration: durationTime, scale: 0 });
 
