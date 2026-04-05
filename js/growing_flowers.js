@@ -88,6 +88,8 @@ FlowerAnimationTest.prototype = {
         gsap.to(topPathFlower, { duration: durationTime, y: 0});
         
     },
+    // rightPathFlower1-1
+    // leftPath1Flower
     hovedStilkBlomstAnim: function () {
         // TODO: legg inn svg-en fra blomsterstand_rosaBlomsterV3.svg
         // behold den originale svg-en og funksjonene og legg inn en og en for den nye
