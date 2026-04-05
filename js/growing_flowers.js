@@ -25,9 +25,6 @@ var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 0.5; // skal vaere 1 i endelig versjon
 
-// TODO sjekk hvorfor playAnim kalles naar playSFAnim klikkes
-// val lonFlwoersStem
-// var hovedStilkBlomst = document.getElementById('hovedStilkBlomst');
 var hovedStilkBlomst = '#hovedStilkBlomst';
 
 
@@ -68,6 +65,7 @@ FlowerAnimationTest.prototype = {
 
         if (this.phazeIndex < this.alienphases.length) {
             this.alienphases[this.phazeIndex]();
+            console.log("playAnim", "this.phazeIndex", this.phazeIndex);
         } else {
             this.resett();
         }
@@ -76,7 +74,7 @@ FlowerAnimationTest.prototype = {
         this.buttonSF.disabled = true;
         if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
-           console.log("playSFAnim", "this.sfPhazeIndex", this.sfPhazeIndex, "sfPhases", this.sfPhases);
+           console.log("playSFAnim", "this.sfPhazeIndex", this.sfPhazeIndex);
         } else {
             this.resettSF();
         }
@@ -90,12 +88,12 @@ FlowerAnimationTest.prototype = {
         }
     },
     updateSFPhase: function () {
-        console.log("updateSFPhase", "sfPhases.length", this.sfPhases.length, "this.sfPhazeIndex", this.sfPhazeIndex);
+        console.log("updateSFPhase", "this.sfPhazeIndex", this.sfPhazeIndex);
 
          if ((this.sfPhases) && this.sfPhazeIndex < (this.sfPhases.length)) {
 
             this.sfPhazeIndex += 1;
-            console.log("this.sfPhazeIndex", this.sfPhazeIndex);
+            console.log("inside updateSFPhase", "this.sfPhazeIndex", this.sfPhazeIndex);
 
             this.setButtonSFText("Fase ");
         }
@@ -273,8 +271,9 @@ FlowerAnimationTest.prototype = {
     getIdGsapSFArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStemsAndFlowers();
         let sfPhases = [];
-        
-        // er feilen her?
+
+        console.log("getIdGsapSFArrBottom", "idGsapArr", idGsapArr);
+
         idGsapArr.forEach((alien, index) => {
             let idGsapFn = () => {
                 idGsapArr[index]();
@@ -282,7 +281,6 @@ FlowerAnimationTest.prototype = {
             sfPhases.push(idGsapFn);
         });
 
-        console.log("getIdGsapSFArrBottom", "sfPhases", sfPhases);
         return sfPhases;
     },
     getIdGsapArrBottom: function () {
@@ -531,60 +529,21 @@ FlowerAnimationTest.prototype = {
                 const id = "#" +group.id;
                 // let gsapVals = this.getGsapValsBottomStems(index);
 
-                // console.log("alienSetupBottomStemsAndFlowers");
-
-                console.log("group id", id);
-
                 if (id === "#groupSFLeft1StilkBlomst") {
 
                     var  groupLeft1 =
-                    function () {
-                        console.log("alienSetupBottomStemsAndFlowers stemFn id", id);
-                        gsap.to(id, { duration: durationTime, scale: 0,
-                             onComplete: this.updateSFPhase, callbackScope: self
-                        });
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1,
+                                onComplete: self.updateSFPhase, callbackScope: self
+                            });
+                        }
 
-                        //  onComplete: this.updateSFPhase,
-                    }
-
-                    console.log("id", id);
-
+                    idGsapArr.push(groupLeft1);
                 }
 
-                if (id === "#pathLeft1") {
-
-                   var  pathLeft1 =
-                    function () {
-                        console.log("alienSetupBottomStemsAndFlowers stemFn id", id);
-                        gsap.to(id, { duration: durationTime, scale: 0,
-                             onComplete: this.updateSFPhase, callbackScope: self
-                        });
-
-                        //  onComplete: this.updateSFPhase,
-                    }
-
-                    console.log("id", id);
-                }
-
-                if (id === "#pathLeft1") {
-
-                   var  pathLeft1 =
-                    function () {
-                        console.log("alienSetupBottomStemsAndFlowers stemFn id", id);
-                        gsap.to(id, { duration: durationTime, scale: 0,
-                             onComplete: this.updateSFPhase, callbackScope: self
-                        });
-
-                        //  onComplete: this.updateSFPhase,
-                    }
-
-                    console.log("id", id);
-                }
-                
                 var stemFn =
                     function () {
-                        console.log("alienSetupBottomStemsAndFlowers stemFn id", id);
-                        gsap.to(id, { duration: durationTime, scale: 0,
+                        gsap.to(id, { duration: durationTime, scale: 1,
                             callbackScope: self
                         });
                         /*
@@ -593,11 +552,8 @@ FlowerAnimationTest.prototype = {
                         }
                             */
                     };
-                  
-                idGsapArr.push(groupLeft1);
             })
         }
-        console.log("alienSetupBottomStemsAndFlowers idGsapArr", idGsapArr);
         return idGsapArr;
     },
     alienSetupStemGroup2: function () {        
@@ -724,11 +680,9 @@ FlowerAnimationTest.prototype = {
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
 
-            // console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
-                // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
@@ -750,16 +704,14 @@ FlowerAnimationTest.prototype = {
         }
     },
     alienSetupBottomStemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupBottomStems-group');
+        const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
 
         if (stemFlowerGroupElement) {
-            const paths = stemFlowerGroupElement.querySelectorAll('path');
+            const groups = stemFlowerGroupElement.querySelectorAll('g');
 
-            // console.log("alienSetupBottomPathScales");
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
+            groups.forEach((group, index) => {
+                const id = "#" +group.id;
 
-                // console.log("id", id);
                 gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
 
             });
@@ -774,7 +726,6 @@ FlowerAnimationTest.prototype = {
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
 
-            // console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
@@ -806,7 +757,6 @@ FlowerAnimationTest.prototype = {
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
 
-            // console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
@@ -838,7 +788,6 @@ FlowerAnimationTest.prototype = {
         if (stemGroupElement) {
             const paths = stemGroupElement.querySelectorAll('path');
 
-            // console.log("alienSetupBottomPathScales");
             paths.forEach((path, index) => {
                 const id = "#" +path.id;
 
@@ -1075,7 +1024,6 @@ FlowerAnimation.prototype = {
         });
     },
     animatePhase(newScale, duration) {
-
         this.button.classList.add('disabled');
         this.basicFlowerLeafs.forEach((leaf, index) => {
             if (index === 0) {
