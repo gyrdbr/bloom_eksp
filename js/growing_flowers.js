@@ -200,8 +200,6 @@ FlowerAnimationTest.prototype = {
         }, 'start');
 
     },
-    // TODO moveTopPathFlowerMovable4 skal skjule rektanglet
-    // resten av blomsten skal vises
     getGsapValsBottomFlowers: function (index) {
         let gsapVals = null;
         const moveLeft = -3;
@@ -509,42 +507,43 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
+    getGsapValsBottomStemsAndFlowers: function (index) {
+        let gsapVals = 0;
+
+        if (index === 1) {
+            gsapVals = {x: -2 };
+        } else if (index === 2) {
+            gsapVals = {x: -8 };        
+        }  else if (index === 3) {
+            gsapVals = {x: -6 };        
+        } else if (index === 4) {
+            gsapVals = {x: -8 };        
+        } 
+
+        return gsapVals;
+    },
     alienSetupBottomStemsAndFlowers: function () {        
         const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
         const idGsapArr = [];
         var self = this; // bruke denne i loopen?
-        // var alienPhaseArr = this.alienSetupBottomFlowers();
         
         if (stemFlowerGroupElement) {
             const groups = stemFlowerGroupElement.querySelectorAll('g');
      
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
-                // let gsapVals = this.getGsapValsBottomStems(index);
+                let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
 
-                if (id === "#groupSFLeft1StilkBlomst") {
-
-                    var  groupLeft1 =
+                 var  stemFn =
                         function () {
                             gsap.to(id, { duration: durationTime, scale: 1,
                                 onComplete: self.updateSFPhase, callbackScope: self
                             });
                         }
-
-                    idGsapArr.push(groupLeft1);
-                }
-
-                var stemFn =
-                    function () {
-                        gsap.to(id, { duration: durationTime, scale: 1,
-                            callbackScope: self
-                        });
-                        /*
-                        if (gsapVals) {
+                        if (gsapVals) {                           
                             gsap.to(id, gsapVals);
                         }
-                            */
-                    };
+               idGsapArr.push(stemFn);
             })
         }
         return idGsapArr;
