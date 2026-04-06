@@ -71,6 +71,7 @@ FlowerAnimationTest.prototype = {
     },
     playSFAnim: function () {
         this.buttonSF.disabled = true;
+        
         if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
         } else {
@@ -88,7 +89,6 @@ FlowerAnimationTest.prototype = {
          if ((this.sfPhases) && this.sfPhazeIndex < (this.sfPhases.length)) {
 
             this.sfPhazeIndex += 1;
- 
             this.setButtonSFText("Fase ");
         }
     },
@@ -134,7 +134,9 @@ FlowerAnimationTest.prototype = {
     },
     moveStilkAndMidStemFlowerUp: function () {
 
-        gsap.to("#hovedStilkBlomst", { duration: durationTime, y: -26 })
+        gsap.to("#hovedStilkBlomst", { duration: durationTime, y: -26,
+            onComplete: this.updateSFPhase, callbackScope: this 
+         })
 
     },
     moveRectangleAndMidFlowerUp: function () {
@@ -767,6 +769,22 @@ FlowerAnimationTest.prototype = {
            // console.error('Group element with ID "myGroup" not found.');
         }
     },
+    alienSetupGroup2StemsAndFlowersPathScales: function () { // denne er korrekt
+        const stemFlowerGroupElement = document.getElementById('groupSF2');
+
+        if (stemFlowerGroupElement) {
+            const groups = stemFlowerGroupElement.querySelectorAll('g');
+
+            groups.forEach((group, index) => {
+                const id = "#" +group.id;
+
+                gsap.set(id, { duration: durationTime, scale: 0 });
+
+            });
+        } else {
+           // console.error('Group element with ID "myGroup" not found.');
+        }
+    },
     alienSetupGroup2PathScales: function () { // denne er korrekt
         const stemGroupElement = document.getElementById('group2');
         const flowerGroupElement = document.getElementById('group2Flowers');
@@ -898,6 +916,7 @@ FlowerAnimationTest.prototype = {
         this.alienSetupGroup4PathScales();
 
         this.alienSetupBottomStemsAndFlowersPathScales();
+        this.alienSetupGroup2StemsAndFlowersPathScales();
 
         var phase1 = () => {
             this.alienPhase1();
