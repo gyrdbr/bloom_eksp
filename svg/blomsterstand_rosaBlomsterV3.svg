@@ -61,12 +61,12 @@
    inkscape:zoom="0.70710678"
    inkscape:cx="379.71634"
    inkscape:cy="586.89863"
-   inkscape:window-width="1375"
+   inkscape:window-width="1195"
    inkscape:window-height="962"
-   inkscape:window-x="411"
-   inkscape:window-y="226"
+   inkscape:window-x="592"
+   inkscape:window-y="188"
    inkscape:window-maximized="0"
-   inkscape:current-layer="wholeInflorecence-group"
+   inkscape:current-layer="hovedStilkBlomst"
    showgrid="false" />
  <g
    inkscape:groupmode="layer"
@@ -462,7 +462,7 @@
        inkscape:linked-fill="path63"
        sodipodi:nodetypes="csssssc"
        transform="matrix(1.0623264,0,0,1.0858586,-17.394906,-10.282299)" /><rect
-       style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+       style="display:fill;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
        id="rect1-group"
        width="42.260754"
        height="213.16785"
