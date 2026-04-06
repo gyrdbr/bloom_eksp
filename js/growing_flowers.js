@@ -223,14 +223,6 @@ FlowerAnimationTest.prototype = {
             callbackScope: this
         }, 'start');
     },
-    moveRectangleAndMidFlowerUp4: function () {
-
-        this.tl.add('start')
-        .to(rectangleMovable, { duration: durationTime,x: 25, y: -80 }, 'start')
-        .to(topPathFlowerMovable, { x: 28, y: -80, onComplete: this.updatePhase,
-            callbackScope: this
-        }, 'start');
-    },
     moveRectangleAndMidFlowerUpRest: function () {
 
         this.tl.add('start')
