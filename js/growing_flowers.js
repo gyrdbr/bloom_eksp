@@ -124,11 +124,11 @@ FlowerAnimationTest.prototype = {
     },
     hovedStilkBlomstAnim: function () {
 
-        gsap.to("#rect1-group", { x: 1, scale: 1})
+        gsap.to("#rect1-group", { scale: 1})
 
         this.tl.add('start')
-        .to("g#hovedStilkBlomst", { duration: durationTime, y: -15, x: -3 }, 'start')
-        .to("#topPathFlower-group", { scale: 1, y: 185, x: -13,
+        .to("g#hovedStilkBlomst", { duration: durationTime, y: -16 }, 'start')
+        .to("#topPathFlower-group", { scale: 1, y: 185, x: -14,
                         onComplete: this.updateSFPhase,
                         callbackScope: this }, 'start');
     },
