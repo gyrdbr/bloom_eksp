@@ -123,15 +123,14 @@ FlowerAnimationTest.prototype = {
         
     },
     hovedStilkBlomstAnim: function () {
-        // TODO: legg inn svg-en fra blomsterstand_rosaBlomsterV3.svg
-        // behold den originale svg-en og funksjonene og legg inn en og en for den nye
 
-         this.tl.add('start')
+        gsap.to("#rect1-group", { x: 1, scale: 1})
+
+        this.tl.add('start')
         .to("g#hovedStilkBlomst", { duration: durationTime, y: -15, x: -3 }, 'start')
-        .to("#topPathFlower-group", { scale: 1,
+        .to("#topPathFlower-group", { scale: 1, y: 185, x: -13,
                         onComplete: this.updateSFPhase,
                         callbackScope: this }, 'start');
-        
     },
     alienPhase1b: function () {
 
@@ -900,7 +899,7 @@ FlowerAnimationTest.prototype = {
         .to("#topPathFlower2", { scale: 1 }, 'start');
         */
 
-        // gsap.set("#rect1-group", { x: 4});
+        gsap.set("#rect1-group", { x: 1, scale: 0});
 
         // viser under utvikling. skal skjules i produksjon
         gsap.set("#topPathFlower-group", { scale: 0.2, transformOrigin: "center" });
