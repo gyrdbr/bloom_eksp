@@ -127,7 +127,7 @@ FlowerAnimationTest.prototype = {
         // behold den originale svg-en og funksjonene og legg inn en og en for den nye
 
          this.tl.add('start')
-        .to("g#hovedStilkBlomst", { duration: durationTime, y: 9 }, 'start')
+        .to("g#hovedStilkBlomst", { duration: durationTime, y: -15, x: -3 }, 'start')
         .to("#topPathFlower-group", { scale: 1,
                         onComplete: this.updateSFPhase,
                         callbackScope: this }, 'start');
@@ -877,18 +877,19 @@ FlowerAnimationTest.prototype = {
 
         this.sfPhases = [phase7].concat(alienPhasesGsapSFArrBottom);
 
+        /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom);
+        */
 
         /*
         this.alienphases = [phase1].concat([phase5]).concat([phase6])
         .concat(alienPhasesGsapArrRest);
-        */
+        */ 
         
-        /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom).concat([phase3])
         .concat(alienPhasesGsapArrGroup2).concat([phase4]).concat(alienPhasesGsapArrGroup3)
+        .concat([phase4]).concat(alienPhasesGsapArrGroup4)
         .concat(alienPhasesGsapArrRest);
-        */
 
         this.setButtonText("Fase ");
 
@@ -899,9 +900,11 @@ FlowerAnimationTest.prototype = {
         .to("#topPathFlower2", { scale: 1 }, 'start');
         */
 
+        // gsap.set("#rect1-group", { x: 4});
+
         // viser under utvikling. skal skjules i produksjon
         gsap.set("#topPathFlower-group", { scale: 0.2, transformOrigin: "center" });
-        gsap.set("g#hovedStilkBlomst", { scale: 1.1, x: 0, y: 220 });
+        gsap.set("g#hovedStilkBlomst", { scale: 1.1, x: -4, y: 220 });
 
         gsap.set(longFlowerstem, { scale: 1.1, transformOrigin: "100% 100%", x: -12,y: 220 });
 
