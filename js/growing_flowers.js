@@ -574,6 +574,14 @@ FlowerAnimationTest.prototype = {
 
         return gsapVals;
     },
+    getGsapVals2StemsAndFlowers: function (index) {
+        let gsapVals = 0;
+
+        if (index === 0) {
+            gsapVals = {x: - 3, y: 1};
+        } 
+        return gsapVals;
+    },
     alienSetupBottomStemsAndFlowers: function () {        
         const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
         const idGsapArr = [];
@@ -610,7 +618,7 @@ FlowerAnimationTest.prototype = {
      
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
-                // let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
+                let gsapVals = this.getGsapVals2StemsAndFlowers(index);
 
                  var  stemFn =
                         function () {
@@ -618,11 +626,10 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updateSFPhase, callbackScope: self
                             });
                         }
-                        /*
                         if (gsapVals) {                           
                             gsap.to(id, gsapVals);
                         }
-                            */
+                            
                idGsapArr.push(stemFn);
             })
         }
@@ -638,7 +645,7 @@ FlowerAnimationTest.prototype = {
      
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
-                // let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
+                // let gsapVals = this.getGsapVals3StemsAndFlowers(index);
 
                  var  stemFn =
                         function () {
