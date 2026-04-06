@@ -23,7 +23,7 @@ var longFlowerstem = "#pathHovedStilk";
 var rectangleMovable = "#rect1"; // middle rectangle hiding upper stem
 var topPathFlowerMovable = "#path3";
 var delay = 0;
-var durationTime = 0.5; // skal vaere 1 i endelig versjon
+var durationTime = 0.3; // skal vaere 1 i endelig versjon
 
 var hovedStilkBlomst = '#hovedStilkBlomst';
 
@@ -124,7 +124,7 @@ FlowerAnimationTest.prototype = {
     },
     hovedStilkBlomstAnim: function () {
 
-        gsap.to("#rect1-group", { scale: 1})
+        gsap.to("#rect1-group", { scale: 1}) // TODO: denne skal vaere paa plass naar stilken vokser
 
         this.tl.add('start')
         .to("g#hovedStilkBlomst", { duration: durationTime, y: -16 }, 'start')
@@ -171,6 +171,14 @@ FlowerAnimationTest.prototype = {
 
         gsap.to("#rect1-group", { y: -73})
         gsap.to("#topPathFlower-group", { duration: durationTime, x: 17, y: 112,
+            onComplete: this.updateSFPhase, callbackScope: this 
+         })
+
+    },
+    moveStilkAndMidStemFlowerUp5: function () {
+
+        gsap.to("#rect1-group", { scale: 0})
+        gsap.to("#topPathFlower-group", { duration: durationTime, x: 1, y: 8, rotation: -2,
             onComplete: this.updateSFPhase, callbackScope: this 
          })
 
@@ -1122,6 +1130,10 @@ FlowerAnimationTest.prototype = {
             this.moveStilkAndMidStemFlowerUp4();
         }
 
+        var phase11 = () => {
+            this.moveStilkAndMidStemFlowerUp5();
+        }
+
         let alienPhasesGsapArrBottom = this.getIdGsapArrBottom();
         let alienPhasesGsapArrRest = this.getIdGsapArrRest();
         let alienPhasesGsapArrGroup2= this.getIdGsapArrGroup2();
@@ -1135,7 +1147,7 @@ FlowerAnimationTest.prototype = {
 
         this.sfPhases = [phase7].concat(alienPhasesGsapSFArrBottom).concat([phase8])
         .concat(alienPhasesGsapSFArrGroup2).concat([phase9]).concat(alienPhasesGsapSFArrGroup3)
-        .concat([phase10]).concat(alienPhasesGsapSFArrGroup4);
+        .concat([phase10]).concat(alienPhasesGsapSFArrGroup4).concat([phase11]);
 
         /*
         this.alienphases = [phase1].concat(alienPhasesGsapArrBottom);
