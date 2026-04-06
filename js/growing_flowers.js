@@ -161,8 +161,8 @@ FlowerAnimationTest.prototype = {
     },
     moveStilkAndMidStemFlowerUp3: function () {
 
-        gsap.to("#rect1-group", { y: -30})
-        gsap.to("#topPathFlower-group", { duration: durationTime, y: 150,
+        gsap.to("#rect1-group", { y: -54})
+        gsap.to("#topPathFlower-group", { duration: durationTime,  rotation: 35, x: 8, y: 132,
             onComplete: this.updateSFPhase, callbackScope: this 
          })
 
