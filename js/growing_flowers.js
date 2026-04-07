@@ -97,8 +97,18 @@ FlowerAnimationTest.prototype = {
          })
 
     },
-    getIdGsapSFArr: function (method) {
-        // this.alienSetupStemsAndFlowers(); // TODO: slaa sammen alle
+    getIdGsapSFArr: function (group, method) {
+        var idGsapArr = this.alienSetupStemsAndFlowers(group, method);
+        let sfPhases = [];
+
+        idGsapArr.forEach((alien, index) => {
+            let idGsapFn = () => {
+                idGsapArr[index]();
+            }
+            sfPhases.push(idGsapFn);
+        });
+
+        return sfPhases;
     },
     getIdGsapSFArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStemsAndFlowers();
@@ -204,8 +214,31 @@ FlowerAnimationTest.prototype = {
         } 
         return gsapVals;
     },
-    alienSetupStemsAndFlowers: function () {
-        // TODO
+    alienSetupStemsAndFlowers: function (group, method) {
+        const stemFlowerGroupElement = document.getElementById(group);
+        const idGsapArr = [];
+        var self = this; // bruke denne i loopen?
+        
+        if (stemFlowerGroupElement) {
+            const groups = stemFlowerGroupElement.querySelectorAll('g');
+     
+            groups.forEach((group, index) => {
+                const id = "#" +group.id;                
+                let gsapVals = this.getGsapValStemsAndFlowers(index, method);
+
+                 var  stemFn =
+                        function () {
+                            gsap.to(id, { duration: durationTime, scale: 1,
+                                onComplete: self.updateSFPhase, callbackScope: self
+                            });
+                        }
+                        if (gsapVals) {                           
+                            gsap.to(id, gsapVals);
+                        }
+               idGsapArr.push(stemFn);
+            })
+        }
+        return idGsapArr;
     },
     alienSetupBottomStemsAndFlowers: function () {        
         const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
@@ -439,8 +472,8 @@ FlowerAnimationTest.prototype = {
 
         // let alienPhasesGsapSFArrBottom = this.getIdGsapSFArr("bottom");
 
-        let alienPhasesGsapSFArrBottom = this.getIdGsapSFArrBottom();
-        let alienPhasesGsapSFArrGroup2 = this.getIdGsapSFArrGroup2();
+        let alienPhasesGsapSFArrBottom = this.getIdGsapSFArr('groupSFBottomStems-group', "bottom");
+        let alienPhasesGsapSFArrGroup2 = this.getIdGsapSFArr('groupSF2', "group2");
         let alienPhasesGsapSFArrGroup3 = this.getIdGsapSFArrGroup3();
         let alienPhasesGsapSFArrGroup4 = this.getIdGsapSFArrGroup4();
         let alienPhasesGsapSFArrGroup5 = this.getIdGsapSFArrGroup5();
