@@ -175,50 +175,6 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    alienSetupGroup4StemsAndFlowers: function () {        
-        const stemFlowerGroupElement = document.getElementById('groupSF4');
-        const idGsapArr = [];
-        var self = this; 
-        
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-     
-            groups.forEach((group, index) => {
-                const id = "#" +group.id;
-
-                 var  stemFn =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updateSFPhase, callbackScope: self
-                            });
-                        }
-               idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
-    alienSetupGroup5StemsAndFlowers: function () {        
-        const stemFlowerGroupElement = document.getElementById('groupSFRestStems-group');
-        const idGsapArr = [];
-        var self = this; 
-        
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-     
-            groups.forEach((group) => {
-                const id = "#" +group.id;
-
-                 var  stemFn =
-                        function () {
-                            gsap.to(id, { duration: durationTime, scale: 1,
-                                onComplete: self.updateSFPhase, callbackScope: self
-                            });
-                        }
-               idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
     alienSetupBottomStemsAndFlowersPathScales: function () { // denne er korrekt
         const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
 
