@@ -18,17 +18,10 @@ class BlomsterstandBlomst {
 }
 
 var rectangleMovable = "#rect1"; // middle rectangle hiding upper stem
-var topPathFlowerMovable = "#path3";
 var delay = 0;
 var durationTime = 0.3; // skal vaere 1 i endelig versjon
 
 var hovedStilkBlomst = '#hovedStilkBlomst';
-
-
-let topBlomstMovable = new BlomsterstandBlomst("#path3", "0 0");
-
-var pathLeft1 = "#pathLeft1"; // stilk
-var leftPath1Flower = "#leftPath1Flower"; // blomst
 
 function blomsterstandStyle () {
     const rect = document.getElementById('rect1');
@@ -151,22 +144,6 @@ FlowerAnimationTest.prototype = {
             onComplete: this.updateSFPhase, callbackScope: this 
          })
 
-    },
-    moveTopPathFlowerMovable: function () {
-
-        gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, x: -3,
-                        onComplete: this.updatePhase,
-                        callbackScope: this
-            });
-    },
-    moveTopPathFlowerMovable2: function () {
-
-        gsap.to(topPathFlowerMovable, 
-                    {scale: 1, duration: durationTime, x: 12, y: -55, rotation: 35,
-                        onComplete: this.updatePhase,
-                        callbackScope: this
-            });
     },
     getGsapValsBottomFlowers: function (index) {
         let gsapVals = null;
@@ -691,11 +668,6 @@ FlowerAnimationTest.prototype = {
         // viser under utvikling. skal skjules i produksjon
         gsap.set("#topPathFlower-group", { scale: 0.2, transformOrigin: "center" });
         gsap.set("g#hovedStilkBlomst", { scale: 1.1, x: -4, y: 220 });
-
-        gsap.set("#path3", { scale: 0, transformOrigin: "50% bottom", x: -1 });
-        
-        gsap.set(pathLeft1, { scale: 0, scaleX: 0, transformOrigin: "left"});
-        gsap.set(leftPath1Flower, { scale: 0, transformOrigin: "100% bottom", x: 3, y: 2 });
     }
 }
 
