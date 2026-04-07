@@ -42,22 +42,9 @@ function FlowerAnimationTest() {
 }
 
 FlowerAnimationTest.prototype = {
-    resett: function () {
-        this.phazeIndex = 0;
-        this.setupAlienFlower();
-    },
     resettSF: function () {
         this.sfPhazeIndex = 0;
         this.setupAlienFlower();
-    },
-    playAnim: function () {
-        this.button.disabled = true;
-
-        if (this.phazeIndex < this.alienphases.length) {
-            this.alienphases[this.phazeIndex]();
-        } else {
-            this.resett();
-        }
     },
     playSFAnim: function () {
         this.buttonSF.disabled = true;
@@ -68,13 +55,6 @@ FlowerAnimationTest.prototype = {
             this.resettSF();
         }
     },
-    updatePhase: function () {
-        if ((this.alienphases) && this.phazeIndex < (this.alienphases.length)) {
-            this.phazeIndex += 1;
-
-            this.setButtonText("Fase ");
-        }
-    },
     updateSFPhase: function () {
          if ((this.sfPhases) && this.sfPhazeIndex < (this.sfPhases.length)) {
 
@@ -82,22 +62,11 @@ FlowerAnimationTest.prototype = {
             this.setButtonSFText("Fase ");
         }
     },
-    finalPhase: function () {
- 
-        this.phazeIndex += 1;
-
-        this.setButtonText("Start igjen ");
-    },
     finalSFPhase: function () {
  
         this.sfPhazeIndex += 1;
 
         this.setButtonSFText("Start igjen ");
-    },
-    setButtonText: function (text) {
-
-        this.button.innerHTML = text + String(this.phazeIndex + 1);
-        this.button.disabled = false;
     },
     setButtonSFText: function (text) {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
@@ -149,7 +118,6 @@ FlowerAnimationTest.prototype = {
         let gsapVals = null;
         const moveLeft = -3;
 
-        // todo oppdater index
         if (index === 0) {
             gsapVals = {x: 15 , y: 16};
         } else if (index === 2) {
@@ -163,22 +131,8 @@ FlowerAnimationTest.prototype = {
     getGsapValsFlowers3: function (index) {
         let gsapVals = null;
 
-        // todo oppdater index
          if (index === 0) {
             gsapVals = {x: -5, y: 5};
-        }
-
-        return gsapVals;
-    },
-    getGsapValsRestFlowers: function (index) {
-        let gsapVals = null;
-        const moveLeft = -3;
-        const moveDown = 7;
-
-        if (index === 0) {
-            gsapVals = {transformOrigin: "left", x: moveLeft, y: moveDown};
-        } else if (index === 6 || index === 3) {
-                gsapVals = {x: -5, y: moveDown};
         }
 
         return gsapVals;
@@ -357,7 +311,6 @@ FlowerAnimationTest.prototype = {
      
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
-                // let gsapVals = this.getGsapVals3StemsAndFlowers(index);
 
                  var  stemFn =
                         function () {
@@ -365,11 +318,6 @@ FlowerAnimationTest.prototype = {
                                 onComplete: self.updateSFPhase, callbackScope: self
                             });
                         }
-                        /*
-                        if (gsapVals) {                           
-                            gsap.to(id, gsapVals);
-                        }
-                            */
                idGsapArr.push(stemFn);
             })
         }
@@ -415,123 +363,6 @@ FlowerAnimationTest.prototype = {
                             });
                         }
                idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
-    alienSetupStemGroup2: function () {        
-        const stemGroupElement = document.getElementById('group2');
-        const idGsapArr = [];
-        var self = this; // bruke denne i loopen?
-        // var alienPhaseArr = this.alienSetupFlowersGroup2();   
-        
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
-     
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                
-                var stemFn =
-                    function () {  
-                        gsap.to(id, { duration: durationTime, scale: 1,
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                        /*
-                        if (gsapVals) {
-                            gsap.to(id, gsapVals);
-                        } */
-                    };
-                  
-                idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
-    alienSetupStemGroup3: function () {        
-        const stemGroupElement = document.getElementById('group3');
-        const idGsapArr = [];
-        var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupFlowersGroup3();   
-        
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
-     
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                let gsapVals = this.getGsapValsStems3(index);
-                
-                var stemFn =
-                    function () {  
-                        gsap.to(id, { duration: durationTime, scale: 1,
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                        if (gsapVals) {
-                            gsap.to(id, gsapVals);
-                        }
-                    };
-                  
-                idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
-    alienSetupStemGroup4: function () {        
-        const stemGroupElement = document.getElementById('group4');
-        const idGsapArr = [];
-        var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupFlowersGroup4();   
-        
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
-     
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsStems4(index);
-
-                var stemFn =
-                    function () {  
-                        gsap.to(id, { duration: durationTime, scale: 1,
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                        /*
-                        if (gsapVals) {
-                            gsap.to(id, gsapVals);
-                        }
-                            */
-                    };
-                  
-                idGsapArr.push(stemFn);
-            })
-        }
-        return idGsapArr;
-    },
-    alienSetupRestStems: function () {        
-        const stemGroupElement = document.getElementById('groupRestStems');
-        const idGsapArr = [];
-        var self = this; // bruke denne i loopen?
-        var alienPhaseArr = this.alienSetupRestFlowers();   
-        
-        if (stemGroupElement) {
-            const paths = stemGroupElement.querySelectorAll('path');
-     
-            paths.forEach((path, index) => {
-                const id = "#" +path.id;
-                // let gsapVals = this.getGsapValsRestFlowers(index); 
-                
-                var stemFn = 
-                    function () {   
-                        gsap.to(id, { duration: durationTime, scale: 1,
-                            onComplete: alienPhaseArr[index], callbackScope: self
-                        });
-                        /*
-                        if (gsapVals) {
-                            // legger til gsap som skal ha flere values
-                            gsap.to(id, gsapVals);
-                        }
-                            */
-                    };
-                  
-                idGsapArr.push(stemFn);
             })
         }
         return idGsapArr;
@@ -660,8 +491,9 @@ FlowerAnimationTest.prototype = {
         // TODO: slett alienphases og alt tilbehoer
         // mink svg-bredden 1 px
         // rydd i animering slik at hoyre-stilken vokser fra venstre mot hoyre og vise versa for venstre-stilkene.
+        // fix fargen paa skjuleren foran hovedstilken slik at den matcher bakgrunnen bedre
 
-        this.setButtonText("Fase ");
+        this.setButtonSFText("Fase ");
 
         gsap.set("#rect1-group", { x: 0, scale: 0});
 
@@ -673,10 +505,6 @@ FlowerAnimationTest.prototype = {
 
 var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
-
-function playFlowerBloom() {
-    bloomFlowerAnim.playAnim();
-}
 
 function playStemFlowerBloom() {
     bloomFlowerAnim.playSFAnim();
