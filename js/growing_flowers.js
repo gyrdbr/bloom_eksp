@@ -97,38 +97,6 @@ FlowerAnimationTest.prototype = {
          })
 
     },
-    getGsapValsBottomFlowers: function (index) {
-        let gsapVals = null;
-        const moveLeft = -3;
-
-        if (index === 0) {
-            gsapVals = {x: 15 , y: 16};
-        } else if (index === 2) {
-            gsapVals = {x: moveLeft, y: 5};
-        } else if (index === 4) {
-            gsapVals = {x: -5 };
-        } 
-
-        return gsapVals;
-    },
-    getGsapValsFlowers3: function (index) {
-        let gsapVals = null;
-
-         if (index === 0) {
-            gsapVals = {x: -5, y: 5};
-        }
-
-        return gsapVals;
-    },
-    getGsapValsStems3: function (index) {
-        let gsapVals = 0;
-
-        if (index === 0) {
-            gsapVals = {x: -5, y: 5};
-        }
-
-        return gsapVals;
-    },
     getIdGsapSFArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStemsAndFlowers();
         let sfPhases = [];
@@ -201,6 +169,9 @@ FlowerAnimationTest.prototype = {
             case "bottom":
                 gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
                 break;
+            case "group2":
+                gsapVals = this.getGsapVals2StemsAndFlowers(index);
+                break;
             default:
                 // code block
             }
@@ -241,7 +212,6 @@ FlowerAnimationTest.prototype = {
             groups.forEach((group, index) => {
                 const id = "#" +group.id;                
                 let gsapVals = this.getGsapValStemsAndFlowers(index, "bottom");
-                // let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
 
                  var  stemFn =
                         function () {
@@ -267,7 +237,7 @@ FlowerAnimationTest.prototype = {
      
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
-                let gsapVals = this.getGsapVals2StemsAndFlowers(index);
+                let gsapVals = this.getGsapValStemsAndFlowers(index, "group2");
 
                  var  stemFn =
                         function () {
