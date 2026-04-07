@@ -194,6 +194,19 @@ FlowerAnimationTest.prototype = {
 
         return sfPhases;
     },
+    getGsapValStemsAndFlowers: function (index, method) {
+        let gsapVals = 0;
+
+        switch(method) {
+            case "bottom":
+                gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
+                break;
+            default:
+                // code block
+            }
+
+        return gsapVals;
+    },
     getGsapValsBottomStemsAndFlowers: function (index) {
         let gsapVals = 0;
 
@@ -205,7 +218,7 @@ FlowerAnimationTest.prototype = {
             gsapVals = {x: -6 };        
         } else if (index === 4) {
             gsapVals = {x: -8 };        
-        } 
+        }
 
         return gsapVals;
     },
@@ -226,8 +239,9 @@ FlowerAnimationTest.prototype = {
             const groups = stemFlowerGroupElement.querySelectorAll('g');
      
             groups.forEach((group, index) => {
-                const id = "#" +group.id;
-                let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
+                const id = "#" +group.id;                
+                let gsapVals = this.getGsapValStemsAndFlowers(index, "bottom");
+                // let gsapVals = this.getGsapValsBottomStemsAndFlowers(index);
 
                  var  stemFn =
                         function () {
