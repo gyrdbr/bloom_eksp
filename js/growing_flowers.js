@@ -2,14 +2,6 @@
 
 /* blomsterstand */
 
-class InflorescenceLeaf {
-    constructor(id, transformOrigin, startScale) {
-        this.id = id;
-        this.transformOrigin = transformOrigin;
-        this.startScale = startScale;
-    }
-}
-
 class BlomsterstandBlomst {
   constructor(id, transformOrigin) {
       this.id = id;
@@ -20,25 +12,16 @@ class BlomsterstandBlomst {
 var rectangleMovable = "#rect1"; // middle rectangle hiding upper stem
 var delay = 0;
 var durationTime = 0.3; // skal vaere 1 i endelig versjon
-
 var hovedStilkBlomst = '#hovedStilkBlomst';
-
-function blomsterstandStyle () {
-    const rect = document.getElementById('rect1');
-
-    rect.style.display = 'inline';
-}
 
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.sfPhazeIndex = 0;
-    this.button = document.querySelector('#playBloomButton');
     this.buttonSF = document.querySelector('#playBloomStemButton');
 
     this.alienphases = [];
     this.sfPhases= [];
     this.tl = gsap.timeline();
-
 }
 
 FlowerAnimationTest.prototype = {
@@ -133,20 +116,6 @@ FlowerAnimationTest.prototype = {
 
          if (index === 0) {
             gsapVals = {x: -5, y: 5};
-        }
-
-        return gsapVals;
-    },
-    getGsapValsBottomStems: function (index) {
-        let gsapVals = 0;
-        const moveLeft = -3;
-
-        if (index === 0) {
-            gsapVals = {x: 110, y: 55};
-        } else if (index === 2) {
-            gsapVals = {x: moveLeft, y: 5 };        
-        } else if (index === 4) {
-            gsapVals = {x: -5  };
         }
 
         return gsapVals;
