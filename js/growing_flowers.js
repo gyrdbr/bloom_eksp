@@ -19,7 +19,6 @@ function FlowerAnimationTest() {
     this.sfPhazeIndex = 0;
     this.buttonSF = document.querySelector('#playBloomStemButton');
 
-    this.alienphases = [];
     this.sfPhases= [];
     this.tl = gsap.timeline();
 }
@@ -233,8 +232,7 @@ FlowerAnimationTest.prototype = {
         .concat(alienPhasesGsapSFArrGroup2).concat([phase9]).concat(alienPhasesGsapSFArrGroup3)
         .concat([phase10]).concat(alienPhasesGsapSFArrGroup4).concat([phase11]).concat(alienPhasesGsapSFArrGroup5);
 
-        // TODO: slett alienphases og alt tilbehoer
-        // mink svg-bredden 1 px
+        // TODO: mink svg-bredden 1 px
         // rydd i animering slik at hoyre-stilken vokser fra venstre mot hoyre og vise versa for venstre-stilkene.
         // fix fargen paa skjuleren foran hovedstilken slik at den matcher bakgrunnen bedre
 
