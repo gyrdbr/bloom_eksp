@@ -97,6 +97,9 @@ FlowerAnimationTest.prototype = {
          })
 
     },
+    getIdGsapSFArr: function (method) {
+        // this.alienSetupStemsAndFlowers(); // TODO: slaa sammen alle
+    },
     getIdGsapSFArrBottom: function () {
         var idGsapArr = this.alienSetupBottomStemsAndFlowers();
         let sfPhases = [];
@@ -200,6 +203,9 @@ FlowerAnimationTest.prototype = {
             gsapVals = {x: - 3, y: 1};
         } 
         return gsapVals;
+    },
+    alienSetupStemsAndFlowers: function () {
+        // TODO
     },
     alienSetupBottomStemsAndFlowers: function () {        
         const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
@@ -430,6 +436,8 @@ FlowerAnimationTest.prototype = {
         var phase11 = () => {
             this.moveStilkAndMidStemFlowerUp5();
         }
+
+        // let alienPhasesGsapSFArrBottom = this.getIdGsapSFArr("bottom");
 
         let alienPhasesGsapSFArrBottom = this.getIdGsapSFArrBottom();
         let alienPhasesGsapSFArrGroup2 = this.getIdGsapSFArrGroup2();
