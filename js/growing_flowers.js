@@ -57,9 +57,8 @@ FlowerAnimationTest.prototype = {
     },
     hovedStilkBlomstAnim: function () {
 
-        gsap.to("#rect1-group", { scale: 1}) // TODO: denne skal vaere paa plass naar stilken vokser
-
         this.tl.add('start')
+        .to("#rect1-group", { duration: 0.01, scale: 1}) 
         .to("g#hovedStilkBlomst", { duration: durationTime, y: -16 }, 'start')
         .to("#topPathFlower-group", { scale: 1, y: 185, x: -14,
                         onComplete: this.updateSFPhase,
@@ -175,8 +174,8 @@ FlowerAnimationTest.prototype = {
         }
         return idGsapArr;
     },
-    alienSetupBottomStemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupSFBottomStems-group');
+    alienSetupStemsAndFlowersPathScales: function (group, transformOrigin) { // denne er korrekt
+        const stemFlowerGroupElement = document.getElementById(group);
 
         if (stemFlowerGroupElement) {
             const groups = stemFlowerGroupElement.querySelectorAll('g');
@@ -184,73 +183,11 @@ FlowerAnimationTest.prototype = {
             groups.forEach((group, index) => {
                 const id = "#" +group.id;
 
-                gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: "right" });
-
-            });
-        } else {
-           // console.error('Group element with ID "myGroup" not found.');
-        }
-    },
-    alienSetupGroup2StemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupSF2');
-
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-
-            groups.forEach((group, index) => {
-                const id = "#" +group.id;
-
-                gsap.set(id, { duration: durationTime, scale: 0 });
-
-            });
-        } else {
-           // console.error('Group element with ID "myGroup" not found.');
-        }
-    },
-    alienSetupGroup3StemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupSF3');
-
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-
-            groups.forEach((group, index) => {
-                const id = "#" +group.id;
-
-                gsap.set(id, { duration: durationTime, scale: 0 });
-
-            });
-        } else {
-           // console.error('Group element with ID "myGroup" not found.');
-        }
-    },
-    alienSetupGroup4StemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupSF4');
-
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-
-            groups.forEach((group) => {
-                const id = "#" +group.id;
-
-                // console.log("id: " + id);
-
-                gsap.set(id, { duration: durationTime, scale: 0 });
-
-            });
-        } else {
-           // console.error('Group element with ID "myGroup" not found.');
-        }
-    },
-    alienSetupGroup5StemsAndFlowersPathScales: function () { // denne er korrekt
-        const stemFlowerGroupElement = document.getElementById('groupSFRestStems-group');
-
-        if (stemFlowerGroupElement) {
-            const groups = stemFlowerGroupElement.querySelectorAll('g');
-
-            groups.forEach((group) => {
-                const id = "#" +group.id;
-
-                gsap.set(id, { duration: durationTime, scale: 0 });
+                if (transformOrigin) {
+                    gsap.set(id, { duration: durationTime, scale: 0, transformOrigin: transformOrigin });
+                } else {
+                    gsap.set(id, { duration: durationTime, scale: 0 });
+                }
 
             });
         } else {
@@ -260,11 +197,17 @@ FlowerAnimationTest.prototype = {
     setupAlienFlower: function () {
         this.phazeIndex = 0;
 
-        this.alienSetupBottomStemsAndFlowersPathScales();
-        this.alienSetupGroup2StemsAndFlowersPathScales();
-        this.alienSetupGroup3StemsAndFlowersPathScales();
-        this.alienSetupGroup4StemsAndFlowersPathScales();
-        this.alienSetupGroup5StemsAndFlowersPathScales();
+        this.alienSetupStemsAndFlowersPathScales('groupSFBottomStems-group', "right");
+        this.alienSetupStemsAndFlowersPathScales('groupSF2');
+        this.alienSetupStemsAndFlowersPathScales('groupSF3');
+        this.alienSetupStemsAndFlowersPathScales('groupSF4');
+        this.alienSetupStemsAndFlowersPathScales('groupSFRestStems-group');
+
+        let alienPhasesGsapSFArrBottom = this.getIdGsapSFArr('groupSFBottomStems-group', "bottom");
+        let alienPhasesGsapSFArrGroup2 = this.getIdGsapSFArr('groupSF2', "group2");
+        let alienPhasesGsapSFArrGroup3 = this.getIdGsapSFArr('groupSF3');
+        let alienPhasesGsapSFArrGroup4 = this.getIdGsapSFArr('groupSF4');
+        let alienPhasesGsapSFArrGroup5 = this.getIdGsapSFArr('groupSFRestStems-group');
 
         var phase7 = () => {
             this.hovedStilkBlomstAnim();
@@ -285,12 +228,6 @@ FlowerAnimationTest.prototype = {
         var phase11 = () => {
             this.moveStilkAndMidStemFlowerUp5();
         }
-
-        let alienPhasesGsapSFArrBottom = this.getIdGsapSFArr('groupSFBottomStems-group', "bottom");
-        let alienPhasesGsapSFArrGroup2 = this.getIdGsapSFArr('groupSF2', "group2");
-        let alienPhasesGsapSFArrGroup3 = this.getIdGsapSFArr('groupSF3');
-        let alienPhasesGsapSFArrGroup4 = this.getIdGsapSFArr('groupSF4');
-        let alienPhasesGsapSFArrGroup5 = this.getIdGsapSFArr('groupSFRestStems-group');
 
         this.sfPhases = [phase7].concat(alienPhasesGsapSFArrBottom).concat([phase8])
         .concat(alienPhasesGsapSFArrGroup2).concat([phase9]).concat(alienPhasesGsapSFArrGroup3)
