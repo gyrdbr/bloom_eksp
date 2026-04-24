@@ -1,5 +1,7 @@
 // gsap.config({ trialWarn: false });
 
+gsap.registerPlugin(Flip);
+
 /* visne blomster */
 
 // TODO:  animer knoppen til å vokse og blomstre, og deretter animere de andre blomstene til å blomstre etter hverandre
@@ -27,6 +29,6 @@ habitFlowerTransform.init();
 habitFlowerTransform.setupHabitFlower();
 habitFlowerTransform.animateHabitFlower();
 
-// gsap.set("#polygonRotate", {transformPerspective:600, transformOrigin:"50% 50%"})
-// gsap.to("#polygonRotate", {rotationX:360, duration:10, ease:"none"})
-// gsap.to("#polygonRotate", {rotationY:360, duration:15, repeat:1, ease:"none"})
+TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
+
+

@@ -9,7 +9,11 @@
    <meta charset="UTF-8">
    <!-- OBS innstillingene i meta var det som fiksa viewet mht str etc -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- link rel="stylesheet" href="css/growing_flowers.css" -->
+    <!-- Core GSAP Library -->
+   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+   <!-- Flip Plugin -->
+   <script src="https://unpkg.com/gsap@3/dist/Flip.min.js"></script>
 </head>
 
 <body>
@@ -308,7 +312,19 @@
       </div>
    </section>
 
-   <section class="rw-section rw-flower-page hidden-elementX" id="rw-habitTransform-page">
+<section class="rw-section rw-flower-page hidden-elementX" id="flip" data-state="initial">
+   <div class="rw-icon-list">
+         <div class="frame-container-flower">
+
+            <svg width="400" height="110">
+               <rect id='rect' width="50" height="50" style="fill:rgb(0,0,255);" />
+            </svg>
+            
+         </div>
+      </div>
+</section>
+
+   <section class="rw-section rw-flower-page hidden-element" id="rw-habitTransform-page">
       <div class="rw-icon-list">
          <div class="frame-container-flower">
 
