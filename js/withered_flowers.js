@@ -8,3 +8,14 @@
 const gBlomstHeleVenstre = document.querySelector('.blomst-hele-venstre');
 const gBlomstHeleMidten = document.querySelector('.blomst-hele-midten');
 const gBlomstHeleHøyre = document.querySelector('.blomst-hele-høyre');
+
+HabitFlowerTransform = {
+    init: function() {
+
+    },
+    setupHabitFlower: function() {
+        gsap.set(gBlomstHeleVenstre, { scale: 0, transformOrigin: 'center' });
+        gsap.set(gBlomstHeleMidten, { scale: 0, transformOrigin: 'center' });
+        gsap.set(gBlomstHeleHøyre, { scale: 0, transformOrigin: 'center' });
+    }
+}
