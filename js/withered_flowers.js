@@ -11,11 +11,22 @@ const gBlomstHeleHøyre = document.querySelector('.blomst-hele-høyre');
 
 HabitFlowerTransform = {
     init: function() {
-
+        // 
     },
     setupHabitFlower: function() {
-        gsap.set(gBlomstHeleVenstre, { scale: 0, transformOrigin: 'center' });
-        gsap.set(gBlomstHeleMidten, { scale: 0, transformOrigin: 'center' });
-        gsap.set(gBlomstHeleHøyre, { scale: 0, transformOrigin: 'center' });
+        // gsap.set(gBlomstHeleMidten, { scale: 0, transformOrigin: 'center' });
+    },
+    animateHabitFlower: function() {
+        gsap.to("#pUtspring1HoyreToppen", { scale: 1.2, transformOrigin:"50% 50%", duration: 2 });
     }
 }
+
+var habitFlowerTransform = Object.create(HabitFlowerTransform);
+
+habitFlowerTransform.init();
+habitFlowerTransform.setupHabitFlower();
+habitFlowerTransform.animateHabitFlower();
+
+// gsap.set("#polygonRotate", {transformPerspective:600, transformOrigin:"50% 50%"})
+// gsap.to("#polygonRotate", {rotationX:360, duration:10, ease:"none"})
+// gsap.to("#polygonRotate", {rotationY:360, duration:15, repeat:1, ease:"none"})
