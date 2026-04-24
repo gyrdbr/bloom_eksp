@@ -1,7 +1,5 @@
 // gsap.config({ trialWarn: false });
 
-gsap.registerPlugin(Flip);
-
 /* visne blomster */
 
 // TODO:  animer knoppen til å vokse og blomstre, og deretter animere de andre blomstene til å blomstre etter hverandre
