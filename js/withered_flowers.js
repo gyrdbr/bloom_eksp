@@ -25,7 +25,7 @@ var habitFlowerTransform = Object.create(HabitFlowerTransform);
 
 habitFlowerTransform.init();
 habitFlowerTransform.setupHabitFlower();
-habitFlowerTransform.animateHabitFlower();
+// habitFlowerTransform.animateHabitFlower();
 
 TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
 
