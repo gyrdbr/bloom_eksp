@@ -1,6 +1,7 @@
 // gsap.config({ trialWarn: false });
 
-gsap.registerPlugin(MorphSVGPlugin);
+// gsap.registerPlugin(MorphSVGPlugin);
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 /* visne blomster */
 
@@ -34,15 +35,21 @@ habitFlowerTransform.animateHabitFlower();
 
 // TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
 
+let tl = gsap
+  .timeline({
+    defaults: { duration: 2, ease: "expo.inOut" },
+    repeat: -1
+  })
+  .to("#morph", { morphSVG: "#speech" })
+  .to("#morph", { morphSVG: "#rocket" })
+  .to("#morph", { morphSVG: "#lightning" })
+  .to("#morph", { morphSVG: "#thumb" })
+  .to("#morph", { morphSVG: "#square" })
+  .to("#morph", { morphSVG: "#grid" })
+  .to("#morph", { morphSVG: "#bulb" })
+  .to("#morph", { morphSVG: "#morph" })
 
-gsap.to("#diamond", {
-	duration: 2,
-	ease: "power2.inOut",
-	morphSVG: {
-		shape: "#lightning",
-		smooth: { points: 80 }
-	}
-});
+GSDevTools.create({animation: tl, minimal: true});
 
 
 
