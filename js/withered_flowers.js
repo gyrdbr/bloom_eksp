@@ -1,7 +1,7 @@
 // gsap.config({ trialWarn: false });
 
 // gsap.registerPlugin(MorphSVGPlugin);
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
+// gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 /* visne blomster */
 
@@ -40,11 +40,14 @@ let tl = gsap
   .timeline({
     defaults: { duration: 2, ease: "expo.inOut" },
   })
-  .to("#morph", { morphSVG: "#speech" });
-  
+  .to("#morph", { morphSVG: "#speech" })
+  .to("#morph", { morphSVG: "#lightning" })
 
-// GSDevTools.create({animation: tl, minimal: true});
-
+  let tm = gsap
+  .timeline({
+    defaults: { duration: 2 },
+  })
+  .to("#pUtspring1HoyreToppen", { morphSVG: "#pBlomstOeverstBladHoved" })
 
 
 
