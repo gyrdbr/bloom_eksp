@@ -41,15 +41,8 @@ let tl = gsap
     repeat: -1
   })
   .to("#morph", { morphSVG: "#speech" })
-  .to("#morph", { morphSVG: "#rocket" })
-  .to("#morph", { morphSVG: "#lightning" })
-  .to("#morph", { morphSVG: "#thumb" })
-  .to("#morph", { morphSVG: "#square" })
-  .to("#morph", { morphSVG: "#grid" })
-  .to("#morph", { morphSVG: "#bulb" })
-  .to("#morph", { morphSVG: "#morph" })
 
-GSDevTools.create({animation: tl, minimal: true});
+// GSDevTools.create({animation: tl, minimal: true});
 
 
 
