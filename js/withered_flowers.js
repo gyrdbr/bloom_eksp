@@ -21,7 +21,7 @@ HabitFlowerTransform = {
     animateHabitFlower: function() {
         // gsap.to("#pUtspring1HoyreToppen", { scale: 1.2, transformOrigin:"50% 50%", duration: 2 });
 
-        gsap.set("#path5-2-4-9", { scale: 1, rotation: -180,  transformOrigin: "50% 0%", strokeWidth: 0.1 });
+        gsap.set("#path5-2-4-9", { scale: 1, rotation: -180,  transformOrigin: "50% 0%" });
         
     }
 }
@@ -34,13 +34,16 @@ habitFlowerTransform.animateHabitFlower();
 
 // TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
 
+
 gsap.to("#diamond", {
-	duration: 1,
+	duration: 2,
 	ease: "power2.inOut",
 	morphSVG: {
 		shape: "#lightning",
-		smooth: { points: 80, redraw: true }
+		smooth: { points: 80 }
 	}
 });
+
+
 
 
