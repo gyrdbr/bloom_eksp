@@ -35,12 +35,13 @@ habitFlowerTransform.animateHabitFlower();
 
 // TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
 
+/*
 let tl = gsap
   .timeline({
     defaults: { duration: 2, ease: "expo.inOut" },
-    repeat: -1
   })
   .to("#morph", { morphSVG: "#speech" })
+  */
 
 // GSDevTools.create({animation: tl, minimal: true});
 
