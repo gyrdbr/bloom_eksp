@@ -44,11 +44,11 @@ let tl = gsap
   .to("#morph", { morphSVG: "#lightning" })
 
   let tm = gsap
-  .timeline({
-    defaults: { duration: 2, ease: "expo.inOut" },
-  })
-  .to("#pUtspring1HoyreToppen", { morphSVG: "#speech" })
-  .to("#pUtspring1HoyreToppen", { morphSVG: "#lightning" })
+    .timeline({
+        defaults: { duration: 2, ease: "expo.inOut" },
+    })
+    .to("#pUtspring1HoyreToppen", { morphSVG: "#pBlomsBladHoved2" })
+    .to("#pUtspring1HoyreToppen", { morphSVG: "#lightning" })
   
 
 
