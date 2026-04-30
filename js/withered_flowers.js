@@ -45,7 +45,7 @@ let tl = gsap
 
   let tm = gsap
   .timeline({
-    defaults: { duration: 2 },
+    defaults: { duration: 2, ease: "expo.inOut" },
   })
   .to("#pUtspring1HoyreToppen", { morphSVG: "#speech" })
   .to("#pUtspring1HoyreToppen", { morphSVG: "#lightning" })
