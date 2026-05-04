@@ -56,10 +56,5 @@ let tn = gsap
     })
     .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
 
-let to = gsap
-    .timeline({
-        defaults: { delay: 2, duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMainSkygge-4-2-3" })
 
-// TODO: animer alle pathene i g samtidig, den nederste funker ikke
+// TODO: animer alle pathene i g samtidig
