@@ -26,13 +26,13 @@
      inkscape:document-units="mm"
      inkscape:zoom="0.50000001"
      inkscape:cx="842.99998"
-     inkscape:cy="1082"
+     inkscape:cy="601.99998"
      inkscape:window-width="1396"
      inkscape:window-height="1000"
      inkscape:window-x="443"
      inkscape:window-y="201"
      inkscape:window-maximized="0"
-     inkscape:current-layer="gVissenHoyreBottom" /><defs
+     inkscape:current-layer="gStilkerOgBlomster" /><defs
      id="defs1"><linearGradient
        id="linearGradient76"
        inkscape:collect="always"><stop
@@ -4452,7 +4452,7 @@
            inkscape:path-effect="#path-effect5-50-8-2" /></g></g><g
        id="gBlomstHeleOeverst"
        transform="matrix(0.9542681,0.17699459,-0.14819551,0.9542681,38.430656,-45.68132)"
-       display="inline"><g
+       display="none"><g
          id="gBlomstBlad5Left-9-6-5"
          style="fill:url(#linearGradient417);fill-opacity:0.515464"
          display="none"><path

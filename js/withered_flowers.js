@@ -57,4 +57,16 @@ let tn = gsap
     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
 
 
-// TODO: animer alle pathene i g samtidig
+// animering av hovedstilk og blomster
+
+let to = gsap
+    .timeline({
+        defaults: { duration: 2, ease: "expo.inOut" },
+    })
+    .to("#pUtspring1HoyreToppen", { morphSVG: "#path5-2-4-9" })
+
+let tp = gsap
+    .timeline({
+        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
+    })
+    .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
