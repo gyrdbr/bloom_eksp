@@ -49,5 +49,17 @@ let tm = gsap
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppen", { morphSVG: "#pBlomsBladHoved2" })
-    .to("#pUtspring1HoyreToppen", { morphSVG: "#lightning" })
+
+let tn = gsap
+    .timeline({
+        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
+    })
     .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
+
+let to = gsap
+    .timeline({
+        defaults: { delay: 2, duration: 2, ease: "expo.inOut" },
+    })
+    .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMainSkygge-4-2-3" })
+
+// TODO: animer alle pathene i g samtidig, den nederste funker ikke
