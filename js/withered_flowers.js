@@ -48,13 +48,13 @@ let tm = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring1HoyreToppen", { morphSVG: "#pBlomsBladHoved2" })
+    .to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomsBladHoved2" })
 
 let tn = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
+    .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
 
 
 // TODO: animer alle pathene i g samtidig
