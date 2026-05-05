@@ -65,6 +65,7 @@ let to = gsap
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppen", { morphSVG: "#path5-2-4-9" })
+     .to("#pUtspring1HoyreToppen", { morphSVG: "#gBlomsterSubBottomAnim1" })
 
 let tp = gsap
     .timeline({
