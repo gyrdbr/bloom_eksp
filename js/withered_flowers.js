@@ -44,12 +44,15 @@ let tl = gsap
   .to("#morph", { morphSVG: "#lightning" })
 
   
+  
 let tm = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomsBladHoved2" })
 
+
+    
 let tn = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
@@ -57,17 +60,22 @@ let tn = gsap
     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
 
 
+
 // animering av hovedstilk og blomster
 // animering i main funker naa. maa bare flytte den. saa endre stylinga paa siste steg
+
 
 let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppen", { morphSVG: "#path5-2-4-9" })
-     .to("#pUtspring1HoyreToppen", { morphSVG: "#gBlomsterSubBottomAnim1" })
+    .to("#pUtspring1HoyreToppen", { morphSVG: "#gBlomsterSubBottomAnim1" })
 
-let tp = gsap
+    
+
+
+     let tp = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
