@@ -3853,7 +3853,8 @@
        y1="331.60084"
        x2="438.8262"
        y2="331.60084"
-       gradientUnits="userSpaceOnUse" /><linearGradient
+       gradientUnits="userSpaceOnUse" />
+       <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5"
        id="linearGradient92"
@@ -3861,7 +3862,8 @@
        x1="100.82532"
        y1="170.40871"
        x2="107.36198"
-       y2="108.21648" /><linearGradient
+       y2="108.21648" />
+       <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient404"
        id="linearGradient93"
