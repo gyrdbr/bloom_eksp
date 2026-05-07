@@ -35,14 +35,14 @@ habitFlowerTransform.animateHabitFlower();
 
 // TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
 
-
+/*
 let tl = gsap
   .timeline({
     defaults: { duration: 2, ease: "expo.inOut" },
   })
   .to("#morph", { morphSVG: "#speech" })
   .to("#morph", { morphSVG: "#lightning" })
-
+*/
   
   
 let tm = gsap
@@ -64,7 +64,7 @@ let tn = gsap
 // animering av hovedstilk og blomster
 // animering i main funker naa. maa bare flytte den. saa endre stylinga paa siste steg
 
-
+/*
 let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
@@ -80,5 +80,5 @@ let to = gsap
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
-
+*/
     
