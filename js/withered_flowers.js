@@ -60,6 +60,8 @@ let tn = gsap
     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
 
 
+// TODO:  gjoer om animerigs-blomsten til riktig stoerrelse og plassering
+// og putt svg-koden i html-fila til svg-mammaen
 
 // animering av hovedstilk og blomster
 // animering i main funker naa. maa bare flytte den. saa endre stylinga paa siste steg
