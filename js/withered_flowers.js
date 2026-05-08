@@ -70,16 +70,20 @@ let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring1HoyreToppen", { morphSVG: "#path5-2-4-9" })
-    .to("#pUtspring1HoyreToppen", { morphSVG: "#gBlomsterSubBottomAnim1" })
+    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })    
 
-    
-
-
-     let tp = gsap
+let tq = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring2VenstreToppen", { morphSVG: "#pBlomstLeftMain-2-2-5" })
+    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
 
+
+/*
+let tp = gsap
+    .timeline({
+        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
+    })
+    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMain-2-2-5" })
+*/
     
