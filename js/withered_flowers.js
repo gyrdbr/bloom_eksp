@@ -44,7 +44,7 @@ let tl = gsap
   .to("#morph", { morphSVG: "#lightning" })
 */
   
- /* 
+ 
 let tm = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
@@ -58,7 +58,7 @@ let tn = gsap
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
-*/
+
 
 // TODO:  gjoer om animerigs-blomsten til riktig stoerrelse og plassering
 // og putt svg-koden i html-fila til svg-mammaen
@@ -70,14 +70,14 @@ let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
-    //.to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
+    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
     .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExp2" })
 
 let tq = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
-    //.to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
+    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
     .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" })
 
 
