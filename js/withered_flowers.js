@@ -73,6 +73,7 @@ let to = gsap
     })
     .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
     .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExp2" })
+    
 
 let tq = gsap
     .timeline({
