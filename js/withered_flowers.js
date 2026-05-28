@@ -58,6 +58,7 @@ let tn = gsap
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
+    
 
 
 // TODO:  gjoer om animerigs-blomsten til riktig stoerrelse og plassering
