@@ -73,7 +73,7 @@ let to = gsap
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
-    //.to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExp2" })
+    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
     
 
 let tq = gsap
