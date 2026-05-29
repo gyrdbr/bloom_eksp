@@ -67,6 +67,7 @@ let tn = gsap
 // animering av hovedstilk og blomster
 // animering i main funker naa. maa bare flytte den. saa endre stylinga paa siste steg
 
+/*
 let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
@@ -81,7 +82,7 @@ let tq = gsap
     })
     .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
     .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" })
-
+*/
 
 /*
 let tp = gsap
