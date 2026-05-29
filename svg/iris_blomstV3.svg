@@ -32,7 +32,7 @@
    inkscape:window-x="241"
    inkscape:window-y="188"
    inkscape:window-maximized="0"
-   inkscape:current-layer="gKnoppOgUtspringToppen"
+   inkscape:current-layer="gStilkerOgBlomster"
    showgrid="false" /><defs
    id="defs1"><inkscape:path-effect
    effect="simplify"
@@ -4337,7 +4337,7 @@
          inkscape:path-effect="#path-effect5-50-8" /></g></g><g
      id="gBlomstHeleHoyreMidten"
      transform="matrix(0.96330968,0.10305262,-0.08628476,0.96330968,36.056519,168.87676)"
-     display="inline"><g
+     display="none"><g
        id="gBlomstBlad5Left-9-6-9"
        style="fill:url(#linearGradient422);fill-opacity:0.515464"><path
          style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:url(#linearGradient420);fill-opacity:0.515464;stroke:#1b8000;stroke-width:0.741802;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.980392;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
