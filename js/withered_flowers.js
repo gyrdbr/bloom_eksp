@@ -45,7 +45,7 @@ let to = gsap
         defaults: { duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
-    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
+    // .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
     
 
 let tq = gsap
@@ -53,6 +53,6 @@ let tq = gsap
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
     .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
-    // .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" })
+    // .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" }) // sjekk om denne fins i gammel versjon
 
     
