@@ -33,56 +33,12 @@ habitFlowerTransform.init();
 habitFlowerTransform.setupHabitFlower();
 habitFlowerTransform.animateHabitFlower();
 
-// TweenMax.to('#rect', 5, { rotation: "+=90", ease: Linear.easeNone, transformOrigin:"50% 50%" });
-
-/*
-let tl = gsap
-  .timeline({
-    defaults: { duration: 2, ease: "expo.inOut" },
-  })
-  .to("#morph", { morphSVG: "#speech" })
-  .to("#morph", { morphSVG: "#lightning" })
-*/
-  
- 
-let tm = gsap
-    .timeline({
-        defaults: { duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomsBladHoved2" })
-
-
-    
-let tn = gsap
-    .timeline({
-        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMainExp" })
-    
-
 
 // TODO:  gjoer om animerigs-blomsten til riktig stoerrelse og plassering
 // og putt svg-koden i html-fila til svg-mammaen
 
 // animering av hovedstilk og blomster
 // animering i main funker naa. maa bare flytte den. saa endre stylinga paa siste steg
-
-/*
-let to = gsap
-    .timeline({
-        defaults: { duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
-    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
-    
-
-let tq = gsap
-    .timeline({
-        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
-    //.to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" })
-*/
 
 let to = gsap
     .timeline({
@@ -99,12 +55,4 @@ let tq = gsap
     .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
     // .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" })
 
-
-/*
-let tp = gsap
-    .timeline({
-        defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
-    })
-    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMain-2-2-5" })
-*/
     
