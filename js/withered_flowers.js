@@ -44,15 +44,19 @@ let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
-    // .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
-    
+    .to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomstSubLeft3" })
+    // .to(#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomstSubLeft3" })
+  
 
 let tq = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnim1" })
-    // .to("#pUtspring2VenstreToppenExp2", { morphSVG: "#pBlomstLeftMainAnimExp2" }) // sjekk om denne fins i gammel versjon
+    .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" })
+    // .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" }) // sjekk om denne fins i gammel versjon
+
+    // TODO: endre navnene saa de blir riktige
+    // Endre fargene saa de blir riktige
+    // slette fila som ikke skal brukes, som naa er skjult
 
     
