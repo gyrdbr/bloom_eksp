@@ -56,3 +56,5 @@ let tq = gsap
     // .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" }) // sjekk om denne fins i gammel versjon
 
     
+
+    
