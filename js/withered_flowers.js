@@ -44,15 +44,19 @@ let to = gsap
     .timeline({
         defaults: { duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomstSubLeft3" })
+    //.to("#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomstSubLeft3" }) // legg inn denne
     // .to(#pUtspring1HoyreToppenExp", { morphSVG: "#pBlomstSubLeft3" })
+    .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnim1" })
+    // .to("#pUtspring1HoyreToppenExp2", { morphSVG: "#gBlomsterSubBottomAnimExpX" })
   
 
 let tq = gsap
     .timeline({
         defaults: { delay: 1, duration: 2, ease: "expo.inOut" },
     })
-    .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" })
+    //.to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" }) // legg inn denne
+    // .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" }) // sjekk om denne fins i gammel versjon
+     .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" })
     // .to("#pUtspring2VenstreToppenExp", { morphSVG: "#pBlomstLeftMain3" }) // sjekk om denne fins i gammel versjon
 
     // TODO: endre navnene saa de blir riktige
