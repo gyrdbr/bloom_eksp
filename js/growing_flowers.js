@@ -317,8 +317,8 @@ FlowerAnimation.prototype = {
         }
     },
     setButtonText: function (text) {
-        this.button.innerHTML = text + String(this.phazeIndex + 1);
-        this.button.classList.remove('disabled');
+        // this.button.innerHTML = text + String(this.phazeIndex + 1);
+        // this.button.classList.remove('disabled');
     },
     setupBasicFlower: function () {
         this.phazeIndex = 0;
