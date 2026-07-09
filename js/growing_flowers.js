@@ -19,6 +19,8 @@ function FlowerAnimationTest() {
     this.sfPhazeIndex = 0;
     this.buttonSF = document.querySelector('#playBloomStemButton');
 
+    console.log("FlowerAnimationTest buttonSF");
+
     this.sfPhases= [];
     this.tl = gsap.timeline();
 }
@@ -30,9 +32,13 @@ FlowerAnimationTest.prototype = {
     },
     playSFAnim: function () {
         this.buttonSF.disabled = true;
-        
-        if (this.sfPhazeIndex < this.sfPhases.length) {
+
+        console.log("playSFAnim");
+
+          if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
+
+            console.log("playSFAnim this.sfPhazeIndex: " + this.sfPhazeIndex);
         } else {
             this.resettSF();
         }
@@ -52,6 +58,8 @@ FlowerAnimationTest.prototype = {
     },
     setButtonSFText: function (text) {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
+
+        console.log("setButtonSFText this.sfPhazeIndex: " + this.sfPhazeIndex);
         this.buttonSF.disabled = false;
     },
     hovedStilkBlomstAnim: function () {
