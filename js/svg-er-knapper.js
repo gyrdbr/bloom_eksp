@@ -71,6 +71,7 @@ function moveTriangle(rect) {
     // This moves the element 200 pixels to the right from its current position
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
 }
+// TODO: her skal skjuling fjernes og i stedet skal god vane/daarlig vane vises skjules naar man klikker paa dem
 tripButtonSettings.addEventListener('click', function () {
     if (tripButtonSettings.classList.contains('rw-habit-chosen')) {
         tripButtonSettings.classList.remove('rw-habit-chosen');
