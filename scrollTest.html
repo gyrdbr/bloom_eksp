@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-   <title>Simple growing flowers animations</title>
-   <link rel="stylesheet" href="css/bloom.css">
-   <meta charset="UTF-8">
-   <!-- OBS innstillingene i meta var det som fiksa viewet mht str etc -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+div {
+  background-color: lightblue;
+  height: 2000px;  width: 2000px;
+}
+</style>
 </head>
-
 <body>
-    <div class="gfg">GeeksforGeeks</div>
-    <div class="geeks">
-        A computer science portal for geeks
-    </div>
 
-    <h1>
-        <font color='Blue'>
-            This is gfg.html 
-        </font>
-    </h1>
+<h1>The Window Object</h1>
+<h2>The scrollX and scrollY Properties</h2>
+
+<p>Click the button to scroll the document window 100px horizontally and vertically.</p>
+
+<button onclick="myFunction()" style="position:fixed;">Click me to scroll</button><br><br>
+
+<div></div>
+
+<script>
+function myFunction() {
+  window.scrollBy(100, 100);
+  alert("pageXOffset: " + window.scrollX + ", scrollY: " + window.scrollY);
+}
+</script>
+
 </body>
 </html>
