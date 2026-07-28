@@ -1,0 +1,17 @@
+/*
+vis gear-btn
+*/
+
+button.cross-btn,
+button.gear-btn {
+    background-color: transparent; /* Makes background fully transparent */
+    border: transparent;
+    color: transparent; /* Changes the text color */
+    cursor: pointer; /* Optional: Changes cursor to a hand icon on hover */
+    float: right;
+    padding-right: 1rem;
+    margin-right: 16px;
+    position: relative; 
+    width: 60px;
+    height:60px;
+}
