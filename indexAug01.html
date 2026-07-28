@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+section {
+  background-color: lightblue;
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 60px;
+  height: 1000px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The scrollX and scrollY Properties</h2>
+
+<button onclick="myFunction()" style="position:fixed; background-color: #8e7cc3;">Click me to scroll</button><br><br>
+
+<div>
+  <button class="scroll">scroll() to 1000</button>
+  <button class="scroll-to">scrollTo() top</button>
+  <button class="scroll-by">scrollBy() 200</button>
+  <button class="scroll-into-view">Scroll last &lt;p&gt; into view</button>
+</div>
+
+<section>Hei</section>
+
+<script>
+function myFunction() {
+  window.scrollBy(100, 100);
+  // alert("pageXOffset: " + window.scrollX + ", scrollY: " + window.scrollY);
+}
+</script>
+
+</body>
+</html>
