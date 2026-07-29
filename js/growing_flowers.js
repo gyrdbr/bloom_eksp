@@ -2,6 +2,7 @@
 
 /* blomsterstand */
 
+
 class BlomsterstandBlomst {
   constructor(id, transformOrigin) {
       this.id = id;
@@ -19,7 +20,12 @@ function FlowerAnimationTest() {
     this.sfPhazeIndex = 0;
     this.buttonSF = document.querySelector('#playBloomStemButton');
 
+    
+    // Logs classes as a single string (e.g., "btn btn-primary active")
+    console.log(this.buttonSF.className); 
+
     console.log("FlowerAnimationTest buttonSF");
+
 
     this.sfPhases= [];
     this.tl = gsap.timeline();
@@ -59,7 +65,13 @@ FlowerAnimationTest.prototype = {
     setButtonSFText: function (text) {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
 
+         // Logs classes as a single string (e.g., "btn btn-primary active")
+        console.log("this.buttonSF.innerHTML", this.buttonSF.innerHTML); 
+
         console.log("setButtonSFText this.sfPhazeIndex: " + this.sfPhazeIndex);
+
+        
+
         this.buttonSF.disabled = false;
     },
     hovedStilkBlomstAnim: function () {

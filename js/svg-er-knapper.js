@@ -334,23 +334,37 @@ if (closeHelpButton) {
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
+
+    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton.innerHTML);
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
+
+    // console.log("badHabitButton innerHTML set to lollipopContent", badHabitButton.innerHTML);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
+
+    // console.log("chooseGHabitButton innerHTML set to carrotContent", chooseGHabitButton.innerHTML);
 }
 if (chooseBHabitButton) {
     chooseBHabitButton.innerHTML = lollipopContent;
+
+    // console.log("chooseBHabitButton innerHTML set to lollipopContent", chooseBHabitButton.innerHTML);
 }
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;
+
+    // console.log("helpGHabitButton innerHTML set to carrotWhiteContent", helpGHabitButton.innerHTML);
 }
 if (helpBHabitButton) {
     helpBHabitButton.innerHTML = lollipopWhiteContent;
+
+    // console.log("helpBHabitButton innerHTML set to lollipopWhiteContent", helpBHabitButton.innerHTML);
 }
 if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
+
+    // console.log("refsButton innerHTML set to referencesWhiteContent", refsButton.innerHTML);
 }
 // console.log("Welcome");
