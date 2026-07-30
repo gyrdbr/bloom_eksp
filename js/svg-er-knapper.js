@@ -64,6 +64,10 @@ var chooseGHabitButton = document.getElementById('habitG-button-svg');
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
+
+// console.log("goodHabitSettings", goodHabitSettings);
+
+
 function moveTriangle(rect) {
     var rectLeft = rect.left;
     var rectWidth = rect.width;
@@ -218,6 +222,9 @@ chooseGHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
+
+    console.log("chooseGHabitButton", "goodHabitSettings.classList", goodHabitSettings.classList);
+    // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
 });
 chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
@@ -335,7 +342,13 @@ if (closeHelpButton) {
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 
-    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton.innerHTML);
+    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
+
+    // Grabs the element
+    //const element = document.querySelector('.my-element');
+
+    // Logs a space-separated string of all classes
+    //console.log(element.className);
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;

@@ -22,9 +22,9 @@ function FlowerAnimationTest() {
 
     
     // Logs classes as a single string (e.g., "btn btn-primary active")
-    console.log(this.buttonSF.className); 
+    // console.log(this.buttonSF.className); 
 
-    console.log("FlowerAnimationTest buttonSF");
+    // console.log("FlowerAnimationTest buttonSF");
 
 
     this.sfPhases= [];
@@ -39,7 +39,7 @@ FlowerAnimationTest.prototype = {
     playSFAnim: function () {
         this.buttonSF.disabled = true;
 
-        console.log("playSFAnim");
+        // console.log("playSFAnim");
 
           if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
@@ -66,9 +66,9 @@ FlowerAnimationTest.prototype = {
         this.buttonSF.innerHTML = text + String(this.sfPhazeIndex + 1);
 
          // Logs classes as a single string (e.g., "btn btn-primary active")
-        console.log("this.buttonSF.innerHTML", this.buttonSF.innerHTML); 
+        // console.log("this.buttonSF.innerHTML", this.buttonSF.innerHTML); 
 
-        console.log("setButtonSFText this.sfPhazeIndex: " + this.sfPhazeIndex);
+        //console.log("setButtonSFText this.sfPhazeIndex: " + this.sfPhazeIndex);
 
         
 
