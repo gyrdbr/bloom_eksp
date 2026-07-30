@@ -94,6 +94,8 @@ tripButton.addEventListener('click', function () {
     else {
         tripButton.classList.add('rw-habit-chosen');
     }
+
+    // TODO: fjern alle hidden-element. Skjule&vus elementer ikke med styling, men funksjonelt 
     badHabitSettings.classList.add('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.remove('hidden-element');
@@ -224,6 +226,8 @@ chooseGHabitButton.addEventListener('click', function () {
     growingFlowerSettings.classList.add('hidden-element');
 
     console.log("chooseGHabitButton", "goodHabitSettings.classList", goodHabitSettings.classList);
+
+    // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
 });
 chooseBHabitButton.addEventListener('click', function () {
