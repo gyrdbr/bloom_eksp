@@ -247,7 +247,7 @@ chooseGHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
 
-    console.log("chooseGHabitButton", "goodHabitSettings.classList", goodHabitSettings.classList);
+    // console.log("chooseGHabitButton", "goodHabitSettings.classList", goodHabitSettings.classList);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -256,6 +256,8 @@ chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
+
+   // console.log("chooseBHabitButton", "badHabitSettings.classList", badHabitSettings.classList);    
 });
 gearButton.addEventListener('click', function () {
     if (helpPage) {
@@ -368,7 +370,7 @@ if (closeHelpButton) {
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 
-    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
+    // console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
 
     // Grabs the element
     //const element = document.querySelector('.my-element');
@@ -389,7 +391,7 @@ if (chooseGHabitButton) {
 if (chooseBHabitButton) {
     chooseBHabitButton.innerHTML = lollipopContent;
 
-    // console.log("chooseBHabitButton innerHTML set to lollipopContent", chooseBHabitButton.innerHTML);
+    // console.log("chooseBHabitButton innerHTML set to lollipopContent", chooseBHabitButton);
 }
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;
