@@ -21,8 +21,8 @@ body {
   border-radius: 9px;
 }
 
-#myFunction {
-    background-color: purple;
+.experimentClass {
+    background-color: #fce5cd;
     border: 2px solid black;
 }
 

@@ -67,6 +67,9 @@ var gearButton = document.getElementById("help-button-svg");
 
 // console.log("goodHabitSettings", goodHabitSettings);
 
+// TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
+// med funksjonen Fase 1, 2 etc slik at den metoden viser/skjule
+
 
 // TODO: skjul alle elementer som ikke er valgt. 
 function showMe() {
