@@ -46,7 +46,7 @@ FlowerAnimationTest.prototype = {
           if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
 
-            // console.log("playSFAnim this.sfPhazeIndex: " + this.sfPhazeIndex);
+            console.log("playSFAnim this.sfPhazeIndex: " + this.sfPhazeIndex);
 
             // om Fase 1, 2 settes her, saa burde det paaverke hidden-element settes i svg-er-knapper.js?
         } else {
@@ -275,8 +275,10 @@ bloomFlowerAnim.setupAlienFlower();
 
 
 // TODO playStem
-function playStemFlowerBloom() {
+function playStemFlowerBloom(items = []) {
     bloomFlowerAnim.playSFAnim();
+
+    console.log("playStemFlowerBloom", items);
 
     // var XXX = bloomFlowerAnim;
 
@@ -371,6 +373,8 @@ FlowerAnimation.prototype = {
         this.basicFlowerLeafs.forEach(leaf => {
             gsap.set(leaf.id, { scale: leaf.startScale, transformOrigin: leaf.transformOrigin });
         });
+
+        console.log("setupBasicFlower this.basicFlowerLeafs", this.basicFlowerLeafs);
     },
     animatePhase(newScale, duration) {
         this.button.classList.add('disabled');

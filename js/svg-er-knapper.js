@@ -199,7 +199,8 @@ refsButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
-    console.log("refsButton refsButton", refsButton);
+    
+    console.log("refsButton refsButton R", refsButton);
     referencesText.classList.remove("hidden-element");
 });
 settingsButton.addEventListener('click', function () {

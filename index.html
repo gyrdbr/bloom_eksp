@@ -305,7 +305,10 @@
             <div class="rw-button-container">
                <ul class="rw-icon-list__row-buttons">
                   <li class="rw-icon-list__button">
-                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
+                     <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
+                      og dele med playStemFlowerBloom slik at den brukes baade i 
+                      growing_flowers og i svg-er-knapper -->
+                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom(items = [])">
                         Stilk
                      </button>
                   </li>
@@ -5039,6 +5042,8 @@
    </section>
 
    <!-- TODO: skjul m hidden -->
+
+   <!-- TODO: fjerner hidden-elementX -->
    <section class="rw-section rw-flower-page hidden-element" id="rw-growingFlower-page">
       <div class="rw-icon-list">
          <div class="frame-container-flower">
