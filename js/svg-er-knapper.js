@@ -68,6 +68,16 @@ var gearButton = document.getElementById("help-button-svg");
 // console.log("goodHabitSettings", goodHabitSettings);
 
 
+// TODO: skjul alle elementer som ikke er valgt. 
+function showMe() {
+
+}
+
+function hideEveryOneElse() {
+
+}
+
+
 function moveTriangle(rect) {
     var rectLeft = rect.left;
     var rectWidth = rect.width;
@@ -205,6 +215,10 @@ infoButton.addEventListener('click', function () {
     infoText.classList.remove("hidden-element");
 });
 goodHabitButton.addEventListener('click', function () {
+
+    // TODO: goodHabitButton
+    // vis denne. skjul alle andre
+
     var rect = goodHabitButton.getBoundingClientRect();
     moveTriangle(rect);
     for (var i = 0; i < helpDivs.length; i++) {
@@ -220,6 +234,11 @@ badHabitButton.addEventListener('click', function () {
     }
     badHabitsText.classList.remove("hidden-element");
 });
+
+
+// TODO: her sjal growingFlowers vises/skjules
+
+
 chooseGHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');

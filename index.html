@@ -26,6 +26,20 @@
 
     <button onclick="myFunction()" style="position:fixed;">Click me to scroll</button><br><br>
 
+    <button onclick="
+      let x = document.getElementById('myContent');
+         if (x.style.display === 'none') {
+            x.style.display = 'block';
+         } else {
+            x.style.display = 'none';
+         }
+      ">Show / Hide
+   </button>
+
+   <div id="myContent" style="display: block;">
+      This text is manipulated directly by inline style attributes.
+   </div>
+
    <script>
   
       function myFunction() {
@@ -200,6 +214,7 @@
       </div>
    </section>
 
+   
    <section class="rw-section rw-goodHabits-page hidden-element" id="rw-good-habits-page">
       <div class="rw-icon-list">
 
@@ -5023,6 +5038,7 @@
       </div>
    </section>
 
+   // TODO: skjul m hidden
    <section class="rw-section rw-flower-page hidden-elementX" id="rw-growingFlower-page">
       <div class="rw-icon-list">
          <div class="frame-container-flower">
