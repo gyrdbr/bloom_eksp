@@ -199,6 +199,7 @@ refsButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
+    console.log("refsButton refsButton", refsButton);
     referencesText.classList.remove("hidden-element");
 });
 settingsButton.addEventListener('click', function () {
@@ -228,6 +229,7 @@ goodHabitButton.addEventListener('click', function () {
         helpDivs[i].classList.add('hidden-element');
     }
     goodHabitsText.classList.remove("hidden-element");
+
 });
 badHabitButton.addEventListener('click', function () {
     var rect = badHabitButton.getBoundingClientRect();
@@ -247,7 +249,7 @@ chooseGHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
 
-    // console.log("chooseGHabitButton", "goodHabitSettings.classList", goodHabitSettings.classList);
+    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -370,7 +372,7 @@ if (closeHelpButton) {
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 
-    // console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
+    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
 
     // Grabs the element
     //const element = document.querySelector('.my-element');

@@ -15,6 +15,8 @@ var delay = 0;
 var durationTime = 0.3; // skal vaere 1 i endelig versjon
 var hovedStilkBlomst = '#hovedStilkBlomst';
 
+// console.log("FlowerAnimationTest", "setButtonSFText", FlowerAnimationTest.prototype.playSFAnim());
+
 function FlowerAnimationTest() {
     this.phazeIndex = 0;
     this.sfPhazeIndex = 0;
@@ -44,7 +46,9 @@ FlowerAnimationTest.prototype = {
           if (this.sfPhazeIndex < this.sfPhases.length) {
             this.sfPhases[this.sfPhazeIndex]();
 
-            console.log("playSFAnim this.sfPhazeIndex: " + this.sfPhazeIndex);
+            // console.log("playSFAnim this.sfPhazeIndex: " + this.sfPhazeIndex);
+
+            // om Fase 1, 2 settes her, saa burde det paaverke hidden-element settes i svg-er-knapper.js?
         } else {
             this.resettSF();
         }
@@ -269,8 +273,16 @@ FlowerAnimationTest.prototype = {
 var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
 
+
+// TODO playStem
 function playStemFlowerBloom() {
     bloomFlowerAnim.playSFAnim();
+
+    // var XXX = bloomFlowerAnim;
+
+
+    // console.log("bloomFlowerAnim", "XXX", XXX);
+
 }
 
 /** flower1 og flower2 */
