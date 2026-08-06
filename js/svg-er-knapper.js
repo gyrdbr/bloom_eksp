@@ -41,6 +41,8 @@ var growingFlowerSettings = document.getElementById('rw-growingFlower-page');
  */
 var infoButton = document.getElementById('info-button-svg');
 var lightButton = document.getElementById('lightbulb-button-svg');
+
+// help-Ghabit-button' fra 
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
@@ -67,8 +69,7 @@ var chooseGHabitButton = document.getElementById('habitG-button-svg');
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
-
-console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
+// console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
 
 
 // TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
@@ -255,7 +256,7 @@ chooseGHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
 
-    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -383,7 +384,7 @@ if (playBloomStemButtonTest) {
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 
-    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
+    //console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
 
     // Grabs the element
     //const element = document.querySelector('.my-element');
