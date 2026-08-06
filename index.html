@@ -324,10 +324,25 @@
          <div class="habit-choice-container">
             <div class="rw-button-container">
                <ul class="rw-icon-list__row-buttons">
-                  <li class="rw-icon-list__button">
-                     <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
+                   <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
                       og dele med playStemFlowerBloom slik at den brukes baade i 
-                      growing_flowers og i svg-er-knapper -->
+                      growing_flowers og i svg-er-knapper -->                                    
+                  <li class="rw-icon-list__button">
+                     <button class="flower2 disabled" onclick="pickFlower(1, '0 0 90.476448 264.7684')">
+                        Flower 1
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="flower1" onclick="pickFlower(0, '0 0 300 210')">
+                        Flower 2
+                     </button>
+                  </li>               
+                  <!-- li class="rw-icon-list__button">
+                     <button class="playButton" onclick="play()">
+                        Spill
+                     </button>
+                  </li -->
+                  <li class="rw-icon-list__button">
                      <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
                         Stilk
                      </button>
