@@ -275,10 +275,10 @@ bloomFlowerAnim.setupAlienFlower();
 
 
 // TODO playStem
-function playStemFlowerBloom(items = []) {
+function playStemFlowerBloom() {
     bloomFlowerAnim.playSFAnim();
 
-    console.log("playStemFlowerBloom", items);
+    console.log("playStemFlowerBloom");
 
     // var XXX = bloomFlowerAnim;
 
@@ -374,6 +374,7 @@ FlowerAnimation.prototype = {
             gsap.set(leaf.id, { scale: leaf.startScale, transformOrigin: leaf.transformOrigin });
         });
 
+        // TODO: Leafs settes her. Denne maa kunne leses av 
         console.log("setupBasicFlower this.basicFlowerLeafs", this.basicFlowerLeafs);
     },
     animatePhase(newScale, duration) {

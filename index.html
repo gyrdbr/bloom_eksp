@@ -40,6 +40,18 @@
       This text is manipulated directly by inline style attributes.
    </div>
 
+   <h1>The script element</h1>
+
+   <p id="demo"></p>
+
+   <script>
+      document.getElementById("demo").innerHTML = "Hello Java!";
+
+      // console.log("testSystem", playStemFlowerBloom());
+
+      console.log("testHabitC");
+   </script>
+
    <script>
   
       function myFunction() {
@@ -302,6 +314,8 @@
       // You can also log variables and math operations
       let user = "Alex";
       console.log("items", items);
+
+      console.log("playStemFlowerBloom called");
     </script>
 
    <section class="rw-section carrot-lollipop-container">
@@ -314,12 +328,12 @@
                      <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
                       og dele med playStemFlowerBloom slik at den brukes baade i 
                       growing_flowers og i svg-er-knapper -->
-                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom(items = [])">
+                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
                         Stilk
                      </button>
                   </li>
                   <li class="rw-icon-list__button">
-                     <button class="task-btn" id="habitG-button-svg">
+                     <button class="task-btn" id="habitG-button-svg" onclick="testSystem()">
                      </button>
                   </li>
                   <li class="rw-icon-list__button">
@@ -5050,7 +5064,7 @@
    <!-- TODO: skjul m hidden -->
 
    <!-- TODO: fjerner hidden-elementX -->
-   <section class="rw-section rw-flower-page hidden-element" id="rw-growingFlower-page">
+   <section class="rw-section rw-flower-page hidden-elementX" id="rw-growingFlower-page">
       <div class="rw-icon-list">
          <div class="frame-container-flower">
 
