@@ -375,7 +375,7 @@ FlowerAnimation.prototype = {
         });
 
         // TODO: Leafs settes her. Denne maa kunne leses av 
-        console.log("setupBasicFlower this.basicFlowerLeafs", this.basicFlowerLeafs);
+        //console.log("setupBasicFlower this.basicFlowerLeafs", this.basicFlowerLeafs);
     },
     animatePhase(newScale, duration) {
         this.button.classList.add('disabled');
@@ -541,6 +541,8 @@ function pickFlower(flowerIndex, svgVBParams) {
     activeButton.classList.add('disabled');
 
     bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
+
+    console.log("pickFlower", "activeFlower.getAttribute('id')", activeFlower.getAttribute('id'));
 }
 
 bFlowerAnim.setPhases(activeFlower.getAttribute('id'));

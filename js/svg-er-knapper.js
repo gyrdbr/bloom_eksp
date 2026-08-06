@@ -68,7 +68,7 @@ var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
 
-console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
+//console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
 
 
 // TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
@@ -82,6 +82,15 @@ function showMe() {
 
 function hideEveryOneElse() {
 
+}
+
+function pickLeft(current) {
+    var left = Math.max(current - 0, 0);
+    var newLeft = Math.min(left, helpDivs.length - 1);
+
+    console.log("pickLeft", current, left, newLeft);
+
+    return newLeft;
 }
 
 
@@ -104,7 +113,7 @@ tripButtonSettings.addEventListener('click', function () {
 tripButton.addEventListener('click', function () {
     // const rect = badHabitButton.getBoundingClientRect();
     // moveTriangle(rect);
-    console.log("trip button clicked");
+    //console.log("trip button clicked");
     if (tripButton.classList.contains('rw-habit-chosen')) {
         tripButton.classList.remove('rw-habit-chosen');
     }
@@ -204,7 +213,7 @@ refsButton.addEventListener('click', function () {
         helpDivs[i].classList.add('hidden-element');
     }
     
-    console.log("refsButton refsButton R", refsButton);
+    // console.log("refsButton refsButton R", refsButton);
     referencesText.classList.remove("hidden-element");
 });
 settingsButton.addEventListener('click', function () {
@@ -255,7 +264,7 @@ chooseGHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
 
-    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -378,12 +387,12 @@ if (closeHelpButton) {
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
 
-    console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
+    // console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
 
-    console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
+    // console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
 
     // Grabs the element
     //const element = document.querySelector('.my-element');
