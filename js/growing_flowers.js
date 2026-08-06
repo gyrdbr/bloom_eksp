@@ -543,6 +543,8 @@ function pickFlower(flowerIndex, svgVBParams) {
     bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
 
     console.log("pickFlower", "activeFlower.getAttribute('id')", activeFlower.getAttribute('id'));
+
+    // TODO: denne funker saa daa maa det gaa inn aa fa til den i pickLeft og pickRight ogsaa TODO
 }
 
 bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
