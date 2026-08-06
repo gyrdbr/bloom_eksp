@@ -42,6 +42,9 @@ var growingFlowerSettings = document.getElementById('rw-growingFlower-page');
 var infoButton = document.getElementById('info-button-svg');
 var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
+
+var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
+
 var badHabitButton = document.getElementById('help-Bhabit-button');
 var fysenButton = document.getElementById('fysen-button');
 var gameButton = document.getElementById('game-button');
@@ -65,7 +68,8 @@ var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
 
-// console.log("goodHabitSettings", goodHabitSettings);
+console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
+
 
 // TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
 // med funksjonen Fase 1, 2 etc slik at den metoden viser/skjule
@@ -229,6 +233,7 @@ goodHabitButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
+    // console.log("goodHabitButton clicked, helpDivs.length", helpDivs.length);
     goodHabitsText.classList.remove("hidden-element");
 
 });
@@ -369,6 +374,11 @@ if (settingsButton) {
 }
 if (closeHelpButton) {
     closeHelpButton.innerHTML = crossWhiteContent;
+}
+if (playBloomStemButtonTest) {
+    playBloomStemButtonTest.innerHTML = carrotContent;
+
+    console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;

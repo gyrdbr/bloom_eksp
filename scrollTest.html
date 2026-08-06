@@ -18,16 +18,23 @@ div {
 
 <button onclick="myFunction()" style="position:fixed;">Click me to scroll</button><br><br>
 
+<button onclick="log_console()">
+        View Message
+</button>
+
 
 <div></div>
 
 <script>
 
-  
-function myFunction() {
-  window.scrollBy(100, 100);
-  // alert("pageXOffset: " + window.scrollX + ", scrollY: " + window.scrollY);
-}
+  function log_console() {
+            console.log("GeeksforGeeks is a portal for geeks.");
+  }
+
+  function myFunction() {
+    window.scrollBy(100, 100);
+    // alert("pageXOffset: " + window.scrollX + ", scrollY: " + window.scrollY);
+  }
 
 </script>
 
