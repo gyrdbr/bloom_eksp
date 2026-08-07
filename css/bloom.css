@@ -363,8 +363,6 @@ ul {
 }
 
 /* help page */
-
-
 ul.rw-icon-list__row-buttons {
     padding: 0;            /* Removes default padding */
     margin: 0; 
@@ -372,7 +370,6 @@ ul.rw-icon-list__row-buttons {
     display: flex;         /* Aligns items in a single line */
     gap: 21px;
     justify-content: space-evenly;
-
 }
 
 .rw-button-list {
@@ -474,8 +471,8 @@ ul.rw-icon-list__row-buttons {
     justify-content: center;
     transition: transform 0.5s ease;
 }
-/* game switches*/
 
+/* game switches*/
 .switch {
   position: relative;
   display: inline-block;
