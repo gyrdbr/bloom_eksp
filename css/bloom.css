@@ -6,8 +6,10 @@ body {
   display:flex;
   align-items:center;
   justify-content:center;
+  /*
   background: #0e100f;
   overflow: hidden;
+  */
 }
 
 .container {
