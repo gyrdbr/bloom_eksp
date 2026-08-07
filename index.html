@@ -10,6 +10,27 @@
    <!-- OBS innstillingene i meta var det som fiksa viewet mht str etc -->
    <script src="https://unpkg.com/gsap@3/dist/MorphSVGPlugin.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+      div {
+      height: 40px;
+      width: 300px;
+      /* border: 5px dashed black;
+      */
+      margin: 1rem 0;
+      padding: 1rem;
+      font-size: 2rem;
+      }
+
+      div#until-found-box {
+      color: red;
+      border: 5px dotted red;
+      background-color: lightgray;
+      }
+      #until-found-box {
+      scroll-margin-top: 200px;
+      }
+   </style>
 </head>
 
 <body>
@@ -5051,9 +5072,32 @@
    </section>
 
    <!-- TODO: skjul m hidden -->
-
    <!-- TODO: fjerner hidden-elementX -->
-   <section class="rw-section rw-flower-page hidden-elementX" id="rw-growingFlower-page">
+    <!-- ha paa hidden skjult og slaa paa naar den blar -->
+   <section class="rw-section rw-flower-page" id="rw-growingFlower-page">
+
+      <a href="#until-found-box">Go to hidden content</a>
+
+      <div>I'm not hidden</div>
+      <div id="until-found-box" hidden="until-found">Hidden until found</div>
+      <div>I'm not hidden, either</div>
+      <button id="reset">Reset</button>
+
+   <script>
+      console.log(document.querySelector("#until-found-box"));
+          
+      const untilFound = document.querySelector("#until-found-box");
+      untilFound.addEventListener(
+         "beforematch",
+            () => (untilFound.textContent = "I've been revealed!"),
+         );
+
+      document.querySelector("#reset").addEventListener("click", () => {
+      document.location.hash = "";
+      document.location.reload();
+      });
+   </script>
+
       <div class="rw-icon-list">
          <div class="frame-container-flower">
 
@@ -5885,7 +5929,8 @@
       }
    </script>
    -->
-   
+
+
    <script type="text/javascript" src="js/svg-er-knapper.js"></script>
    <script type="text/javascript" src="js/growing_flowers.js"></script>
    <script type="text/javascript" src="js/withered_flowers.js"></script>
