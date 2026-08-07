@@ -24,6 +24,10 @@
         </div>
     </header>
 
+    <h1>The Window Object</h1>
+
+    <h2>The scrollX and scrollY Properties</h2>
+
     <button class="experimentClass" onclick="myFunction()" style="position:fixed;">Click me to scroll</button><br><br>
 
     <button onclick="
@@ -284,16 +288,12 @@
    </section>
    
    <!-- Valgknapper nederst paa sia -->
-
    <section class="rw-section carrot-lollipop-container">
       <div class="rw-front-page rw-icon-list">
 
          <div class="habit-choice-container">
             <div class="rw-button-container">
-               <ul class="rw-icon-list__row-buttons">
-                   <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
-                      og dele med playStemFlowerBloom slik at den brukes baade i 
-                      growing_flowers og i svg-er-knapper -->                                    
+               <ul class="rw-icon-list__row-buttons">                                   
                   <li class="rw-icon-list__button">
                      <button class="flower2 disabled" onclick="pickFlower(1, '0 0 90.476448 264.7684')">
                         Flower 1
@@ -304,11 +304,6 @@
                         Flower 2
                      </button>
                   </li>               
-                  <!-- li class="rw-icon-list__button">
-                     <button class="playButton" onclick="play()">
-                        Spill
-                     </button>
-                  </li -->
                   <li class="rw-icon-list__button">
                      <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
                         Stilk
@@ -339,7 +334,7 @@
       </div>
    </section>
 
-<section class="rw-section rw-flower-page hidden-element" id="flip" data-state="initial">
+   <section class="rw-section rw-flower-page hidden-element" id="flip" data-state="initial">
    <div class="rw-icon-list">
          <div class="frame-container-flower">
 
