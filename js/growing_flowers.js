@@ -547,4 +547,12 @@ function pickFlower(flowerIndex, svgVBParams) {
     // TODO: denne funker saa daa maa det gaa inn aa fa til den i pickLeft og pickRight ogsaa TODO
 }
 
+function playStemFlowerBloom() {
+    // TODO: implement playStemFlowerBloom functionality
+    // This function should handle the logic for playing the stem flower bloom animation
+
+    console.log("playStemFlowerBloom called");
+}
+
+
 bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
