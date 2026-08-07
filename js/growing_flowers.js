@@ -274,18 +274,7 @@ var bloomFlowerAnim = new FlowerAnimationTest();
 bloomFlowerAnim.setupAlienFlower();
 
 
-// TODO playStem
-function playStemFlowerBloom() {
-    bloomFlowerAnim.playSFAnim();
 
-    console.log("playStemFlowerBloom");
-
-    // var XXX = bloomFlowerAnim;
-
-
-    // console.log("bloomFlowerAnim", "XXX", XXX);
-
-}
 
 /** flower1 og flower2 */
 
@@ -551,8 +540,24 @@ function playStemFlowerBloom() {
     // TODO: implement playStemFlowerBloom functionality
     // This function should handle the logic for playing the stem flower bloom animation
 
+    // this.updateSFPhase();
+
     console.log("playStemFlowerBloom called");
 }
 
+// TODO playStem
+/*
+function playStemFlowerBloom() {
+    bloomFlowerAnim.playSFAnim();
+
+    console.log("playStemFlowerBloom");
+
+    // var XXX = bloomFlowerAnim;
+
+
+    // console.log("bloomFlowerAnim", "XXX", XXX);
+
+}
+*/
 
 bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
