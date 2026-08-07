@@ -540,24 +540,9 @@ function playStemFlowerBloom() {
     // TODO: implement playStemFlowerBloom functionality
     // This function should handle the logic for playing the stem flower bloom animation
 
-    // this.updateSFPhase();
+    bloomFlowerAnim.playSFAnim();
 
     console.log("playStemFlowerBloom called");
 }
-
-// TODO playStem
-/*
-function playStemFlowerBloom() {
-    bloomFlowerAnim.playSFAnim();
-
-    console.log("playStemFlowerBloom");
-
-    // var XXX = bloomFlowerAnim;
-
-
-    // console.log("bloomFlowerAnim", "XXX", XXX);
-
-}
-*/
 
 bFlowerAnim.setPhases(activeFlower.getAttribute('id'));
