@@ -47,9 +47,37 @@
 
 .nav-btn:hover { background: rgba(0, 0, 0, 0.8); }
 
+div.hiddenNow {
+    height: 40px;
+    width: 300px;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+
+  div#until-found-box {
+    color: red;
+    border: 5px dotted red;
+    background-color: lightgray;
+  }
+  #until-found-box {
+    scroll-margin-top: 200px;
+  }
+  
+
 </style>
 </head>
 <body>
+
+  <section class="rw-section rw-flower-page" id="rw-growingFlower-page"> 
+      <a href="#until-found-box">Go to hidden content</a>
+
+      <div class="hiddenNow">I'm not hidden</div>
+      <div class="hiddenNow" id="until-found-box" hidden="until-found">Hidden until found</div>
+      <div class="hiddenNow">I'm not hidden, either</div>
+      <button id="reset">Reset</button>
+  </section>
 
 
 
