@@ -29,10 +29,10 @@ prevBtn.addEventListener('click', () => {
   updateSlider();
 });
     
-const allUntilFounds = document.querySelectorAll(".hiddenNow");
+// const allUntilFounds = document.querySelectorAll(".hiddenNow");
 
 document.querySelector("#reset").addEventListener("click", () => {
-document.location.hash = "";
-document.location.reload();
+  document.location.hash = "";
+  document.location.reload();
 });
 
