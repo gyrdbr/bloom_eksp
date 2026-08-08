@@ -51,6 +51,7 @@
 
 .nav-btn:hover { background: rgba(0, 0, 0, 0.8); }
 
+section,
 div.hiddenNow {
     height: 40px;
     width: 300px;
@@ -60,12 +61,14 @@ div.hiddenNow {
   }
 
 
-  div#until-found-box {
+  div#until-found-box,
+  div#until-found-box2 {
     color: red;
     border: 5px dotted red;
     background-color: lightgray;
   }
-  #until-found-box {
+   #until-found-box,
+  #until-found-box2 {
     scroll-margin-top: 200px;
   }
   
@@ -74,7 +77,8 @@ div.hiddenNow {
 </head>
 <body>
 
-  <main>
+<main>
+
 <div class="slider-container">
   <div class="slider-track" id="sliderTrack">
     <div class="slide" style="background-color: #ff5733;">Slide 1</div>
@@ -86,15 +90,23 @@ div.hiddenNow {
   <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
 </div>
 
-<a href="#until-found-box">Go to hidden content</a>
+<href="#until-found-box">Go to hidden content</a> --> 
+
+<a href="#until-found-box2">Go to hidden content</a>
 
 <div class="hiddenNow">I'm not hidden</div>
-<div class="hiddenNow" id="until-found-box" hidden="until-found">Hidden until found</div>
 <div class="hiddenNow">I'm not hidden, either</div>
 <button id="reset">Reset</button>
 
+<section class="hiddenNow" id="until-found-box" hidden="until-found">
+  
+  Hidden until found
 
-<section class="rw-flower-page rw-section hiddenNow" id="until-found-box" hidden="until-found">
+</section>
+
+<section class="hiddenNow rw-flower-page rw-section" id="until-found-box2" hidden="until-found">
+
+  Hidden until found2
 
 
       <div class="rw-icon-list">
@@ -140,7 +152,7 @@ div.hiddenNow {
       </div>
    </section>
 
-   <section class="rw-section rw-flower-page" id="until-found-box" hidden="until-found">
+   <section class="rw-section rw-flower-page">
 
       <div class="rw-icon-list">
          <div class="frame-container-flower">
