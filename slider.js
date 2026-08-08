@@ -29,27 +29,10 @@ prevBtn.addEventListener('click', () => {
   updateSlider();
 });
     
-const untilFound = document.querySelector("#until-found-box");
-
-const allFounds = document.querySelectorAll(".hiddenNow");
-
-console.log("allFounds", allFounds);
-
-// Loop through the items to apply changes
-allFounds.forEach(item => {
-  item.style.color = 'blue';
-  console.log("item", item);
-});
-
-
-
-
-untilFound.addEventListener(
-  "beforematch",
-      () => (untilFound.textContent = "I've been revealed!"),
-  );
+const allUntilFounds = document.querySelectorAll(".hiddenNow");
 
 document.querySelector("#reset").addEventListener("click", () => {
 document.location.hash = "";
 document.location.reload();
 });
+
