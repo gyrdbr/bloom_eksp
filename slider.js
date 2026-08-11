@@ -89,7 +89,7 @@ function keepMaxOneArr(arr) {
   // Shift the track left by the width of the active slide index
 
 
-  if (arr.length <= 1) {
+  if (arr.length < 1) {
     hiddenSections.push("denne");
 
     console.log("hallo?", hiddenSections);
