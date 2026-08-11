@@ -10,7 +10,10 @@ const nextBtn = document.getElementById('nextBtn');
 const prevBtn2 = document.getElementById('prevBtn2');
 const nextBtn2 = document.getElementById('nextBtn2');
 
+const section1 = document.getElementById('until-found-box');
+const section2 = document.getElementById('until-found-box2');
 
+console.log("sections", section1, section2);
 
 let currentIndex = 0;
 let currentIndex2 = 0;
@@ -68,10 +71,7 @@ prevBtn2.addEventListener('click', () => {
 
 
 
-document.querySelector("#reset").addEventListener("click", () => {
-  document.location.hash = "";
-  document.location.reload();
-});
+
 
 /*
 document.querySelector("#resetHidden1").addEventListener("click", () => {
@@ -85,33 +85,46 @@ document.querySelector("#resetHidden1").addEventListener("click", () => {
 
 const hiddenSections = [];
 
+
+
+document.querySelector("#reset").addEventListener("click", () => {
+  document.location.hash = "";
+  document.location.reload();
+});
+
 function keepMaxOneArr(arr) {
   // Shift the track left by the width of the active slide index
 
-
+  console.log("arr", arr);
   if (arr.length < 1) {
     hiddenSections.push("denne");
 
     console.log("hallo?", hiddenSections);
   } else {
+    document.location.reload();
     console.log("keepMaxOneArr", arr, hiddenSections);
-    hiddenSections.remove();
+    document.location.hash = "";
+    console.log("arr", arr, hiddenSections);
+    // document.location.reload();
+    // hiddenSections.remove();
   }
 }
 
 document.querySelector("#resetHidden1").addEventListener("click", () => {
-  document.location.hash = "";
+  // document.location.hash = "";
   // document.location.reload();
   // hiddenSections.push("denne");
-  // console.log("hiddenSections", hiddenSections.length);
+  console.log("hiddenSections", "hiddenSections", hiddenSections, hiddenSections.length);
 
   keepMaxOneArr(hiddenSections);
 });
 
 document.querySelector("#resetHidden2").addEventListener("click", () => {
-  document.location.hash = "";
+  // document.location.hash = "";
   // document.location.reload();
 });
+
+
 
 
 // hidden
