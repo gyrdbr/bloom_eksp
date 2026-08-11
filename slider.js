@@ -57,7 +57,7 @@ nextBtn2.addEventListener('click', () => {
   } else {``
     currentIndex2 = 0; // Loop back to the first slide
   }
-  updateSlider();
+  updateSlider2();
 });
 
 prevBtn2.addEventListener('click', () => {
@@ -66,7 +66,7 @@ prevBtn2.addEventListener('click', () => {
   } else {
     currentIndex2 = totalSlides - 1; // Loop back to the last slide
   }
-  updateSlider();
+  updateSlider2();
 });
 
 document.querySelector("#reset").addEventListener("click", () => {
