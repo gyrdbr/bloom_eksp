@@ -128,15 +128,18 @@ div.hiddenNow {
 
 
 <div class="slider-track dist">
-  <a class="dist" href="#until-found-box">
+
+  <a class="dist" href="#until-found-box" id="dist1">
     Go to hidden content 1
   </a>
-  <a class="dist" href="#until-found-box2">Go to hidden content 2</a>
 
-  <button class="dist" id="reset">Reset</button>
+  <a class="dist" href="#until-found-box2" id="dist2">Go to hidden content 2</a>
+
+  <button class="resetWalf dist" id="reset">Reset</button>
 </div>
 
 <!-- todo: bruk riktig bilde. feil i endringen i slide.js? -->
+  <!-- hidden="until-found kun en av gange. gang 1 -->
 
 <section class="hiddenNow rw-section rw-flower-page" id="until-found-box2" hidden="until-found">
 
@@ -169,6 +172,7 @@ div.hiddenNow {
       </div>
    </section> 
 
+   <!-- hidden="until-found kun en av gange. gang 2 -->
    <section class="hiddenNow rw-flower-page rw-section" id="until-found-box" hidden="until-found">
 
   Hidden until found1

@@ -7,14 +7,8 @@ const slides2 = document.querySelectorAll('.slide2');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-console.log("prevBtn", prevBtn);
-console.log("nextBtn", nextBtn);
-
 const prevBtn2 = document.getElementById('prevBtn2');
 const nextBtn2 = document.getElementById('nextBtn2');
-
-console.log("prevBtn2", prevBtn2);
-console.log("nextBtn2", nextBtn2);
 
 let currentIndex = 0;
 let currentIndex2 = 0;
