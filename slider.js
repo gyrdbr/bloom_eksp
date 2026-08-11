@@ -10,6 +10,8 @@ const nextBtn = document.getElementById('nextBtn');
 const prevBtn2 = document.getElementById('prevBtn2');
 const nextBtn2 = document.getElementById('nextBtn2');
 
+
+
 let currentIndex = 0;
 let currentIndex2 = 0;
 
@@ -70,6 +72,47 @@ document.querySelector("#reset").addEventListener("click", () => {
   document.location.hash = "";
   document.location.reload();
 });
+
+/*
+document.querySelector("#resetHidden1").addEventListener("click", () => {
+  // document.location.hash = "";
+  // document.location.reload();
+  // console.leg("document.querySelector(resetHidden1)", document.querySelector("#resetHidden1"));
+  console.log("how many are shown")
+});
+*/
+
+
+const hiddenSections = [];
+
+function keepMaxOneArr(arr) {
+  // Shift the track left by the width of the active slide index
+
+
+  if (arr.length <= 1) {
+    hiddenSections.push("denne");
+
+    console.log("hallo?", hiddenSections);
+  } else {
+    console.log("keepMaxOneArr", arr, hiddenSections);
+    hiddenSections.remove();
+  }
+}
+
+document.querySelector("#resetHidden1").addEventListener("click", () => {
+  document.location.hash = "";
+  // document.location.reload();
+  // hiddenSections.push("denne");
+  // console.log("hiddenSections", hiddenSections.length);
+
+  keepMaxOneArr(hiddenSections);
+});
+
+document.querySelector("#resetHidden2").addEventListener("click", () => {
+  document.location.hash = "";
+  // document.location.reload();
+});
+
 
 // hidden
 
