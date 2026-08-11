@@ -10,10 +10,7 @@ const nextBtn = document.getElementById('nextBtn');
 const prevBtn2 = document.getElementById('prevBtn2');
 const nextBtn2 = document.getElementById('nextBtn2');
 
-const section1 = document.getElementById('until-found-box');
-const section2 = document.getElementById('until-found-box2');
 
-console.log("sections", section1, section2);
 
 let currentIndex = 0;
 let currentIndex2 = 0;
@@ -82,15 +79,8 @@ document.querySelector("#resetHidden1").addEventListener("click", () => {
 });
 */
 
-
+/*
 const hiddenSections = [];
-
-
-
-document.querySelector("#reset").addEventListener("click", () => {
-  document.location.hash = "";
-  document.location.reload();
-});
 
 function keepMaxOneArr(arr) {
   // Shift the track left by the width of the active slide index
@@ -123,8 +113,25 @@ document.querySelector("#resetHidden2").addEventListener("click", () => {
   // document.location.hash = "";
   // document.location.reload();
 });
+*/
 
+const section1 = document.getElementById('until-found-box');
+const section2 = document.getElementById('until-found-box2');
 
+console.log("sections", section1, section2);
+
+/*
+const untilFound = document.querySelector("#until-found-box");
+untilFound.addEventListener(
+  "beforematch",
+  () => (untilFound.textContent = "I've been revealed!"),
+);
+*/
+
+document.querySelector("#reset").addEventListener("click", () => {
+  document.location.hash = "";
+  document.location.reload();
+});
 
 
 // hidden

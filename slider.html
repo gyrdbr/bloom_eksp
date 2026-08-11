@@ -84,17 +84,33 @@ div.hiddenNow {
     font-size: 2rem;
   }
 
- div#until-found-box2,
+  div#until-found-box2,
   div#until-found-box {
     color: red;
     border: 5px dotted red;
     background-color: lightgray;
   }
- #until-found-box2,
+
+  #until-found-box2,
   #until-found-box {
     scroll-margin-top: 200px;
   }
-  
+
+  div.hiddenHere {
+    color: greenyellow;
+    border: 5px pink;
+    background-color: lightgray;
+  }
+
+div#until-found-box {
+  color: greenyellow;
+  border: 5px pink;
+  background-color: lightgray;
+}
+#until-found-box {
+  scroll-margin-top: 200px;
+}
+
 
 
 </style>
@@ -135,6 +151,8 @@ div.hiddenNow {
       Go to hidden content 1
     </a>
 
+
+
     <a class="dist" href="#until-found-box2" id="dist2">And me
       Go to hidden content 2
     </a>
@@ -147,7 +165,7 @@ div.hiddenNow {
    <!-- hidden="until-found kun en av gange. gang 2 -->
    <section class="hiddenNow rw-flower-page rw-section" id="until-found-box" hidden="until-found">
 
-  I've been revealed 1!
+    <div id="heiSveis" class="hiddenHere">Hidden until found</div>
 
       <div class="rw-icon-list">
 
