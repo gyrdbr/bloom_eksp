@@ -63,7 +63,7 @@ prevBtn2.addEventListener('click', () => {
   updateSlider2();
 });
 
-const untilFound = document.querySelector("#until-found-box");
+
 
 
 document.querySelector("#reset").addEventListener("click", () => {
@@ -75,6 +75,6 @@ document.querySelector("#reset").addEventListener("click", () => {
 
 // console.log("dist1", dist1);
 
-console.log("hidden until found");
+
 
 
