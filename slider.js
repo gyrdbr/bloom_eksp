@@ -130,15 +130,23 @@ console.log("<section class=hiddenNow rw-flower-page rw-section id=until-found-b
 const untilFound = document.querySelector("#until-found-box");
 const untilFound2 = document.querySelector("#until-found-box2");
 
+
 untilFound.addEventListener(
   "beforematch",
-  () => (untilFound.textContent = "I've been revealed 1!"),
-);
+  () => (untilFound.textContent = "I've been revealed 1!"));
+
+  // TODO: I moren
+// todo enten vises kun en uansett, ellers kan man ikke fjerne noen
+// her viser den skjulte
+// jeg tror man boer bruke denne men maa finne ut hvordan man kan bruke begge
+
+console.log("untilFound", untilFound);
 
 untilFound2.addEventListener(
   "beforematch2",
   () => (untilFound2.textContent = "I've been revealed 2!"),
 );
+
 
 
 document.querySelector("#reset").addEventListener("click", () => {
