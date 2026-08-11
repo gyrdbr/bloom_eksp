@@ -118,15 +118,28 @@ document.querySelector("#resetHidden2").addEventListener("click", () => {
 const section1 = document.getElementById('until-found-box');
 const section2 = document.getElementById('until-found-box2');
 
-console.log("sections", section1, section2);
+console.log("<section>", section1);
 
-/*
+console.log("<section class=hiddenNow rw-flower-page rw-section id=until-found-box hidden=until-found><div id=heiSveis class=hiddenHere>Hidden until found</div>");
+
+/* 
+<div id="heiSveis" class="hiddenHere">Hidden until found</div>
+*/
+
+
 const untilFound = document.querySelector("#until-found-box");
+const untilFound2 = document.querySelector("#until-found-box2");
+
 untilFound.addEventListener(
   "beforematch",
-  () => (untilFound.textContent = "I've been revealed!"),
+  () => (untilFound.textContent = "I've been revealed 1!"),
 );
-*/
+
+untilFound2.addEventListener(
+  "beforematch2",
+  () => (untilFound2.textContent = "I've been revealed 2!"),
+);
+
 
 document.querySelector("#reset").addEventListener("click", () => {
   document.location.hash = "";
