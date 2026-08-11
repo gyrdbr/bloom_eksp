@@ -11,6 +11,24 @@
     margin-top: 100px;
   }
 
+  
+  .slider-track {
+    margin-bottom: 25px; 
+    margin-top: 25px;
+    margin-left: 5px
+  }
+
+  .slider-track.dist {
+     margin: 10px;
+  }
+
+  .dist {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+
+
   .slider-container {
     position: relative;
     width: 600px;
@@ -76,6 +94,7 @@ div.hiddenNow {
   }
   
 
+
 </style>
 </head>
 <body>
@@ -93,10 +112,25 @@ div.hiddenNow {
   <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
 </div>
 
-<a href="#until-found-box">Go to hidden content 1</a>
-<a href="#until-found-box2">Go to hidden content 2</a>
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack2">
+    <div class="slide" style="background-color: pink;">Slide 1</div>
+    <div class="slide" style="background-color: #e69138;">Slide 2</div>
+    <div class="slide" style="background-color: #6fa8dc;">Slide 3</div>
+  </div>
+  
+  <button class="nav-btn prev-btn" id="prevBtn1">&#10094;</button>
+  <button class="nav-btn next-btn" id="nextBtn2">&#10095;</button>
+</div>
 
-<button id="reset">Reset</button>
+<div class="slider-track dist">
+  <a class="dist" href="#until-found-box">
+    Go to hidden content 1
+  </a>
+  <a class="dist" href="#until-found-box2">Go to hidden content 2</a>
+
+  <button class="dist" id="reset">Reset</button>
+</div>
 
 <!-- todo: bruk riktig bilde. feil i endringen i slide.js? -->
 
