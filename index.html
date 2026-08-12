@@ -271,60 +271,6 @@
          </div>
       </div>
    </section>
-   
-   <!-- Valgknapper nederst paa sia -->
-    
-   <script>
-      // You can also log variables and math operations
-      let user = "Alex";
-      console.log("items", items);
-    </script>
-
-   <!-- TODO: flytt fra denne help-Ghabit-button til denne -->
-   <section class="rw-section carrot-lollipop-container">
-      <div class="rw-front-page rw-icon-list">
-     
-         <div class="habit-choice-container">
-            <div class="rw-button-container">
-               <ul class="rw-icon-list__row-buttons">                                   
-                  <li class="rw-icon-list__button">
-                     <button class="flower2 disabled" onclick="pickFlower(1, '0 0 90.476448 264.7684')">
-                        Flower 1
-                     </button>
-                  </li>
-                  <li class="rw-icon-list__button">
-                     <button class="flower1" onclick="pickFlower(0, '0 0 300 210')">
-                        Flower 2
-                     </button>
-                  </li>               
-                  <li class="rw-icon-list__button">
-                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
-                        Stilk
-                     </button>
-                  </li>
-                  <li class="rw-icon-list__button">
-                     <button class="task-btn" id="habitG-button-svg">
-                     </button>
-                  </li>
-                  <li class="rw-icon-list__button">
-                     <button class="task-btn" id="habitB-button-svg">
-                     </button>
-                  </li>
-                  <li class="rw-icon-list__button">
-                     <button class="task-btn" id="goLeft" onclick="pickLeft(current)">
-                        <
-                     </button>
-                  </li>
-                  <li class="rw-icon-list__button">
-                     <button class="task-btn" id="goRight" onclick="pickRight(right)">
-                        >
-                     </button>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div>
-   </section>
 
 <section class="rw-section rw-flower-page hidden-element" id="flip" data-state="initial">
    <div class="rw-icon-list">
@@ -5773,13 +5719,60 @@
          </g>
       </g>
    </svg>
-
-
-
          </div>
       </div>
    </section>
    
+   
+
+      <!-- TODO prevBtn og nextBtn skal implementeres, med kun en synlig av gangen -->
+   <!-- TODO: flytt fra denne help-Ghabit-button til denne -->
+   <section class="rw-section carrot-lollipop-container">
+      <div class="rw-front-page rw-icon-list">
+     
+         <div class="habit-choice-container">
+            <div class="rw-button-container">
+               <ul class="rw-icon-list__row-buttons">                                   
+                  <li class="rw-icon-list__button">
+                     <button class="flower2 disabled" onclick="pickFlower(1, '0 0 90.476448 264.7684')">
+                        Flower 1
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="flower1" onclick="pickFlower(0, '0 0 300 210')">
+                        Flower 2
+                     </button>
+                  </li>               
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
+                        Stilk
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="habitG-button-svg">
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="habitB-button-svg">
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="goLeft" onclick="pickLeft(current)">
+                        <
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="goRight" onclick="pickRight(right)">
+                        >
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- 
     <section class="rw-flower-page rw-section hidden-element" id="rw-growingFlower-page">
       <div class="rw-icon-list">
 
@@ -5832,8 +5825,10 @@
          </div>
       </div>
    </section>
+   -->
 
-   <section class="rw-flower-page rw-section hidden-element" id="rw-growingFlower-pageY">
+   <!-- 
+   <section class="rw-flower-page rw-section hidden-elementX" id="rw-growingFlower-pageY">
       <ul class="rw-icon-list__items"> 
          <li class="rw-icon-list__item">
             <div class="rw-icon-list__icon">
@@ -5883,7 +5878,7 @@
                </text>
             </svg>
 
-            <!--a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by Freepik - Flaticon</a-->           
+            <a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by Freepik - Flaticon</a>
             </div>
             <div class="rw-icon-list__text">
                <p>Gaa tilbake til blomsten</p>
@@ -5891,6 +5886,8 @@
          </li>
       </ul>
    </section>
+   -->
+
    </main>
    
    <script type="text/javascript" src="js/svg-er-knapper.js"></script>

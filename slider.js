@@ -6,6 +6,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn2 = document.getElementById('prevBtn2');
 const nextBtn2 = document.getElementById('nextBtn2');
+
 const totalSlides = slides.length;
 const totalSlides2 = slides2.length;
 
@@ -18,8 +19,11 @@ function updateSlider() {
 }
 
 function updateSlider2() {
+
+  console.log("updateSlider2");
+  
   // Shift the track left by the width of the active slide index
-  track2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
+  // track2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
 }
 
 nextBtn.addEventListener('click', () => {

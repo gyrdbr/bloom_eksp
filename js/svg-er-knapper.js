@@ -14,7 +14,7 @@ var readButtonSettings = document.getElementById('read-button-menu');
 var lightBHButtonSettings = document.getElementById('lightbulbBH-menu');
 var helpGHabitButton = document.getElementById('help-Ghabit-button');
 
-console.log("helpGHabitButton", helpGHabitButton);
+// console.log("helpGHabitButton", helpGHabitButton);
 
 var helpBHabitButton = document.getElementById('help-Bhabit-button');
 var lightContent = "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"-5.0 -10.0 110.0 135.0\"\n        id=\"game_lightbulb\"\n        >\n            <path d=\"m34.133 85.805v3.6641c0 4.4297 3.6055 8.0312 8.0312 8.0312h15.668c4.4297 0 8.0312-3.6055\n            8.0312-8.0312v-3.6641h-31.734zm-17.719-65.441c-1.0898-1.0898-1.0898-2.8594 0-3.9492 1.0898-1.0898\n            2.8594-1.0898 3.9492 0l6.5117 6.5117c1.0938 1.0898 1.0938 2.8594 0 3.9492-1.0898 1.0898-2.8594 1.0898-3.9492 0zm-11.121 32.43c-1.543\n            0-2.793-1.25-2.793-2.793s1.25-2.793 2.793-2.793h9.2109c1.543 0 2.793 1.25 2.793 2.793s-1.25 2.793-2.793 2.793zm15.07 30.793c-1.0898\n            1.0898-2.8594 1.0898-3.9492 0-1.0898-1.0898-1.0898-2.8594 0-3.9492l6.5117-6.5117c1.0898-1.0898 2.8594-1.0898 3.9492 0 1.0938 1.0898 1.0938\n            2.8594 0 3.9492zm63.223-3.9492c1.0938 1.0898 1.0938 2.8594 0 3.9492-1.0898 1.0898-2.8594 1.0898-3.9492 0l-6.5117-6.5117c-1.0898-1.0898-1.0898-2.8594\n            0-3.9492s2.8594-1.0898 3.9492 0zm11.117-32.43c1.543 0 2.793 1.25 2.793 2.793s-1.25 2.793-2.793 2.793h-9.2109c-1.543 0-2.793-1.25-2.793-2.793s1.25-2.793\n            2.793-2.793zm-15.07-30.793c1.0898-1.0898 2.8594-1.0898 3.9492 0 1.0938 1.0898 1.0938 2.8594 0 3.9492l-6.5117 6.5117c-1.0898 1.0898-2.8594 1.0898-3.9492\n            0s-1.0898-2.8594 0-3.9492zm-32.426-11.121c0-1.543 1.2539-2.793 2.793-2.793 1.543 0 2.793 1.25 2.793 2.793v9.207c0 1.543-1.25 2.7969-2.793\n            2.7969s-2.793-1.2539-2.793-2.7969zm18.781 75.617c0.46484-4.5547 2.25-8.4648 5.3516-11.945 10.012-11.258 9.5742-28.43-1.1484-39.156-11.148-11.148-29.227-11.148-40.379\n            0-10.727 10.727-11.16 27.898-1.1484 39.156 3.0977 3.4844 4.8867 7.3945 5.3477 11.945zm-30.531-33.734c0 1.3516-1.0938 2.4453-2.4453 2.4453-1.3516\n            0-2.4453-1.0938-2.4453-2.4453 0-9.3242 7.5625-16.887 16.887-16.887 1.3516 0 2.4453 1.0938 2.4453 2.4453s-1.0938 2.4453-2.4453 2.4453c-6.625 0-11.996\n            5.3711-11.996 11.996z\" fill-rule=\"evenodd\"/>\n            <!-- text x=\"0.0\" y=\"117.5\" font-size=\"5.0\" font-weight=\"bold\" font-family=\"Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif\" fill=\"#000000\">Created by Asa Kharisma Dini</text>\n            <text x=\"0.0\" y=\"122.5\" font-size=\"5.0\" font-weight=\"bold\" font-family=\"Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif\" fill=\"#000000\">from Noun Project</text -->\n    </svg>\n";
@@ -68,7 +68,7 @@ var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
 
-console.log("goodHabitsText", goodHabitsText);
+// console.log("goodHabitsText", goodHabitsText);
 
 var badHabitsText = document.getElementById('rw-badHabits-text');
 var referencesText = document.getElementById('rw-references-text');
@@ -79,16 +79,24 @@ var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
 var chooseGHabitButton = document.getElementById('habitG-button-svg');
 
-console.log("chooseGHabitButton", chooseGHabitButton);
+// console.log("chooseGHabitButton", chooseGHabitButton);
 
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
 // console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
 
+var hiddenElements = document.getElementsByClassName('hidden-element');
+
+console.log("hidden-element", hiddenElements);
+
 
 // TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
 // med funksjonen Fase 1, 2 etc slik at den metoden viser/skjule
+
+function hideEveryOneElse() {
+    
+}
 
 
 // TODO: skjul alle elementer som ikke er valgt. 
@@ -96,9 +104,7 @@ function showMe() {
 
 }
 
-function hideEveryOneElse() {
 
-}
 
 
 function moveTriangle(rect) {
@@ -120,7 +126,7 @@ tripButtonSettings.addEventListener('click', function () {
 tripButton.addEventListener('click', function () {
     // const rect = badHabitButton.getBoundingClientRect();
     // moveTriangle(rect);
-    console.log("trip button clicked");
+    // console.log("trip button clicked");
     if (tripButton.classList.contains('rw-habit-chosen')) {
         tripButton.classList.remove('rw-habit-chosen');
     }
@@ -220,7 +226,7 @@ refsButton.addEventListener('click', function () {
         helpDivs[i].classList.add('hidden-element');
     }
     
-    console.log("refsButton refsButton R", refsButton);
+    // console.log("refsButton refsButton R", refsButton);
     referencesText.classList.remove("hidden-element");
 });
 settingsButton.addEventListener('click', function () {
@@ -394,7 +400,7 @@ if (closeHelpButton) {
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
 
-    console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
+    // console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
