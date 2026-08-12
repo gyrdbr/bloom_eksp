@@ -79,63 +79,37 @@ var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
 var chooseGHabitButton = document.getElementById('habitG-button-svg');
 
-// console.log("chooseGHabitButton", chooseGHabitButton);
-
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
-// todo finn metodebeskrivelser i annen fil og legg til her
-// console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
 
 
-
-
-
-// TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
-// med funksjonen Fase 1, 2 etc slik at den metoden viser/skjule
-
+// TODO: laget vis alle og skjul alle andre av sections med hidden-element
+// Vis hva som skal gjoeres hvis del lages flere
+// For eksempel naar rw-section rw-goodHabits-page mister en noClassSections
+// da skal den andre fjernes, saa det alltid kun er en
 
 function showMe() {
-    var sections = document.querySelectorAll('section');
+    const allSections = document.getElementsByTagName('section');
+    const noClassSections = Array.from(allSections).filter(
+        section => !section.classList.contains('hidden-element')
+    );
 
-    // var showElements = document.getElementsByClassName('hidden-element');
+    noClassSections.forEach(section => {
+        // console.log(section);
+    });
 
-
-
-    console.log("find section", sections)
+    console.log("noClassSections", noClassSections, noClassSections.length)
 }
-
-showMe();
-
-// TODO: skjul alle elementer som ikke er valgt. 
-/*
-function showMe() {
-    var sections = document.querySelectorAll('section');
-
-    // var showElements = document.getElementsByClassName('hidden-element');
-
-
-
-    console.log("find section", notHiddenElement)
-}
-
-showMe();
 
 function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
 
-
-    
-    console.log("hidden-element", hiddenElements);
-    console.log("hiddenOne", hiddenOne);
 }
 
+// TODO: flytte dette er mer passende sted
+showMe();
 hideEveryOneElse();
-
-*/
-
-
-
 
 function moveTriangle(rect) {
     var rectLeft = rect.left;
