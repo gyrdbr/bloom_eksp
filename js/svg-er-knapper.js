@@ -86,23 +86,53 @@ var gearButton = document.getElementById("help-button-svg");
 // todo finn metodebeskrivelser i annen fil og legg til her
 // console.log("goodHabitSettings", document.getElementById('habitG-button-svg'), goodHabitSettings);
 
-var hiddenElements = document.getElementsByClassName('hidden-element');
 
-console.log("hidden-element", hiddenElements);
+
 
 
 // TODO hidden-elementX paa linje 5042 ned hidden-elementX skal endres 
 // med funksjonen Fase 1, 2 etc slik at den metoden viser/skjule
 
-function hideEveryOneElse() {
-    
+
+function showMe() {
+    var sections = document.querySelectorAll('section');
+
+    // var showElements = document.getElementsByClassName('hidden-element');
+
+
+
+    console.log("find section", sections)
 }
 
+showMe();
 
 // TODO: skjul alle elementer som ikke er valgt. 
+/*
 function showMe() {
+    var sections = document.querySelectorAll('section');
 
+    // var showElements = document.getElementsByClassName('hidden-element');
+
+
+
+    console.log("find section", notHiddenElement)
 }
+
+showMe();
+
+function hideEveryOneElse() {
+    var hiddenElements  = document.getElementsByClassName('hidden-element');
+    var hiddenOne = hiddenElements[0];
+
+
+    
+    console.log("hidden-element", hiddenElements);
+    console.log("hiddenOne", hiddenOne);
+}
+
+hideEveryOneElse();
+
+*/
 
 
 
