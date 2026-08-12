@@ -283,31 +283,46 @@
    <!-- TODO: flytt fra denne help-Ghabit-button til denne -->
    <section class="rw-section carrot-lollipop-container">
       <div class="rw-front-page rw-icon-list">
-
+     
          <div class="habit-choice-container">
             <div class="rw-button-container">
-               <ul class="rw-icon-list__row-buttons">
+               <ul class="rw-icon-list__row-buttons">                                   
                   <li class="rw-icon-list__button">
-                     <!-- TODO: her boer svg-er-knappe settes, bare growing_flowers 
-                      og dele med playStemFlowerBloom slik at den brukes baade i 
-                      growing_flowers og i svg-er-knapper -->
-                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom(items = [])">
+                     <button class="flower2 disabled" onclick="pickFlower(1, '0 0 90.476448 264.7684')">
+                        Flower 1
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="flower1" onclick="pickFlower(0, '0 0 300 210')">
+                        Flower 2
+                     </button>
+                  </li>               
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="playBloomStemButton" onclick="playStemFlowerBloom()">
                         Stilk
                      </button>
                   </li>
-                  <!-- denne brukes habitG-button-svg -->
                   <li class="rw-icon-list__button">
-                     <button class="task-btn" id="habitG-button-svg" onclick="habitGButtonSvg(items = [])">
+                     <button class="task-btn" id="habitG-button-svg">
                      </button>
                   </li>
                   <li class="rw-icon-list__button">
                      <button class="task-btn" id="habitB-button-svg">
                      </button>
                   </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="goLeft" onclick="pickLeft(current)">
+                        <
+                     </button>
+                  </li>
+                  <li class="rw-icon-list__button">
+                     <button class="task-btn" id="goRight" onclick="pickRight(right)">
+                        >
+                     </button>
+                  </li>
                </ul>
             </div>
          </div>
-
       </div>
    </section>
 
@@ -5876,46 +5891,7 @@
          </li>
       </ul>
    </section>
-
-   <!--section class="rw-section rw-bg--colorSeven">
-      <div class="rw-front-page rw-icon-list">
-
-         <div class="frame-container">
-            <div class="stem">
-               <p>Trenger du hjelp?</p>
-            </div>
-            <div class="task-containers">
-               <ul class="rw-icon-list__items"> 
-                  <li class="rw-icon-list__item">
-                     <div class="rw-icon-list__text">
-                        <p>Klikk på tannhjulet for å få hjelp.</p>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-         </div>
-
-      </div>
-   </section -->
-   <!-- Vissen blomst, blomstrer igjen -->
-    <!-- Inflorescence/blomsterstand-->
-
-      <!-- TODO: la blomsten vaere helt skjult og saa naar man klikker paa knappen vokser den langsomt. til sammen 10 minutter -->
    </main>
-
-   <button onclick="playStemFlowerBloom()">
-        View Message
-   </button>
-
-   <script>
-       function playStemFlowerBloom() {
-         console.log("Stem flower blooming...");
-      }
-      
-      function log_console() {
-         console.log("GeeksforGeeks is a portal for geeks.");
-      }
-   </script>
    
    <script type="text/javascript" src="js/svg-er-knapper.js"></script>
    <script type="text/javascript" src="js/growing_flowers.js"></script>
