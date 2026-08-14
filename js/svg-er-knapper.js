@@ -71,6 +71,8 @@ var badHabitsPage = document.getElementById('rw-bad-habits-page');
 // som brukes av crossWhiteContent paa linje 25 og i heloOage mm. og av innerHtml
 var closeHelpButton = document.getElementById('cross-button-svg');
 
+var closeHelpButtonTmp = document.getElementById('cross-button-good');
+
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
@@ -344,6 +346,22 @@ closeHelpButton.addEventListener('click', function () {
         main.classList.remove('rw-help-page');
     }
         */
+    if (gearIcon) {
+        gearIcon.classList.remove('hidden-element');
+    }
+});
+closeHelpButtonTmp.addEventListener('click', function () {
+    if (helpPage) {
+        helpPage.classList.add('hidden-element');
+        helpPage.classList.remove('visible-element');
+    }
+    if (goodHabitsPage) {
+        goodHabitsPage.classList.add('visible-element');
+        goodHabitsPage.classList.remove('hidden-element');
+    }
+    if (header) {
+        header.classList.remove('hidden-element');
+    }
     if (gearIcon) {
         gearIcon.classList.remove('hidden-element');
     }
