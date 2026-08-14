@@ -199,6 +199,10 @@ button.task-btn {
     padding-bottom: 60px;
 }
 
+.close-iconX {
+    padding-bottom: 60px;
+}
+
 button.cross-btn,
 button.gear-btn {
     background-color: transparent; /* Makes background fully transparent */
@@ -212,6 +216,20 @@ button.gear-btn {
     width: 60px;
     height:60px;
 }
+
+button.cross-btnX {
+    background-color: pink;
+    border: orange;
+    color: red; /* Changes the text color */
+    cursor: pointer; /* Optional: Changes cursor to a hand icon on hover */
+    float: right;
+    padding-right: 1rem;
+    margin-right: 16px;
+    position: relative; 
+    width: 60px;
+    height:60px;
+}
+
 
 #helpWhite_svg,
 #help_svg {
