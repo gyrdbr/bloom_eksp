@@ -72,6 +72,7 @@ var badHabitsPage = document.getElementById('rw-bad-habits-page');
 // som brukes av crossWhiteContent paa linje 25 og i heloOage mm. og av innerHtml
 var closeHelpButton = document.getElementById('cross-button-svg');
 
+// TODO gjoer den lukkbar a la closeHelpButton
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
 
 var infoText = document.getElementById('rw-info-text');
@@ -330,7 +331,9 @@ gearButton.addEventListener('click', function () {
         gearIcon.classList.add('hidden-element');
     }
 });
+// TODO cross-button-svg oppfoerser 
 closeHelpButton.addEventListener('click', function () {
+    console.log("closeHelpButton", helpPage)
     if (helpPage) {
         helpPage.classList.add('hidden-element');
         helpPage.classList.remove('visible-element');
@@ -352,6 +355,7 @@ closeHelpButton.addEventListener('click', function () {
     }
 });
 closeHelpButtonTmp.addEventListener('click', function () {
+    console.log("closeHelpButtonTmp", helpPage)
     if (helpPage) {
         helpPage.classList.add('hidden-element');
         helpPage.classList.remove('visible-element');
