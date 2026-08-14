@@ -68,6 +68,7 @@ var badHabitsPage = document.getElementById('rw-bad-habits-page');
 
 
 // TODO cross-button-svg sim brukes av knappen paa ID-en brukes her som brukes
+// som brukes av crossWhiteContent paa linje 25 og i heloOage mm. og av innerHtml
 var closeHelpButton = document.getElementById('cross-button-svg');
 
 var infoText = document.getElementById('rw-info-text');
