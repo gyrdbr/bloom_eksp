@@ -80,6 +80,8 @@ var closeHelpButton = document.getElementById('cross-button-svg');
 // TODO gjoer den lukkbar a la closeHelpButton
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
 
+// console.log("closeHelpButtonTmp", closeHelpButtonTmp);
+
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
@@ -297,10 +299,24 @@ chooseGHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
 
-    growingFlowerSettings.classList.add('hidden-element');
+    growingFlowerSettings.classList.add('visible-element');
 
-    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
-    console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
+    console.log("closeHelpButtonTmp.classList.add('cross-button-good');", closeHelpButtonTmp.classList)
+    console.log("closeHelpButtonTmp", closeHelpButtonTmp);
+    console.log("goodHabitSettings.classList.", goodHabitSettings.classList);
+
+    closeHelpButtonTmp.classList.remove('hidden-element');
+
+
+    if ("rw-good-habits-page") {
+        closeHelpButtonTmp.classList.add('cross-button-good');
+    }
+    
+
+
+
+    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    // console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -341,7 +357,7 @@ gearButton.addEventListener('click', function () {
 });
 // TODO cross-button-svg oppfoerser 
 closeHelpButton.addEventListener('click', function () {
-    console.log("closeHelpButton", helpPage)
+    // ("closeHelpButton", helpPage)
     if (helpPage) {
         helpPage.classList.add('hidden-element');
         helpPage.classList.remove('visible-element');
@@ -371,10 +387,10 @@ closeHelpButtonTmp.addEventListener('click', function () {
     goodHabitSettings.classList.add('hidden-element');
     badHabitSettings.classList.add('hidden-element');
 
-    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
-    console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
+    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    // console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
 
-
+    console.log("closeHelpButtonTmp closeHelpButtonTmp", closeHelpButtonTmp);
 
     if (helpPageGoodHabits) {
         helpPageGoodHabits.classList.add('hidden-element');
