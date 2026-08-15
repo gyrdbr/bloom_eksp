@@ -52,6 +52,9 @@ var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
+var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
+
+console.log("document.getElementById('rw-good-habits-page')", helpGapeGoodHide);
 
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
 
