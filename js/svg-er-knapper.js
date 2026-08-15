@@ -51,7 +51,7 @@ var lightButton = document.getElementById('lightbulb-button-svg');
 // help-Ghabit-button' fra 
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
-
+var helpPageGoodHabits = document.getElementById('cross-button-good');
 
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
 
@@ -59,7 +59,9 @@ var badHabitButton = document.getElementById('help-Bhabit-button');
 var fysenButton = document.getElementById('fysen-button');
 var gameButton = document.getElementById('game-button');
 var readButton = document.getElementById('read-button');
+
 var helpPage = document.getElementById('rw-help-page');
+
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 
 // TODO: denne brukes ikke da den er skjult
@@ -108,8 +110,6 @@ function showMe() {
     noClassSections.forEach(section => {
         // console.log(section);
     });
-
-    console.log("noClassSections", noClassSections, noClassSections.length)
 }
 
 function hideEveryOneElse() {
@@ -354,11 +354,12 @@ closeHelpButton.addEventListener('click', function () {
         gearIcon.classList.remove('hidden-element');
     }
 });
+console.log("closeHelpButtonTmp", helpPage)
 closeHelpButtonTmp.addEventListener('click', function () {
     console.log("closeHelpButtonTmp", helpPage)
-    if (helpPage) {
-        helpPage.classList.add('hidden-element');
-        helpPage.classList.remove('visible-element');
+    if (helpPageGoodHabits) {
+        helpPageGoodHabits.classList.add('hidden-element');
+        helpPageGoodHabits.classList.remove('visible-element');
     }
     if (goodHabitsPage) {
         goodHabitsPage.classList.add('visible-element');
