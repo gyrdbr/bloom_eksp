@@ -20,8 +20,6 @@ var helpBHabitButton = document.getElementById('help-Bhabit-button');
 var lightContent = "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"-5.0 -10.0 110.0 135.0\"\n        id=\"game_lightbulb\"\n        >\n            <path d=\"m34.133 85.805v3.6641c0 4.4297 3.6055 8.0312 8.0312 8.0312h15.668c4.4297 0 8.0312-3.6055\n            8.0312-8.0312v-3.6641h-31.734zm-17.719-65.441c-1.0898-1.0898-1.0898-2.8594 0-3.9492 1.0898-1.0898\n            2.8594-1.0898 3.9492 0l6.5117 6.5117c1.0938 1.0898 1.0938 2.8594 0 3.9492-1.0898 1.0898-2.8594 1.0898-3.9492 0zm-11.121 32.43c-1.543\n            0-2.793-1.25-2.793-2.793s1.25-2.793 2.793-2.793h9.2109c1.543 0 2.793 1.25 2.793 2.793s-1.25 2.793-2.793 2.793zm15.07 30.793c-1.0898\n            1.0898-2.8594 1.0898-3.9492 0-1.0898-1.0898-1.0898-2.8594 0-3.9492l6.5117-6.5117c1.0898-1.0898 2.8594-1.0898 3.9492 0 1.0938 1.0898 1.0938\n            2.8594 0 3.9492zm63.223-3.9492c1.0938 1.0898 1.0938 2.8594 0 3.9492-1.0898 1.0898-2.8594 1.0898-3.9492 0l-6.5117-6.5117c-1.0898-1.0898-1.0898-2.8594\n            0-3.9492s2.8594-1.0898 3.9492 0zm11.117-32.43c1.543 0 2.793 1.25 2.793 2.793s-1.25 2.793-2.793 2.793h-9.2109c-1.543 0-2.793-1.25-2.793-2.793s1.25-2.793\n            2.793-2.793zm-15.07-30.793c1.0898-1.0898 2.8594-1.0898 3.9492 0 1.0938 1.0898 1.0938 2.8594 0 3.9492l-6.5117 6.5117c-1.0898 1.0898-2.8594 1.0898-3.9492\n            0s-1.0898-2.8594 0-3.9492zm-32.426-11.121c0-1.543 1.2539-2.793 2.793-2.793 1.543 0 2.793 1.25 2.793 2.793v9.207c0 1.543-1.25 2.7969-2.793\n            2.7969s-2.793-1.2539-2.793-2.7969zm18.781 75.617c0.46484-4.5547 2.25-8.4648 5.3516-11.945 10.012-11.258 9.5742-28.43-1.1484-39.156-11.148-11.148-29.227-11.148-40.379\n            0-10.727 10.727-11.16 27.898-1.1484 39.156 3.0977 3.4844 4.8867 7.3945 5.3477 11.945zm-30.531-33.734c0 1.3516-1.0938 2.4453-2.4453 2.4453-1.3516\n            0-2.4453-1.0938-2.4453-2.4453 0-9.3242 7.5625-16.887 16.887-16.887 1.3516 0 2.4453 1.0938 2.4453 2.4453s-1.0938 2.4453-2.4453 2.4453c-6.625 0-11.996\n            5.3711-11.996 11.996z\" fill-rule=\"evenodd\"/>\n            <!-- text x=\"0.0\" y=\"117.5\" font-size=\"5.0\" font-weight=\"bold\" font-family=\"Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif\" fill=\"#000000\">Created by Asa Kharisma Dini</text>\n            <text x=\"0.0\" y=\"122.5\" font-size=\"5.0\" font-weight=\"bold\" font-family=\"Arbeit Regular, Helvetica, Arial-Unicode, Arial, Sans-serif\" fill=\"#000000\">from Noun Project</text -->\n    </svg>\n";
 var helpContent = "\n         <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n            id=\"help_svg\"\n            x=\"0px\" y=\"0px\" viewBox=\"0 0 100 125\"\n            style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n         <g>\n            <path d=\"M48.9,12.1c3.2-0.5,6.6,0.4,9.2,2.4c1.7,1.3,3,3.2,3.8,5.2c0.2,0.5,0.4,1,0.7,1.4c0.9,1.3,2.5,2,4,1.9c0.7,0,1.3-0.3,2-0.5   \n            c2.8-0.8,5.9-0.5,8.5,0.8c2.5,1.2,4.6,3.4,5.8,6c1.2,2.5,1.4,5.5,0.7,8.2c-0.2,0.8-0.5,1.6-0.9,2.4c-0.3,0.7-0.8,1.3-1,2   \n            c-0.5,1.5,0,3.3,1.1,4.5c0.5,0.5,1.1,0.8,1.6,1.3c1.8,1.3,3.2,3.2,4,5.3c1,2.6,1.1,5.5,0.2,8.1c-0.7,2.2-2.1,4.3-3.9,5.8   \n            c-1.8,1.4-3.9,2.3-6.2,2.6c-1.3,0.2-2.5,0.9-3.2,1.9c-0.7,0.9-0.9,2.1-0.8,3.2c0.2,2.1-0.1,4.3-1,6.2c-1,2.3-2.8,4.3-5,5.6   \n            c-1.7,1-3.5,1.5-5.5,1.6C60,88.1,56.9,87,54.6,85c-0.6-0.5-1.1-1.1-1.8-1.4c-1.7-0.9-3.8-0.6-5.2,0.7c-0.9,0.9-2,1.7-3.1,2.3   \n            c-1.7,0.9-3.7,1.3-5.6,1.4c-1.3-0.1-2.6-0.2-3.8-0.7c-2.8-0.9-5.2-2.8-6.7-5.3c-1.3-2.2-1.9-4.8-1.7-7.4c0.1-1.2-0.2-2.4-0.9-3.4   \n            c-0.8-1-1.9-1.6-3.2-1.8c-2.5-0.3-5-1.4-6.8-3.2c-2.1-1.9-3.4-4.7-3.8-7.5c-0.3-2.1,0-4.3,0.9-6.3c0.8-1.9,2.2-3.6,3.9-4.9   \n            c0.5-0.4,1.1-0.7,1.5-1.2c1.1-1.1,1.5-2.7,1.2-4.2c-0.1-0.6-0.4-1.1-0.7-1.6c-1.2-2.1-1.9-4.5-1.7-6.9c0.1-2.7,1.3-5.3,3.1-7.4   \n            c1.6-1.8,3.8-3.2,6.2-3.8c1.9-0.5,4-0.5,5.9,0c0.7,0.2,1.4,0.5,2.1,0.5c1.6,0.1,3.2-0.7,4.1-2c0.3-0.4,0.5-0.9,0.6-1.4   \n            c0.9-2.3,2.5-4.3,4.5-5.7C45.2,13,47,12.4,48.9,12.1 M49.8,19.6c-1.2,0.2-2.4,0.9-3.1,1.9c-0.5,0.7-0.7,1.5-1,2.3   \n            c-1.2,2.6-3.5,4.8-6.1,5.9c-2.5,1.1-5.3,1.3-8,0.6c-0.6-0.1-1.2-0.4-1.8-0.4c-0.8-0.1-1.7,0-2.5,0.4c-1.3,0.6-2.2,1.8-2.6,3.2   \n            c-0.2,0.8-0.2,1.7,0.1,2.5c0.3,0.8,0.8,1.4,1.1,2.1c1.5,3,1.6,6.7,0.3,9.8c-0.8,2-2.1,3.7-3.8,5c-0.6,0.5-1.3,0.9-1.8,1.4   \n            c-1,1.1-1.3,2.6-1,4c0.3,1.3,1.1,2.5,2.2,3.1c0.6,0.3,1.3,0.5,2,0.6c2.3,0.3,4.6,1.3,6.4,2.9c2.1,1.8,3.5,4.4,4,7.1   \n            c0.2,1.1,0.2,2.3,0.1,3.5c-0.1,1.1,0.2,2.3,0.9,3.1c1,1.3,2.7,2,4.3,1.8c1-0.1,1.9-0.6,2.6-1.2c0.5-0.5,1.1-1,1.7-1.4   \n            c2.3-1.6,5.1-2.4,7.8-2.2c2.8,0.2,5.5,1.4,7.5,3.3c0.5,0.5,1.1,0.9,1.8,1.2c1.5,0.6,3.2,0.2,4.5-0.7c0.9-0.7,1.6-1.8,1.7-2.9   \n            c0.1-0.8-0.1-1.7,0-2.5c0-3.3,1.4-6.6,3.9-8.9c1.8-1.7,4.2-2.9,6.7-3.2c1.2-0.1,2.3-0.7,3.1-1.6c0.9-1.1,1.3-2.7,0.9-4.1   \n            c-0.2-1.1-0.9-2-1.8-2.6c-0.6-0.4-1.2-0.8-1.7-1.3c-2-1.8-3.4-4.3-3.9-6.9c-0.5-2.8,0-5.8,1.5-8.3c0.5-0.8,0.8-1.6,0.8-2.5   \n            c0-1.6-0.9-3.2-2.3-4.1c-0.8-0.5-1.8-0.7-2.7-0.7c-0.8,0.1-1.6,0.4-2.4,0.6c-2.8,0.7-5.9,0.3-8.4-1.1c-2.3-1.2-4.1-3.1-5.3-5.4   \n            c-0.4-0.8-0.6-1.7-1.2-2.4C53.2,20,51.5,19.3,49.8,19.6z\"/>\n            <path d=\"M49.6,37.5c2.9-0.2,5.8,0.5,8.2,2c2.3,1.4,4.1,3.5,5.2,6c1.3,2.8,1.5,6.1,0.7,9c-0.7,2.6-2.2,4.9-4.2,6.7   \n            c-2,1.7-4.5,2.9-7.1,3.2c-2.9,0.4-6-0.2-8.5-1.6c-2.5-1.4-4.5-3.6-5.7-6.2c-1.4-3-1.6-6.5-0.6-9.6c0.8-2.6,2.4-4.9,4.5-6.6   \n            C44.2,38.8,46.9,37.7,49.6,37.5 M49.5,44.3c-2.1,0.3-4,1.7-5,3.6c-1.1,2.1-1,4.8,0.3,6.8c0.8,1.3,2,2.3,3.5,2.8   \n            c1.2,0.4,2.6,0.5,3.9,0.2c1.6-0.3,3-1.3,4-2.6c0.8-1,1.2-2.2,1.3-3.5c0.1-1.5-0.2-3.1-1.1-4.3c-0.7-1.1-1.8-2.1-3.1-2.6   \n            C52.1,44.2,50.8,44.1,49.5,44.3z\"/>\n         </g>\n         <!--text x=\"0\" y=\"115\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">Created by Ehsan Madadi</text>\n         <text x=\"0\" y=\"120\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">from the Noun Project</text -->\n      </svg>\n";
 var helpWhiteContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n    id=\"helpWhite_svg\"\n    version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 100 125\" \n    style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n    <g>\n        <path fill=\"white\" d=\"M48.9,12.1c3.2-0.5,6.6,0.4,9.2,2.4c1.7,1.3,3,3.2,3.8,5.2c0.2,0.5,0.4,1,0.7,1.4c0.9,1.3,2.5,2,4,1.9c0.7,0,1.3-0.3,2-0.5   \n        c2.8-0.8,5.9-0.5,8.5,0.8c2.5,1.2,4.6,3.4,5.8,6c1.2,2.5,1.4,5.5,0.7,8.2c-0.2,0.8-0.5,1.6-0.9,2.4c-0.3,0.7-0.8,1.3-1,2   \n        c-0.5,1.5,0,3.3,1.1,4.5c0.5,0.5,1.1,0.8,1.6,1.3c1.8,1.3,3.2,3.2,4,5.3c1,2.6,1.1,5.5,0.2,8.1c-0.7,2.2-2.1,4.3-3.9,5.8   \n        c-1.8,1.4-3.9,2.3-6.2,2.6c-1.3,0.2-2.5,0.9-3.2,1.9c-0.7,0.9-0.9,2.1-0.8,3.2c0.2,2.1-0.1,4.3-1,6.2c-1,2.3-2.8,4.3-5,5.6   \n        c-1.7,1-3.5,1.5-5.5,1.6C60,88.1,56.9,87,54.6,85c-0.6-0.5-1.1-1.1-1.8-1.4c-1.7-0.9-3.8-0.6-5.2,0.7c-0.9,0.9-2,1.7-3.1,2.3   \n        c-1.7,0.9-3.7,1.3-5.6,1.4c-1.3-0.1-2.6-0.2-3.8-0.7c-2.8-0.9-5.2-2.8-6.7-5.3c-1.3-2.2-1.9-4.8-1.7-7.4c0.1-1.2-0.2-2.4-0.9-3.4   \n        c-0.8-1-1.9-1.6-3.2-1.8c-2.5-0.3-5-1.4-6.8-3.2c-2.1-1.9-3.4-4.7-3.8-7.5c-0.3-2.1,0-4.3,0.9-6.3c0.8-1.9,2.2-3.6,3.9-4.9   \n        c0.5-0.4,1.1-0.7,1.5-1.2c1.1-1.1,1.5-2.7,1.2-4.2c-0.1-0.6-0.4-1.1-0.7-1.6c-1.2-2.1-1.9-4.5-1.7-6.9c0.1-2.7,1.3-5.3,3.1-7.4   \n        c1.6-1.8,3.8-3.2,6.2-3.8c1.9-0.5,4-0.5,5.9,0c0.7,0.2,1.4,0.5,2.1,0.5c1.6,0.1,3.2-0.7,4.1-2c0.3-0.4,0.5-0.9,0.6-1.4   \n        c0.9-2.3,2.5-4.3,4.5-5.7C45.2,13,47,12.4,48.9,12.1 M49.8,19.6c-1.2,0.2-2.4,0.9-3.1,1.9c-0.5,0.7-0.7,1.5-1,2.3   \n        c-1.2,2.6-3.5,4.8-6.1,5.9c-2.5,1.1-5.3,1.3-8,0.6c-0.6-0.1-1.2-0.4-1.8-0.4c-0.8-0.1-1.7,0-2.5,0.4c-1.3,0.6-2.2,1.8-2.6,3.2   \n        c-0.2,0.8-0.2,1.7,0.1,2.5c0.3,0.8,0.8,1.4,1.1,2.1c1.5,3,1.6,6.7,0.3,9.8c-0.8,2-2.1,3.7-3.8,5c-0.6,0.5-1.3,0.9-1.8,1.4   \n        c-1,1.1-1.3,2.6-1,4c0.3,1.3,1.1,2.5,2.2,3.1c0.6,0.3,1.3,0.5,2,0.6c2.3,0.3,4.6,1.3,6.4,2.9c2.1,1.8,3.5,4.4,4,7.1   \n        c0.2,1.1,0.2,2.3,0.1,3.5c-0.1,1.1,0.2,2.3,0.9,3.1c1,1.3,2.7,2,4.3,1.8c1-0.1,1.9-0.6,2.6-1.2c0.5-0.5,1.1-1,1.7-1.4   \n        c2.3-1.6,5.1-2.4,7.8-2.2c2.8,0.2,5.5,1.4,7.5,3.3c0.5,0.5,1.1,0.9,1.8,1.2c1.5,0.6,3.2,0.2,4.5-0.7c0.9-0.7,1.6-1.8,1.7-2.9   \n        c0.1-0.8-0.1-1.7,0-2.5c0-3.3,1.4-6.6,3.9-8.9c1.8-1.7,4.2-2.9,6.7-3.2c1.2-0.1,2.3-0.7,3.1-1.6c0.9-1.1,1.3-2.7,0.9-4.1   \n        c-0.2-1.1-0.9-2-1.8-2.6c-0.6-0.4-1.2-0.8-1.7-1.3c-2-1.8-3.4-4.3-3.9-6.9c-0.5-2.8,0-5.8,1.5-8.3c0.5-0.8,0.8-1.6,0.8-2.5   \n        c0-1.6-0.9-3.2-2.3-4.1c-0.8-0.5-1.8-0.7-2.7-0.7c-0.8,0.1-1.6,0.4-2.4,0.6c-2.8,0.7-5.9,0.3-8.4-1.1c-2.3-1.2-4.1-3.1-5.3-5.4   \n        c-0.4-0.8-0.6-1.7-1.2-2.4C53.2,20,51.5,19.3,49.8,19.6z\"/>\n        <path fill=\"white\" d=\"M49.6,37.5c2.9-0.2,5.8,0.5,8.2,2c2.3,1.4,4.1,3.5,5.2,6c1.3,2.8,1.5,6.1,0.7,9c-0.7,2.6-2.2,4.9-4.2,6.7   \n        c-2,1.7-4.5,2.9-7.1,3.2c-2.9,0.4-6-0.2-8.5-1.6c-2.5-1.4-4.5-3.6-5.7-6.2c-1.4-3-1.6-6.5-0.6-9.6c0.8-2.6,2.4-4.9,4.5-6.6   \n        C44.2,38.8,46.9,37.7,49.6,37.5 M49.5,44.3c-2.1,0.3-4,1.7-5,3.6c-1.1,2.1-1,4.8,0.3,6.8c0.8,1.3,2,2.3,3.5,2.8   \n        c1.2,0.4,2.6,0.5,3.9,0.2c1.6-0.3,3-1.3,4-2.6c0.8-1,1.2-2.2,1.3-3.5c0.1-1.5-0.2-3.1-1.1-4.3c-0.7-1.1-1.8-2.1-3.1-2.6   C52.1,44.2,50.8,44.1,49.5,44.3z\"/>\n    </g>\n    <!-- text x=\"0\" y=\"115\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">Created by Ehsan Madadi</text>\n    <text x=\"0\" y=\"120\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">from the Noun Project</text -->\n</svg>";
-
-// bruker SVG en til crossWhiteContent
 var crossWhiteContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"-5.0 -10.0 110.0 135.0\">\n    <path fill=\"#FFFFFF\"d=\"m86.898 13.102c-4.0977-4.1016-10.699-4.1016-14.898 0l-22 22-22-22c-4.1992-4.1016-10.801-4.1016-14.898 0-4.1016 \n    4.0977-4.1016 10.699 0 14.898l22 22-22 22c-4.1016 4.1992-4.1016 10.801 0 14.898 4.1016 4.1016 10.801 4.1016 14.898 \n    0l22-22 22 22c4.1016 4.1016 10.801 4.1016 14.898 0 4.1016-4.1016 4.1016-10.801 0-14.898l-22-22 22-22c4.1016-4.1992 \n    4.1016-10.801 0-14.898z\"/>\n    <!-- text x=\"0.0\" y=\"117.5\" font-size=\"5.0\" font-weight=\"bold\" fill=\"#000000\">Created by ainul muttaqin</text>\n    <text x=\"0.0\" y=\"122.5\" font-size=\"5.0\" font-weight=\"bold\" fill=\"#000000\">from Noun Project</text -->\n    </svg>";
 
 var carrotWhiteContent = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" \n    id=\"carrot_svg\"\n    version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"-199 201 100 125\" style=\"enable-background:new -199 201 100 100;\" xml:space=\"preserve\">\n    <g fill=\"white\">\n        <g fill=\"white\">\n            <path fill=\"white\" d=\"M-180.6,284.1c-0.4,0-0.8-0.2-1.1-0.4c-0.5-0.5-0.6-1.2-0.3-1.8l19.1-34.4c2.8-5.1,8.6-8.1,12.9-6.8l0,0    \n            c5.6,1.7,9.6,5.7,11.2,11.2c1.3,4.3-1.8,10.1-6.8,12.9l-34.3,19.1C-180.1,284-180.4,284.1-180.6,284.1z M-152,243.3    \n            c-2.8,0-6.3,2.3-8.2,5.6l-16.5,29.8l29.8-16.6c3.8-2.1,6.3-6.5,5.4-9.4c-1.4-4.6-4.7-7.9-9.2-9.2l0,0    \n            C-151.1,243.4-151.6,243.3-152,243.3z\"/>\n        </g>\n    </g>\n    <g fill=\"white\">\n        <g fill=\"white\">\n            <path fill=\"white\" d=\"M-158.7,257.4c-0.4,0-0.8-0.1-1.1-0.4l-4.5-4.5c-0.6-0.6-0.6-1.5,0-2.1c0.6-0.6,1.5-0.6,2.1,0l4.5,4.5    \n            c0.6,0.6,0.6,1.5,0,2.1C-157.9,257.2-158.3,257.4-158.7,257.4z\"/>\n        </g>\n    </g>\n    <g>\n        <g>\n            <path fill=\"white\" d=\"M-158.8,272c-0.4,0-0.8-0.1-1.1-0.4l-4-4c-0.6-0.6-0.6-1.5,0-2.1c0.6-0.6,1.5-0.6,2.1,0l4,4c0.6,0.6,0.6,1.5,0,2.1    \n            C-158,271.8-158.4,272-158.8,272z\"/>\n        </g>\n    </g>\n    <g>\n        <path fill=\"white\" d=\"M-169,272.5c-0.4,0-0.8-0.2-1.1-0.5l-3.3-3.4c-0.6-0.6-0.6-1.5,0-2.1c0.6-0.6,1.5-0.6,2.1,0l3.3,3.4c0.6,0.6,0.6,1.5,0,2.1   \n            C-168.2,272.4-168.6,272.5-169,272.5z\"/>\n    </g>\n    <g>\n        <g>\n            <path fill=\"white\" d=\"M-114.9,230c-0.8-0.8-1.9-1.4-3-1.7l0,0c2.6-2.6,2.6-6.7,0-9.3s-6.7-2.6-9.3,0c-0.2,0.2-0.4,0.4-0.5,0.6    \n            c-0.3-1-0.9-2-1.6-2.7c-2.6-2.6-6.7-2.6-9.3,0c-1,1-1.6,2.2-1.8,3.5c0,0,0,0-0.1-0.1c-2.6-2.6-6.7-2.6-9.3,0    \n            c-2.6,2.6-2.6,6.7,0,9.3c0.6,0.6,1.3,1.1,2.1,1.4c-0.9,2.4-0.5,5.2,1.5,7.1c0.7,0.7,1.6,1.3,2.6,1.6c-0.9,2.8-3.1,4-3.1,4l4.7,4.3    \n            c1-1.7,3.2-2.2,4.5-2.3c0.3,1,0.8,1.9,1.6,2.6c2.1,2.1,5.3,2.5,7.8,1.1c0.3,0.7,0.8,1.3,1.3,1.9c2.6,2.6,6.7,2.6,9.3,0    \n            c2.6-2.6,2.6-6.7,0-9.3c-0.3-0.3-0.6-0.6-1-0.8c1.3-0.2,2.6-0.8,3.6-1.8C-112.4,236.7-112.4,232.5-114.9,230z\"/>\n        </g>\n    </g>\n    <!-- text x=\"-199\" y=\"316\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">Created by Wawan Hermawan</text>\n    <text x=\"-199\" y=\"321\" fill=\"#000000\" font-size=\"5px\" font-weight=\"bold\" font-family=\"'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif\">from the Noun Project</text -->\n</svg>";
@@ -46,16 +44,11 @@ var growingFlowerSettings = document.getElementById('rw-growingFlower-page');
  * Main TS file for handling help page interactions
  */
 var infoButton = document.getElementById('info-button-svg');
-var lightButton = document.getElementById('lightbulb-button-svg');
-
-// help-Ghabit-button' fra 
+var lightButton = document.getElementById('lightbulb-button-svg'); 
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
-
-// console.log("document.getElementById('rw-good-habits-page')", helpGapeGoodHide);
-
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
 
 var badHabitButton = document.getElementById('help-Bhabit-button');
@@ -66,28 +59,12 @@ var readButton = document.getElementById('read-button');
 var helpPage = document.getElementById('rw-help-page');
 
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
-
-// TODO: denne brukes ikke da den er skjult
-// console.log("goodHabitSettings", document.getElementById('rw-good-habits-page'));
-
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
-
-
-// TODO cross-button-svg sim brukes av knappen paa ID-en brukes her som brukes
-// som brukes av crossWhiteContent paa linje 25 og i heloOage mm. og av innerHtml
 var closeHelpButton = document.getElementById('cross-button-svg');
-
-// TODO gjoer den lukkbar a la closeHelpButton
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
-
-// console.log("closeHelpButtonTmp", closeHelpButtonTmp);
-
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
-
-// console.log("goodHabitsText", goodHabitsText);
-
 var badHabitsText = document.getElementById('rw-badHabits-text');
 var referencesText = document.getElementById('rw-references-text');
 var header = document.getElementById('rw-page-header');
@@ -100,12 +77,6 @@ var chooseGHabitButton = document.getElementById('habitG-button-svg');
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 var gearButton = document.getElementById("help-button-svg");
 
-
-// TODO: laget vis alle og skjul alle andre av sections med hidden-element
-// Vis hva som skal gjoeres hvis del lages flere
-// For eksempel naar rw-section rw-goodHabits-page mister en noClassSections
-// da skal den andre fjernes, saa det alltid kun er en
-
 function showMe() {
     const allSections = document.getElementsByTagName('section');
     const noClassSections = Array.from(allSections).filter(
@@ -113,7 +84,7 @@ function showMe() {
     );
 
     noClassSections.forEach(section => {
-        // console.log(section);
+        console.log(section);
     });
 }
 
@@ -144,9 +115,6 @@ tripButtonSettings.addEventListener('click', function () {
     }
 });
 tripButton.addEventListener('click', function () {
-    // const rect = badHabitButton.getBoundingClientRect();
-    // moveTriangle(rect);
-    // console.log("trip button clicked");
     if (tripButton.classList.contains('rw-habit-chosen')) {
         tripButton.classList.remove('rw-habit-chosen');
     }
@@ -246,7 +214,6 @@ refsButton.addEventListener('click', function () {
         helpDivs[i].classList.add('hidden-element');
     }
     
-    // console.log("refsButton refsButton R", refsButton);
     referencesText.classList.remove("hidden-element");
 });
 settingsButton.addEventListener('click', function () {
@@ -275,7 +242,7 @@ goodHabitButton.addEventListener('click', function () {
     for (var i = 0; i < helpDivs.length; i++) {
         helpDivs[i].classList.add('hidden-element');
     }
-    // console.log("goodHabitButton clicked, helpDivs.length", helpDivs.length);
+
     goodHabitsText.classList.remove("hidden-element");
 
 });
@@ -288,45 +255,20 @@ badHabitButton.addEventListener('click', function () {
     badHabitsText.classList.remove("hidden-element");
 });
 
-
-// TODO: her sjal growingFlowers vises/skjules
-// TODO chooseGHabitButton lukker chooseGHabitButton
-
-// console.log("fjern chooseGHabitButton fra goodHabitSettings og gell denne inn i helpGapeGoodHide");
 chooseGHabitButton.addEventListener('click', function () {
-
 
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
+    closeHelpButtonTmp.classList.remove('hidden-element');
 
     growingFlowerSettings.classList.add('visible-element');
 
-    console.log("closeHelpButtonTmp.classList.add('cross-button-good');", closeHelpButtonTmp.classList)
-    console.log("closeHelpButtonTmp", closeHelpButtonTmp);
-    console.log("goodHabitSettings.classList.", goodHabitSettings.classList);
-
-    closeHelpButtonTmp.classList.remove('hidden-element');
-
-
-    if ("rw-good-habits-page") {
-        closeHelpButtonTmp.classList.add('cross-button-good');
-    }
-    
-
-
-
-    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
-    // console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
-
-    // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
-    // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
 });
 chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
-
-   // console.log("chooseBHabitButton", "badHabitSettings.classList", badHabitSettings.classList);    
+  
 });
 gearButton.addEventListener('click', function () {
     if (helpPage) {
@@ -355,9 +297,10 @@ gearButton.addEventListener('click', function () {
         gearIcon.classList.add('hidden-element');
     }
 });
-// TODO cross-button-svg oppfoerser 
+
 closeHelpButton.addEventListener('click', function () {
-    // ("closeHelpButton", helpPage)
+    // TODO skal gjoeres paa samme maate som closeHelpButtonTmp
+
     if (helpPage) {
         helpPage.classList.add('hidden-element');
         helpPage.classList.remove('visible-element');
@@ -378,33 +321,17 @@ closeHelpButton.addEventListener('click', function () {
         gearIcon.classList.remove('hidden-element');
     }
 });
-// console.log("closeHelpButtonTmp", helpPage)
+
 closeHelpButtonTmp.addEventListener('click', function () {
-    // console.log("closeHelpButtonTmp", helpPage);
-
-    // goodHabitSettings.classList.add('hidden-element');
-
+    
     goodHabitSettings.classList.add('hidden-element');
     badHabitSettings.classList.add('hidden-element');
 
-    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
-    // console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
-
-    console.log("closeHelpButtonTmp closeHelpButtonTmp", closeHelpButtonTmp);
-
     if (helpPageGoodHabits) {
         helpPageGoodHabits.classList.add('hidden-element');
-        // helpPageGoodHabits.classList.remove('visible-element');
     }
     if (goodHabitsPage) {
         goodHabitsPage.classList.add('visible-element');
-        // goodHabitsPage.classList.remove('hidden-element');
-    }
-    if (header) {
-        // header.classList.remove('hidden-element');
-    }
-    if (gearIcon) {
-        // gearIcon.classList.remove('hidden-element');
     }
 });
 if (brakeButtonSettings) {
@@ -472,48 +399,26 @@ if (closeHelpButtonTmp) {
 }
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
-
-    // console.log("playBloomStemButtonTest innerHTML", playBloomStemButtonTest, playBloomStemButtonTest.className);
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
-
-    //console.log("goodHabitButton innerHTML set to carrotContent", goodHabitButton, goodHabitButton.className);
-
-    // Grabs the element
-    //const element = document.querySelector('.my-element');
-
-    // Logs a space-separated string of all classes
-    //console.log(element.className);
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
-
-    // console.log("badHabitButton innerHTML set to lollipopContent", badHabitButton.innerHTML);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
-
-    // console.log("chooseGHabitButton innerHTML set to carrotContent", chooseGHabitButton.innerHTML);
 }
 if (chooseBHabitButton) {
     chooseBHabitButton.innerHTML = lollipopContent;
-
-    // console.log("chooseBHabitButton innerHTML set to lollipopContent", chooseBHabitButton);
 }
 if (helpGHabitButton) {
     helpGHabitButton.innerHTML = carrotWhiteContent;
-
-    // console.log("helpGHabitButton innerHTML set to carrotWhiteContent", helpGHabitButton.innerHTML);
 }
 if (helpBHabitButton) {
     helpBHabitButton.innerHTML = lollipopWhiteContent;
-
-    // console.log("helpBHabitButton innerHTML set to lollipopWhiteContent", helpBHabitButton.innerHTML);
 }
 if (refsButton) {
     refsButton.innerHTML = referencesWhiteContent;
-
-    // console.log("refsButton innerHTML set to referencesWhiteContent", refsButton.innerHTML);
 }
 // console.log("Welcome");
