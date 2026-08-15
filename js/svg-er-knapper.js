@@ -54,7 +54,7 @@ var goodHabitButton = document.getElementById('help-Ghabit-button');
 var helpPageGoodHabits = document.getElementById('cross-button-good');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
 
-console.log("document.getElementById('rw-good-habits-page')", helpGapeGoodHide);
+// console.log("document.getElementById('rw-good-habits-page')", helpGapeGoodHide);
 
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
 
@@ -288,14 +288,19 @@ badHabitButton.addEventListener('click', function () {
 
 
 // TODO: her sjal growingFlowers vises/skjules
+// TODO chooseGHabitButton lukker chooseGHabitButton
 
-
+// console.log("fjern chooseGHabitButton fra goodHabitSettings og gell denne inn i helpGapeGoodHide");
 chooseGHabitButton.addEventListener('click', function () {
+
+
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
+
     growingFlowerSettings.classList.add('hidden-element');
 
-    // console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
 
     // TODO: hidden element boer settes gobalt. siden det ikke gjeres. trist. maa det finnes en egen metode for aa opppdatere globalt
     // her fjernes hidden-element fra goodHabitSettings og legges til hidden-element i badHabitSettings og growingFlowerSettings
@@ -357,22 +362,33 @@ closeHelpButton.addEventListener('click', function () {
         gearIcon.classList.remove('hidden-element');
     }
 });
-console.log("closeHelpButtonTmp", helpPage)
+// console.log("closeHelpButtonTmp", helpPage)
 closeHelpButtonTmp.addEventListener('click', function () {
-    console.log("closeHelpButtonTmp", helpPage)
+    // console.log("closeHelpButtonTmp", helpPage);
+
+    // goodHabitSettings.classList.add('hidden-element');
+
+    goodHabitSettings.classList.add('hidden-element');
+    badHabitSettings.classList.add('hidden-element');
+
+    console.log("chooseGHabitButton", "goodHabitSettings.className", goodHabitSettings.className);
+    console.log("badHabitSettings", "badHabitSettings.className", badHabitSettings.className);
+
+
+
     if (helpPageGoodHabits) {
         helpPageGoodHabits.classList.add('hidden-element');
-        helpPageGoodHabits.classList.remove('visible-element');
+        // helpPageGoodHabits.classList.remove('visible-element');
     }
     if (goodHabitsPage) {
         goodHabitsPage.classList.add('visible-element');
-        goodHabitsPage.classList.remove('hidden-element');
+        // goodHabitsPage.classList.remove('hidden-element');
     }
     if (header) {
-        header.classList.remove('hidden-element');
+        // header.classList.remove('hidden-element');
     }
     if (gearIcon) {
-        gearIcon.classList.remove('hidden-element');
+        // gearIcon.classList.remove('hidden-element');
     }
 });
 if (brakeButtonSettings) {
