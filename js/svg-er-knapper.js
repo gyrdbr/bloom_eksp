@@ -64,6 +64,9 @@ var closeHelpButton = document.getElementById('cross-button-svg');
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
 var closeHelpButtonBad = document.getElementById('cross-button-bad');
 
+console.log("closeHelpButtonTmp", closeHelpButtonTmp);
+console.log("closeHelpButtonBad", closeHelpButtonBad);
+
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
@@ -303,7 +306,6 @@ gearButton.addEventListener('click', function () {
 });
 
 closeHelpButton.addEventListener('click', function () {
-    // TODO skal gjoeres paa samme maate som closeHelpButtonTmp
 
     if (helpPage) {
         helpPage.classList.add('hidden-element');
@@ -338,6 +340,25 @@ closeHelpButtonTmp.addEventListener('click', function () {
         goodHabitsPage.classList.add('visible-element');
     }
 });
+
+
+
+/*
+closeHelpButtonBad.addEventListener('click', function () {
+    
+    goodHabitSettings.classList.add('hidden-element');
+    badHabitSettings.classList.add('hidden-element');
+
+    if (helpPageBadHabits) {
+        helpPageBadHabits.classList.add('hidden-element');
+    }
+    if (badHabitButtonHabitsPage) {
+        badHabitsPage.classList.add('visible-element');
+    }
+});
+*/
+
+
 if (brakeButtonSettings) {
     brakeButtonSettings.innerHTML = brakeContent;
 }
@@ -400,9 +421,12 @@ if (closeHelpButton) {
 }
 if (closeHelpButtonTmp) {
     closeHelpButtonTmp.innerHTML = crossWhiteContent;
+    console.log("closeHelpButtonTmp", closeHelpButtonTmp);
 }
+console.log("closeHelpButtonBad", closeHelpButtonBad);
 if (closeHelpButtonBad) {
     closeHelpButtonBad.innerHTML = crossWhiteContent;
+    console.log("closeHelpButtonBad", closeHelpButtonBad.innerHTML, crossWhiteContent);
 }
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
