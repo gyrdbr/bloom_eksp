@@ -84,7 +84,7 @@ var gearButton = document.getElementById("help-button-svg");
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
-console.log("showMeButton", showMeButton, tripButton);
+// console.log("showMeButton", showMeButton, tripButton);
 
 /*
 function showMe() {
@@ -121,15 +121,16 @@ function ShowHide() {
 ShowHide.prototype = {
     showMe: function () {
         const allSections = document.getElementsByTagName('section');
+
         const noClassSections = Array.from(allSections).filter(
             section => !section.classList.contains('hidden-element')
         );
 
-        /*
+        
         noClassSections.forEach(section => {
-            console.log(section);
+            console.log("section", section);
         });
-        */
+        
 
         console.log("show me");
     },
@@ -137,15 +138,18 @@ ShowHide.prototype = {
         var hiddenElements  = document.getElementsByClassName('hidden-element');
         var hiddenOne = hiddenElements[0];
 
-        console.log("hideEveryOneElse")
+        console.log("hideEveryOneElse");
     },
     showHideBoth: function () {
-        this.phazeIndex = 0;
+        console.log("showHideBoth");
     }
 }
 
-var showHideElement = new ShowHide();
-showHideElement.showHideBoth();
+var showThisOne = new ShowHide();
+showThisOne.showMe();
+showThisOne.hideEveryOneElse();
+
+
 
 
 function moveTriangle(rect) {
