@@ -275,8 +275,8 @@ chooseGHabitButton.addEventListener('click', function () {
 chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
-
     closeHelpButtonBad.classList.remove('hidden-element');
+
     growingFlowerSettings.classList.add('hidden-element');
   
 });
@@ -344,23 +344,18 @@ closeHelpButtonTmp.addEventListener('click', function () {
     }
 });
 
-
-
-/*
 closeHelpButtonBad.addEventListener('click', function () {
     
     goodHabitSettings.classList.add('hidden-element');
     badHabitSettings.classList.add('hidden-element');
 
     if (helpPageBadHabits) {
-        helpPageBadHabits.classList.add('hidden-element');
+        helpPageBadHabits.classList.add('visible-element');
     }
     if (badHabitButtonHabitsPage) {
-        badHabitsPage.classList.add('visible-element');
+        badHabitsPage.classList.add('hidden-element');
     }
 });
-*/
-
 
 if (brakeButtonSettings) {
     brakeButtonSettings.innerHTML = brakeContent;
