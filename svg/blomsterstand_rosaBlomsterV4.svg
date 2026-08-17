@@ -7,7 +7,7 @@
    id="svg-blomsterstand-group"
    xml:space="preserve"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="blomsterstand_rosaBlomsterV3.svg"
+   sodipodi:docname="blomsterstand_rosaBlomsterV4.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -59,14 +59,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="mm"
    inkscape:zoom="0.5"
-   inkscape:cx="570"
-   inkscape:cy="662"
-   inkscape:window-width="1347"
+   inkscape:cx="571"
+   inkscape:cy="660"
+   inkscape:window-width="1071"
    inkscape:window-height="880"
-   inkscape:window-x="468"
-   inkscape:window-y="256"
+   inkscape:window-x="415"
+   inkscape:window-y="264"
    inkscape:window-maximized="0"
-   inkscape:current-layer="hovedStilkBlomst"
+   inkscape:current-layer="svg-blomsterstand-group"
    showgrid="false" />
  <g
    inkscape:groupmode="layer"
@@ -462,12 +462,6 @@
        inkscape:linked-fill="path63"
        sodipodi:nodetypes="csssssc"
        transform="matrix(1.0623264,0,0,1.0858586,-17.394906,-10.282299)" /><rect
-       style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1-group"
-       width="42.260754"
-       height="213.16785"
-       x="67.703156"
-       y="-8.9508181" /><rect
        style="display:inline;opacity:1;fill:#f4e3d7;stroke:#f5f1e9;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
        id="rect2"
        width="10.549225"
@@ -498,4 +492,11 @@
        ry="2.3366978" /><path
        id="rect2395-7-group"
        style="display:inline;fill:#a05a2c;fill-opacity:1;stroke-width:0.193224"
-       d="m 112.89074,154.51408 0.91933,4.67362 h 63.7992 l 1.00304,-4.67362 z" /></g></g></svg>
+       d="m 112.89074,154.51408 0.91933,4.67362 h 63.7992 l 1.00304,-4.67362 z" /></g></g><rect
+   style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:#f5f1e9;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+   id="rect1-group"
+   width="42.260754"
+   height="213.16785"
+   x="67.703156"
+   y="-8.9508181"
+   sodipodi:insensitive="true" /></svg>
