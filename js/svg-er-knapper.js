@@ -64,10 +64,6 @@ var closeHelpButton = document.getElementById('cross-button-svg');
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
 var closeHelpButtonBad = document.getElementById('cross-button-bad');
 
-console.log("closeHelpButtonTmp", document.getElementById('cross-button-good'), closeHelpButtonTmp);
-
-console.log("closeHelpButtonBad", document.getElementById('cross-button-bad'), closeHelpButtonBad);
-
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
@@ -419,12 +415,10 @@ if (closeHelpButton) {
 }
 if (closeHelpButtonTmp) {
     closeHelpButtonTmp.innerHTML = crossWhiteContent;
-    console.log("closeHelpButtonTmp", closeHelpButtonTmp);
 }
-console.log("closeHelpButtonBad", closeHelpButtonBad);
+
 if (closeHelpButtonBad) {
     closeHelpButtonBad.innerHTML = crossWhiteContent;
-    console.log("closeHelpButtonBad", closeHelpButtonBad.innerHTML, crossWhiteContent);
 }
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
