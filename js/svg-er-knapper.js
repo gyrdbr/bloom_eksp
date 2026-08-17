@@ -86,6 +86,9 @@ var hideMeButton = document.getElementById("hidden-everyone-else");
 
 // console.log("showMeButton", showMeButton, tripButton);
 
+
+// TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
+
 /*
 function showMe() {
     const allSections = document.getElementsByTagName('section');
@@ -148,9 +151,6 @@ ShowHide.prototype = {
 var showThisOne = new ShowHide();
 showThisOne.showMe();
 showThisOne.hideEveryOneElse();
-
-
-
 
 function moveTriangle(rect) {
     var rectLeft = rect.left;
