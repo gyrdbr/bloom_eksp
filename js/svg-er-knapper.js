@@ -88,7 +88,7 @@ function showMe() {
     );
 
     noClassSections.forEach(section => {
-        console.log(section);
+        // console.log(section);
     });
 }
 
