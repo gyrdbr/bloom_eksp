@@ -214,6 +214,20 @@ button.gear-btn {
     height:60px;
 }
 
+
+button#cross-btn-bad {
+    background-color: pink; /* Makes background fully transparent */
+    border: orange;
+    color: #b6d7a8; /* Changes the text color */
+    cursor: pointer; /* Optional: Changes cursor to a hand icon on hover */
+    float: right;
+    padding-right: 1rem;
+    margin-right: 16px;
+    position: relative; 
+    width: 60px;
+    height:60px;
+}
+
 #helpWhite_svg,
 #help_svg {
     width: 50px;

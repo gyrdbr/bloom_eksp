@@ -401,9 +401,11 @@ if (closeHelpButton) {
 if (closeHelpButtonTmp) {
     closeHelpButtonTmp.innerHTML = crossWhiteContent;
 }
+/*
 if (closeHelpButtonBas) {
     closeHelpButtonBad.innerHTML = crossWhiteContent;
 }
+    */
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
 }
