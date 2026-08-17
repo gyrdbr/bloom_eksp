@@ -81,6 +81,9 @@ var chooseBHabitButton = document.getElementById('habitB-button-svg');
 
 var gearButton = document.getElementById("help-button-svg");
 
+var showMeButton = document.getElementById("show-only-one");
+var hideMeButton = document.getElementById("hidden-everyone-else");
+
 function showMe() {
     const allSections = document.getElementsByTagName('section');
     const noClassSections = Array.from(allSections).filter(
@@ -91,7 +94,7 @@ function showMe() {
         console.log(section);
     });
 
-    console.log("show me")
+    // console.log("show me")
 }
 
 function hideEveryOneElse() {
@@ -263,6 +266,8 @@ badHabitButton.addEventListener('click', function () {
 });
 
 chooseGHabitButton.addEventListener('click', function () {
+
+    console.log("closeHelpButtonTmp");
 
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
