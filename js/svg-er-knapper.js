@@ -64,8 +64,9 @@ var closeHelpButton = document.getElementById('cross-button-svg');
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
 var closeHelpButtonBad = document.getElementById('cross-button-bad');
 
-console.log("closeHelpButtonTmp", closeHelpButtonTmp);
-console.log("closeHelpButtonBad", closeHelpButtonBad);
+console.log("closeHelpButtonTmp", document.getElementById('cross-button-good'), closeHelpButtonTmp);
+
+console.log("closeHelpButtonBad", document.getElementById('cross-button-bad'), closeHelpButtonBad);
 
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
@@ -80,6 +81,8 @@ var moveHelpTriangle = document.getElementById('rw-help-triangle');
 var chooseGHabitButton = document.getElementById('habitG-button-svg');
 
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
+
+
 var gearButton = document.getElementById("help-button-svg");
 
 function showMe() {
