@@ -46,6 +46,7 @@ var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
+var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
 
@@ -59,7 +60,10 @@ var helpPage = document.getElementById('rw-help-page');
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
 var closeHelpButton = document.getElementById('cross-button-svg');
+
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
+var closeHelpButtonBad = document.getElementById('cross-button-bad');
+
 var infoText = document.getElementById('rw-info-text');
 var helpText = document.getElementById('rw-settings-text');
 var goodHabitsText = document.getElementById('rw-goodHabits-text');
@@ -265,6 +269,8 @@ chooseGHabitButton.addEventListener('click', function () {
 chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
+
+    closeHelpButtonBad.classList.remove('hidden-element');
     growingFlowerSettings.classList.add('hidden-element');
   
 });
@@ -394,6 +400,9 @@ if (closeHelpButton) {
 }
 if (closeHelpButtonTmp) {
     closeHelpButtonTmp.innerHTML = crossWhiteContent;
+}
+if (closeHelpButtonBas) {
+    closeHelpButtonBad.innerHTML = crossWhiteContent;
 }
 if (playBloomStemButtonTest) {
     playBloomStemButtonTest.innerHTML = carrotContent;
