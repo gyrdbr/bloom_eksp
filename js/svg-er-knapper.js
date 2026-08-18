@@ -84,10 +84,18 @@ var gearButton = document.getElementById("help-button-svg");
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
-// console.log("showMeButton", showMeButton, tripButton);
+var showHideButtons = document.getElementById('rw-show-me');
+
+console.log("showHideButtons", document.getElementById('rw-show-me'));
+
+// TODO
+var goodHabitsSection = document.getElementById("rw-goodHabits-page");
+
+
 
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
+// funker helt likt. maa ha noe som vises som hidden-element"
 
 /*
 function showMe() {
