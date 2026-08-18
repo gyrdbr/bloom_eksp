@@ -84,9 +84,8 @@ var gearButton = document.getElementById("help-button-svg");
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
+// TODO showHideButtons
 var showHideButtons = document.getElementById('rw-show-me');
-
-console.log("showHideButtons", document.getElementById('rw-show-me'));
 
 // TODO
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
@@ -97,7 +96,7 @@ var goodHabitsSection = document.getElementById("rw-goodHabits-page");
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
 // funker helt likt. maa ha noe som vises som hidden-element"
 
-/*
+
 function showMe() {
     const allSections = document.getElementsByTagName('section');
     const noClassSections = Array.from(allSections).filter(
@@ -105,7 +104,7 @@ function showMe() {
     );
 
     noClassSections.forEach(section => {
-        console.log(section);
+        // console.log(section);
     });
 
     // console.log("show me")
@@ -115,18 +114,21 @@ function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
 
+    // console.log("hideEveryOneElse")
+
 }
-*/
+
 
 // TODO: flytte dette er mer passende sted
+
 /*
 showMe();
 hideEveryOneElse();
 */
 
-
+/*
 function ShowHide() {
-    console.log("ShowHide")
+    // console.log("ShowHide")
 }
 
 ShowHide.prototype = {
@@ -139,26 +141,23 @@ ShowHide.prototype = {
 
         
         noClassSections.forEach(section => {
-            console.log("section", section);
+            // console.log("section", section);
         });
-        
-
-        console.log("show me");
     },
     hideEveryOneElse: function() {
         var hiddenElements  = document.getElementsByClassName('hidden-element');
         var hiddenOne = hiddenElements[0];
 
-        console.log("hideEveryOneElse");
     },
     showHideBoth: function () {
-        console.log("showHideBoth");
+        // console.log("showHideBoth");
     }
 }
 
 var showThisOne = new ShowHide();
 showThisOne.showMe();
 showThisOne.hideEveryOneElse();
+*/
 
 function moveTriangle(rect) {
     var rectLeft = rect.left;
@@ -318,11 +317,21 @@ badHabitButton.addEventListener('click', function () {
     badHabitsText.classList.remove("hidden-element");
 });
 
+showHideButtons.addEventListener('click', function () {
+
+    console.log("chooseGHabitButton showHideButtons", goodHabitSettings.classList);
+    showMe();
+    hideEveryOneElse();
+
+});
+
 chooseGHabitButton.addEventListener('click', function () {
 
-    console.log("closeHelpButtonTmp");
-
     goodHabitSettings.classList.remove('hidden-element');
+
+    // console.log("chooseGHabitButton", goodHabitSettings.classList);
+
+
     badHabitSettings.classList.add('hidden-element');
     closeHelpButtonTmp.classList.remove('hidden-element');
 
