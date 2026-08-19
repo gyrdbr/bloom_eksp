@@ -100,29 +100,11 @@ console.log("habitB", document.getElementById("habitB-button-svg"));
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
-
-// TODO showHideButtons
-
 var showHideButtons = document.getElementById('rw-show-me');
 
-// console.log("showHideButtons", document.getElementById("rw-show-me"));
 
 // TODO
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
-
-// console.log("goodHabitsSection", document);
-
-/*
-var habitGButton = document.getElementById("rw-habitG-button");
-var habitBButton = document.getElementById("rw-habitB-button");
-
-console.log("habitGButton", habitGButton);
-*/
-
-// console.log("habitGButton", document.getElementById("rw-habitG-button"););
-
-
-
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
 // funker helt likt. maa ha noe som vises som hidden-element"
@@ -148,47 +130,6 @@ function hideEveryOneElse() {
     // console.log("hideEveryOneElse")
 
 }
-
-
-// TODO: flytte dette er mer passende sted
-
-/*
-showMe();
-hideEveryOneElse();
-*/
-
-/*
-function ShowHide() {
-    // console.log("ShowHide")
-}
-
-ShowHide.prototype = {
-    showMe: function () {
-        const allSections = document.getElementsByTagName('section');
-
-        const noClassSections = Array.from(allSections).filter(
-            section => !section.classList.contains('hidden-element')
-        );
-
-        
-        noClassSections.forEach(section => {
-            // console.log("section", section);
-        });
-    },
-    hideEveryOneElse: function() {
-        var hiddenElements  = document.getElementsByClassName('hidden-element');
-        var hiddenOne = hiddenElements[0];
-
-    },
-    showHideBoth: function () {
-        // console.log("showHideBoth");
-    }
-}
-
-var showThisOne = new ShowHide();
-showThisOne.showMe();
-showThisOne.hideEveryOneElse();
-*/
 
 function moveTriangle(rect) {
     var rectLeft = rect.left;
