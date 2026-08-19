@@ -188,7 +188,16 @@ button.task-btn {
 }
 
 .rw-habit-chosen {
-    outline: 6px solid #B33434;; 
+    outline: 6px solid #B33434;
+}
+
+/* TODO legg paa og fjern avhengig av sensor */
+.rw-habitG-button {
+    outline: 6px solid #B33434;
+}
+
+.rw-habitB-button {
+    outline: 6px solid #B33434;
 }
 
 .gear-icon {
