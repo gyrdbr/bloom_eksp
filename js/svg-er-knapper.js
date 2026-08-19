@@ -74,9 +74,10 @@ var body = document.getElementById('rw-page-header');
 var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
-var chooseGHabitButton = document.getElementById('habitG-button-svg');
 
+var chooseGHabitButton = document.getElementById('habitG-button-svg');
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
+
 var gearButton = document.getElementById("help-button-svg");
 
 var habitG = document.getElementById("habitG-button-svg");
@@ -291,6 +292,7 @@ chooseGHabitButton.addEventListener('click', function () {
 
     // console.log("chooseGHabitButton", goodHabitSettings.classList);
 
+    console.log("chooseBHabitButton");
 
     badHabitSettings.classList.add('hidden-element');
     closeHelpButtonTmp.classList.remove('hidden-element');
@@ -302,6 +304,9 @@ chooseBHabitButton.addEventListener('click', function () {
     badHabitSettings.classList.remove('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
     closeHelpButtonBad.classList.remove('hidden-element');
+
+    console.log("chooseBHabitButton");
+    habitG.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('hidden-element');
   
@@ -384,17 +389,21 @@ closeHelpButtonTmp.addEventListener('click', function () {
 
 habitG.addEventListener('click', function () {
 
-    console.log("habitG", document.getElementById("habitG-button-svg"));
-
-    habitG.style="outline: 6px solid pink;";
+    if (document.getElementById("habitG-button-svg")) {
+        console.log("habitG", document.getElementById("habitG-button-svg"));
+        habitG.style="outline: 6px solid #B33434;";
+    }
 
 });
 
 habitB.addEventListener('click', function () {
 
-    console.log("habitB", document.getElementById("habitB-button-svg"));
-
-    habitB.style="outline: 6px solid pink;";
+    /*
+    if (document.getElementById("habitB-button-svg")) {
+        console.log("habitB", document.getElementById("habitB-button-svg"));
+        habitB.style="outline: 6px solid #B33434;";
+    }
+        */
 
 });
 
