@@ -90,7 +90,16 @@ var showHideButtons = document.getElementById('rw-show-me');
 // TODO
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
 
+/*
 
+.rw-habitB-button {
+    outline: 6px solid #B33434; 
+
+.rw-habitG-button {
+   outline: 6px solid #B33434;
+}
+
+*/
 
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
@@ -294,8 +303,11 @@ infoButton.addEventListener('click', function () {
     }
     infoText.classList.remove("hidden-element");
 });
+
+// console.log("goodHabitButton", goodHabitButton);
 goodHabitButton.addEventListener('click', function () {
 
+    console.log("goodHabitButton");
     // TODO: goodHabitButton
     // vis denne. skjul alle andre
 
@@ -309,6 +321,8 @@ goodHabitButton.addEventListener('click', function () {
 
 });
 badHabitButton.addEventListener('click', function () {
+
+    console.log("goodHabitButton");
     var rect = badHabitButton.getBoundingClientRect();
     moveTriangle(rect);
     for (var i = 0; i < helpDivs.length; i++) {
@@ -495,12 +509,14 @@ if (playBloomStemButtonTest) {
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
-}
-if (badHabitButton) {
-    badHabitButton.innerHTML = lollipopContent;
+    console.log("goodHabitButton", goodHabitButton);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
+    console.log("chooseGHabitButton")
+}
+if (badHabitButton) {
+    badHabitButton.innerHTML = lollipopContent;
 }
 if (chooseBHabitButton) {
     chooseBHabitButton.innerHTML = lollipopContent;
