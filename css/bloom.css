@@ -192,12 +192,12 @@ button.task-btn {
 }
 
 /* TODO legg paa og fjern avhengig av sensor */
-.rw-habitG-button {
-   /* outline: 6px solid #B33434; */
+#habitG-button-svg {
+   outline: 6px solid pink; 
 }
 
-.rw-habitB-button {
-    /* outline: 6px solid #B33434; */
+#habitB-button-svg {
+    outline: 6px solid pink; 
 }
 
 .gear-icon {

@@ -77,29 +77,51 @@ var moveHelpTriangle = document.getElementById('rw-help-triangle');
 var chooseGHabitButton = document.getElementById('habitG-button-svg');
 
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
-
-
 var gearButton = document.getElementById("help-button-svg");
+
+var habitG = document.getElementById("habitG-button-svg");
+var habitB = document.getElementById("habitB-button-svg");
+
+console.log("habitG", document.getElementById("habitG-button-svg"));
+console.log("habitB", document.getElementById("habitB-button-svg"));
+
+
+/*
+
+#habitG-button-svg {
+   outline: 6px solid pink; 
+}
+
+#habitB-button-svg {
+    outline: 6px solid pink; 
+}
+*/
 
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
+
 // TODO showHideButtons
+
 var showHideButtons = document.getElementById('rw-show-me');
+
+// console.log("showHideButtons", document.getElementById("rw-show-me"));
 
 // TODO
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
 
+// console.log("goodHabitsSection", document);
+
 /*
+var habitGButton = document.getElementById("rw-habitG-button");
+var habitBButton = document.getElementById("rw-habitB-button");
 
-.rw-habitB-button {
-    outline: 6px solid #B33434; 
-
-.rw-habitG-button {
-   outline: 6px solid #B33434;
-}
-
+console.log("habitGButton", habitGButton);
 */
+
+// console.log("habitGButton", document.getElementById("rw-habitG-button"););
+
+
 
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
@@ -307,7 +329,7 @@ infoButton.addEventListener('click', function () {
 // console.log("goodHabitButton", goodHabitButton);
 goodHabitButton.addEventListener('click', function () {
 
-    console.log("goodHabitButton");
+    // console.log("goodHabitButton");
     // TODO: goodHabitButton
     // vis denne. skjul alle andre
 
@@ -322,7 +344,7 @@ goodHabitButton.addEventListener('click', function () {
 });
 badHabitButton.addEventListener('click', function () {
 
-    console.log("goodHabitButton");
+    // console.log("goodHabitButton");
     var rect = badHabitButton.getBoundingClientRect();
     moveTriangle(rect);
     for (var i = 0; i < helpDivs.length; i++) {
@@ -333,7 +355,7 @@ badHabitButton.addEventListener('click', function () {
 
 showHideButtons.addEventListener('click', function () {
 
-    console.log("chooseGHabitButton showHideButtons", goodHabitSettings.classList);
+    // console.log("chooseGHabitButton showHideButtons", goodHabitSettings.classList);
     showMe();
     hideEveryOneElse();
 
@@ -509,11 +531,11 @@ if (playBloomStemButtonTest) {
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
-    console.log("goodHabitButton", goodHabitButton);
+    // console.log("goodHabitButton", goodHabitButton);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
-    console.log("chooseGHabitButton")
+    // console.log("chooseGHabitButton")
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
