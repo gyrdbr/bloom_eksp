@@ -75,6 +75,7 @@ var gearIcon = document.getElementById('gear-icon');
 var helpDivs = document.getElementsByClassName('rw-help-text');
 var moveHelpTriangle = document.getElementById('rw-help-triangle');
 
+// TODO fjerne carrot-lollipop-container paa aapnge/skule ved alle slags endringer
 var chooseGHabitButton = document.getElementById('habitG-button-svg');
 var chooseBHabitButton = document.getElementById('habitB-button-svg');
 
@@ -287,15 +288,12 @@ showHideButtons.addEventListener('click', function () {
 });
 
 chooseGHabitButton.addEventListener('click', function () {
-
     goodHabitSettings.classList.remove('hidden-element');
-
-    // console.log("chooseGHabitButton", goodHabitSettings.classList);
-
-    console.log("chooseBHabitButton");
-
     badHabitSettings.classList.add('hidden-element');
     closeHelpButtonTmp.classList.remove('hidden-element');
+
+    console.log("chooseGHabitButton");
+    habitB.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('visible-element');
 
@@ -398,12 +396,10 @@ habitG.addEventListener('click', function () {
 
 habitB.addEventListener('click', function () {
 
-    /*
     if (document.getElementById("habitB-button-svg")) {
         console.log("habitB", document.getElementById("habitB-button-svg"));
-        habitB.style="outline: 6px solid #B33434;";
+        habitB.style="outline: 6px solid yellow;";
     }
-        */
 
 });
 
