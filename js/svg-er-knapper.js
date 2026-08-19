@@ -88,15 +88,10 @@ var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
 var showHideButtons = document.getElementById('rw-show-me');
-
-
-// TODO
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
 // funker helt likt. maa ha noe som vises som hidden-element"
-
-
 function showMe() {
     const allSections = document.getElementsByTagName('section');
     const noClassSections = Array.from(allSections).filter(
@@ -107,7 +102,6 @@ function showMe() {
         // console.log(section);
     });
 
-    // console.log("show me")
 }
 
 function hideEveryOneElse() {
@@ -252,12 +246,7 @@ infoButton.addEventListener('click', function () {
     infoText.classList.remove("hidden-element");
 });
 
-// console.log("goodHabitButton", goodHabitButton);
 goodHabitButton.addEventListener('click', function () {
-
-    // console.log("goodHabitButton");
-    // TODO: goodHabitButton
-    // vis denne. skjul alle andre
 
     var rect = goodHabitButton.getBoundingClientRect();
     moveTriangle(rect);
@@ -281,7 +270,6 @@ badHabitButton.addEventListener('click', function () {
 
 showHideButtons.addEventListener('click', function () {
 
-    // console.log("chooseGHabitButton showHideButtons", goodHabitSettings.classList);
     showMe();
     hideEveryOneElse();
 
@@ -373,18 +361,6 @@ closeHelpButtonTmp.addEventListener('click', function () {
     }
 });
 
-/* 
-#habitG-button-svg {
-   outline: 6px solid pink; 
-}
-
-#habitB-button-svg {
-    outline: 6px solid pink; 
-}
-*/
-
-// TODO Her skal det settes av og paa a la closeHelpButtonBad slik at fargen gaar av og paa
-
 habitG.addEventListener('click', function () {
 
     if (document.getElementById("habitG-button-svg")) {
@@ -398,7 +374,7 @@ habitB.addEventListener('click', function () {
 
     if (document.getElementById("habitB-button-svg")) {
         console.log("habitB", document.getElementById("habitB-button-svg"));
-        habitB.style="outline: 6px solid yellow;";
+        habitB.style="outline: 6px solid #B33434;";
     }
 
 });
