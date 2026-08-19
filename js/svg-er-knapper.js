@@ -89,6 +89,8 @@ var habitG = document.getElementById("habitG-button-svg");
 var taskButtonG = document.getElementById("habitG-button-svg");
 var taskButtonB = document.getElementById("habitB-button-svg");
 
+console.log("taskButtonG", taskButtonG);
+
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
