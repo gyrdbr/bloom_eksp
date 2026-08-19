@@ -82,21 +82,6 @@ var gearButton = document.getElementById("help-button-svg");
 var habitG = document.getElementById("habitG-button-svg");
 var habitB = document.getElementById("habitB-button-svg");
 
-console.log("habitG", document.getElementById("habitG-button-svg"));
-console.log("habitB", document.getElementById("habitB-button-svg"));
-
-
-/*
-
-#habitG-button-svg {
-   outline: 6px solid pink; 
-}
-
-#habitB-button-svg {
-    outline: 6px solid pink; 
-}
-*/
-
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
@@ -126,8 +111,6 @@ function showMe() {
 function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
-
-    // console.log("hideEveryOneElse")
 
 }
 
@@ -385,6 +368,34 @@ closeHelpButtonTmp.addEventListener('click', function () {
     if (goodHabitsPage) {
         goodHabitsPage.classList.add('visible-element');
     }
+});
+
+/* 
+#habitG-button-svg {
+   outline: 6px solid pink; 
+}
+
+#habitB-button-svg {
+    outline: 6px solid pink; 
+}
+*/
+
+// TODO Her skal det settes av og paa a la closeHelpButtonBad slik at fargen gaar av og paa
+
+habitG.addEventListener('click', function () {
+
+    console.log("habitG", document.getElementById("habitG-button-svg"));
+
+    habitG.style="outline: 6px solid pink;";
+
+});
+
+habitB.addEventListener('click', function () {
+
+    console.log("habitB", document.getElementById("habitB-button-svg"));
+
+    habitB.style="outline: 6px solid pink;";
+
 });
 
 closeHelpButtonBad.addEventListener('click', function () {
