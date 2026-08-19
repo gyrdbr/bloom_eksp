@@ -84,6 +84,11 @@ var gearButton = document.getElementById("help-button-svg");
 var habitG = document.getElementById("habitG-button-svg");
 var habitB = document.getElementById("habitB-button-svg");
 
+var habitG = document.getElementById("habitG-button-svg");
+
+var taskButtonG = document.getElementById("habitG-button-svg");
+var taskButtonB = document.getElementById("habitB-button-svg");
+
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
@@ -259,7 +264,6 @@ goodHabitButton.addEventListener('click', function () {
 });
 badHabitButton.addEventListener('click', function () {
 
-    // console.log("goodHabitButton");
     var rect = badHabitButton.getBoundingClientRect();
     moveTriangle(rect);
     for (var i = 0; i < helpDivs.length; i++) {
@@ -363,8 +367,9 @@ closeHelpButtonTmp.addEventListener('click', function () {
 
 habitG.addEventListener('click', function () {
 
+    console.log("habitG", document.getElementById("habitG-button-svg"));
     if (document.getElementById("habitG-button-svg")) {
-        console.log("habitG", document.getElementById("habitG-button-svg"));
+        
         habitG.style="outline: 6px solid #B33434;";
     }
 
@@ -372,8 +377,9 @@ habitG.addEventListener('click', function () {
 
 habitB.addEventListener('click', function () {
 
+    console.log("habitB", document.getElementById("habitB-button-svg"));
     if (document.getElementById("habitB-button-svg")) {
-        console.log("habitB", document.getElementById("habitB-button-svg"));
+
         habitB.style="outline: 6px solid #B33434;";
     }
 
@@ -464,11 +470,14 @@ if (playBloomStemButtonTest) {
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
-    // console.log("goodHabitButton", goodHabitButton);
+    console.log("goodHabitButton", goodHabitButton);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
-    // console.log("chooseGHabitButton")
+    habitG.style="outline: 1px transparent";
+
+    console.log("chooseGHabitButton")
+    console.log(habitG);
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
