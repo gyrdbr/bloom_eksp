@@ -47,9 +47,13 @@ var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
 
+// console.log("helpPageGoodHabits", document.getElementById('cross-button-good'))
+
 // TODO id="rw-wholeInflorecence"
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
 var growingFlower = document.getElementById('rw-growingFlower-page');
+
+// console.log("chooseGHabitButton good");
 
 // var giHabits = document.getElementsByClassName("rw-giHabits-page");
 
@@ -69,8 +73,8 @@ var helpPage = document.getElementById('rw-help-page');
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
 var closeHelpButton = document.getElementById('cross-button-svg');
-
 var closeHelpButtonTmp = document.getElementById('cross-button-good');
+
 var closeHelpButtonBad = document.getElementById('cross-button-bad');
 
 var infoText = document.getElementById('rw-info-text');
@@ -118,12 +122,35 @@ function showMe() {
         // console.log(section);
     });
 
+    // console.log("showMe");
+
 }
 
 function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
+
+    // console.log("hideEveryOneElse");
+
+    // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
+
+    // document.getElementById("rw-wholeInflorecence");
+
+    if (document.getElementById("habitG-button-svg")) {
+
+        console.log("wholeInflorecence");
+
+        wholeInflorecence.classList.remove('hidden-element');
+    }
+
 }
+
+showHideButtons.addEventListener('click', function () {
+
+    showMe();
+    hideEveryOneElse();
+
+});
 
 function moveTriangle(rect) {
     var rectLeft = rect.left;
@@ -283,19 +310,9 @@ badHabitButton.addEventListener('click', function () {
     badHabitsText.classList.remove("hidden-element");
 });
 
-showHideButtons.addEventListener('click', function () {
-
-    showMe();
-    hideEveryOneElse();
-
-    console.log("showMe growingFlower", document.getElementById("rw-growingFlower-page"));
-
-    console.log("showMe wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
-
-});
-
 // TODO: hvordan kalles denne naar chooseGHabitButton lukkes
 //  og wholeInflorecence aapnes
+/*
 wholeInflorecence.addEventListener('click', function () {
     console.log("wholeInflorecence");
 
@@ -304,6 +321,7 @@ wholeInflorecence.addEventListener('click', function () {
         // wholeInflorecence.classList.remove('hidden-element');
     }
 });
+*/
 
 chooseGHabitButton.addEventListener('click', function () {
 
@@ -313,17 +331,9 @@ chooseGHabitButton.addEventListener('click', function () {
     
     closeHelpButtonTmp.classList.remove('hidden-element');
 
-    /*
-    console.log("goodHabitSettings.classList.remove('hidden-element');", goodHabitSettings,
-        goodHabitSettings.classList);
-    */
-
-    // console.log("chooseGHabitButton");
     habitB.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('visible-element');
-
-    // wholeInflorecence.classList.remove('hidden-element');
 
 });
 chooseBHabitButton.addEventListener('click', function () {
@@ -331,7 +341,6 @@ chooseBHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.add('hidden-element');
     closeHelpButtonBad.classList.remove('hidden-element');
 
-    // console.log("chooseBHabitButton");
     habitG.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('hidden-element');
