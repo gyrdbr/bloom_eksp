@@ -49,10 +49,11 @@ var helpPageGoodHabits = document.getElementById('cross-button-good');
 
 // TODO id="rw-wholeInflorecence"
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
-var giHabits = document.getElementsByClassName("rw-giHabits-page");
+var growingFlower = document.getElementById('rw-growingFlower-page');
+
+// var giHabits = document.getElementsByClassName("rw-giHabits-page");
 
 // console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
-// console.log("giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
 
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
@@ -287,9 +288,9 @@ showHideButtons.addEventListener('click', function () {
     showMe();
     hideEveryOneElse();
 
-    console.log("showMe wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
-    console.log("showMe giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
+    console.log("showMe growingFlower", document.getElementById("rw-growingFlower-page"));
 
+    console.log("showMe wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
 
 });
 
