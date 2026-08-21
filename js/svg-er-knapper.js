@@ -49,8 +49,10 @@ var helpPageGoodHabits = document.getElementById('cross-button-good');
 
 // TODO id="rw-wholeInflorecence"
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
+var giHabits = document.getElementsByClassName("rw-giHabits-page");
 
 console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
+console.log("giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
 
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
@@ -151,6 +153,7 @@ tripButton.addEventListener('click', function () {
     // TODO: fjern alle hidden-element. Skjule&vus elementer ikke med styling, men funksjonelt 
     badHabitSettings.classList.add('hidden-element');
     goodHabitSettings.classList.add('hidden-element');
+
     growingFlowerSettings.classList.remove('hidden-element');
 });
 brakeButtonSettings.addEventListener('click', function () {
@@ -292,15 +295,22 @@ showHideButtons.addEventListener('click', function () {
 wholeInflorecence.addEventListener('click', function () {
     console.log("wholeInflorecence");
 
-    wholeInflorecence.classList.remove('hidden-element');
+    if (document.getElementById("habitG-button-svg")) {
+
+        // wholeInflorecence.classList.remove('hidden-element');
+    }
 });
 
 chooseGHabitButton.addEventListener('click', function () {
+
     goodHabitSettings.classList.remove('hidden-element');
+
     badHabitSettings.classList.add('hidden-element');
+    
     closeHelpButtonTmp.classList.remove('hidden-element');
 
-    console.log("goodHabitSettings.classList.remove('hidden-element');", goodHabitSettings)
+    console.log("goodHabitSettings.classList.remove('hidden-element');", goodHabitSettings,
+        goodHabitSettings.classList);
 
     console.log("chooseGHabitButton");
     habitB.style="outline: 1px transparent";
