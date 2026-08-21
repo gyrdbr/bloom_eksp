@@ -136,12 +136,14 @@ function hideEveryOneElse() {
 
     // document.getElementById("rw-wholeInflorecence");
 
+    
     if (document.getElementById("habitG-button-svg")) {
 
         console.log("wholeInflorecence");
 
         wholeInflorecence.classList.remove('hidden-element');
     }
+        
 
 }
 
@@ -312,7 +314,6 @@ badHabitButton.addEventListener('click', function () {
 
 // TODO: hvordan kalles denne naar chooseGHabitButton lukkes
 //  og wholeInflorecence aapnes
-/*
 wholeInflorecence.addEventListener('click', function () {
     console.log("wholeInflorecence");
 
@@ -321,7 +322,7 @@ wholeInflorecence.addEventListener('click', function () {
         // wholeInflorecence.classList.remove('hidden-element');
     }
 });
-*/
+
 
 chooseGHabitButton.addEventListener('click', function () {
 
@@ -334,6 +335,8 @@ chooseGHabitButton.addEventListener('click', function () {
     habitB.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('visible-element');
+
+    // wholeInflorecence.classList.remove('hidden-element');
 
 });
 chooseBHabitButton.addEventListener('click', function () {
