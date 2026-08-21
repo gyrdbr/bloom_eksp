@@ -124,6 +124,8 @@ function showMe() {
         // console.log(section);
     });
 
+    // TODO kan man ta html av og paa. maa jo gaa?
+    // sjekk noen game filer
     // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
 
     // document.getElementById("rw-wholeInflorecence");
