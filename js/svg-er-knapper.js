@@ -122,7 +122,6 @@ function showMe() {
 function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
-
 }
 
 function moveTriangle(rect) {
@@ -287,6 +286,10 @@ showHideButtons.addEventListener('click', function () {
 
     showMe();
     hideEveryOneElse();
+
+    console.log("showMe wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
+    console.log("showMe giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
+
 
 });
 
