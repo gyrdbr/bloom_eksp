@@ -124,7 +124,16 @@ function showMe() {
         // console.log(section);
     });
 
-    // console.log("showMe");
+    // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
+
+    // document.getElementById("rw-wholeInflorecence");
+
+    if (document.getElementById("habitG-button-svg")) {
+
+        console.log("showMe wholeInflorecence");
+
+        // wholeInflorecence.classList.remove('hidden-element');
+    } 
 
 }
 
@@ -134,19 +143,17 @@ function hideEveryOneElse() {
 
     // console.log("hideEveryOneElse");
 
-    // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
 
-    // document.getElementById("rw-wholeInflorecence");
-
-    
+    /*
     if (document.getElementById("habitG-button-svg")) {
 
-        console.log("wholeInflorecence");
+        console.log("showMe wholeInflorecence");
 
-        // wholeInflorecence.classList.remove('hidden-element');
+        wholeInflorecence.classList.add('hidden-element');
     }
+        */
         
-
+        
 }
 
 showHideButtons.addEventListener('click', function () {
@@ -349,7 +356,7 @@ wholeInflorecence.addEventListener('click', function () {
 
     if (document.getElementById("habitG-button-svg")) {
 
-        // wholeInflorecence.classList.remove('hidden-element');
+        wholeInflorecence.classList.add('hidden-element');
     }
 });
 
@@ -418,6 +425,11 @@ closeHelpButtonTmp.addEventListener('click', function () {
         goodHabitsPage.classList.add('visible-element');
     }
 });
+
+
+        
+habitG.style="outline: 6px solid #B33434;";
+
 
 habitG.addEventListener('click', function () {
 
