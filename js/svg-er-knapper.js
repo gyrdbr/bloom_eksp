@@ -51,8 +51,8 @@ var helpPageGoodHabits = document.getElementById('cross-button-good');
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
 var giHabits = document.getElementsByClassName("rw-giHabits-page");
 
-console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
-console.log("giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
+// console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
+// console.log("giHabits", document.getElementsByClassName("rw-giHabits-page")[0]);
 
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
@@ -312,10 +312,12 @@ chooseGHabitButton.addEventListener('click', function () {
     
     closeHelpButtonTmp.classList.remove('hidden-element');
 
+    /*
     console.log("goodHabitSettings.classList.remove('hidden-element');", goodHabitSettings,
         goodHabitSettings.classList);
+    */
 
-    console.log("chooseGHabitButton");
+    // console.log("chooseGHabitButton");
     habitB.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('visible-element');
@@ -328,7 +330,7 @@ chooseBHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.add('hidden-element');
     closeHelpButtonBad.classList.remove('hidden-element');
 
-    console.log("chooseBHabitButton");
+    // console.log("chooseBHabitButton");
     habitG.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('hidden-element');
@@ -400,7 +402,7 @@ closeHelpButtonTmp.addEventListener('click', function () {
 
 habitG.addEventListener('click', function () {
 
-    console.log("habitG", document.getElementById("habitG-button-svg"));
+    // console.log("habitG", document.getElementById("habitG-button-svg"));
     if (document.getElementById("habitG-button-svg")) {
         
         habitG.style="outline: 6px solid #B33434;";
@@ -410,7 +412,7 @@ habitG.addEventListener('click', function () {
 
 habitB.addEventListener('click', function () {
 
-    console.log("habitB", document.getElementById("habitB-button-svg"));
+    // console.log("habitB", document.getElementById("habitB-button-svg"));
     if (document.getElementById("habitB-button-svg")) {
 
         habitB.style="outline: 6px solid #B33434;";
@@ -503,14 +505,14 @@ if (playBloomStemButtonTest) {
 }
 if (goodHabitButton) {
     goodHabitButton.innerHTML = carrotContent;
-    console.log("goodHabitButton", goodHabitButton);
+    // console.log("goodHabitButton", goodHabitButton);
 }
 if (chooseGHabitButton) {
     chooseGHabitButton.innerHTML = carrotContent;
     habitG.style="outline: 1px transparent";
 
-    console.log("chooseGHabitButton")
-    console.log(habitG);
+    // console.log("chooseGHabitButton")
+    // console.log(habitG);
 }
 if (badHabitButton) {
     badHabitButton.innerHTML = lollipopContent;
