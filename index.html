@@ -262,13 +262,8 @@
       </div>
    </section>
 
-   <input type="text" id="username" value="Alex">
-   <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
-      Hei ho
-   </section>
-   <button onclick="logInput()">Log Input</button>
 
-
+<!-- 
    <script>
       function logInput() {
          let inputVal = document.getElementById("username").value;
@@ -287,6 +282,14 @@
 
       // console.log(5 + 10); // Logs: 15
    </script>
+   -->
+
+   <input type="text" id="username" value="Alex">
+   <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
+      Hoppsan
+   </section>
+   <button onclick="logInput()">Log Input</button>
+
 
    <!-- TODO: fjerner hidden-elementX -->
    <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
@@ -808,7 +811,26 @@
       </div>
    </section>
 
-   <section class="rw-section rw-badHabits-page rw-flower-page hidden-element" id="rw-growingFlower-page">
+   <script>
+      function logInput() {
+         let inputVal = document.getElementById("username").value;
+         let inputVal3 = document.getElementById("wholeInflorecence").value;
+
+         console.log("User entered:", inputVal);
+
+         console.log(5 + 10); // Logs: 15
+      }
+
+      var wholeInflorecence3 = document.getElementById("rw-wholeInflorecence");
+
+      wholeInflorecence3.classList.remove('hidden-element');
+
+      console.log("wholeInflorecence3", wholeInflorecence3);
+
+      // console.log(5 + 10); // Logs: 15
+   </script>
+
+   <section class="rw-section rw-badHabits-page rw-flower-page hidden-element" id="rw-growingFlower-pageX">
       <div class="rw-icon-list">
          <div class="frame-container-flower">
 
