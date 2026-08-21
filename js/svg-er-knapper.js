@@ -49,15 +49,7 @@ var helpPageGoodHabits = document.getElementById('cross-button-good');
 
 // console.log("helpPageGoodHabits", document.getElementById('cross-button-good'))
 
-// TODO id="rw-wholeInflorecence"
-var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
-var growingFlower = document.getElementById('rw-growingFlower-page');
 
-// console.log("chooseGHabitButton good");
-
-// var giHabits = document.getElementsByClassName("rw-giHabits-page");
-
-// console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
 
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
@@ -69,6 +61,16 @@ var gameButton = document.getElementById('game-button');
 var readButton = document.getElementById('read-button');
 
 var helpPage = document.getElementById('rw-help-page');
+
+// TODO id="rw-wholeInflorecence"
+var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
+var growingFlower = document.getElementById('rw-growingFlower-page');
+
+// console.log("chooseGHabitButton good");
+
+// var giHabits = document.getElementsByClassName("rw-giHabits-page");
+
+// console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
 
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
@@ -141,7 +143,7 @@ function hideEveryOneElse() {
 
         console.log("wholeInflorecence");
 
-        wholeInflorecence.classList.remove('hidden-element');
+        // wholeInflorecence.classList.remove('hidden-element');
     }
         
 
@@ -312,16 +314,6 @@ badHabitButton.addEventListener('click', function () {
     badHabitsText.classList.remove("hidden-element");
 });
 
-// TODO: hvordan kalles denne naar chooseGHabitButton lukkes
-//  og wholeInflorecence aapnes
-wholeInflorecence.addEventListener('click', function () {
-    console.log("wholeInflorecence");
-
-    if (document.getElementById("habitG-button-svg")) {
-
-        // wholeInflorecence.classList.remove('hidden-element');
-    }
-});
 
 
 chooseGHabitButton.addEventListener('click', function () {
@@ -349,7 +341,21 @@ chooseBHabitButton.addEventListener('click', function () {
     growingFlowerSettings.classList.add('hidden-element');
   
 });
+
+// TODO: hvordan kalles denne naar chooseGHabitButton lukkes
+//  og wholeInflorecence aapnes
+wholeInflorecence.addEventListener('click', function () {
+    console.log("wholeInflorecence");
+
+    if (document.getElementById("habitG-button-svg")) {
+
+        // wholeInflorecence.classList.remove('hidden-element');
+    }
+});
+
 gearButton.addEventListener('click', function () {
+
+    console.log("gearButton");
     if (helpPage) {
         helpPage.classList.remove('hidden-element');
         helpPage.classList.add('visible-element');
