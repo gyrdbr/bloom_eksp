@@ -287,7 +287,8 @@ showHideButtons.addEventListener('click', function () {
 
 });
 
-
+// TODO: hvordan kalles denne naar chooseGHabitButton lukkes
+//  og wholeInflorecence aapnes
 wholeInflorecence.addEventListener('click', function () {
     console.log("wholeInflorecence");
 
