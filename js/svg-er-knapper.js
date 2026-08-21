@@ -46,6 +46,12 @@ var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
+
+// TODO id="rw-wholeInflorecence"
+var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
+
+console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
+
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
@@ -89,13 +95,13 @@ var habitG = document.getElementById("habitG-button-svg");
 var taskButtonG = document.getElementById("habitG-button-svg");
 var taskButtonB = document.getElementById("habitB-button-svg");
 
-console.log("taskButtonG", taskButtonG);
-
 var showMeButton = document.getElementById("show-only-one");
 var hideMeButton = document.getElementById("hidden-everyone-else");
 
 var showHideButtons = document.getElementById('rw-show-me');
 var goodHabitsSection = document.getElementById("rw-goodHabits-page");
+
+
 
 // TODO sjekk hvordan dette funka med showMe, hideEveryOneElse, showMe, hideEveryOneElse
 // funker helt likt. maa ha noe som vises som hidden-element"
@@ -281,15 +287,26 @@ showHideButtons.addEventListener('click', function () {
 
 });
 
+
+wholeInflorecence.addEventListener('click', function () {
+    console.log("wholeInflorecence");
+
+    wholeInflorecence.classList.remove('hidden-element');
+});
+
 chooseGHabitButton.addEventListener('click', function () {
     goodHabitSettings.classList.remove('hidden-element');
     badHabitSettings.classList.add('hidden-element');
     closeHelpButtonTmp.classList.remove('hidden-element');
 
+    console.log("goodHabitSettings.classList.remove('hidden-element');", goodHabitSettings)
+
     console.log("chooseGHabitButton");
     habitB.style="outline: 1px transparent";
 
     growingFlowerSettings.classList.add('visible-element');
+
+    // wholeInflorecence.classList.remove('hidden-element');
 
 });
 chooseBHabitButton.addEventListener('click', function () {
