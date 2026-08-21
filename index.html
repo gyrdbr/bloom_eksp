@@ -789,14 +789,27 @@
    <input type="text" id="username" value="Alex">
    <button onclick="logInput()">Log Input</button>
 
+   <p>Click to trigger a function that will output "Hello World":</p>
+
+   <button onclick="myFunction()">Click me</button>
+
+   <p id="demo"></p>
+
    <script>
+      function myFunction() {
+         document.getElementById("demo").innerHTML = "Go there";
+      }
+
       function logInput() {
          let inputVal = document.getElementById("username").value;
          let inputVal3 = document.getElementById("wholeInflorecence").value;
 
+         document.getElementById("demo").innerHTML = "Go there To";
+
          console.log("User entered:", inputVal);
 
          console.log(5 + 10); // Logs: 15
+
       }
 
       var wholeInflorecence3 = document.getElementById("rw-wholeInflorecence");
