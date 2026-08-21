@@ -262,11 +262,30 @@
       </div>
    </section>
 
+   <input type="text" id="username" value="Alex">
+   <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="testMe" value="AlexXXX">
+      Hall ho
+   </section>
+   <button onclick="logInput()">Log Input</button>
+
+
    <script>
-      let user = { name: "Sarah", age: 28 };
-  
-      console.log(5 + 10); // Logs: 15
-      console.log(user);   // Logs the full object data
+      function logInput() {
+         let inputVal = document.getElementById("username").value;
+         let inputVal2 = document.getElementById("testMe").value;
+
+         console.log("User entered:", inputVal);
+
+         console.log(5 + 10); // Logs: 15
+      }
+
+      var testMe2 = document.getElementById("testMe");
+
+      testMe2.classList.remove('hidden-element');
+
+      console.log("testMe2", testMe2);
+
+      // console.log(5 + 10); // Logs: 15
    </script>
 
    <!-- TODO: fjerner hidden-elementX -->
