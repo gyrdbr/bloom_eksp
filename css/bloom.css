@@ -92,6 +92,10 @@ body {
     background-color: pink;
 }
 
+.rw-habit-chosen {
+    outline: 6px solid #B33434;
+    outline: 2px solid #b33489;
+}
 
 .full-page-element {
   height: 100vh; /* Fills the entire visible browser window height */
@@ -204,11 +208,6 @@ button.task-btn {
     width: 52px;
     height:50px;
     position: relative; 
-}
-
-.rw-habit-chosen {
-    outline: 6px solid #B33434;
-    outline: 2px solid #b33489;
 }
 
 
