@@ -74,6 +74,25 @@ body {
   display: block;
 }
 
+#lollipopWhite_svg,
+#lollipop_svg {
+    width: 42px;
+    position: absolute;
+    left: -2px;
+    top: -1px;
+    background-color: pink;
+}
+
+#carrotWhite_svg,
+#carrot_svg {
+    width: 47px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: pink;
+}
+
+
 .full-page-element {
   height: 100vh; /* Fills the entire visible browser window height */
 }
@@ -189,7 +208,9 @@ button.task-btn {
 
 .rw-habit-chosen {
     outline: 6px solid #B33434;
+    outline: 2px solid #b33489;
 }
+
 
 /* TODO legg paa og fjern avhengig av sensor */
 #habitG-button-svg {
@@ -246,21 +267,7 @@ button#cross-btn-bad {
     top: -2px;
 }
 
-#lollipopWhite_svg,
-#lollipop_svg {
-    width: 42px;
-    position: absolute;
-    left: -2px;
-    top: -1px;
-}
 
-#carrotWhite_svg,
-#carrot_svg {
-    width: 47px;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
 
 #info_svg {
     width: 17px;

@@ -261,6 +261,22 @@
          </div>
       </div>
    </section>
+
+   <input type="text" id="username" value="Alex">
+   <button onclick="myFunction()">Click me</button>
+
+   <script>
+      function myFunction() {
+         let inputVal = document.getElementById("username").value;
+         let wholeInflorecence3 = document.getElementById("rw-wholeInflorecence");
+
+         wholeInflorecence3.classList.remove('hidden-element');
+
+         let inputVal2 = document.getElementById("wholeInflorecence").value;
+
+         console.log(5 + 10, 10); // Logs: 
+      }
+   </script>
   
    <!-- TODO: Hoppsan slaar seg til en gang.  Hvordan kan det gjoeeres hver gang -->
    <!-- TODO: fjerner hidden-elementX -->
@@ -785,22 +801,6 @@
         </div>
       </div>
    </section>
-
-   <input type="text" id="username" value="Alex">
-   <button onclick="myFunction()">Click me</button>
-
-   <script>
-      function myFunction() {
-         let inputVal = document.getElementById("username").value;
-         let wholeInflorecence3 = document.getElementById("rw-wholeInflorecence");
-
-         wholeInflorecence3.classList.remove('hidden-element');
-
-         let inputVal2 = document.getElementById("wholeInflorecence").value;
-
-         console.log(5 + 10, 10); // Logs: 
-      }
-   </script>
 
    <section class="rw-section rw-badHabits-page rw-flower-page hidden-element" id="rw-growingFlower-pageX">
       <div class="rw-icon-list">

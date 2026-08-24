@@ -46,11 +46,6 @@ var lightButton = document.getElementById('lightbulb-button-svg');
 var goodHabitButton = document.getElementById('help-Ghabit-button');
 
 var helpPageGoodHabits = document.getElementById('cross-button-good');
-
-// console.log("helpPageGoodHabits", document.getElementById('cross-button-good'))
-
-
-
 var helpPageBadHabits = document.getElementById('cross-button-bad');
 var helpGapeGoodHide = document.getElementById('rw-good-habits-page');
 var playBloomStemButtonTest = document.getElementsByClassName('stilkName')[0];
@@ -62,15 +57,11 @@ var readButton = document.getElementById('read-button');
 
 var helpPage = document.getElementById('rw-help-page');
 
+// TODO Bruk Hoppsan og endre hvilken som brukes. Bruk carrot avhengig av hvilen
+// som brukes. Bruk carrot for naa bruker. Finne ut hvor denne er gjort.  Saan sam denne 
 // TODO id="rw-wholeInflorecence"
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
 var growingFlower = document.getElementById('rw-growingFlower-page');
-
-// console.log("chooseGHabitButton good");
-
-// var giHabits = document.getElementsByClassName("rw-giHabits-page");
-
-// console.log("wholeInflorecence", document.getElementById("rw-wholeInflorecence"));
 
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
