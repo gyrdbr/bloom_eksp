@@ -419,8 +419,9 @@ closeHelpButtonTmp.addEventListener('click', function () {
     }
 });
 
+// TODO: outline: 6px solid #B33434;" 
+// hide and show carrur n.n.
 
-        
 habitG.style="outline: 6px solid #B33434;";
 
 
