@@ -80,7 +80,7 @@ body {
     position: absolute;
     left: -2px;
     top: -1px;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 #carrotWhite_svg,
@@ -89,7 +89,11 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: pink;
+    /* background-color: pink; */
+}
+
+#habitG-button-svg {
+    outline: 6px solid #b33489;
 }
 
 .rw-habit-chosen {
