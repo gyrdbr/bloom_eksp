@@ -74,23 +74,7 @@ body {
   display: block;
 }
 
-#lollipopWhite_svg,
-#lollipop_svg {
-    width: 42px;
-    position: absolute;
-    left: -2px;
-    top: -1px;
-    /* background-color: pink; */
-}
 
-#carrotWhite_svg,
-#carrot_svg {
-    width: 47px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    /* background-color: pink; */
-}
 
 #habitG-button-svg {
     outline: 6px solid #b33489;
@@ -270,7 +254,21 @@ button#cross-btn-bad {
     top: -2px;
 }
 
+#lollipopWhite_svg,
+#lollipop_svg {
+    width: 42px;
+    position: absolute;
+    left: -2px;
+    top: -1px;
+}
 
+#carrotWhite_svg,
+#carrot_svg {
+    width: 47px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 #info_svg {
     width: 17px;
