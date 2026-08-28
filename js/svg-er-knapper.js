@@ -421,6 +421,7 @@ closeHelpButtonTmp.addEventListener('click', function () {
 
 // TODO: outline: 6px solid #B33434;" 
 // hide and show carrur n.n.
+// hoppga 
 
 habitG.style="outline: 6px solid #B33434;";
 
