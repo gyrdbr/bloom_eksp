@@ -92,10 +92,7 @@ var habitB = document.getElementById("habitB-button-svg");
 
 var habitG = document.getElementById("habitG-button-svg");
 
-console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 
-// consolg.console("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
-/// console.console('habitG.style="outline: 6px solid #B33434;";', habitG.style)
 
 var taskButtonG = document.getElementById("habitG-button-svg");
 var taskButtonB = document.getElementById("habitB-button-svg");
@@ -133,6 +130,7 @@ function showMe() {
         // wholeInflorecence.classList.remove('hidden-element');
     } 
 
+    console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
     
 }
 
@@ -155,14 +153,38 @@ function hideEveryOneElse() {
         console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 }
 
-//consolg.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
-
-
 showHideButtons.addEventListener('click', function () {
 
     showMe();
     hideEveryOneElse();
-    console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+
+});
+
+console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+
+// TODO: outline: 6px solid #B33434;" 
+// hide and show carrur n.n.
+// hoppga 
+
+habitG.style="outline: 6px solid #B33434;";
+
+habitG.addEventListener('click', function () {
+
+    console.log("habitG", document.getElementById("habitG-button-svg"));
+    if (document.getElementById("habitG-button-svg")) {
+        
+        habitG.style="outline: 6px solid #B33434;";
+    }
+
+});
+
+habitB.addEventListener('click', function () {
+
+    console.log("habitB", document.getElementById("habitB-button-svg"));
+    if (document.getElementById("habitB-button-svg")) {
+
+        habitB.style="outline: 6px solid #B33434;";
+    }
 
 });
 
@@ -429,32 +451,7 @@ closeHelpButtonTmp.addEventListener('click', function () {
     }
 });
 
-// TODO: outline: 6px solid #B33434;" 
-// hide and show carrur n.n.
-// hoppga 
 
-habitG.style="outline: 6px solid #B33434;";
-
-
-habitG.addEventListener('click', function () {
-
-    // console.log("habitG", document.getElementById("habitG-button-svg"));
-    if (document.getElementById("habitG-button-svg")) {
-        
-        habitG.style="outline: 6px solid #B33434;";
-    }
-
-});
-
-habitB.addEventListener('click', function () {
-
-    // console.log("habitB", document.getElementById("habitB-button-svg"));
-    if (document.getElementById("habitB-button-svg")) {
-
-        habitB.style="outline: 6px solid #B33434;";
-    }
-
-});
 
 closeHelpButtonBad.addEventListener('click', function () {
     
