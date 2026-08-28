@@ -92,6 +92,11 @@ var habitB = document.getElementById("habitB-button-svg");
 
 var habitG = document.getElementById("habitG-button-svg");
 
+console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+
+// consolg.console("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+/// console.console('habitG.style="outline: 6px solid #B33434;";', habitG.style)
+
 var taskButtonG = document.getElementById("habitG-button-svg");
 var taskButtonB = document.getElementById("habitB-button-svg");
 
@@ -119,7 +124,7 @@ function showMe() {
     // sjekk noen game filer
     // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
 
-    // document.getElementById("rw-wholeInflorecence");
+    document.getElementById("rw-wholeInflorecence");
 
     if (document.getElementById("habitG-button-svg")) {
 
@@ -128,31 +133,36 @@ function showMe() {
         // wholeInflorecence.classList.remove('hidden-element');
     } 
 
+    
 }
 
 function hideEveryOneElse() {
     var hiddenElements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
 
-    // console.log("hideEveryOneElse");
+    console.log("hideEveryOneElse");
 
 
-    /*
+    
     if (document.getElementById("habitG-button-svg")) {
 
         console.log("showMe wholeInflorecence");
 
         wholeInflorecence.classList.add('hidden-element');
     }
-        */
         
         
+        console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 }
+
+//consolg.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+
 
 showHideButtons.addEventListener('click', function () {
 
     showMe();
     hideEveryOneElse();
+    console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 
 });
 
