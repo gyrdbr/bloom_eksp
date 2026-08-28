@@ -63,6 +63,8 @@ var helpPage = document.getElementById('rw-help-page');
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
 var growingFlower = document.getElementById('rw-growingFlower-page');
 
+
+
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
 var closeHelpButton = document.getElementById('cross-button-svg');
@@ -90,8 +92,15 @@ var gearButton = document.getElementById("help-button-svg");
 var habitG = document.getElementById("habitG-button-svg");
 var habitB = document.getElementById("habitB-button-svg");
 
-var habitG = document.getElementById("habitG-button-svg");
+var XXX = document.getElementById("habitG-button-svg");
 
+document.getElementById("habitG-button-svg");
+
+XXX.classList.add("habitG-button-svg");
+
+
+// console.log("habitG");
+// <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
 
 
 var taskButtonG = document.getElementById("habitG-button-svg");
@@ -119,7 +128,7 @@ function showMe() {
 
     // TODO kan man ta html av og paa. maa jo gaa?
     // sjekk noen game filer
-    // <section class="rw-section rw-giHabits-page rw-flower-page hidden-element" id="rw-wholeInflorecence">
+
 
     document.getElementById("rw-wholeInflorecence");
 
