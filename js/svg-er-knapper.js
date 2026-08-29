@@ -92,11 +92,16 @@ var gearButton = document.getElementById("help-button-svg");
 var habitG = document.getElementById("habitG-button-svg");
 var habitB = document.getElementById("habitB-button-svg");
 
-var XXX = document.getElementById("habitG-button-svg");
-
+console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 document.getElementById("habitG-button-svg");
 
-XXX.classList.add("habitG-button-svg");
+// ''
+// var XXX = document.getElementById("habitG-button-svg");
+
+// document.getElementById("habitG-button-svg");
+
+// XXX.classList.add("habitG-button-svg");
+//
 
 
 // console.log("habitG");
@@ -162,14 +167,14 @@ function hideEveryOneElse() {
         console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 }
 
+
+
 showHideButtons.addEventListener('click', function () {
 
     showMe();
     hideEveryOneElse();
 
 });
-
-console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
 
 // TODO: outline: 6px solid #B33434;" 
 // hide and show carrur n.n.
