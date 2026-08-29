@@ -63,8 +63,6 @@ var helpPage = document.getElementById('rw-help-page');
 var wholeInflorecence = document.getElementById("rw-wholeInflorecence");
 var growingFlower = document.getElementById('rw-growingFlower-page');
 
-
-
 var goodHabitsPage = document.getElementById('rw-good-habits-page');
 var badHabitsPage = document.getElementById('rw-bad-habits-page');
 var closeHelpButton = document.getElementById('cross-button-svg');
@@ -92,7 +90,10 @@ var gearButton = document.getElementById("help-button-svg");
 var habitG = document.getElementById("habitG-button-svg");
 var habitB = document.getElementById("habitB-button-svg");
 
-console.log("habitG", "habitG.style", habitG.style="outline: 6px solid #B33434;");
+var wholeIno = document.getElementById("rw-wholeInflorecence");
+// var ZZZ = document.getElementById("habitG-button-svg");
+
+document.getElementById("rw-wholeInflorecence");
 document.getElementById("habitG-button-svg");
 
 // ''
@@ -149,7 +150,7 @@ function showMe() {
 }
 
 function hideEveryOneElse() {
-    var hiddenElements  = document.getElementsByClassName('hidden-element');
+    var hiddenEhabitGhabitGlements  = document.getElementsByClassName('hidden-element');
     var hiddenOne = hiddenElements[0];
 
     console.log("hideEveryOneElse");
@@ -176,9 +177,36 @@ showHideButtons.addEventListener('click', function () {
 
 });
 
+
+
+function moveTriangle(rect) {
+    var rectLeft = rect.left;
+    var rectWidth = rect.width;
+    // Use transform: translateX() for smooth, performant animation
+    // This moves the element 200 pixels to the right from its current position
+    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
+}
+
+
+wholeIno.style="outline: 6px solid #b33474;";
+
+wholeIno.style="outline: 6px solid #b33474";
+
+wholeIno.addEventListener('click', function () {
+
+    console.log("wholeIno", document.getElementById("rw-wholeInflorecence"));
+    if (document.getElementById("rw-wholeInflor")) {
+        
+        wholeIno.style="outline: 6px solid #b33474";
+    }
+
+});
+
 // TODO: outline: 6px solid #B33434;" 
 // hide and show carrur n.n.
 // hoppga 
+
+habitG.style="outline: 6px solid #B33434;";
 
 habitG.style="outline: 6px solid #B33434;";
 
@@ -201,14 +229,6 @@ habitB.addEventListener('click', function () {
     }
 
 });
-
-function moveTriangle(rect) {
-    var rectLeft = rect.left;
-    var rectWidth = rect.width;
-    // Use transform: translateX() for smooth, performant animation
-    // This moves the element 200 pixels to the right from its current position
-    moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
-}
 
 // TODO: her skal skjuling fjernes og i stedet skal god vane/daarlig vane vises skjules naar man klikker paa dem
 tripButtonSettings.addEventListener('click', function () {
