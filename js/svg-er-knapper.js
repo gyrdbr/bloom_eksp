@@ -187,6 +187,9 @@ function moveTriangle(rect) {
     moveHelpTriangle.style.transform = "translateX(" + (rectLeft - ((rectWidth / 2) + 3)) + "px)";
 }
 
+// document.getElementById("habitB-button-svg")
+console.log("habitG", document.getElementById("habitG-button-svg"));
+console.log("wholeIno", document.getElementById("rw-wholeInflor"));
 
 wholeIno.style="outline: 6px solid #b33474;";
 
